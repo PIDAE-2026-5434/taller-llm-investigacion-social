@@ -1,0 +1,9 @@
+Clasificá cada pasaje de la lista según a quién le asigna la responsabilidad de resolver el problema. Usá estas categorías:
+
+@esquema responsable
+
+Devolvé una tabla con tres columnas: número de párrafo, pasaje, responsable.
+
+<pasajes>
+[pegar la lista del paso 1, ya revisada]
+</pasajes>

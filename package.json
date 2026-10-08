@@ -1,0 +1,22 @@
+{
+  "name": "taller-llm-investigacion-social",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "discursos": "node scripts/bajar_discursos.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.3",
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "astro": "^7.3.8"
+  }
+}

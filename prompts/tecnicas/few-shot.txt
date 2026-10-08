@@ -1,0 +1,8 @@
+Clasificá cada párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Si hay más de un responsable, listalos separados por punto y coma.
+
+Ejemplos:
+Párrafo: "La inflación se come el salario de quienes trabajan, y este gobierno va a terminar con ella." -> gobierno nacional
+Párrafo: "Todos sabemos que hay rutas que llevan décadas sin arreglarse." -> no asigna
+Párrafo: "Sin inversión de las empresas y sin el esfuerzo de cada familia no hay salida de la pobreza." -> sector privado; ciudadanía
+
+Párrafo a clasificar: "El país no puede seguir perdiendo jóvenes que se van a buscar futuro a otro lado."

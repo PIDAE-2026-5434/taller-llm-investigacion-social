@@ -1,0 +1,205 @@
+---
+layout: ../../layouts/Guia.astro
+---
+
+import Prompt from '../../components/Prompt.astro';
+import Ficha from '../../components/Ficha.astro';
+import Eleccion from '../../components/Eleccion.astro';
+import Cadena from '../../components/Cadena.astro';
+import Iteracion from '../../components/Iteracion.astro';
+
+Las cinco técnicas se combinan entre sí. Cada una resuelve un problema distinto de la tarea.
+
+Todos los ejemplos usan la misma tarea: clasificar párrafos de discursos presidenciales según a quién le asignan la responsabilidad de resolver un problema. Los párrafos de muestra son inventados.
+
+## Cuál usar
+
+<Eleccion
+  opciones={[
+    {
+      nombre: 'Zero-shot',
+      cuando: 'Si la tarea tiene categorías que se entienden sin explicación, o es una primera exploración.',
+      aporta: 'Muestra qué interpreta el modelo sin ayuda y qué hay que agregarle al prompt.',
+    },
+    {
+      nombre: 'Few-shot',
+      cuando: 'Si tiene categorías con límites finos o un formato de salida fijo.',
+      aporta: 'Los ejemplos fijan el criterio en los casos donde la definición sola no alcanza.',
+    },
+    {
+      nombre: 'Razonamiento paso a paso',
+      cuando: 'Si exige combinar varios criterios o justificar cada decisión.',
+      aporta: 'Deja a la vista los pasos, que el equipo puede revisar.',
+    },
+    {
+      nombre: 'Descomposición',
+      cuando: 'Si mezcla varias operaciones o trabaja sobre textos largos.',
+      aporta: 'Cada paso se revisa antes de seguir y los errores no se arrastran.',
+    },
+    {
+      nombre: 'Iteración',
+      cuando: 'En cualquiera de los casos anteriores.',
+      aporta: 'El prompt se ajusta mirando los resultados sobre los mismos casos.',
+    },
+  ]}
+/>
+
+## Zero-shot
+
+<Ficha
+  datos={[
+    ['Qué es', 'La instrucción sola, sin ejemplos.'],
+    [
+      'Cuándo conviene',
+      'Tareas simples, exploración inicial, o para ver qué entiende el modelo por una categoría antes de definirla.',
+    ],
+  ]}
+/>
+
+<Prompt id="tecnicas/zero-shot" />
+
+## Few-shot
+
+<Ficha
+  datos={[
+    ['Qué es', 'La instrucción más algunos ejemplos ya resueltos.'],
+    [
+      'Cuándo conviene',
+      'Categorías con límites finos, formato de salida fijo, o cuando el zero-shot clasifica distinto que el equipo.',
+    ],
+    [
+      'Cuidado',
+      'Incluir al menos un caso límite y variar los ejemplos, para que el modelo no copie un rasgo superficial.',
+    ],
+  ]}
+/>
+
+<Prompt id="tecnicas/few-shot" />
+
+## Razonamiento paso a paso
+
+También se lo llama chain of thought o CoT.
+
+<Ficha
+  datos={[
+    ['Qué es', 'Pedirle al modelo que explicite los pasos antes de dar la respuesta.'],
+    [
+      'Cuándo conviene',
+      'Casos ambiguos, decisiones con varios criterios, y siempre que haga falta revisar por qué eligió un código.',
+    ],
+    [
+      'Cuidado',
+      'La explicación sirve para revisar la decisión. No garantiza que el modelo haya llegado a la respuesta por ese camino.',
+    ],
+  ]}
+/>
+
+El prompt trae dos párrafos. En el primero el modelo asigna una categoría y en el segundo concluye que el párrafo no asigna responsable. La pestaña Salida muestra una corrida guardada.
+
+<Prompt id="tecnicas/paso-a-paso" />
+
+## Descomposición y salida estructurada
+
+<Ficha
+  datos={[
+    [
+      'Qué es',
+      'Partir una tarea grande en pasos, cada uno con su prompt, y pedir cada salida en un formato fijo, como una tabla o una lista numerada.',
+    ],
+    [
+      'Cuándo conviene',
+      'Textos largos, tareas que mezclan extraer, clasificar y sintetizar, y resultados que después van a una planilla.',
+    ],
+    ['Cuidado', 'Revisar la salida de cada paso antes de usarla en el siguiente.'],
+  ]}
+/>
+
+### Paso 1. Extraer
+
+<Prompt id="tecnicas/descomposicion-1" />
+
+### Paso 2. Clasificar
+
+<Prompt id="tecnicas/descomposicion-2" />
+
+### Paso 3. Sintetizar
+
+<Prompt id="tecnicas/descomposicion-3" />
+
+### Cómo se encadenan en una app de chat
+
+<Cadena
+  pasos={[
+    {
+      pega: 'El prompt del paso 1 y el discurso con los párrafos numerados.',
+      devuelve: 'Una lista de pasajes con su número de párrafo.',
+      revisa: 'Busca cada pasaje en el original y corrige o borra los que no coinciden.',
+    },
+    {
+      pega: 'El prompt del paso 2 y la lista ya corregida.',
+      devuelve: 'Una tabla con número de párrafo, pasaje y responsable.',
+      revisa: 'Mira las filas dudosas y corrige la categoría a mano.',
+    },
+    {
+      pega: 'El prompt del paso 3 y la tabla ya corregida.',
+      devuelve: 'Un resumen de 5 líneas con números de párrafo.',
+      revisa: 'Comprueba que cada afirmación tenga respaldo en la tabla.',
+    },
+  ]}
+/>
+
+- Los tres mensajes pueden ir en la misma conversación. Cuando el equipo corrigió una salida, pega la versión corregida y le indica al modelo que trabaje sobre esa.
+- Con textos largos conviene abrir una conversación nueva para cada paso y pegar solo lo necesario.
+- La salida de cada paso se guarda en un archivo o en una planilla. Ese archivo es el registro del análisis.
+
+<details>
+<summary>Opción: correr la cadena sin copiar y pegar</summary>
+
+La misma cadena se puede automatizar de dos formas. En las dos, las revisiones entre pasos las sigue haciendo una persona.
+
+- Un script que llama al modelo por API, lee cada prompt de `prompts/` y guarda cada respuesta en `salidas/`.
+- Un agente, como Claude Code o Codex, que trabaja sobre la carpeta del proyecto, corre los pasos en orden y se detiene después de cada uno para que el equipo revise.
+
+Conviene pasar a una de estas opciones cuando el mismo análisis se repite sobre muchos documentos.
+
+</details>
+
+## Iteración
+
+<Ficha
+  datos={[
+    ['Qué es', 'Revisar la respuesta, ajustar el prompt y volver a correrlo.'],
+    ['Cuándo conviene', 'En todos los casos. El primer prompt rara vez queda como definitivo.'],
+    [
+      'Cómo',
+      'Cambiar una cosa por vez, probar sobre los mismos 10 a 20 casos y guardar cada versión con su resultado.',
+    ],
+  ]}
+/>
+
+<Iteracion
+  v1="Clasificá el párrafo según a quién le asigna la responsabilidad de resolver el problema."
+  problema='Clasifica como "provincias y municipios" los párrafos que hablan de "el interior" como región, sin nombrar a ningún gobierno.'
+  v2='Agrega la definición. "Provincias y municipios" son los gobernadores, las legislaturas provinciales y los intendentes nombrados como responsables. Las menciones a "el interior" como región van a "no asigna".'
+/>
+
+Así entró en el esquema de códigos la exclusión de "el interior". El esquema completo está en la [sección 3](../componentes-del-prompt/).
+
+## Cómo se combinan
+
+Un mismo prompt suele reunir varias técnicas. El que sigue es el paso 2 de la descomposición, con ejemplos resueltos, razonamiento antes de la categoría y formato de salida fijo. A la derecha de cada tramo figura la técnica que aporta.
+
+<Prompt id="tecnicas/combinado" anotado />
+
+La iteración no figura en el prompt. Aparece cuando, después de cada ajuste, se lo vuelve a correr sobre los mismos casos.
+
+## Variación entre corridas
+
+Los modelos de lenguaje no son determinísticos. El mismo prompt puede dar respuestas distintas en dos corridas. La variación se acota, y lo que queda se mide y se informa.
+
+- Correr cada prompt de 3 a 5 veces en conversaciones nuevas y anotar en qué cambian las salidas.
+- Fijar herramienta, modelo y nivel de esfuerzo, y anotarlos en el registro de corridas, que puede ser una planilla.
+- Pedir un formato de salida fijo, como la línea que empieza con "Categoría:".
+- Dejar a la vista el contexto con el que trabaja el modelo. Las instrucciones y los archivos de un proyecto ayudan y se anotan en el registro. La memoria personal de la app conviene apagarla, porque cambia las respuestas sin figurar en el prompt.
+- En las apps de chat, el control disponible es el nivel de esfuerzo, que se explica en la sección 3. Por API, algunos modelos permiten además bajar la aleatoriedad con el parámetro de temperatura.
+- Si un caso recibe categorías distintas en corridas distintas, lo resuelve una persona y se anota como ambiguo.

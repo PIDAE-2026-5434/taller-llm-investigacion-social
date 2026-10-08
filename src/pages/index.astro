@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
+---
+
+<Base>
+  <main>
+    <section class="contenedor portada">
+      <div class="portada-texto">
+        <div class="antetitulo">Taller PIDAE 2026 · Parte 2 · 75 minutos</div>
+        <h1>Interactuando con <span class="marca">LLMs</span></h1>
+        <p>
+          Material de apoyo para usar modelos de lenguaje en investigación social: tipos de tareas, técnicas, armado de
+          prompts, errores frecuentes, dos casos de aplicación y un checklist de validación.
+        </p>
+        <div class="portada-botones">
+          <a class="boton" href={rutaSeccion('tecnicas')}>Empezar por las técnicas</a>
+          <a class="boton boton-linea" href={ruta('materiales/')}>Ver los materiales</a>
+        </div>
+      </div>
+
+      <figure class="ejemplo-marcado">
+        <figcaption>Párrafo de ejemplo, inventado. Codificado con el esquema de la sección 3.</figcaption>
+        <blockquote>
+          "Necesitamos que <span class="marca">los gobernadores</span> ordenen sus cuentas para que{' '}<span class="subrayado">las escuelas abran todos los días</span>."
+        </blockquote>
+        <dl class="ejemplo-codigos">
+          <dt><span class="subrayado">Problema</span></dt>
+          <dd>días de clase perdidos</dd>
+          <dt><span class="marca">Responsable</span></dt>
+          <dd>provincias y municipios</dd>
+        </dl>
+      </figure>
+    </section>
+
+    <section class="contenedor bloque-secciones" id="secciones">
+      <div class="bloque-secciones-titulo">
+        <h2>Siete secciones</h2>
+        <p>Se pueden leer en orden o entrar por un caso.</p>
+      </div>
+      <ol class="lista-secciones">
+        {
+          secciones.map((s) => (
+            <li>
+              <a href={rutaSeccion(s.slug)}>
+                <span class="lista-n">{s.n}</span>
+                <span class="lista-titulo">{s.titulo}</span>
+                <span class="lista-bajada">{s.bajada}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="repositorio" id="repositorio">
+      <div class="contenedor">
+        <div class="repositorio-texto">
+          <h2>Todo el material es un archivo</h2>
+          <p>
+            Los discursos, los prompts y las salidas están en el repositorio, guardados con el mismo registro que
+            propone el taller.
+          </p>
+          <ul>
+            <li>Copiar cada prompt con un clic.</li>
+            <li>Comparar la salida guardada con una corrida propia.</li>
+            <li>Reemplazar los discursos por material propio.</li>
+          </ul>
+          <div class="portada-botones">
+            <a class="boton" href={ruta('materiales/')}>Ver los materiales</a>
+            {
+              sitio.repo && (
+                <a class="boton boton-linea" href={sitio.repo}>
+                  Abrir en GitHub
+                </a>
+              )
+            }
+          </div>
+        </div>
+
+        <dl class="arbol">
+          <dt>prompts/</dt>
+          <dd>un archivo por prompt</dd>
+          <dt>esquemas/</dt>
+          <dd>categorías con su definición, en CSV</dd>
+          <dt>discursos/</dt>
+          <dd>textos con los párrafos numerados</dd>
+          <dt>entrevistas/</dt>
+          <dd>la entrevista sintética del Caso 2</dd>
+          <dt>salidas/</dt>
+          <dd>respuestas guardadas de cada prompt</dd>
+          <dt><span class="marca">registro.csv</span></dt>
+          <dd>una fila por corrida, con modelo y fecha</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+</Base>

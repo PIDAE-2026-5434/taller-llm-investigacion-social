@@ -1,0 +1,66 @@
+---
+// Layout de las páginas de src/pages/guia/. El título, la numeración y la
+// navegación salen de la lista de secciones de src/lib/sitio.js.
+import Base from './Base.astro';
+import { secciones, rutaSeccion } from '../lib/sitio.js';
+
+const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
+const i = secciones.findIndex((s) => s.slug === slug);
+if (i === -1) throw new Error(`La página "${slug}" no figura en la lista de secciones de src/lib/sitio.js`);
+const seccion = secciones[i];
+const anterior = secciones[i - 1];
+const siguiente = secciones[i + 1];
+---
+
+<Base titulo={seccion.titulo} descripcion={seccion.bajada}>
+  <div class="contenedor guia">
+    <nav class="guia-indice" aria-label="Secciones de la guía">
+      <div class="guia-indice-titulo">Guía</div>
+      <ol>
+        {
+          secciones.map((s) => (
+            <li>
+              <a href={rutaSeccion(s.slug)} aria-current={s.slug === slug ? 'page' : undefined}>
+                {s.n} {s.corto}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <main class="guia-cuerpo">
+      <div class="guia-encabezado">
+        <div class="antetitulo">Sección {i + 1} de {secciones.length}</div>
+        <h1>{seccion.titulo}</h1>
+      </div>
+
+      <div class="prosa">
+        <slot />
+      </div>
+
+      <nav class="pasar" aria-label="Sección anterior y siguiente">
+        {
+          anterior && (
+            <a href={rutaSeccion(anterior.slug)}>
+              <span>Anterior</span>
+              <span>
+                {anterior.n} {anterior.corto}
+              </span>
+            </a>
+          )
+        }
+        {
+          siguiente && (
+            <a href={rutaSeccion(siguiente.slug)}>
+              <span>Siguiente</span>
+              <span>
+                {siguiente.n} {siguiente.corto}
+              </span>
+            </a>
+          )
+        }
+      </nav>
+    </main>
+  </div>
+</Base>

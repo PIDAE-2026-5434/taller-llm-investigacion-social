@@ -1,0 +1,18 @@
+---
+// Lista "si la tarea... conviene tal técnica". Uso: <Eleccion opciones={[{ nombre, cuando, aporta }]} />
+const { opciones } = Astro.props;
+---
+
+<dl class="eleccion">
+  {
+    opciones.map((o) => (
+      <div>
+        <dt>{o.nombre}</dt>
+        <dd>
+          <span>{o.cuando}</span>
+          <span>{o.aporta}</span>
+        </dd>
+      </div>
+    ))
+  }
+</dl>

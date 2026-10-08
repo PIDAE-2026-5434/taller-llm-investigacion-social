@@ -1,0 +1,42 @@
+---
+// Tabla de un esquema de códigos, leída de esquemas/<id>.csv.
+import { esquema } from '../lib/archivos.js';
+import { enRepo } from '../lib/sitio.js';
+
+const { id } = Astro.props;
+const { filas } = esquema(id);
+const archivo = `esquemas/${id}.csv`;
+const enlace = enRepo(archivo);
+---
+
+<div class="tabla-ancha">
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Definición</th>
+        <th>Incluye</th>
+        <th>Excluye</th>
+        <th>Ejemplo inventado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        filas.map((f) => (
+          <tr>
+            <td>{f.codigo}</td>
+            <td>{f.definicion}</td>
+            <td>{f.incluye}</td>
+            <td>{f.excluye}</td>
+            <td>{f.ejemplo}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+<p class="nota">
+  Archivo: {enlace ? <a href={enlace}>{archivo}</a> : <code>{archivo}</code>}. Los prompts lo incluyen con la línea <code
+    >@esquema {id}</code
+  >.
+</p>

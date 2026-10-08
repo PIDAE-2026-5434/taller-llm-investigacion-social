@@ -1,0 +1,15 @@
+---
+// Dos a cuatro datos cortos en columnas. Uso: <Ficha datos={[['Qué es', '...'], ['Cuándo conviene', '...']]} />
+const { datos } = Astro.props;
+---
+
+<dl class="ficha">
+  {
+    datos.map(([rotulo, texto]) => (
+      <div>
+        <dt>{rotulo}</dt>
+        <dd>{texto}</dd>
+      </div>
+    ))
+  }
+</dl>

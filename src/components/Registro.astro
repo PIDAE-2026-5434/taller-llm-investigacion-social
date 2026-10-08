@@ -1,0 +1,45 @@
+---
+// Tabla con registro.csv: una fila por corrida.
+import { registro } from '../lib/archivos.js';
+import { enRepo } from '../lib/sitio.js';
+
+const { columnas, filas } = registro();
+const enlace = enRepo('registro.csv');
+const rotulos = {
+  fecha: 'Fecha',
+  prompt: 'Prompt',
+  material: 'Material',
+  herramienta: 'Herramienta',
+  modelo: 'Modelo',
+  esfuerzo: 'Esfuerzo',
+  configuracion: 'Configuración',
+  salida: 'Salida',
+  cambios_a_mano: 'Cambios a mano',
+  reviso: 'Revisó',
+  notas: 'Notas',
+};
+---
+
+<div class="tabla-ancha tabla-registro">
+  <table>
+    <thead>
+      <tr>
+        {columnas.map((c) => <th>{rotulos[c] ?? c}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        filas.map((f) => (
+          <tr>
+            {columnas.map((c) => (
+              <td>{f[c]}</td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+<p class="nota">
+  Archivo: {enlace ? <a href={enlace}>registro.csv</a> : <code>registro.csv</code>}.
+</p>

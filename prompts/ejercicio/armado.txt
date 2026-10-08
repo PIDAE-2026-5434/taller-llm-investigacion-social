@@ -1,0 +1,21 @@
+#> Rol y contexto
+Sos asistente de un equipo que estudia a quién se dirigen los discursos presidenciales y qué conductas presentan como valiosas.
+
+#> Tarea
+Clasificá cada párrafo según el destinatario al que se dirige.
+
+#> Criterios
+Destinatarios posibles: alumnos, docentes, familias, autoridades, país en general. Un párrafo puede tener más de uno.
+[COMPLETAR: qué cuenta como dirigirse a alguien]
+
+#> Formato de salida
+Tabla con cuatro columnas: número de párrafo, destinatario o destinatarios, conducta que se presenta como valiosa, cita textual.
+
+#> Restricciones y dudas
+Usá solo el texto del discurso. Copiá las citas sin modificarlas.
+[COMPLETAR: qué hacer cuando el destinatario no está claro]
+
+#> Material
+<discurso>
+[pegar el discurso con los párrafos numerados]
+</discurso>

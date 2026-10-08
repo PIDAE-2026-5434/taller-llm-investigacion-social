@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import Registro from '../components/Registro.astro';
+import { listar, leer, csv } from '../lib/archivos.js';
+import { sitio, enRepo, rutaSeccion } from '../lib/sitio.js';
+
+const grupos = [
+  { carpeta: 'prompts/tecnicas/', titulo: 'Técnicas', seccion: 'tecnicas' },
+  { carpeta: 'prompts/componentes/', titulo: 'Componentes del prompt', seccion: 'componentes-del-prompt' },
+  { carpeta: 'prompts/caso-1/', titulo: 'Caso 1: análisis de discurso', seccion: 'caso-1' },
+  { carpeta: 'prompts/caso-2/', titulo: 'Caso 2: análisis cualitativo', seccion: 'caso-2' },
+  { carpeta: 'prompts/ejercicio/', titulo: 'Ejercicio', seccion: 'cierre' },
+].map((g) => ({ ...g, archivos: listar(g.carpeta) }));
+
+const salidas = new Set(listar('salidas/'));
+const tieneSalida = (archivo) => salidas.has(archivo.replace(/^prompts\//, 'salidas/'));
+
+const fuentes = csv(leer('discursos/fuentes.csv') ?? '').filas.map((f) => ({
+  ...f,
+  bajado: leer(`discursos/${f.id}.txt`) !== null,
+}));
+const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
+---
+
+<Base titulo="Materiales" descripcion="Prompts, esquemas, discursos, salidas y registro del taller, como archivos.">
+  <div class="contenedor guia">
+    <main class="guia-cuerpo">
+      <div class="guia-encabezado">
+        <div class="antetitulo">Repositorio</div>
+        <h1>Materiales</h1>
+      </div>
+
+      <div class="prosa">
+        <p>
+          Cada prompt, esquema y salida del taller es un archivo. El sitio los lee del repositorio, así que hay una sola
+          copia de cada uno.
+        </p>
+        {
+          sitio.repo && (
+            <p>
+              <a class="boton" href={sitio.repo}>
+                Abrir el repositorio en GitHub
+              </a>
+            </p>
+          )
+        }
+
+        <h2>Prompts</h2>
+        <p>
+          Dentro de un archivo de prompt, las líneas que empiezan con <code>#&gt;</code> son anotaciones para el sitio
+          y no forman parte del prompt. La línea <code>@esquema responsable</code> se reemplaza por el esquema de códigos.
+          El botón Copiar de cada página entrega el prompt ya armado.
+        </p>
+        {
+          grupos.map((g) => (
+            <>
+              <h3>
+                <a href={rutaSeccion(g.seccion)}>{g.titulo}</a>
+              </h3>
+              <ul class="lista-materiales">
+                {g.archivos.map((a) => (
+                  <li>
+                    <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                    <span>{tieneSalida(a) ? 'Con salida guardada' : 'Sin salida guardada'}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))
+        }
+
+        <h2>Esquemas y entrevistas</h2>
+        <ul class="lista-materiales">
+          {
+            otros.map((a) => (
+              <li>
+                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                <span>{a.startsWith('esquemas/') ? 'Esquema de códigos' : 'Entrevista sintética, inventada'}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2>Discursos</h2>
+        <p>
+          Los discursos salen del sitio de Casa Rosada. La lista de fuentes está en <code>discursos/fuentes.csv</code> y
+          el comando <code>npm run discursos</code> baja cada texto y numera sus párrafos.
+        </p>
+        <ul class="lista-materiales">
+          {
+            fuentes.map((f) => (
+              <li>
+                <span>
+                  <a href={f.url}>{f.titulo}</a> ({f.fecha})
+                </span>
+                <span>
+                  {f.uso}. {f.bajado ? `Texto en discursos/${f.id}.txt` : 'Texto todavía sin bajar'}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2>Registro de corridas</h2>
+        <p>Cada salida guardada tiene su fila, con herramienta, modelo, nivel de esfuerzo y fecha.</p>
+        <Registro />
+      </div>
+    </main>
+  </div>
+</Base>

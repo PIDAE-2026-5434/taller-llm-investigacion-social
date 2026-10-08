@@ -1,0 +1,96 @@
+---
+layout: ../../layouts/Guia.astro
+---
+
+import Prompt from '../../components/Prompt.astro';
+import Esquema from '../../components/Esquema.astro';
+
+Este material organiza el prompt en siete componentes. Lo que el prompt deja sin definir lo decide el modelo, que suele ir a la opción más genérica.
+
+La lista es una síntesis propia y otras guías agrupan las mismas piezas de otro modo. [The Prompt Report](https://arxiv.org/abs/2406.06608) (Schulhoff et al., 2024) distingue instrucción, ejemplos, formato de salida, rol e información adicional. [Törnberg (2024)](https://sociologica.unibo.it/article/view/19461) propone pautas de armado de prompts para anotar textos en ciencias sociales.
+
+| Componente | Pregunta que responde | Ejemplo |
+| --- | --- | --- |
+| Rol y contexto | ¿Para quién trabaja el modelo y con qué fin? | "Sos asistente de un equipo que estudia qué problemas públicos nombran los discursos presidenciales." |
+| Tarea | ¿Qué tiene que hacer, dicho con un verbo preciso? | "Clasificá cada párrafo según a quién le asigna la responsabilidad de resolver el problema." |
+| Material | ¿Sobre qué texto trabaja y dónde empieza y termina? | Texto entre marcas como `<discurso>` y `</discurso>`, con párrafos numerados |
+| Criterios | ¿Qué significa cada categoría, qué incluye y qué deja afuera? | El esquema de códigos de esta sección |
+| Ejemplos | ¿Cómo se ve una respuesta correcta? | Párrafo: "Todos sabemos que hay rutas que llevan décadas sin arreglarse." -> no asigna. Conviene dar 2 o 3, uno de ellos límite |
+| Formato de salida | ¿Cómo devuelve el resultado? | Tabla con cuatro columnas: número de párrafo, problema, responsable, cita textual |
+| Restricciones y dudas | ¿Qué no debe hacer y qué hace cuando no sabe? | "Usá solo el texto del discurso. Si dudás de que un pasaje cuente como problema público, incluilo y marcalo como dudoso." |
+
+## El esquema de códigos como archivo
+
+Los criterios son el componente que más cambia durante un análisis. Por eso conviene tenerlos en un archivo aparte, con una fila por categoría. Cuando el equipo corrige una definición, la corrige una sola vez y todos los prompts la toman de ahí.
+
+<Esquema id="responsable" />
+
+## Buenas prácticas
+
+| Práctica | Ejemplo con discursos |
+| --- | --- |
+| Escribir la pregunta de investigación dentro del prompt | "Estudiamos qué problemas públicos nombran los discursos presidenciales y a quién le asignan la responsabilidad de resolverlos." |
+| Delimitar el material y numerar los párrafos, para poder pedir ubicación | `<discurso>` [1] texto del primer párrafo [2] texto del segundo párrafo `</discurso>` |
+| Definir cada categoría con lo que incluye y lo que excluye, en el esquema | La fila "provincias y municipios" incluye gobernadores, legislaturas provinciales e intendentes, y excluye "el interior" nombrado como región |
+| Pedir cita textual y ubicación para cada afirmación | "Para cada problema copiá la frase exacta e indicá el número de párrafo." |
+| Dar una salida para la duda | "Si el párrafo no nombra ningún problema, escribí 'ninguno'. Si dudás entre dos responsables, anotá los dos." |
+| Pedir una tarea por prompt | Un mensaje para "Listá los problemas que nombra el discurso" y otro para "Clasificá cada problema según el responsable" |
+| Limitar la respuesta al texto pegado | "Basate solo en el discurso pegado. Dejá afuera lo que sepas del orador o de la época." |
+| Guardar el prompt en un archivo y reutilizarlo | El mismo archivo de `prompts/` se usa para el discurso A y para el discurso B, cada uno en su conversación. Con muchos documentos conviene un proyecto con instrucciones fijas o una corrida automatizada |
+| Revisar si el material tiene datos personales o confidenciales | Los discursos son públicos. Una entrevista se anonimiza antes de pegarla, como en el Caso 2 |
+
+## Elección de modelo
+
+Cada proveedor ofrece modelos en escalones de capacidad, velocidad y costo. En Claude los tres escalones habituales se llaman Haiku, Sonnet y Opus. OpenAI usa una escala equivalente en GPT, con los nombres Luna, Sol y Astra. Otros proveedores tienen las suyas.
+
+| Escalón | Perfil | Conviene para |
+| --- | --- | --- |
+| Chico (Haiku en Claude, Luna en GPT) | Rápido y barato | Clasificar con categorías cerradas, extraer datos, grandes volúmenes con criterio claro |
+| Intermedio (Sonnet en Claude, Sol en GPT) | Equilibrio entre calidad y costo | Uso general: resumir, proponer categorías, codificar con evidencia |
+| Grande (Opus en Claude, Astra en GPT) | Más capaz, más lento y más caro | Textos largos y ambiguos, comparación entre documentos, revisión crítica de un esquema. También preparar el plan y las instrucciones de un análisis de varios pasos, que después ejecuta un modelo más chico |
+
+1. Empezar por el escalón intermedio.
+2. Bajar al chico si la tarea es simple y el volumen grande, después de comprobar en 20 casos que rinde igual.
+3. Subir al grande si el intermedio falla en los matices o pierde instrucciones en textos largos.
+4. Registrar nombre y versión del modelo. Los nombres de familia se mantienen y las versiones cambian varias veces por año.
+
+La equivalencia entre las dos escalas es aproximada y vale a octubre de 2026, según la [página de modelos de OpenAI](https://developers.openai.com/api/docs/models). Los nombres cambian de lugar entre generaciones: en GPT-5.6, Sol era el escalón más alto.
+
+## Nivel de esfuerzo
+
+Además del modelo se elige cuánto razona antes de responder. Las apps lo muestran como un interruptor o un selector de pensamiento o razonamiento. Los rankings lo anotan junto al nombre del modelo, como High, xHigh o Max.
+
+- Más esfuerzo da respuestas más lentas y más caras, y ayuda en tareas con varios pasos o con criterios que se cruzan.
+- Para clasificar con categorías claras suele alcanzar un nivel bajo o medio.
+- Los niveles cambian de un modelo a otro. Los modelos actuales de OpenAI ofrecen low, medium, high, xhigh y max, y solo el más chico permite desactivar el razonamiento. Otros proveedores usan otros nombres y otra cantidad de niveles.
+- El mismo nombre de nivel en dos modelos distintos no asegura el mismo comportamiento. La comparación se hace probando en casos propios.
+- El nivel de esfuerzo se registra junto con el modelo y la versión.
+
+## Configuración de la herramienta
+
+El mismo prompt puede dar resultados distintos según cómo esté configurada la herramienta. Los cuatro ajustes de la tabla se revisan antes de empezar un análisis.
+
+| Ajuste | Qué hace | Efecto sobre el análisis | Qué conviene |
+| --- | --- | --- | --- |
+| Memoria personal entre conversaciones | La app guarda datos de chats anteriores de cada persona y los usa en los nuevos | Dos integrantes con el mismo prompt reciben respuestas distintas, y la diferencia no figura en ningún lado | Apagarla o usar un chat temporal durante el análisis, y anotar cómo estaba |
+| Preferencias o instrucciones personalizadas | Texto fijo de cada persona que se suma a todos sus chats | Cambia el tono, el formato o los criterios sin que figure en el prompt | Desactivarlas para el análisis o copiarlas en el registro |
+| Instrucciones y archivos de un proyecto | Texto y documentos que se aplican a todas las conversaciones de un proyecto compartido | Ayudan, porque fijan rol, esquema y formato para todo el equipo | Escribirlas pensando en el análisis: rol, esquema de códigos y formato de salida. Guardar cada versión y sumarla al registro |
+| Conversaciones largas | El modelo atiende peor lo que se dijo al principio. Algunas herramientas resumen de forma automática la parte más vieja para seguir funcionando | El esquema o las definiciones pueden quedar resumidos o perderse sin aviso | Conversaciones cortas, una por documento. Lo que tiene que durar se guarda en archivos del proyecto. Antes de cerrar una conversación se le pide al modelo una nota de traspaso con decisiones y pendientes, que se pega al abrir la siguiente |
+
+La diferencia entre la primera fila y la tercera es quién ve el contexto. Las instrucciones de un proyecto las lee todo el equipo y quedan registradas. La memoria personal es distinta para cada integrante.
+
+## Cómo leer un ranking de modelos
+
+Un ranking general orienta poco para elegir modelo, porque el orden cambia según la tarea y la lengua. [Arena](https://arena.ai/leaderboard), antes LMArena, ordena modelos a partir de votos de personas que comparan respuestas. Publica rankings separados por tipo de uso: texto, código, visión, documentos, búsqueda y agentes.
+
+- El primer puesto cambia de una categoría a otra.
+- Entre los primeros puestos las diferencias suelen ser menores que el margen de error.
+- El ranking mide la preferencia de quienes votan. No mide exactitud, ni desempeño en castellano rioplatense, ni desempeño en la tarea del equipo.
+- [IberBench](https://arxiv.org/abs/2504.16921) evalúa modelos en lenguas ibéricas y variedades del castellano, con 101 conjuntos de datos y 22 tipos de tarea. Sus autores aclaran que no cubre el castellano de Argentina.
+- La prueba que decide es propia: 20 a 30 casos ya codificados por el equipo, corridos con el mismo prompt en dos o tres modelos.
+
+## Ejemplo armado
+
+El prompt que sigue reúne los siete componentes sobre un discurso presidencial. A la derecha de cada tramo figura el componente. Los dos párrafos del tramo de ejemplos son inventados y en un análisis real se reemplazan por párrafos que el equipo ya revisó.
+
+<Prompt id="componentes/prompt-armado" anotado />

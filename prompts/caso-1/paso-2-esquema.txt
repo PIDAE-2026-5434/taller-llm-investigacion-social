@@ -1,0 +1,7 @@
+A partir de los problemas que listaste, proponé entre 6 y 8 códigos para clasificar los párrafos del discurso. Para cada código incluí:
+- nombre corto
+- definición en una oración
+- qué incluye y qué deja afuera
+- un párrafo del discurso que lo ilustre, con su número
+
+Si un tema aparece una sola vez, listalo aparte como "tema aislado" en lugar de armarle un código.

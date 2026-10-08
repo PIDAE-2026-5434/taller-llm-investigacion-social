@@ -1,0 +1,105 @@
+---
+layout: ../../layouts/Guia.astro
+---
+
+import Prompt from '../../components/Prompt.astro';
+import Ficha from '../../components/Ficha.astro';
+
+El caso recorre en cinco pasos un análisis de discursos presidenciales, desde una primera detección de temas hasta la revisión de los resultados. Cada paso indica para qué sirve, qué tarea de la sección 1 pide y qué técnica de la sección 2 usa.
+
+## Material
+
+- Corpus: discursos presidenciales publicados en el [sitio de Casa Rosada](https://www.casarosada.gob.ar/informacion/discursos). El listado muestra 40 discursos por página.
+- Licencia: [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/). Permite reutilizar los textos citando la fuente.
+- Selección sugerida: dos discursos de apertura de sesiones ordinarias del Congreso, de años distintos. Comparten género y ocasión, y eso hace comparable el paso 4.
+- Preparación: cada discurso se guarda como archivo de texto con los párrafos numerados. El comando `npm run discursos` del repositorio lo hace a partir de la lista de fuentes.
+- Pregunta de ejemplo: ¿qué problemas públicos nombra el discurso y a quién le asigna la responsabilidad de resolverlos?
+
+Los prompts de este caso todavía no tienen salidas guardadas, porque falta elegir los dos discursos. Cuando se guarde una corrida, el bloque del prompt suma la pestaña Salida.
+
+## Paso 1. Detección de temas
+
+<Ficha
+  datos={[
+    ['Para qué', 'Tener un primer mapa del discurso y ver qué entiende el modelo cuando no se le da contexto.'],
+    ['Tarea', 'Detectar temas.'],
+    ['Técnica', 'Zero-shot en la primera versión. Iteración para llegar a la segunda.'],
+  ]}
+/>
+
+<Prompt id="caso-1/paso-1a-temas" />
+
+Lo esperable es una lista de rótulos inespecíficos, del tipo "economía", "educación" o "unidad nacional", que servirían para casi cualquier discurso presidencial. Tres razones lo explican.
+
+- El prompt no dice para qué se quieren los temas.
+- Tampoco define unidad de análisis ni nivel de detalle.
+- Sin esas pistas, el modelo devuelve los rótulos más frecuentes para ese género de texto.
+
+La segunda versión suma la pregunta de investigación, el nivel de detalle y el pedido de cita.
+
+<Prompt id="caso-1/paso-1b-temas-con-contexto" />
+
+## Paso 2. Propuesta de códigos y corrección del esquema
+
+<Ficha
+  datos={[
+    ['Para qué', 'Conseguir un borrador de esquema de códigos que el equipo corrige antes de clasificar.'],
+    ['Tarea', 'Proponer categorías.'],
+    ['Técnica', 'Salida estructurada, en la misma conversación del paso 1.'],
+  ]}
+/>
+
+<Prompt id="caso-1/paso-2-esquema" />
+
+El esquema que devuelve el modelo es un borrador. El equipo lo corrige con estas preguntas.
+
+- ¿Hay dos códigos que se pisan?
+- ¿Algún código es tan amplio que absorbe casi todo?
+- ¿Cada definición dice qué queda afuera?
+- ¿Falta alguna categoría que el marco teórico del equipo considera necesaria?
+- ¿Algún código expresa una interpretación que el texto no sostiene?
+
+El esquema corregido se guarda como archivo, con el formato del [esquema de la sección 3](../componentes-del-prompt/), y es la entrada del paso 3.
+
+## Paso 3. Codificación de una submuestra
+
+<Ficha
+  datos={[
+    ['Para qué', 'Aplicar el esquema corregido a pocos párrafos y encontrar las definiciones que todavía fallan.'],
+    ['Tarea', 'Clasificar con categorías dadas.'],
+    ['Técnica', 'Salida estructurada, con cita y nivel de ambigüedad. Few-shot si aparecen casos límite.'],
+  ]}
+/>
+
+<Prompt id="caso-1/paso-3-codificacion" />
+
+Los párrafos con ambigüedad media o alta se revisan primero. Suelen señalar definiciones que hay que afinar.
+
+## Paso 4. Comparación entre dos discursos
+
+<Ficha
+  datos={[
+    ['Para qué', 'Contrastar dos discursos con las mismas categorías y poner a prueba la diferencia encontrada.'],
+    ['Tarea', 'Comparar y buscar contraejemplos.'],
+    ['Técnica', 'Descomposición en pasos numerados dentro de un mismo prompt.'],
+  ]}
+/>
+
+Este paso se corre en una conversación nueva, con el esquema y la tabla del paso 3 ya revisados.
+
+<Prompt id="caso-1/paso-4-comparacion" />
+
+El prompt pide números de párrafo para que el conteo lo haga el equipo.
+
+## Paso 5. Revisión
+
+<Ficha
+  datos={[
+    ['Para qué', 'Decidir si el resultado se puede usar.'],
+    ['Quién', 'El equipo, sin el modelo.'],
+  ]}
+/>
+
+- Citas: buscar cada cita en el texto original con la función de búsqueda. Si una cita no aparece textual, esa fila se descarta o se corrige a mano.
+- Consistencia entre documentos: comprobar que cada código se aplicó con el mismo criterio en A y en B. Repetir 5 párrafos en una conversación nueva y comparar.
+- Contraste con la codificación del equipo: dos personas codifican los mismos párrafos sin ver la salida del modelo. Las diferencias se discuten una por una y se anota si el problema estuvo en la definición, en el prompt o en el modelo.

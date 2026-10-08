@@ -1,0 +1,5 @@
+¿A quién le habla este discurso?
+
+<discurso>
+[pegar el discurso con los párrafos numerados]
+</discurso>

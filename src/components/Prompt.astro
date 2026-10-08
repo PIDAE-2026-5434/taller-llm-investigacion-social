@@ -1,0 +1,72 @@
+---
+// Muestra prompts/<id>.txt con botón de copiar.
+// Si existe salidas/<id>.txt, suma la pestaña Salida con los datos del registro.
+// Con `anotado`, parte el prompt por sus líneas "#> Etiqueta" y muestra cada tramo con su rótulo.
+import { prompt, salidaDe } from '../lib/archivos.js';
+import { enRepo } from '../lib/sitio.js';
+
+const { id, anotado = false } = Astro.props;
+const p = prompt(id);
+const salida = salidaDe(id);
+const enlace = enRepo(p.ruta);
+const c = salida?.corrida;
+const fecha = (iso) => {
+  const [a, m, d] = (iso || '').split('-').map(Number);
+  const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  return a && m && d ? `${d} de ${meses[m - 1]} de ${a}` : iso;
+};
+const pie = c
+  ? [c.herramienta, c.modelo, c.esfuerzo && `esfuerzo ${c.esfuerzo}`, fecha(c.fecha)].filter(Boolean).join(' · ') + '.'
+  : null;
+---
+
+<div class="bloque" data-bloque>
+  <div class="bloque-barra">
+    {
+      salida ? (
+        <div class="bloque-pestanas" role="group" aria-label="Qué mostrar">
+          <button type="button" class="pestana" data-ver="prompt" aria-pressed="true">
+            Prompt
+          </button>
+          <button type="button" class="pestana" data-ver="salida" aria-pressed="false">
+            Salida
+          </button>
+        </div>
+      ) : (
+        <span class="bloque-rotulo">Prompt</span>
+      )
+    }
+    <span class="bloque-ruta">{enlace ? <a href={enlace}>{p.ruta}</a> : p.ruta}</span>
+    <button type="button" class="copiar" data-copiar>Copiar</button>
+  </div>
+
+  <div data-panel="prompt">
+    {
+      anotado ? (
+        <>
+          {p.tramos.map((t) => (
+            <div class="tramo">
+              <div class="tramo-etiqueta">{t.etiqueta && <span class="chip">{t.etiqueta}</span>}</div>
+              <pre>{t.texto}</pre>
+            </div>
+          ))}
+          <pre data-texto hidden>{p.limpio}</pre>
+        </>
+      ) : (
+        <pre data-texto>{p.limpio}</pre>
+      )
+    }
+  </div>
+
+  {
+    salida && (
+      <div data-panel="salida" hidden>
+        <pre data-texto>{salida.texto}</pre>
+        <p class="bloque-pie">
+          {pie ?? 'Corrida sin datos en registro.csv.'}
+          {c?.notas && ` ${c.notas}`}
+        </p>
+      </div>
+    )
+  }
+</div>

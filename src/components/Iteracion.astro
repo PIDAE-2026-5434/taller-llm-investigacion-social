@@ -1,0 +1,19 @@
+---
+// Una vuelta de iteración: primera versión, problema observado y versión corregida.
+const { v1, problema, v2 } = Astro.props;
+---
+
+<dl class="version">
+  <div>
+    <dt>Versión 1</dt>
+    <dd>{v1}</dd>
+  </div>
+  <div class="observado">
+    <dt>Problema observado</dt>
+    <dd>{problema}</dd>
+  </div>
+  <div>
+    <dt>Versión 2</dt>
+    <dd>{v2}</dd>
+  </div>
+</dl>

@@ -1,0 +1,15 @@
+Vas a clasificar párrafos de un discurso presidencial según a quién le asignan la responsabilidad de resolver el problema que nombran.
+
+Categorías:
+@esquema responsable
+
+Para cada párrafo, antes de clasificar, respondé en orden:
+1. ¿Qué problema nombra el párrafo? Citá las palabras exactas.
+2. ¿Nombra a alguien que deba resolverlo? Citá las palabras exactas o escribí "no lo nombra".
+3. ¿Qué categoría corresponde y por qué descartás la más cercana?
+
+Después escribí la categoría en una línea aparte que empiece con "Categoría:".
+
+Párrafo A: "Necesitamos que los gobernadores ordenen sus cuentas para que las escuelas abran todos los días."
+
+Párrafo B: "El país no puede seguir perdiendo jóvenes que se van a buscar futuro a otro lado."

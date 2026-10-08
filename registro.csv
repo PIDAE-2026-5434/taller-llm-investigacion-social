@@ -1,0 +1,2 @@
+fecha,prompt,material,herramienta,modelo,esfuerzo,configuracion,salida,cambios_a_mano,reviso,notas
+2026-10-08,tecnicas/paso-a-paso,"Dos párrafos inventados, incluidos en el prompt","Claude, sesión de preparación del material",claude-opus-5-5,sin dato,"Sesión de trabajo con contexto del proyecto, no un chat limpio",salidas/tecnicas/paso-a-paso.txt,Ninguno,Pendiente,Salida provisoria. Reemplazar por una corrida en chat temporal.

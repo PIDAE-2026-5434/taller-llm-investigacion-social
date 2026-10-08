@@ -1,0 +1,115 @@
+---
+layout: ../../layouts/Guia.astro
+---
+
+import Prompt from '../../components/Prompt.astro';
+import Texto from '../../components/Texto.astro';
+import Ficha from '../../components/Ficha.astro';
+
+El caso aplica la secuencia del Caso 1 a una entrevista. La entrevista es sintética: se escribió para el taller y no corresponde a ninguna persona real.
+
+## Material
+
+- Tema: la experiencia de alquilar vivienda.
+- Hablantes: E es quien entrevista. I es una inquilina ficticia.
+- Guía de preguntas, con cuatro ejes: búsqueda y acceso, relación con la propietaria, costos y ajustes, y expectativas.
+- Pregunta de ejemplo: ¿cómo explica la entrevistada las decisiones que toma para sostener el alquiler?
+
+<Texto archivo="entrevistas/alquiler-sintetica.txt" rotulo="Entrevista" />
+
+## Paso 1. Preparar el material
+
+<Ficha
+  datos={[
+    ['Para qué', 'Que el texto se pueda pegar en una herramienta sin exponer a nadie y que cada cita tenga ubicación.'],
+    ['Quién', 'El equipo, sin el modelo.'],
+  ]}
+/>
+
+- En una entrevista real se reemplazan nombres, direcciones, lugares de trabajo y cualquier otro dato que identifique por marcas como [NOMBRE], [BARRIO] o [EMPLEADOR] antes de pegarla en cualquier herramienta.
+- Se numeran los turnos de habla y se marca quién habla en cada uno.
+- La entrevista sintética ya cumple las dos condiciones.
+
+## Paso 2. Resumen por ejes
+
+<Ficha
+  datos={[
+    ['Para qué', 'Ordenar la entrevista según la guía de preguntas antes de codificar.'],
+    ['Tarea', 'Resumir.'],
+    ['Técnica', 'Salida estructurada, con número de turno para cada afirmación.'],
+  ]}
+/>
+
+<Prompt id="caso-2/paso-2-resumen" />
+
+Qué mirar: que el resumen conserve la ambivalencia. En el turno 16 la entrevistada piensa en mudarse todos los meses y en el 18 dice que está bien. Un resumen que se queda con una sola de las dos posiciones pierde información.
+
+## Paso 3. Categorías a partir de la entrevista
+
+<Ficha
+  datos={[
+    ['Para qué', 'Conseguir un borrador de categorías con las palabras de la entrevistada.'],
+    ['Tarea', 'Proponer categorías.'],
+    ['Técnica', 'Salida estructurada, en la misma conversación del paso 2.'],
+  ]}
+/>
+
+<Prompt id="caso-2/paso-3-categorias" />
+
+El equipo corrige el esquema con tres preguntas.
+
+- ¿Alguna categoría viene de una palabra de quien entrevista? E introduce "se aprovecha" en el turno 11 e I la rechaza en el 12.
+- ¿Alguna categoría toma una ironía al pie de la letra? "Muy científico todo", en el turno 10, es una crítica a cómo se fija el aumento.
+- ¿Alguna categoría mezcla lo que la entrevistada cuenta que hace con lo que opina de la propietaria?
+
+## Paso 4. Codificación de fragmentos
+
+<Ficha
+  datos={[
+    ['Para qué', 'Aplicar el esquema corregido a toda la entrevista.'],
+    ['Tarea', 'Clasificar con categorías dadas.'],
+    ['Técnica', 'Salida estructurada, con columnas para ironía y ambigüedad.'],
+  ]}
+/>
+
+<Prompt id="caso-2/paso-4-codificacion" />
+
+## Paso 5. Búsqueda de contraejemplos
+
+<Ficha
+  datos={[
+    ['Para qué', 'Poner a prueba una lectura del equipo antes de darla por buena.'],
+    ['Tarea', 'Buscar contraejemplos.'],
+    ['Técnica', 'Zero-shot, con la lectura del equipo escrita en el prompt.'],
+  ]}
+/>
+
+<Prompt id="caso-2/paso-5-contraejemplos" />
+
+Se espera que aparezcan al menos los turnos 8 y 12. Si el modelo confirma la lectura sin matices, el prompt o el modelo no sirven para esta tarea.
+
+## Paso 6. Revisión
+
+<Ficha
+  datos={[
+    ['Para qué', 'Decidir si el resultado se puede usar.'],
+    ['Quién', 'El equipo, sin el modelo.'],
+  ]}
+/>
+
+- Citas: cada fragmento se busca en la transcripción.
+- Hablante: ningún fragmento atribuido a I corresponde a un turno de E.
+- Ironía: una persona revisa los turnos 4 y 10.
+- Contraste: dos integrantes del equipo codifican los mismos turnos sin ver la salida del modelo y discuten las diferencias.
+
+## Qué cambia respecto del Caso 1
+
+| Aspecto | Caso 1, discursos | Caso 2, entrevista |
+| --- | --- | --- |
+| Material | Público, se pega tal cual | Se anonimiza antes y el consentimiento informado tiene que contemplar el uso |
+| Unidad de análisis | Párrafo | Turno de habla |
+| Voces | Un orador | Dos hablantes, y solo se codifica a la persona entrevistada |
+| Registro | Texto preparado para leer en público | Oral, con ironía, rodeos y sobreentendidos |
+| Posiciones | Suele sostener una línea argumental | Una misma persona expresa posiciones que se contradicen |
+
+Una entrevista sintética sirve para mostrar el procedimiento. No permite sacar conclusiones sobre personas reales.

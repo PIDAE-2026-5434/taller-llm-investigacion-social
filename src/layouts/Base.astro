@@ -1,0 +1,94 @@
+---
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import { sitio, ruta, rutaSeccion } from '../lib/sitio.js';
+
+const { titulo, descripcion = sitio.descripcion } = Astro.props;
+const tituloPagina = titulo ? `${titulo} · ${sitio.titulo}` : `${sitio.titulo} · ${sitio.proyecto}`;
+
+const camino = Astro.url.pathname;
+const en = (parte) => camino.includes(parte);
+const menu = [
+  { texto: 'Guía', href: rutaSeccion('tipos-de-tareas'), actual: en('/guia/') && !en('/guia/caso-') },
+  { texto: 'Caso 1', href: rutaSeccion('caso-1'), actual: en('/guia/caso-1/') },
+  { texto: 'Caso 2', href: rutaSeccion('caso-2'), actual: en('/guia/caso-2/') },
+  { texto: 'Materiales', href: ruta('materiales/'), actual: en('/materiales/') },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloPagina}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="icon" type="image/svg+xml" href={ruta('favicon.svg')} />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="contenedor">
+        <a class="cabecera-nombre" href={ruta('')}>{sitio.proyecto} / {sitio.titulo}</a>
+        <nav aria-label="Principal">
+          {
+            menu.map((m) => (
+              <a href={m.href} aria-current={m.actual ? 'page' : undefined}>
+                {m.texto}
+              </a>
+            ))
+          }
+          {sitio.repo && <a href={sitio.repo}>GitHub</a>}
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="pie">
+      <div class="contenedor">
+        <p>{sitio.institucion}</p>
+        <p>
+          Discursos: Casa Rosada, bajo licencia{' '}
+          <a href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento 2.5 Argentina</a>.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Pestañas Prompt / Salida y botón de copiar de cada bloque.
+      document.querySelectorAll<HTMLElement>('[data-bloque]').forEach((bloque) => {
+        const pestanas = bloque.querySelectorAll<HTMLButtonElement>('[data-ver]');
+        const paneles = bloque.querySelectorAll<HTMLElement>('[data-panel]');
+
+        pestanas.forEach((pestana) => {
+          pestana.addEventListener('click', () => {
+            pestanas.forEach((p) => p.setAttribute('aria-pressed', String(p === pestana)));
+            paneles.forEach((panel) => {
+              panel.hidden = panel.dataset.panel !== pestana.dataset.ver;
+            });
+          });
+        });
+
+        const copiar = bloque.querySelector<HTMLButtonElement>('[data-copiar]');
+        copiar?.addEventListener('click', async () => {
+          const visible = [...paneles].find((p) => !p.hidden) ?? paneles[0];
+          const texto = visible?.querySelector('[data-texto]')?.textContent ?? '';
+          try {
+            await navigator.clipboard.writeText(texto);
+            copiar.textContent = 'Copiado';
+          } catch {
+            copiar.textContent = 'No se pudo copiar';
+          }
+          setTimeout(() => {
+            copiar.textContent = 'Copiar';
+          }, 1800);
+        });
+      });
+    </script>
+  </body>
+</html>

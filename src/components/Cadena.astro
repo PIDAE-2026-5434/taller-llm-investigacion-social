@@ -1,0 +1,31 @@
+---
+// Pasos encadenados: qué se pega, qué devuelve el modelo y qué revisa el equipo antes de seguir.
+// Uso: <Cadena pasos={[{ pega, devuelve, revisa }]} />
+const { pasos } = Astro.props;
+---
+
+<ol class="cadena">
+  {
+    pasos.map((p, i) => (
+      <li>
+        <div class="cadena-n" aria-hidden="true">
+          {i + 1}
+        </div>
+        <div class="cadena-celdas">
+          <div class="cadena-celda">
+            <span>Se pega</span>
+            <span>{p.pega}</span>
+          </div>
+          <div class="cadena-celda">
+            <span>El modelo devuelve</span>
+            <span>{p.devuelve}</span>
+          </div>
+          <div class="cadena-celda revisa">
+            <span>El equipo revisa antes de seguir</span>
+            <span>{p.revisa}</span>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,21 @@
+---
+// Muestra un archivo de texto del repositorio (una entrevista, un discurso) con botón de copiar.
+import { leer, limpiar } from '../lib/archivos.js';
+import { enRepo } from '../lib/sitio.js';
+
+const { archivo, rotulo = 'Texto' } = Astro.props;
+const crudo = leer(archivo);
+if (crudo === null) throw new Error(`No existe ${archivo}`);
+const enlace = enRepo(archivo);
+---
+
+<div class="bloque" data-bloque>
+  <div class="bloque-barra">
+    <span class="bloque-rotulo">{rotulo}</span>
+    <span class="bloque-ruta">{enlace ? <a href={enlace}>{archivo}</a> : archivo}</span>
+    <button type="button" class="copiar" data-copiar>Copiar</button>
+  </div>
+  <div data-panel="texto">
+    <pre data-texto>{limpiar(crudo)}</pre>
+  </div>
+</div>

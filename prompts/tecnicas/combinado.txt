@@ -1,0 +1,26 @@
+#> Instrucción y criterios
+Clasificá cada pasaje numerado según a quién le asigna la responsabilidad de resolver el problema. Usá estas categorías:
+
+@esquema responsable
+
+#> Few-shot
+Ejemplos:
+
+Pasaje: "Necesitamos que los gobernadores ordenen sus cuentas para que las escuelas abran todos los días."
+Razonamiento: nombra un problema (escuelas que no abren) y un actor que debe resolverlo (los gobernadores).
+Categoría: provincias y municipios
+
+Pasaje: "Todos sabemos que hay rutas que llevan décadas sin arreglarse."
+Razonamiento: nombra un problema (rutas sin arreglar) y ningún actor que deba resolverlo.
+Categoría: no asigna
+
+#> Razonamiento paso a paso
+Para cada pasaje de la lista escribí primero el razonamiento en una oración y después la categoría.
+
+#> Salida estructurada
+Al final devolvé una tabla con tres columnas: número de párrafo, categoría, cita que la justifica.
+
+#> Descomposición
+<pasajes>
+[pegar la lista de pasajes del paso 1, ya revisada]
+</pasajes>

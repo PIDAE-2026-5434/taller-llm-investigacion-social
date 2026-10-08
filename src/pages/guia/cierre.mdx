@@ -1,0 +1,97 @@
+---
+layout: ../../layouts/Guia.astro
+---
+
+import Prompt from '../../components/Prompt.astro';
+import Registro from '../../components/Registro.astro';
+
+El cierre reúne los controles que aparecieron en las secciones anteriores, muestra cómo se registra cada corrida y propone un ejercicio con un discurso corto del corpus.
+
+## Checklist de validación
+
+Cada control figura con el error de la [sección 4](../errores/) que evita.
+
+| Momento | Control | Error que evita |
+| --- | --- | --- |
+| Antes de correr | El prompt tiene pregunta de investigación, categorías con inclusión y exclusión, y salida para la duda | Categorías demasiado generales |
+| Antes de correr | El material está delimitado y numerado | Citas inventadas o retocadas |
+| Antes de correr | La memoria personal está apagada y las instrucciones del proyecto están anotadas | Inconsistencia |
+| Antes de correr | Los textos largos se dividieron en tramos y el esquema se repite en cada uno | Pérdida de instrucciones en textos largos |
+| Antes de correr | El prompt se probó en 20 a 30 casos que el equipo ya había codificado | Lecturas sesgadas |
+| Al revisar la salida | Cada cita aparece textual y en la ubicación indicada | Citas inventadas o retocadas |
+| Al revisar la salida | Ninguna afirmación se apoya en datos que no están en el texto | Información externa |
+| Al revisar la salida | Los conteos se hicieron a mano o en una planilla | Conteos equivocados |
+| Al revisar la salida | Una muestra se corrió de nuevo en otra conversación y el resultado coincide | Inconsistencia |
+| Al revisar la salida | Se pidieron contraejemplos de la lectura del equipo | Complacencia |
+| Al revisar la salida | Los casos con ambigüedad media o alta los resolvió una persona | Seguridad sin respaldo |
+| Al revisar la salida | Una persona revisó ironías, habla coloquial y atribución de hablante | Lecturas sesgadas |
+| Antes de usar el resultado | Dos personas codificaron una muestra sin ver la salida y discutieron las diferencias | Todos los anteriores |
+
+## Registro de corridas
+
+El registro es una planilla con una fila por corrida. La que sigue es la del repositorio de este taller.
+
+<Registro />
+
+| Columna | Qué se anota |
+| --- | --- |
+| Fecha | Día de la corrida |
+| Prompt | Archivo del prompt y versión |
+| Material | Lo que se pegó, tal como se pegó |
+| Herramienta | Nombre de la app o del servicio |
+| Modelo | Nombre y versión |
+| Esfuerzo | El nivel que estaba seleccionado |
+| Configuración | Memoria, instrucciones personalizadas e instrucciones de proyecto |
+| Salida | Archivo con la respuesta del modelo, sin editar |
+| Cambios a mano | Qué filas se corrigieron y por qué |
+| Revisó | Quién revisó y sobre qué muestra |
+| Notas | Lo que haga falta para entender la corrida más adelante |
+
+## Ejercicio
+
+El ejercicio aplica la secuencia completa a un discurso corto, con material, pregunta y categorías ya definidos. Se resuelve después del taller, individual o en parejas, y lleva unos 30 minutos.
+
+- Material: [discurso por el Día del Maestro del 11 de septiembre de 2026](https://www.casarosada.gob.ar/informacion/discursos/51366-discurso-del-presidente-javier-milei-en-el-acto-por-el-dia-del-maestro-en-la-biblioteca-nacional-de-maestros-del-palacio-sarmiento), del corpus de Casa Rosada. Tiene 8 párrafos y alrededor de 1.200 palabras.
+- Pregunta: ¿a quién le habla el discurso en cada párrafo y qué conductas presenta como valiosas?
+- Categorías de destinatario: alumnos, docentes, familias, autoridades, país en general.
+
+1. Copiar el discurso a un archivo de texto y numerar los párrafos del 1 al 8.
+2. Codificar a mano los párrafos 1, 4 y 7, antes de usar el modelo. Anotar destinatario y conducta valorada.
+3. Correr el prompt mínimo y guardar la salida.
+4. Completar los dos espacios en blanco del prompt armado, correrlo y guardar la salida.
+5. Validar: buscar 3 citas en el original, comparar los párrafos 1, 4 y 7 con la codificación propia y contar a mano cuántos párrafos tienen más de un destinatario.
+6. Cambiar una sola cosa del prompt, volver a correrlo y comparar las dos salidas.
+7. Completar la ficha del ejercicio.
+
+### Prompt mínimo, para el paso 3
+
+<Prompt id="ejercicio/minimo" />
+
+### Prompt armado, para el paso 4
+
+<Prompt id="ejercicio/armado" anotado />
+
+### Ficha del ejercicio
+
+| Campo | Versión 1 | Versión 2 |
+| --- | --- | --- |
+| Herramienta, modelo y nivel de esfuerzo | | |
+| Qué escribí en criterios | | |
+| Qué escribí en restricciones y dudas | | |
+| Citas que encontré en el original, de 3 | | |
+| Coincidencias con mi codificación, de 3 | | |
+| Párrafos con más de un destinatario, según el modelo y según mi conteo | | |
+| Qué cambié entre versiones y por qué | | |
+
+Pista para el control: varios párrafos de este discurso se dirigen a más de un destinatario. Si la tabla del modelo asigna uno solo por párrafo, conviene revisar lo que se escribió en criterios.
+
+## Fuentes
+
+- [Casa Rosada, Discursos](https://www.casarosada.gob.ar/informacion/discursos). Consultado el 6 de octubre de 2026.
+- [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/), licencia de los contenidos de Casa Rosada.
+- [Schulhoff et al., The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608), 2024.
+- [Törnberg, Best Practices for Text Annotation with Large Language Models](https://sociologica.unibo.it/article/view/19461), Sociologica 18(2), 67-85, 2024.
+- [Anthropic, Prompt engineering overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview). Consultado el 6 de octubre de 2026.
+- [OpenAI, Models](https://developers.openai.com/api/docs/models). Consultado el 8 de octubre de 2026.
+- [Arena, Leaderboard](https://arena.ai/leaderboard). Consultado el 6 de octubre de 2026.
+- [González et al., IberBench: LLM Evaluation on Iberian Languages](https://arxiv.org/abs/2504.16921), 2025.
