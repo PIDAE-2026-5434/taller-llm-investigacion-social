@@ -1,0 +1,2 @@
+@continua caso-1/p3-patron
+¿Las citas que pusiste en la tabla son textuales?

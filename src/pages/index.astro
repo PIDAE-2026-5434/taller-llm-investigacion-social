@@ -10,23 +10,24 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
         <div class="antetitulo">Taller PIDAE 2026 · Parte 2 · 75 minutos</div>
         <h1>Interactuando con <span class="marca">LLMs</span></h1>
         <p>
-          Material de apoyo para usar modelos de lenguaje en investigación social: tipos de tareas, técnicas, armado de
-          prompts, errores frecuentes, dos casos de aplicación y un checklist de validación.
+          Material de apoyo para usar modelos de lenguaje en investigación social: cómo organizar el trabajo, tipos de
+          tareas, técnicas, armado de prompts, errores frecuentes y dos casos con sus salidas guardadas.
         </p>
         <div class="portada-botones">
-          <a class="boton" href={rutaSeccion('tecnicas')}>Empezar por las técnicas</a>
+          <a class="boton" href={rutaSeccion('organizar-el-trabajo')}>Empezar</a>
           <a class="boton boton-linea" href={ruta('materiales/')}>Ver los materiales</a>
         </div>
       </div>
 
       <figure class="ejemplo-marcado">
-        <figcaption>Párrafo de ejemplo, inventado. Codificado con el esquema de la sección 3.</figcaption>
+        <figcaption>Apertura de sesiones ordinarias 2026, párrafo 70. Codificado con el esquema de la sección 4.</figcaption>
         <blockquote>
-          "Necesitamos que <span class="marca">los gobernadores</span> ordenen sus cuentas para que{' '}<span class="subrayado">las escuelas abran todos los días</span>."
+          "Ahora solo falta que <span class="marca">las provincias y los municipios</span> hagan su parte, por lo cual hemos
+          facilitado una herramienta para denunciar{' '}<span class="subrayado">tasas excesivas</span>."
         </blockquote>
         <dl class="ejemplo-codigos">
           <dt><span class="subrayado">Problema</span></dt>
-          <dd>días de clase perdidos</dd>
+          <dd>tasas locales excesivas</dd>
           <dt><span class="marca">Responsable</span></dt>
           <dd>provincias y municipios</dd>
         </dl>
@@ -35,7 +36,7 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
 
     <section class="contenedor bloque-secciones" id="secciones">
       <div class="bloque-secciones-titulo">
-        <h2>Siete secciones</h2>
+        <h2>Ocho secciones</h2>
         <p>Se pueden leer en orden o entrar por un caso.</p>
       </div>
       <ol class="lista-secciones">
@@ -58,13 +59,13 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
         <div class="repositorio-texto">
           <h2>Todo el material es un archivo</h2>
           <p>
-            Los discursos, los prompts y las salidas están en el repositorio, guardados con el mismo registro que
-            propone el taller.
+            Los discursos, las entrevistas, los prompts y las salidas están en el repositorio, guardados con el mismo
+            registro que propone el taller. El taller no tiene demostraciones en vivo: todo lo que se muestra está acá.
           </p>
           <ul>
             <li>Copiar cada prompt con un clic.</li>
             <li>Comparar la salida guardada con una corrida propia.</li>
-            <li>Reemplazar los discursos por material propio.</li>
+            <li>Reemplazar el material por uno propio, con la plantilla de carpeta.</li>
           </ul>
           <div class="portada-botones">
             <a class="boton" href={ruta('materiales/')}>Ver los materiales</a>
@@ -86,9 +87,13 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
           <dt>discursos/</dt>
           <dd>textos con los párrafos numerados</dd>
           <dt>entrevistas/</dt>
-          <dd>la entrevista sintética del Caso 2</dd>
+          <dd>dos entrevistas y un grupo focal sintéticos</dd>
           <dt>salidas/</dt>
           <dd>respuestas guardadas de cada prompt</dd>
+          <dt>skills/</dt>
+          <dd>la skill que arma grillas de menciones</dd>
+          <dt>plantilla/</dt>
+          <dd>una carpeta de proyecto lista para copiar</dd>
           <dt><span class="marca">registro.csv</span></dt>
           <dd>una fila por corrida, con modelo y fecha</dd>
         </dl>

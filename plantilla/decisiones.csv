@@ -1,0 +1,2 @@
+fecha,decision,motivo,quien,afecta
+2026-10-12,"""Debemos"" o ""necesitamos"" sin sujeto claro se codifican como ambiguos, con ""gobierno nacional"" como segundo código","El modelo y el equipo los clasificaban distinto en el tramo 112-131",equipo,esquemas/responsable.csv

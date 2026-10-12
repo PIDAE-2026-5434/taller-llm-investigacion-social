@@ -1,0 +1,72 @@
+## 1. Clasificación del discurso B
+
+Usé las mismas columnas que la tabla del discurso A. También usé "ninguno" para los párrafos sin un problema público, como en A, aunque ese código no está en el esquema (ver notas al final).
+
+| Párrafo | Código | Cita textual | Ambigüedad | Motivo y segundo código posible |
+|---|---|---|---|---|
+| 39 | ninguno | "fomentar el consumo en detrimento del ahorro lo que hace es reventar el crecimiento económico" | media | Es un argumento teórico contra los "keynesianos". Los "ustedes" son hipotéticos y no reciben ningún pedido. Segundo código posible: no asigna. |
+| 40 | no asigna | "Por eso estos salvajes cuando se fueron nos dejaron 15% de déficit fiscal en términos del PBI" | media | El problema es el déficit y la inflación heredados, y se culpa al gobierno anterior sin decir quién los resuelve ahora. La frase "para lo cual trabajamos intensamente" se refiere a que no vuelvan a gobernar, no a una solución. Segundo código posible: gobierno nacional. |
+| 41 | gobierno nacional | "si seguimos haciendo los deberes" | media | El problema es la inflación y la corrección de precios relativos heredada. La acción se asigna con "seguimos", en primera persona del plural como gobierno. Sin embargo, el cierre ("Inexorablemente la inflación se va a terminar") la presenta como algo que ocurre solo. Segundo código posible: no asigna. |
+| 42 | gobierno nacional | "Afortunadamente nos topamos con un señor que le dicen Toto y puso las cuentas en orden en un mes." | media | El problema es el déficit. El logro se atribuye a "Nosotros" y a una persona que el texto no ubica en ninguna institución. La leí como parte del "nosotros" de gobierno, pero eso es una inferencia. Segundo código posible: no asigna. |
+| 43 | gobierno nacional | "Y el desastre del Banco Central lo arreglamos en seis meses." | baja | La solución se atribuye con "arreglamos", en primera persona del plural como gobierno. La parte final es un pronóstico de inflación, que no cambia el código. |
+| 44 | gobierno nacional | "como estamos haciendo nosotros desde mediados del 24" | media | El problema es la inflación, incluso ante un shock de precios. La solución es mantener el equilibrio fiscal y la política monetaria restrictiva, y el "nosotros" las asume. El "ustedes sigan manteniendo" es una condición general y no un pedido concreto. Segundo código posible: ciudadanía. |
+| 45 | ninguno | "Por lo tanto, tenemos el tema de los rendimientos crecientes." | baja | Es una exposición sobre Adam Smith y la teoría económica. Nombra a "un conjunto de envidiosos" que reclaman distribución del ingreso, pero no como un problema con un responsable. |
+| 46 | ciudadanía | "Y se lo tienen que decir a la en la cara hasta que sientan vergüenza de ser zurdos." | media | Hay un pedido a quienes escuchan ("se lo tienen que decir"), aunque el sujeto es implícito. El problema es la envidia como motor de los socialistas. Segundo código posible: no asigna. |
+| 47 | ninguno | "¿Qué es la justicia social? Envidia más retórica." | media | Es una cita de autor y una exposición de historia del pensamiento económico. La crítica a la "justicia social" no nombra un problema con un actor que deba resolverlo. Segundo código posible: no asigna. |
+| 48 | ninguno | "El problema no es Adam Smith, el problema es cómo lo interpretaron los neoclásicos." | baja | Es un debate teórico, no un problema público. |
+| 49 | ninguno | "esa controversia de que Adam Smith tiene una contradicción, está mal, es perfectamente consistente" | baja | Es una discusión de teoría económica. Las preguntas a "ustedes" son retóricas y no piden nada. |
+| 50 | ninguno | "ese split entre lo que es el consumidor y el empresario es una tontería" | baja | Es una crítica a la teoría neoclásica. Los empresarios aparecen como objeto de análisis, no como actores a quienes se les asigna una solución. |
+| 51 | ninguno | "una de las partes que hace Adam Smith es aniquilar a los mercantilistas, es decir a los proteccionistas, a todos los prebendarios" | media | Presenta la posición de Smith contra el proteccionismo y anuncia una lectura. Nombra culpables históricos sin problema ni solución. Segundo código posible: no asigna. |
+| 52 | no asigna | "Pasaron 250 años y la relación con esta manga de delincuentes sigue siendo la misma." | media | Nombra como problema la presión de los monopolistas sobre quienes regulan y legislan, y los califica de delincuentes. No dice quién debe resolverlo. Los empresarios figuran solo como culpables, lo que el esquema excluye de "sector privado". |
+| 53 | no asigna | "¿por qué tiene que aparecer un político que cercene su libertad, de que puedan disponer de sus bienes como se les dé la gana?" | media | El problema es una barrera que encarece los productos y perjudica a "casi 48 millones de personas". El texto la atribuye a un "político" genérico y todo se formula con preguntas retóricas, sin quién la resuelva. Segundo código posible: ciudadanía, por los "ustedes", aunque no hay un pedido. |
+| 54 | no asigna | "ganan 48 millones de personas y pierden un conjunto de chorros" | alta | Defiende "la medida" y culpa a empresarios prebendarios, periodistas y políticos que la atacan. No dice quién la aplica: "dijimos que era justa" y "ustedes hacen algo" admiten una lectura de gobierno, pero no la fijan. Segundo código posible: gobierno nacional. |
+| 55 | no asigna | "ustedes creen que en los otros gobiernos había ángeles" | alta | El problema es la diferencia de precios por la barrera ("lo pagan todos los argentinos"), y se culpa a gobiernos anteriores y a empresas. El "no le tiras un torpedo en la cabeza te la bancás" es una frase genérica con "vos", que no llega a ser un pedido claro. Segundo código posible: ciudadanía. |
+| 56 | no asigna | "parece que hay políticos empresaurios y periodistas que están a favor de precios más altos, de salarios más bajos" | baja | Nombra culpables (políticos, empresarios, periodistas) y las consecuencias, sin ningún actor que deba resolverlo. |
+| 57 | no asigna | "no ataco a la gente honesta; ataco a la gente deshonesta" | media | Distingue a los empresarios honestos de los "chorros". Los culpables no reciben una solución. La acción es en primera persona del singular ("ataco"), que el esquema no cubre como gobierno. Segundo código posible: gobierno nacional. |
+
+## 2. Códigos por discurso
+
+| Código | Discurso A: párrafos | Discurso A: cita representativa | Discurso B: párrafos | Discurso B: cita representativa |
+|---|---|---|---|---|
+| gobierno nacional | 114, 116, 117, 118, 119, 121, 124, 125, 126, 127 (10) | "vamos a combatir esta anomia con la reforma del Código Civil y Comercial, el Código Procesal Civil y Comercial" (116) | 41, 42, 43, 44 (4) | "Y el desastre del Banco Central lo arreglamos en seis meses." (43) |
+| otros poderes del Estado | no aparece | | no aparece | |
+| provincias y municipios | no aparece | | no aparece | |
+| sector privado | no aparece | | no aparece | |
+| ciudadanía | no aparece | | 46 (1) | "Y se lo tienen que decir a la en la cara hasta que sientan vergüenza de ser zurdos." |
+| no asigna | 120, 122, 123, 130 (4) | "Por eso necesitamos un Estado ágil, abocado a unas pocas funciones esenciales" (122) | 40, 52, 53, 54, 55, 56, 57 (7) | "Por eso estos salvajes cuando se fueron nos dejaron 15% de déficit fiscal en términos del PBI" (40) |
+| ninguno (no está en el esquema) | 112, 113, 115, 128, 129, 131 (6) | "Entramos a una nueva era de grandes naciones que compiten por asegurarse cadenas de valor verticales." (129) | 39, 45, 47, 48, 49, 50, 51 (7) | "El problema no es Adam Smith, el problema es cómo lo interpretaron los neoclásicos." (48) |
+
+Las citas del discurso A salen de la tabla que pegaste. No tengo el texto completo de ese discurso.
+
+## 3. Códigos presentes en uno y ausentes en el otro
+
+- **Solo en B:** ciudadanía, con un único párrafo (46) y ambigüedad media. Es una base muy chica para sacar conclusiones.
+- **Solo en A:** ninguno.
+- **Ausentes en los dos:** otros poderes del Estado, provincias y municipios, y sector privado.
+  - En A, "otros poderes del Estado" aparece únicamente como segundo código posible (114, 121, 123, 124).
+  - En B, los empresarios figuran siempre como culpables (52, 54, 56, 57) o como objeto de análisis teórico (50), que el esquema deja fuera de "sector privado".
+
+## 4. Cómo difiere el tratamiento en los códigos compartidos
+
+- **gobierno nacional:** En A, 8 de los 10 párrafos son compromisos a futuro ("Dedicaremos", "vamos a", "presentaremos", "seguiremos") sobre reformas jurídicas e institucionales, y solo 2 son logros pasados (124 y 127). En B los párrafos son logros pasados o en curso ("lo arreglamos", "estamos haciendo") sobre déficit, inflación y Banco Central, y ninguno anuncia una reforma nueva.
+- **no asigna:** En A surge sobre todo de "debemos" y "necesitamos" sin sujeto ante problemas institucionales (120, 122, 123). En B surge sobre todo de diagnósticos que culpan a gobiernos anteriores, monopolistas, políticos y periodistas sin decir quién resuelve (40, 52, 53, 56, 57), y pesa más: 7 de 19 párrafos frente a 4 de 20.
+- **ninguno (código no previsto en el esquema):** En A son contexto, llamados generales y respuestas a interrupciones. En B son exposición de teoría económica.
+
+## 5. Párrafos que contradicen la diferencia descrita
+
+Encontré contraejemplos en los dos discursos, aunque no son del mismo peso.
+
+**En el discurso A**
+- **Contradice "A es prospectivo en gobierno nacional":** el 124 ("Ya hemos implementado el sistema acusatorio en el 65% del país") y el 127 ("hemos llevado una modernización histórica del equipamiento militar") son rendición de logros pasados, como en B.
+- **Contradice "en A, no asigna viene de modales sin sujeto":** el 120 también incluye un reproche ("Eso es lo que hacen ustedes"), y el 130 nombra un error pasado ("Esto no nos puede volver a pasar"). Ahí aparece algo parecido al reproche de B.
+
+**En el discurso B**
+- **Contradice "B no mira hacia adelante":** el 41 ("si seguimos haciendo los deberes") es una continuidad hacia adelante, y el 43 pronostica que la inflación minorista "arranque con cero" en agosto. Es un contraejemplo parcial: son condicionales o pronósticos, no anuncios de reformas como los de A.
+- **Contradice "en B, no asigna viene del reproche":** el 54 tiene ambigüedad alta porque no dice quién aplica "la medida", que es el mismo problema de sujeto sin nombrar que A tiene en 122 y 123. Con todo, también contiene reproche a empresarios, periodistas y políticos.
+
+## Notas y límites
+
+- "Ninguno" no es un código del esquema. Lo usé porque la tabla de A lo usa. Si el equipo no lo quiere, esos 7 párrafos de B y los 6 de A habría que pasarlos a "no asigna" o dejarlos fuera.
+- En B leí "nosotros" como el gobierno a partir del propio texto: se habla de "el Gobierno anterior", de "final de mandato" y de lo que "estamos haciendo nosotros". Los párrafos 42 y 44 dependen de esa inferencia.
+- No revisé la codificación de A, solo la tomé como dato. Una nota sobre eso: el motivo del párrafo 123 de A dice que modificar el Código Penal "corresponde al Congreso". Esa afirmación no sale del texto sino de conocimiento externo, así que conviene revisarla si se quiere aplicar el criterio de usar solo lo pegado.
+- Con 19 y 20 párrafos, las diferencias son descriptivas. No alcanzan para generalizar sobre cómo hablan estos oradores.

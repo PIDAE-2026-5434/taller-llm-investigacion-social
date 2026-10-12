@@ -1,0 +1,45 @@
+---
+// Muestra un archivo de salida que no es la respuesta de un chat: un informe
+// de verificación (Markdown) o una planilla (CSV), con botón de copiar.
+import { leer, csv } from '../lib/archivos.js';
+import { enRepo } from '../lib/sitio.js';
+import { md } from '../lib/md.js';
+
+const { archivo, rotulo = 'Archivo', max = null } = Astro.props;
+const crudo = leer(archivo);
+if (crudo === null) throw new Error(`No existe ${archivo}`);
+const enlace = enRepo(archivo);
+const esCsv = archivo.endsWith('.csv');
+const tabla = esCsv ? csv(crudo) : null;
+const filas = tabla && max ? tabla.filas.slice(0, max) : tabla?.filas;
+---
+
+<div class="bloque" data-bloque>
+  <div class="bloque-barra">
+    <span class="bloque-rotulo">{rotulo}</span>
+    <span class="bloque-ruta">{enlace ? <a href={enlace}>{archivo}</a> : archivo}</span>
+    <button type="button" class="copiar" data-copiar>Copiar</button>
+  </div>
+  <div data-panel="archivo">
+    {
+      esCsv ? (
+        <div class="tabla-ancha">
+          <table>
+            <thead>
+              <tr>{tabla.columnas.map((c) => <th>{c}</th>)}</tr>
+            </thead>
+            <tbody>
+              {filas.map((f) => (
+                <tr>{tabla.columnas.map((c) => <td>{f[c]}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div class="salida-md" set:html={md(crudo)} />
+      )
+    }
+    {esCsv && max && tabla.filas.length > max && <p class="bloque-pie">Primeras {max} filas de {tabla.filas.length}. El archivo completo está en el repositorio.</p>}
+    <pre data-texto hidden>{crudo.trim()}</pre>
+  </div>
+</div>

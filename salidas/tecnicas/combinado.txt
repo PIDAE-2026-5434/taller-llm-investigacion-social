@@ -1,0 +1,79 @@
+**[37]**
+Razonamiento: describe la pobreza y el analfabetismo escolar como herencia del pasado, sin indicar quién debe resolverlos.
+Categoría: no asigna
+
+**[38]**
+Razonamiento: culpa al Estado anterior por el uso político del empleo público y la falta de empleo genuino, sin nombrar quién lo resuelve ahora.
+Categoría: no asigna
+
+**[39]**
+Razonamiento: diagnostica déficit de empresas estatales, regulaciones sofocantes y licencias de importación como males pasados, sin asignar un actor que los resuelva.
+Categoría: no asigna
+
+**[40]**
+Razonamiento: señala una justicia politizada y una política que gastaba sin freno, pero solo como crítica al pasado y sin pedirle nada a nadie.
+Categoría: no asigna
+
+**[41]**
+Razonamiento: describe el aislamiento comercial y la persecución del fisco en tiempo pasado, sin decir quién debe resolverlos.
+Categoría: no asigna
+
+**[43]**
+Razonamiento: nombra la inflación y su raíz en la emisión y el déficit como problema urgente, pero en pasado y sin indicar quién la resuelve.
+Categoría: no asigna
+
+**[44]**
+Razonamiento: el orador habla como gobierno ("logramos eliminar") y se atribuye la solución del déficit cuasifiscal.
+Categoría: gobierno nacional
+
+**[45]**
+Razonamiento: menciona la brecha del 300 % como algo que dejaron otros, sin decir quién la resuelve.
+Categoría: no asigna
+
+**[46]**
+Razonamiento: habla de "cortar con este flagelo" sin sujeto claro, por lo que no hay un actor identificable (sería ambiguo y se anota como no asigna).
+Categoría: no asigna
+
+**[48]**
+Razonamiento: el orador usa la primera persona del plural como gobierno ("hemos conseguido", "conseguimos") para atribuirse la baja de homicidios y robos.
+Categoría: gobierno nacional
+
+**[49]**
+Razonamiento: la frontera abierta a los narcos queda como problema pasado, pero el párrafo cierra con "hemos terminado con los piquetes", donde el orador se atribuye la solución como gobierno.
+Categoría: gobierno nacional
+
+**[50]**
+Razonamiento: "eliminamos las transferencias discrecionales" muestra al gobierno actuando sobre la intermediación de la ayuda social.
+Categoría: gobierno nacional
+
+**[51]**
+Razonamiento: condena moralmente el robo a los vulnerables, sin indicar quién debe resolverlo.
+Categoría: no asigna
+
+**[53]**
+Razonamiento: el "ustedes" apunta a opositores culpados por el uso de los planes sociales, no a quienes deben resolver algo ni a un público al que se le pide una acción.
+Categoría: no asigna
+
+**[55]**
+Razonamiento: nombra la pérdida de conocimientos básicos de lectocomprensión en las últimas décadas, sin ningún actor que deba resolverla.
+Categoría: no asigna
+
+## Tabla final
+
+| Párrafo | Categoría | Cita que la justifica |
+|---|---|---|
+| 37 | no asigna | "una pobreza camuflada con controles de precios del 57%, con siete de cada diez chicos pobres" |
+| 38 | no asigna | "El Estado y las empresas estatales eran utilizados como aguantaderos de militantes" |
+| 39 | no asigna | "la gran mayoría de empresas estatales eran deficitarias y debían ser sostenidas con impuestos y emisión monetaria" |
+| 40 | no asigna | "Teníamos una justicia estancada por su excesiva politización" |
+| 41 | no asigna | "Estábamos aislados, solos y temerosos del resto del mundo" |
+| 43 | no asigna | "El aspecto más urgente era el descalabro inflacionario que nos tenía a las puertas de una hiperinflación" |
+| 44 | gobierno nacional | "logramos eliminar en tan solo 6 meses el déficit cuasifiscal, que ascendía al 10% del PBI" |
+| 45 | no asigna | "llegaron a dejar brecha del 300 %" |
+| 46 | no asigna | "para cortar con este flagelo" |
+| 48 | gobierno nacional | "hemos conseguido bajar la tasa de homicidios en un 17 % a nivel nacional" |
+| 49 | gobierno nacional | "hemos terminado con los piquetes de una vez por todas, los cuales pasaron de nueve mil por año a cero" |
+| 50 | gobierno nacional | "eliminamos las transferencias discrecionales, para sacarle a la política el negocio la intermediación de la ayuda social" |
+| 51 | no asigna | "Robar está mal, pero robarle el pan de la boca a los más vulnerables" |
+| 53 | no asigna | "ustedes que usaron los planes sociales para robar a la gente con la intermediación" |
+| 55 | no asigna | "los conocimientos básicos de lecto comprensión que las últimas décadas se perdieron" |

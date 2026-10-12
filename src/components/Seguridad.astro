@@ -1,0 +1,9 @@
+---
+// Recuadro de seguridad: datos personales, privacidad y permisos.
+const { titulo = 'Seguridad' } = Astro.props;
+---
+
+<aside class="seguridad">
+  <p class="seguridad-titulo">{titulo}</p>
+  <slot />
+</aside>

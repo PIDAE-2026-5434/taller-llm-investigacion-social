@@ -1,8 +1,9 @@
-Clasificá cada párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Si hay más de un responsable, listalos separados por punto y coma.
+Clasificá el párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Si hay más de un responsable, listalos separados por punto y coma. Respondé solo con la categoría.
 
 Ejemplos:
-Párrafo: "La inflación se come el salario de quienes trabajan, y este gobierno va a terminar con ella." -> gobierno nacional
-Párrafo: "Todos sabemos que hay rutas que llevan décadas sin arreglarse." -> no asigna
-Párrafo: "Sin inversión de las empresas y sin el esfuerzo de cada familia no hay salida de la pobreza." -> sector privado; ciudadanía
+Párrafo: "Ahora solo falta que las provincias y los municipios hagan su parte, por lo cual hemos facilitado una herramienta para denunciar tasas excesivas, chequeándolo en una página." -> provincias y municipios
+Párrafo: "Nuestras fronteras eran un colador, lo que servía como caldo de cultivo perfecto para que el narcotráfico irrumpiera en nuestra sociedad, tal como sucedió en Rosario." -> no asigna
+Párrafo: "Ésta es la propuesta para este Congreso: legislar a la altura de la grandeza argentina. Nosotros haremos nuestra parte y ustedes deberán hacer la suya." -> otros poderes del Estado; gobierno nacional
 
-Párrafo a clasificar: "El país no puede seguir perdiendo jóvenes que se van a buscar futuro a otro lado."
+Párrafo a clasificar:
+@material discursos/apertura-sesiones-2026.txt 141-141

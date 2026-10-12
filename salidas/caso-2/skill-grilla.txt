@@ -1,0 +1,57 @@
+Armé la grilla con las seis dimensiones de `dimensiones-alquiler.csv`: 27 menciones en total. Corrí `verificar_citas.py` sobre las tres transcripciones y las 27 citas aparecen textuales en el turno indicado. Las transcripciones tienen los datos identificatorios reemplazados por marcas entre corchetes, así que seguí sin preguntar por anonimización. Quien entrevista o modera no se codificó.
+
+## Matriz resumida
+
+Los números son turnos.
+
+| Participante | recortar gastos | sumar ingresos | apoyo de otros | quedarse o irse | trato con quien cobra | seguridad de quedarse |
+|---|---|---|---|---|---|---|
+| entrevista-1, I | 14 | 14 | sin mención | 16 | 10, 12 | sin mención |
+| entrevista-2, I | 10 | 10 | 4, 12 | 14 | 6, 8 | 16 |
+| grupo-focal, P1 | sin mención | sin mención | 3 | sin mención | sin mención | sin mención |
+| grupo-focal, P2 | sin mención | 10 | 10 | sin mención | 17, 25 | 4, 30 |
+| grupo-focal, P3 | sin mención | 5, 11 | sin mención | sin mención | 18 | sin mención |
+| grupo-focal, P4 | 9 | sin mención | sin mención | sin mención | sin mención | sin mención |
+| grupo-focal, P5 | sin mención | 13 | sin mención | sin mención | sin mención | 29, 32 |
+
+## Menciones por dimensión
+
+| Dimensión | Menciones |
+|---|---|
+| recortar gastos | 3 |
+| sumar ingresos | 6 |
+| apoyo de otros | 4 |
+| quedarse o irse | 2 |
+| trato con quien cobra | 7 |
+| seguridad de quedarse | 5 |
+| **Total** | **27** |
+
+## Menciones que no entran en ninguna dimensión
+
+- **entrevista-1 [4]**: la búsqueda de departamento antes de entrar (cuatro meses mirando avisos, filas para ver). Es anterior a la vivienda actual, no una evaluación de mudarse.
+- **entrevista-1 [6]**: los requisitos para entrar (garantía propietaria que no tiene, seguro de caución). No hay apoyo de otros, porque dice que no tiene garantía familiar.
+- **entrevista-1 [8]**: la dueña que cambió el termotanque. Es una reparación, que la dimensión *trato con quien cobra* excluye.
+- **entrevista-2 [2]**: vive solo y necesita la tercera pieza por sus hijos. Es un motivo de elección de la vivienda actual, que *quedarse o irse* excluye.
+- **entrevista-2 [8]**: "el sueldo no se mueve al mismo ritmo". Es una queja sin decisión asociada.
+- **entrevista-2 [16]**: "el 1 pago el alquiler y recién ahí empiezo a ver qué queda". Es una queja sobre el peso del alquiler, sin una decisión asociada.
+- **grupo-focal [2]**: P4 dice que el alquiler es "lo primero que pagamos y lo que más pesa" y que no ahorran nada. Es una queja sin decisión asociada.
+- **grupo-focal [15]**: P4 cuenta que cuando llega el mail de la inmobiliaria "se me cierra el estómago". No describe cómo se fija el aumento ni qué hace.
+- **grupo-focal [16]**: P1 cuenta que un compañero casi se vuelve a su provincia. Habla de otra persona, no de P1.
+- **grupo-focal [19] y [20]**: P4 y P3 discuten si el dueño pierde más o menos que el inquilino. Es una opinión sobre los propietarios, sin una decisión asociada.
+- **grupo-focal [26] y [27]**: P4 ("con la inmobiliaria es un trámite") y P3 ("mi dueña es una señora como yo") describen el vínculo con quien cobra, sin relacionarlo con pagar ni con seguir en la vivienda.
+- **grupo-focal [22] y [23]**: P1 y P4 contestan "Sí" a la frase de la moderadora ("todos coinciden en que lo peor son los aumentos"). No sumé una dimensión, porque no aportan contenido propio. Ese "todos coinciden" lo formuló la moderadora, y la grilla no lo respalda: en [29] P5 lo rechaza.
+
+## Dudas
+
+- **entrevista-1 [12]**: "si me tengo que ir, ¿adónde voy?" podría ir también en *quedarse o irse*, porque explica por qué no puede irse. Lo dejé solo en *trato con quien cobra*, por el "no poder decirle que no".
+- **entrevista-1 [14]**: "ya no pido comida" y las horas extra del local fueron a dos dimensiones distintas, *recortar gastos* y *sumar ingresos*, en filas separadas.
+- **entrevista-2 [2]**: "si no, me iba a un monoambiente" roza el "no poder achicar" de *quedarse o irse*. Lo traté como motivo de elección de la vivienda y lo dejé afuera. El no poder achicar sí está codificado en [14].
+- **entrevista-2 [16]**: "La incertidumbre no, porque tengo contrato" lo codifiqué como *seguridad de quedarse* (el contrato como protección), aunque la persona menciona la inseguridad para descartarla.
+- **grupo-focal [5]**: P3 subalquila una pieza. Lo codifiqué como *sumar ingresos* (subalquilar). Duda con *apoyo de otros*, que excluye la ayuda que la persona da a otros y también incluye compartir la vivienda.
+- **grupo-focal [10]**: P2 compra en el mayorista con una vecina y "dividimos". Lo codifiqué como *apoyo de otros* (compras compartidas). Podría sumarse a *recortar gastos*, pero no cuenta ningún gasto que haya dejado de hacer.
+- **grupo-focal [25]**: P2 dice "por eso no hay contrato... no puedo reclamar nada". Lo codifiqué como *trato con quien cobra* (no poder reclamar). También roza *seguridad de quedarse*, que ya está codificada en [4] y [30].
+- **grupo-focal [29]**: P5 abre con "Antes dijeron que lo peor es el aumento. Para mí no". Dejé una nota en la fila, porque rechaza la formulación de la moderadora.
+- **grupo-focal [32]**: P5 dice "es lo que más pesa" sobre que lo saquen del hotel. Lo codifiqué como *seguridad de quedarse*, por el peso que tiene en sus decisiones.
+- **grupo-focal [18]**: P3 justifica al propietario ("si no actualizan, pierden"). Lo codifiqué como *trato con quien cobra*, que incluye "justificar al propietario".
+
+Te dejo el archivo adjunto `grilla.csv`, con una fila por mención y las columnas `material,turno,hablante,dimension,cita,nota`. La columna `nota` solo está completa en dos filas: entrevista-1 [12] y grupo-focal [29].

@@ -1,0 +1,38 @@
+#> Contexto
+Estudiamos cómo explican quienes alquilan las decisiones que toman para sostener el alquiler. Tenemos dos entrevistas y un grupo focal, y una grilla de menciones ya revisada.
+
+#> Tarea
+Para cada dimensión de la grilla, decidí si hay consenso, diferencia o tensión.
+
+#> Criterios
+- Consenso: participantes de al menos dos materiales distintos dicen lo mismo y nadie dice lo contrario.
+- Diferencia: participantes distintos sostienen posiciones distintas.
+- Tensión: una misma persona sostiene dos cosas que tiran para lados opuestos.
+- Acuerdo inducido: en el grupo focal, un "sí" que responde a una pregunta de M que ya traía la respuesta. No cuenta como consenso.
+- Voz minoritaria: una posición que sostiene una sola persona y que nadie retoma o que el grupo descarta.
+
+@esquema dimensiones-alquiler
+
+#> Formato de salida
+Una tabla con cuatro columnas: dimensión, resultado (consenso, diferencia, tensión o sin datos suficientes), turnos que lo respaldan con material y número, y una oración de explicación. Una dimensión puede tener más de un resultado.
+Después, una lista aparte de acuerdos inducidos y voces minoritarias.
+
+#> Restricciones
+Cada resultado se apoya en turnos citados. Si una dimensión tiene menciones de un solo material, escribí "sin datos suficientes". No generalices a personas que alquilan en general: el material son tres registros.
+
+#> Material
+<grilla>
+@salida caso-2/p3-patron
+</grilla>
+
+<entrevista_1>
+@material entrevistas/entrevista-1.txt
+</entrevista_1>
+
+<entrevista_2>
+@material entrevistas/entrevista-2.txt
+</entrevista_2>
+
+<grupo_focal>
+@material entrevistas/grupo-focal.txt
+</grupo_focal>

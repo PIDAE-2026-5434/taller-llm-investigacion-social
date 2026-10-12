@@ -1,0 +1,7 @@
+¿En qué se diferencian estos dos discursos?
+
+Discurso A:
+@material discursos/apertura-sesiones-2026.txt 112-131
+
+Discurso B:
+@material discursos/foro-noa-2026.txt 39-57

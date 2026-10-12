@@ -1,0 +1,48 @@
+Estos son los problemas públicos que nombra el discurso, según el criterio que me diste: una situación presentada como negativa que afecta a un colectivo. Agrupé las menciones repetidas bajo un mismo rótulo y listé todos los párrafos donde aparece. Dejé afuera los ataques personales a legisladores y los reclamos sobre el debate parlamentario, porque no los presenta como un problema que afecte a un colectivo.
+
+| Problema | Párrafos | Cita textual |
+|---|---|---|
+| Crisis terminal heredada en 2023 | 4, 114 | "la Argentina estaba en una situación de crisis terminal" |
+| Inflación alta, riesgo de hiperinflación | 7, 43, 73, 91 | "El aspecto más urgente era el descalabro inflacionario que nos tenía a las puertas de una hiperinflación" |
+| Déficit fiscal financiado con emisión | 7, 32, 43 | "Terminamos con la emisión monetaria que se usaba para financiar el descalabro fiscal y cuyo resultado era una inflación creciente que golpeaba sobre los más vulnerables" |
+| Endeudamiento que recae en generaciones futuras | 7 | "el endeudamiento inmoral que le pasaba la cuenta de nuestras fiestas a generaciones futuras" |
+| Banco Central en quiebra | 4, 44 | "un Banco Central en quiebra, aún en peor estado que el que tenía Raúl Alfonsín previo a la hiperinflación de 1989" |
+| Brecha cambiaria y control de capitales | 39, 41, 45 | "Porque llegaron a dejar brecha del 300 %." |
+| Falta de inversión e inseguridad jurídica | 29, 96 | "La falta de inversión, producto de la inestabilidad y la inseguridad jurídica, destruía empresas y puestos de trabajo todos los años." |
+| Informalidad laboral de la mitad de los trabajadores | 15 | "dejó a la mitad de los trabajadores en el mercado informal" |
+| Trabajadores formales en situación de pobreza | 16 | "el 30 % de los trabajadores formales eran pobres" |
+| Pobreza creciente | 33, 87, 88 | "la pobreza no paraba de crecer, aunque se la intentara maquillar con planes sociales y empleo público" |
+| Pobreza infantil | 37, 94 | "con siete de cada diez chicos pobres" |
+| Decadencia de décadas perdidas | 22, 114 | "luego de décadas perdidas y generaciones que han visto cómo sus hijos vivían cada vez peor" |
+| Intermediación política de la ayuda social | 35, 50, 51, 53 | "robarle el pan de la boca a los más vulnerables, haciéndolos esclavos para amasar poder" |
+| Deterioro de la educación básica | 37, 55, 125 | "una gran mayoría de egresados escolares que no sabían leer o escribir, ni hacer cuentas matemáticas simples" |
+| Aumento del crimen y los homicidios | 33, 35, 48 | "El crimen y los homicidios venían aumentando y las calles eran tierra de nadie en los barrios y de los piqueteros en las ciudades." |
+| Narcotráfico y fronteras sin control | 36, 49 | "Nuestras fronteras eran un colador, lo que servía como caldo de cultivo perfecto para que el narcotráfico irrumpiera en nuestra sociedad" |
+| Piquetes financiados con asistencia social | 35, 49 | "estos piquetes eran financiados con dinero de asistencia social que debía destinarse a los más necesitados" |
+| Empresas estatales deficitarias | 39, 59, 67 | "la gran mayoría de empresas estatales eran deficitarias y debían ser sostenidas con impuestos y emisión monetaria" |
+| Empleo público militante en el Estado | 38, 141 | "El Estado y las empresas estatales eran utilizados como aguantaderos de militantes" |
+| Exceso de regulaciones y privilegios | 39, 61, 92, 117 | "el Estado estaba tomado por una telaraña inescrutable de regulaciones, que sofocaban el libre mercado" |
+| Gasto político y estructura estatal sobredimensionada | 40, 67 | "La política, desentendida de todo esto, seguía gastando como si no hubiera mañana para asegurarle cargos a sus amigos." |
+| Justicia politizada y lenta | 40, 72, 121 | "Teníamos una justicia estancada por su excesiva politización, con vacantes en una enorme cantidad de juzgados federales y causas dormidas desde hace años." |
+| Aislamiento comercial de la Argentina | 41, 96, 106, 134 | "Estábamos aislados, solos y temerosos del resto del mundo; y por eso nuestra economía era pobre y frágil." |
+| Persecución fiscal a los contribuyentes | 10, 41 | "el fisco perseguía a todos y cada uno de los argentinos de bien, como si fueran narcotraficantes" |
+| Carga tributaria que frena la inversión | 96, 118 | "una carga tributaria estratosférica, que ha hecho imposible casi todo tipo de inversión" |
+| Precios altos por protección industrial | 102, 103, 104, 105, 110 | "¿O acaso les parece bien pagar una remera básica 50 dólares, cuando la importada cuesta 5?" |
+| Industria pequeña, cara y de bajos salarios | 96 | "obtuvimos una industria pequeña, cara, dependiente del subsidio, y con salarios en dólares raquíticos" |
+| Retenciones que frenan al agro | 96, 149 | "se impidió activamente el desarrollo del agro y de las economías regionales con las retenciones" |
+| Baja productividad agropecuaria y trabas a semillas | 150 | "No podemos aceptar que nuestros rindes en Chaco sean de 600 kilos de algodón por hectárea, cuando en Brasil son de 1.400." |
+| Barreras legales al aprovechamiento de recursos | 119 | "remover las barreras legales que se interponen entre la sociedad y su riqueza" |
+| Ley de Alquileres que restringía la oferta | 62 | "luego de derogarse la nefasta Ley de Alquileres, ha visto aumentar fuertemente la oferta de viviendas en alquiler y reducir su precio 30% en términos reales" |
+| Pérdida del respeto a la propiedad privada | 116 | "Los gobiernos pasados destruyeron el respeto a la propiedad privada en nuestro país." |
+| Corrupción de políticos y empresarios prebendarios | 100, 101, 102, 103, 110 | "¿alguien quiere seguir con un modelo empobrecedor donde solo ganan los políticos corruptos y los empresarios amigos del poder, a costa de los argentinos de bien?" |
+| Política como mafia que vive del que produce | 120, 121 | "la política fue usada para tejer una especie de mafia, unida por una solidaridad depredadora con el propósito común de vivir del que produce" |
+| Inestabilidad financiera durante 2025 (riesgo país) | 80, 82, 84 | "En este contexto de incertidumbre política se disparó el Riesgo País, nunca mejor apodado como riesgo kuka, lo cual derivó en una caída de la demanda de activos denominados en pesos" |
+| Daño al pueblo por la ambición de poder | 87 | "Un daño hecho no al gobierno, sino al pueblo argentino, que tuvo que soportar una vez más las consecuencias dañinas de la ambición de poder de los políticos." |
+| Debilidad de la defensa nacional | 126, 127 | "Tampoco podemos ser un país indefenso ante amenazas externas, en un mundo que exige cada vez más preparación." |
+
+Algunas observaciones sobre cómo armé la lista:
+
+- Varios problemas se superponen (por ejemplo, inflación y déficit, o proteccionismo y precios altos). Los separé cuando el discurso los trata como situaciones distintas. Si preferís una lista más agregada, se pueden fusionar.
+- Incluí "Ley de Alquileres que restringía la oferta" y "Debilidad de la defensa nacional" aunque son menciones más breves. El discurso las plantea como situaciones negativas, pero el colectivo afectado queda implícito (inquilinos, el país en general).
+- No incluí el régimen penal juvenil (párrafo 11), porque lo presenta como una norma obsoleta y no como una situación que afecte a un colectivo.
+- Los párrafos de la lista son los que tienen una mención clara del problema. En los párrafos con réplicas improvisadas a legisladores no registré problemas públicos.

@@ -1,0 +1,21 @@
+Vas a comparar dos discursos presidenciales con un mismo esquema de códigos.
+
+<esquema>
+@esquema responsable
+</esquema>
+
+<tabla_discurso_a>
+@salida caso-1/p3-patron
+</tabla_discurso_a>
+
+<discurso_b>
+@material discursos/foro-noa-2026.txt 39-57
+</discurso_b>
+
+1. Clasificá los párrafos del discurso B con el esquema, en el mismo formato que la tabla del discurso A.
+2. Armá una tabla con una fila por código. Para cada discurso indicá los números de párrafo donde aparece y una cita representativa.
+3. Señalá qué códigos aparecen en un discurso y están ausentes en el otro.
+4. Para los códigos compartidos, describí en dos oraciones como máximo en qué difiere el tratamiento.
+5. Buscá en cada discurso un párrafo que contradiga la diferencia que describiste. Si no lo encontrás, decilo.
+
+Basate solo en los textos pegados. Dejá afuera cualquier información externa sobre el orador o el contexto.

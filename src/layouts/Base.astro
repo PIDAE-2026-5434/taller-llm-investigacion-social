@@ -14,7 +14,7 @@ const tituloPagina = titulo ? `${titulo} · ${sitio.titulo}` : `${sitio.titulo} 
 const camino = Astro.url.pathname;
 const en = (parte) => camino.includes(parte);
 const menu = [
-  { texto: 'Guía', href: rutaSeccion('tipos-de-tareas'), actual: en('/guia/') && !en('/guia/caso-') },
+  { texto: 'Guía', href: rutaSeccion('organizar-el-trabajo'), actual: en('/guia/') && !en('/guia/caso-') },
   { texto: 'Caso 1', href: rutaSeccion('caso-1'), actual: en('/guia/caso-1/') },
   { texto: 'Caso 2', href: rutaSeccion('caso-2'), actual: en('/guia/caso-2/') },
   { texto: 'Materiales', href: ruta('materiales/'), actual: en('/materiales/') },

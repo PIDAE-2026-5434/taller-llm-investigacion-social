@@ -1,0 +1,2 @@
+Un archivo de texto por prompt. Ejemplo: 01-temas.txt, 02-codificacion-v1.txt, 02-codificacion-v2.txt.
+No se pisa una versión anterior: se guarda una nueva.

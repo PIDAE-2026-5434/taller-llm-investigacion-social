@@ -4,40 +4,45 @@ layout: ../../layouts/Guia.astro
 
 import Prompt from '../../components/Prompt.astro';
 import Ficha from '../../components/Ficha.astro';
+import Archivo from '../../components/Archivo.astro';
+import Esquema from '../../components/Esquema.astro';
 
-El caso recorre en cinco pasos un análisis de discursos presidenciales, desde una primera detección de temas hasta la revisión de los resultados. Cada paso indica para qué sirve, qué tarea de la sección 1 pide y qué técnica de la sección 2 usa.
+El caso recorre en cinco pasos un análisis de discursos presidenciales, desde una primera detección de temas hasta la revisión de los resultados. Cada paso muestra dos prompts con sus salidas guardadas. El antipatrón es la forma habitual de pedirlo, sin contexto ni criterios. El patrón recomendado aplica lo que proponen las secciones 3 y 4.
 
 ## Material
 
-- Corpus: discursos presidenciales publicados en el [sitio de Casa Rosada](https://www.casarosada.gob.ar/informacion/discursos). El listado muestra 40 discursos por página.
-- Licencia: [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/). Permite reutilizar los textos citando la fuente.
-- Selección sugerida: dos discursos de apertura de sesiones ordinarias del Congreso, de años distintos. Comparten género y ocasión, y eso hace comparable el paso 4.
-- Preparación: cada discurso se guarda como archivo de texto con los párrafos numerados. El comando `npm run discursos` del repositorio lo hace a partir de la lista de fuentes.
-- Pregunta de ejemplo: ¿qué problemas públicos nombra el discurso y a quién le asigna la responsabilidad de resolverlos?
+| | Discurso A | Discurso B |
+| --- | --- | --- |
+| Ocasión | Apertura del 144° período de sesiones ordinarias del Congreso | Foro Económico del NOA |
+| Fecha | 1 de marzo de 2026 | 19 de marzo de 2026 |
+| Párrafos | 163 | 66 |
+| Tramo que se clasifica | Párrafos 112 a 131: anuncio de reformas, con respuestas a interrupciones | Párrafos 39 a 57: déficit, ahorro, empresarios y comercio |
+| Archivo | `discursos/apertura-sesiones-2026.txt` | `discursos/foro-noa-2026.txt` |
 
-Los prompts de este caso todavía no tienen salidas guardadas, porque falta elegir los dos discursos. Cuando se guarde una corrida, el bloque del prompt suma la pestaña Salida.
+- Corpus: 34 discursos presidenciales de 2026 publicados por [Casa Rosada](https://www.casarosada.gob.ar/informacion/discursos) con licencia [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/), reunidos en `discursos/discursos.csv`.
+- Preparación: el comando `npm run discursos` guarda cada discurso elegido como texto, con los párrafos numerados.
+- Pregunta: ¿qué problemas públicos nombra el discurso y a quién le asigna la responsabilidad de resolverlos?
+- Los dos discursos difieren en ocasión y en público. El B es en buena parte una exposición sobre Adam Smith. La comparación del paso 4 tiene que tener en cuenta esa diferencia.
+
+Todas las salidas son de corridas en conversaciones nuevas, sin memoria ni instrucciones de proyecto. Cada una tiene su fila en `registro.csv`.
 
 ## Paso 1. Detección de temas
 
 <Ficha
   datos={[
-    ['Para qué', 'Tener un primer mapa del discurso y ver qué entiende el modelo cuando no se le da contexto.'],
+    ['Para qué', 'Tener un primer mapa del discurso, orientado por la pregunta de investigación.'],
     ['Tarea', 'Detectar temas.'],
-    ['Técnica', 'Zero-shot en la primera versión. Iteración para llegar a la segunda.'],
+    ['Técnica', 'Zero-shot en el antipatrón. Componentes completos en el patrón.'],
   ]}
 />
 
-<Prompt id="caso-1/paso-1a-temas" />
+<Prompt id="caso-1/p1-anti" tipo="anti" />
 
-Lo esperable es una lista de rótulos inespecíficos, del tipo "economía", "educación" o "unidad nacional", que servirían para casi cualquier discurso presidencial. Tres razones lo explican.
+La respuesta es un buen resumen del discurso por áreas: "Balance de gestión", "Política económica y modelo de crecimiento", "Inserción internacional". Sirve para conocer el texto y no sirve para la pregunta. No dice qué problemas nombra, no da párrafos ni citas, y los rótulos servirían para casi cualquier discurso de gestión.
 
-- El prompt no dice para qué se quieren los temas.
-- Tampoco define unidad de análisis ni nivel de detalle.
-- Sin esas pistas, el modelo devuelve los rótulos más frecuentes para ese género de texto.
+<Prompt id="caso-1/p1-patron" tipo="patron" anotado />
 
-La segunda versión suma la pregunta de investigación, el nivel de detalle y el pedido de cita.
-
-<Prompt id="caso-1/paso-1b-temas-con-contexto" />
+La respuesta es una tabla de problemas con párrafos y una cita para cada uno, por ejemplo "Inflación alta, riesgo de hiperinflación" en los párrafos 7, 43, 73 y 91. La verificación encontró textuales 37 de 39 citas. Las dos que marca como no encontradas son rótulos del propio modelo entre comillas, en la nota final. Ninguna cita del discurso estaba retocada.
 
 ## Paso 2. Propuesta de códigos y corrección del esquema
 
@@ -49,17 +54,25 @@ La segunda versión suma la pregunta de investigación, el nivel de detalle y el
   ]}
 />
 
-<Prompt id="caso-1/paso-2-esquema" />
+<Prompt id="caso-1/p2-anti" tipo="anti" />
 
-El esquema que devuelve el modelo es un borrador. El equipo lo corrige con estas preguntas.
+Sin la pregunta, el modelo armó un esquema de dos dimensiones, tema y función retórica, con diez códigos de tema y variables adicionales. Es un esquema razonable para otra investigación. Ninguno de sus códigos responde a quién se le asigna la solución.
 
-- ¿Hay dos códigos que se pisan?
-- ¿Algún código es tan amplio que absorbe casi todo?
-- ¿Cada definición dice qué queda afuera?
-- ¿Falta alguna categoría que el marco teórico del equipo considera necesaria?
-- ¿Algún código expresa una interpretación que el texto no sostiene?
+<Prompt id="caso-1/p2-patron" tipo="patron" />
 
-El esquema corregido se guarda como archivo, con el formato del [esquema de la sección 3](../componentes-del-prompt/), y es la entrada del paso 3.
+El borrador propuso siete códigos: gobierno nacional, Congreso, provincias y municipios, Poder Judicial, mercado y ciudadanos, aliados externos y sin responsable asignado. Separó a quien culpa el discurso de a quien le asigna la tarea, y cerró con tres párrafos dudosos. El equipo lo corrigió con estas preguntas.
+
+| Pregunta | Qué se cambió |
+| --- | --- |
+| ¿Hay códigos con muy pocos casos? | Congreso y Poder Judicial quedaron juntos en "otros poderes del Estado". "Aliados externos" salió del esquema |
+| ¿Algún código mezcla dos cosas? | "Mercado y ciudadanos" se separó en "sector privado" y "ciudadanía", porque una cosa es un mecanismo de mercado y otra un pedido a las personas |
+| ¿Cada definición dice qué queda afuera? | Se agregaron exclusiones: "empresarios nombrados solo como culpables", "proyectos que el Ejecutivo anuncia sin pedirle nada al Congreso" |
+| ¿Qué hacer con lo ambiguo? | "Debemos" o "necesitamos" sin sujeto claro se anotan como ambiguos. Lo había marcado el modelo entre sus dudas |
+| ¿Los ejemplos se superponen con lo que se va a clasificar? | Cada ejemplo se eligió fuera de los tramos de los pasos 3 y 4 |
+
+El resultado es el esquema que usan todas las corridas del taller.
+
+<Esquema id="responsable" />
 
 ## Paso 3. Codificación de una submuestra
 
@@ -67,13 +80,17 @@ El esquema corregido se guarda como archivo, con el formato del [esquema de la s
   datos={[
     ['Para qué', 'Aplicar el esquema corregido a pocos párrafos y encontrar las definiciones que todavía fallan.'],
     ['Tarea', 'Clasificar con categorías dadas.'],
-    ['Técnica', 'Salida estructurada, con cita y nivel de ambigüedad. Few-shot si aparecen casos límite.'],
+    ['Técnica', 'Salida estructurada, con cita y nivel de ambigüedad.'],
   ]}
 />
 
-<Prompt id="caso-1/paso-3-codificacion" />
+<Prompt id="caso-1/p3-anti" tipo="anti" />
 
-Los párrafos con ambigüedad media o alta se revisan primero. Suelen señalar definiciones que hay que afinar.
+Sin esquema, el modelo tuvo que decidir qué significaba "responsable". Lo entendió de dos maneras a la vez, culpable y encargado de actuar, e inventó sus propias categorías. La tabla no se puede comparar con ninguna otra, y casi no tiene citas para verificar.
+
+<Prompt id="caso-1/p3-patron" tipo="patron" anotado />
+
+La tabla tiene una fila por párrafo, con código, cita, ambigüedad y motivo. Los párrafos de ambigüedad alta fueron el 120, el 122 y el 123, los tres con "debemos" o "necesitamos" sin sujeto. Ahí está la definición que todavía falla: el modelo los puso en "no asigna", y el esquema pedía anotarlos como ambiguos sin elegir. El equipo tiene que decidir y anotarlo en `decisiones.csv`.
 
 ## Paso 4. Comparación entre dos discursos
 
@@ -85,21 +102,47 @@ Los párrafos con ambigüedad media o alta se revisan primero. Suelen señalar d
   ]}
 />
 
-Este paso se corre en una conversación nueva, con el esquema y la tabla del paso 3 ya revisados.
+<Prompt id="caso-1/p4-anti" tipo="anti" />
 
-<Prompt id="caso-1/paso-4-comparacion" />
+La respuesta compara tono, temporalidad y destinatarios, y algunas observaciones son buenas. Ninguna se puede contar ni replicar. Además, la verificación encontró dos citas retocadas: "naciones libres y naciones sometidas", donde el texto dice "las naciones libres y las naciones sometidas", y una frase del discurso B reescrita con otras palabras.
 
-El prompt pide números de párrafo para que el conteo lo haga el equipo.
+<Archivo archivo="salidas/caso-1/p4-anti-verificacion.md" rotulo="Verificación" />
+
+El patrón se corre en una conversación nueva, con el esquema y la tabla del paso 3.
+
+<Prompt id="caso-1/p4-patron" tipo="patron" />
+
+La tabla por código muestra que en A domina "gobierno nacional" (10 de 20 párrafos) y en B, "no asigna" (7 de 19). B tiene el único caso de "ciudadanía", en el párrafo 46. El punto 5 encuentra contraejemplos de la propia diferencia: en A, los párrafos 124 y 127 rinden cuentas de lo hecho, como B. El modelo aclara que las citas de A salen de la tabla pegada, porque no tenía el discurso completo.
 
 ## Paso 5. Revisión
 
 <Ficha
   datos={[
     ['Para qué', 'Decidir si el resultado se puede usar.'],
-    ['Quién', 'El equipo, sin el modelo.'],
+    ['Quién', 'El equipo, con ayuda de un script que no usa ningún modelo.'],
   ]}
 />
 
-- Citas: buscar cada cita en el texto original con la función de búsqueda. Si una cita no aparece textual, esa fila se descarta o se corrige a mano.
+Preguntarle al mismo modelo si sus citas son textuales parece una revisión y no lo es.
+
+<Prompt id="caso-1/p5-anti" tipo="anti" />
+
+El modelo respondió que las 20 citas "aparecen tal cual, palabra por palabra". En este caso era cierto, y se sabe porque el script lo comprobó. Un modelo puede afirmar que revisó sin haberlo hecho, y el tono de la respuesta es el mismo en los dos casos.
+
+El patrón es buscar cada cita en el texto original. El script `scripts/verificar_citas.mjs` lo hace para todas las citas de una salida y escribe un informe.
+
+```
+npm run citas -- salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
+```
+
+<Archivo archivo="salidas/caso-1/p3-patron-verificacion.md" rotulo="Verificación del paso 3" />
+
+<Archivo archivo="salidas/caso-1/p4-patron-verificacion.md" rotulo="Verificación del paso 4" />
+
+En el paso 4 el informe marca cuatro citas como no encontradas. Al leerlas, son frases del propio modelo entre comillas, como "A es prospectivo en gobierno nacional". El script señala y una persona decide.
+
+Los otros controles los hace el equipo.
+
 - Consistencia entre documentos: comprobar que cada código se aplicó con el mismo criterio en A y en B. Repetir 5 párrafos en una conversación nueva y comparar.
 - Contraste con la codificación del equipo: dos personas codifican los mismos párrafos sin ver la salida del modelo. Las diferencias se discuten una por una y se anota si el problema estuvo en la definición, en el prompt o en el modelo.
+- Alcance: los resultados valen para dos tramos de dos discursos de ocasiones distintas. Para decir algo sobre el corpus hace falta clasificar más.

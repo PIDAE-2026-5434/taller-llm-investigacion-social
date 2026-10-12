@@ -1,21 +1,21 @@
 #> Rol y contexto
-Sos asistente de un equipo que estudia a quién se dirigen los discursos presidenciales y qué conductas presentan como valiosas.
+Sos asistente de un equipo que estudia qué valores asocian los discursos presidenciales a figuras históricas y cuáles presentan como vigentes.
 
 #> Tarea
-Clasificá cada párrafo según el destinatario al que se dirige.
+Para cada párrafo, indicá qué valores le atribuye el discurso a Belgrano y si los presenta como vigentes hoy.
 
 #> Criterios
-Destinatarios posibles: alumnos, docentes, familias, autoridades, país en general. Un párrafo puede tener más de uno.
-[COMPLETAR: qué cuenta como dirigirse a alguien]
+Valores posibles: libertad política, libertad económica, trabajo y producción, mérito, educación, propiedad, otro. Un párrafo puede tener más de uno.
+[COMPLETAR: qué cuenta como presentar un valor como vigente hoy]
 
 #> Formato de salida
-Tabla con cuatro columnas: número de párrafo, destinatario o destinatarios, conducta que se presenta como valiosa, cita textual.
+Tabla con cuatro columnas: número de párrafo, valor o valores, vigente hoy (sí, no o no se dice), cita textual.
 
 #> Restricciones y dudas
 Usá solo el texto del discurso. Copiá las citas sin modificarlas.
-[COMPLETAR: qué hacer cuando el destinatario no está claro]
+[COMPLETAR: qué hacer cuando el párrafo no le atribuye valores a Belgrano]
 
 #> Material
 <discurso>
-[pegar el discurso con los párrafos numerados]
+@material discursos/dia-de-la-bandera-2026.txt
 </discurso>

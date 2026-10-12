@@ -1,0 +1,59 @@
+Te propongo un libro de códigos con **dos dimensiones** separadas, porque en este discurso lo que se dice (tema) y lo que se hace al decirlo (función) se mezclan todo el tiempo, y si las metés en una sola lista las categorías se pisan. La unidad de análisis sugerida es el **párrafo numerado** ([1] a [163]), que ya viene segmentado en el texto.
+
+## Dimensión A: Tema principal (un código por párrafo)
+
+| Código | Categoría | Qué incluye | Ejemplos (párrafos) |
+|---|---|---|---|
+| T1 | **Fundamento moral / doctrina** | La "moral como política de Estado", el orden de mérito (ética, eficiencia, utilitarismo político), justicia en sentido de Ulpiano, "la justicia social es un robo", legitimidad de las leyes | [23], [26]-[28], [99], [100], [110], [111], [113] |
+| T2 | **Herencia recibida (diagnóstico del pasado)** | Descripción de la situación a diciembre de 2023 y de las gestiones anteriores: crisis, inflación, pobreza, inseguridad, Estado "capturado" | [4], [5], [29], [33], [35]-[41] |
+| T3 | **Estabilización macroeconómica** | Déficit, emisión, inflación, Banco Central, reservas, crecimiento (EMAE), riesgo país | [43]-[45], [73]-[75], [91] |
+| T4 | **Reformas y desregulación** | Ley de Modernización Laboral, RIGI/RIMI, privatizaciones, desregulaciones, baja de impuestos y aranceles, reducción de la planta estatal | [7], [15], [16], [59], [61]-[67], [69]-[71] |
+| T5 | **Política social y capital humano** | AUH, Alimentar, planes sociales, pobreza, educación | [37], [50]-[52], [55], [87], [93], [94], [125] |
+| T6 | **Seguridad, justicia y defensa** | Ley Antimafia, reiterancia, Régimen Penal Juvenil, piquetes, sistema acusatorio, jurado, Fuerzas Armadas | [11], [46]-[49], [72], [123], [124], [126], [127] |
+| T7 | **Comercio y apertura económica** | Críticas al proteccionismo y al "fetiche industrialista", casos de precios (acero, neumáticos, remeras), beneficios de abrir la economía | [96], [100]-[109] |
+| T8 | **Inserción internacional y geopolítica** | Mercosur-UE, acuerdo con EE.UU., ALCA, Atlántico Sur, "nuevo orden mundial", alianza con Trump | [20], [21], [85], [128]-[137] |
+| T9 | **Conflicto político 2025 ("ataque golpista")** | Relato de las corridas, el riesgo país, el rol de la oposición, los medios y los empresarios, costos estimados | [78]-[84], [153] |
+| T10 | **Proyección y agenda 2026** | Sectores del futuro (energía, minería, data centers, agro), reformas anunciadas, paquetes mensuales, "Año de la Grandeza" | [114]-[122], [138], [140], [143], [149]-[151], [154]-[156], [160], [161] |
+| T11 | **Protocolo y cierre** | Saludos, agradecimientos, apertura formal, cierre y consignas | [1]-[3], [162], [163] |
+| T12 | **Interpelación sin contenido temático propio** | Réplicas, insultos o ironías a legisladores que no desarrollan ningún tema | [8], [18], [19], [34], [47], [56]-[58], [77], [98], [152] |
+
+## Dimensión B: Función retórica (un código por párrafo)
+
+| Código | Categoría | Criterio |
+|---|---|---|
+| F1 | **Descriptiva / de balance** | Presenta hechos, cifras o medidas como logros o como estado de situación |
+| F2 | **Argumentativa / doctrinaria** | Explica por qué algo es bueno o malo con razonamiento económico, moral o histórico |
+| F3 | **Programática / prospectiva** | Anuncia medidas, metas o escenarios futuros |
+| F4 | **Confrontativa** | Se dirige a un adversario para descalificarlo, acusarlo o ironizar sobre él |
+| F5 | **Apelación a autoridad** | Cita autores o figuras (Smith, Tocqueville, Rand, Huerta de Soto, Friedman, Becker, etc.) para respaldar un punto |
+| F6 | **Ceremonial / fática** | Saludos, agradecimientos, consignas |
+
+## Variables binarias complementarias (se marcan además del código principal)
+
+Hay mucho contenido que atraviesa categorías, así que conviene registrarlo aparte, con 0/1:
+
+- **Interpelación a la oposición presente**: el párrafo incluye un tramo dirigido a los legisladores, aunque su tema sea otro (por ejemplo [14], [120], [131], [139]).
+- **Cifra o dato empírico verificable**: porcentajes, montos, comparaciones ([48], [52], [62], [65], [74], [106], [134]). Sirve para armar después una lista de afirmaciones a contrastar con fuentes oficiales.
+- **Descalificación moral explícita** (ladrones, chorros, parásitos, golpistas, etc.): permite medir intensidad del léxico sin depender del tema.
+- **Referencia a la dicotomía pasado/futuro** (decadencia vs. grandeza): útil si te interesa el encuadre narrativo.
+
+## Variable opcional: destinatario o blanco
+
+Si querés analizar a quién se dirige o contra quién se construye el discurso, podés codificar:
+`D1` casta política / kirchnerismo, `D2` empresarios "prebendarios", `D3` medios, `D4` izquierda / "comunistas", `D5` ciudadanía / "argentinos de bien", `D6` actores internacionales (aliados o adversarios).
+
+## Reglas de codificación sugeridas
+
+1. **Criterio de dominancia**: si un párrafo mezcla temas, codificá el que ocupa más texto o el que abre el párrafo; el resto va a las variables binarias. Ejemplo: [14] arranca con la ley y sigue con la oposición, así que va como T12/F4 con tema secundario.
+2. **Los párrafos cortos que son réplicas** ([34], [56], [58], [77], etc.) van a T12 y F4. No los fuerces dentro de un tema por el contexto de lo que venía antes.
+3. **Un dato no convierte un párrafo en "balance"** si la intención es argumentar. [106] usa cifras, pero su función es argumentativa (F2) sobre el tema T7.
+4. **Repeticiones y errores de transcripción** ([26] repite una frase de [24]; [28] duplica una oración): codificalos igual, pero registrá la duplicación en una nota para no inflar frecuencias.
+5. **Distinguí T2 de T3/T4**: T2 describe cómo estaba el país; T3 y T4 describen lo que hizo el gobierno. Cuando un párrafo compara ambos ("antes... ahora..."), usá la función para desempatar (F1 con balance de logros va a T3/T4).
+
+## Sugerencias metodológicas
+
+- Hacé una **prueba piloto** con unos 20-30 párrafos, codificados por vos y por otra persona (o por un LLM con este mismo libro) y calculá acuerdo (kappa de Cohen) antes de codificar todo.
+- Con 163 unidades, un libro de 12 temas puede dar categorías muy chicas. Si ves que varias quedan con menos de 5 párrafos, podés agruparlas (por ejemplo T3, T4 y T5 en "Gestión y reformas internas").
+- Si querés comparar con otros discursos de apertura de sesiones, conviene mantener solo las categorías que no dependen de la coyuntura de este año (T9, por ejemplo, es específica).
+
+Si te sirve, puedo codificar el discurso completo con este esquema y devolverte una tabla párrafo por párrafo (código de tema, función y variables binarias), con la distribución de frecuencias y los casos dudosos marcados para que los revises.

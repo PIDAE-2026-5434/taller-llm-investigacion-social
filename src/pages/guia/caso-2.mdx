@@ -5,17 +5,41 @@ layout: ../../layouts/Guia.astro
 import Prompt from '../../components/Prompt.astro';
 import Texto from '../../components/Texto.astro';
 import Ficha from '../../components/Ficha.astro';
+import Archivo from '../../components/Archivo.astro';
+import Esquema from '../../components/Esquema.astro';
+import Seguridad from '../../components/Seguridad.astro';
 
-El caso aplica la secuencia del Caso 1 a una entrevista. La entrevista es sintética: se escribió para el taller y no corresponde a ninguna persona real.
+El caso usa el modelo para tres tareas típicas del trabajo con entrevistas: descomponer una variable en dimensiones, armar una grilla de menciones y ubicar consensos, tensiones y diferencias entre fuentes. Al final, el paso de la grilla se guarda como skill para repetirlo igual sobre material nuevo.
+
+El material es sintético. Son dos entrevistas y un grupo focal escritos para el taller, que no corresponden a ninguna persona real. Reemplazan de forma provisoria al corpus del proyecto, que está publicado en el repositorio institucional del CONICET y que no estaba disponible al preparar este material. Los prompts sirven igual para el corpus real: se cambian los archivos de `entrevistas/` y se vuelven a correr.
 
 ## Material
 
 - Tema: la experiencia de alquilar vivienda.
-- Hablantes: E es quien entrevista. I es una inquilina ficticia.
-- Guía de preguntas, con cuatro ejes: búsqueda y acceso, relación con la propietaria, costos y ajustes, y expectativas.
-- Pregunta de ejemplo: ¿cómo explica la entrevistada las decisiones que toma para sostener el alquiler?
+- Pregunta: ¿cómo explican quienes alquilan las decisiones que toman para sostener el alquiler?
+- Fuentes: una inquilina con trato directo con la dueña (entrevista 1), un inquilino que alquila por inmobiliaria con contrato (entrevista 2) y un grupo focal de cinco personas con situaciones distintas, que incluyen alquiler sin contrato y una pieza de hotel.
+- Unidad: el turno de habla, numerado. E y M son quienes entrevistan y moderan, y no se codifican.
 
-<Texto archivo="entrevistas/alquiler-sintetica.txt" rotulo="Entrevista" />
+<details>
+<summary>Entrevista 1</summary>
+
+<Texto archivo="entrevistas/entrevista-1.txt" rotulo="Entrevista 1" />
+
+</details>
+
+<details>
+<summary>Entrevista 2</summary>
+
+<Texto archivo="entrevistas/entrevista-2.txt" rotulo="Entrevista 2" />
+
+</details>
+
+<details>
+<summary>Grupo focal</summary>
+
+<Texto archivo="entrevistas/grupo-focal.txt" rotulo="Grupo focal" />
+
+</details>
 
 ## Paso 1. Preparar el material
 
@@ -26,55 +50,125 @@ El caso aplica la secuencia del Caso 1 a una entrevista. La entrevista es sinté
   ]}
 />
 
-- En una entrevista real se reemplazan nombres, direcciones, lugares de trabajo y cualquier otro dato que identifique por marcas como [NOMBRE], [BARRIO] o [EMPLEADOR] antes de pegarla en cualquier herramienta.
+- Se reemplazan nombres, direcciones, lugares de trabajo y cualquier otro dato que identifique por marcas como [NOMBRE], [BARRIO] o [EMPLEADOR]. La entrevista 2 y el grupo focal muestran cómo quedan.
 - Se numeran los turnos de habla y se marca quién habla en cada uno.
-- La entrevista sintética ya cumple las dos condiciones.
+- El encabezado de cada archivo describe a quienes participan sin identificarlos. El modelo lo usa para entender quién es P3 o P5.
 
-## Paso 2. Resumen por ejes
+<Seguridad>
+  <ul>
+    <li>Una entrevista real se anonimiza antes de pegarla en cualquier herramienta, también en una cuenta institucional.</li>
+    <li>El consentimiento informado tiene que contemplar el procesamiento con servicios externos. Si no lo contempla, el material no se sube.</li>
+    <li>Combinar datos sueltos puede identificar a alguien aunque no figure el nombre: una ocupación poco común, un barrio y una edad. Esos detalles también se generalizan.</li>
+    <li>La lista completa de cuidados está en la [sección 1](../organizar-el-trabajo/).</li>
+  </ul>
+</Seguridad>
 
-<Ficha
-  datos={[
-    ['Para qué', 'Ordenar la entrevista según la guía de preguntas antes de codificar.'],
-    ['Tarea', 'Resumir.'],
-    ['Técnica', 'Salida estructurada, con número de turno para cada afirmación.'],
-  ]}
-/>
-
-<Prompt id="caso-2/paso-2-resumen" />
-
-Qué mirar: que el resumen conserve la ambivalencia. En el turno 16 la entrevistada piensa en mudarse todos los meses y en el 18 dice que está bien. Un resumen que se queda con una sola de las dos posiciones pierde información.
-
-## Paso 3. Categorías a partir de la entrevista
+## Paso 2. Descomponer la variable
 
 <Ficha
   datos={[
-    ['Para qué', 'Conseguir un borrador de categorías con las palabras de la entrevistada.'],
+    ['Para qué', 'Pasar de un concepto, "sostener el alquiler", a dimensiones e indicadores que se puedan reconocer en lo que dicen las personas.'],
     ['Tarea', 'Proponer categorías.'],
-    ['Técnica', 'Salida estructurada, en la misma conversación del paso 2.'],
+    ['Técnica', 'Salida estructurada, con un ejemplo citado por dimensión.'],
   ]}
 />
 
-<Prompt id="caso-2/paso-3-categorias" />
+<Prompt id="caso-2/p2-anti" tipo="anti" />
 
-El equipo corrige el esquema con tres preguntas.
+El modelo listó todo lo que se puede medir en el material: edad, ocupación, tipo de vivienda, formalidad del contrato, estrategias, redes y expectativas. Es un inventario útil para describir los casos y no está ordenado por la pregunta. Hay un acierto que vale la pena mirar: señaló que el "todos coinciden" de la moderadora en el grupo focal es un consenso inducido.
 
-- ¿Alguna categoría viene de una palabra de quien entrevista? E introduce "se aprovecha" en el turno 11 e I la rechaza en el 12.
-- ¿Alguna categoría toma una ironía al pie de la letra? "Muy científico todo", en el turno 10, es una crítica a cómo se fija el aumento.
-- ¿Alguna categoría mezcla lo que la entrevistada cuenta que hace con lo que opina de la propietaria?
+<Prompt id="caso-2/p2-patron" tipo="patron" anotado />
 
-## Paso 4. Codificación de fragmentos
+El borrador propuso siete dimensiones, cada una con indicadores, un ejemplo citado y el turno. Usó palabras de quienes participan para los nombres, como "Uno va zafando como puede" o "¿Adónde voy?", y marcó la séptima, sobre el futuro, como "viene de la guía": aparece solo cuando quien entrevista pregunta por el futuro. También listó lo que no entra, como los requisitos para entrar y las reparaciones.
+
+El equipo corrigió el borrador así.
+
+| Pregunta | Qué se cambió |
+| --- | --- |
+| ¿Alguna dimensión viene solo de la guía? | La de expectativas salió de la variable. Se analiza aparte |
+| ¿Algún indicador es una queja y no una decisión? | "El sueldo no acompaña al alquiler" salió de "sumar ingresos" y quedó como exclusión |
+| ¿Algún nombre es una cita? | Los nombres pasaron a ser descriptivos. Las palabras de quienes participan quedaron en los ejemplos |
+| ¿Cada dimensión dice qué queda afuera? | Se agregó una exclusión a cada una |
+
+<Esquema id="dimensiones-alquiler" />
+
+## Paso 3. Grilla de menciones
 
 <Ficha
   datos={[
-    ['Para qué', 'Aplicar el esquema corregido a toda la entrevista.'],
-    ['Tarea', 'Clasificar con categorías dadas.'],
-    ['Técnica', 'Salida estructurada, con columnas para ironía y ambigüedad.'],
+    ['Para qué', 'Registrar en qué turnos aparece cada dimensión, para cada participante, con la cita que lo muestra.'],
+    ['Tarea', 'Clasificar con categorías dadas y recuperar fragmentos.'],
+    ['Técnica', 'Salida estructurada. "Sin mención" como respuesta válida.'],
   ]}
 />
 
-<Prompt id="caso-2/paso-4-codificacion" />
+<Prompt id="caso-2/p3-anti" tipo="anti" />
 
-## Paso 5. Búsqueda de contraejemplos
+Sin dimensiones, el modelo eligió sus propias columnas: situación, acceso, aumentos, estrategias, preocupación central y futuro. Las celdas son resúmenes con el turno entre paréntesis. Resumir ya es interpretar, y una celda como "Entró por una compañera de trabajo" no se puede verificar contra el texto con un script.
+
+<Prompt id="caso-2/p3-patron" tipo="patron" anotado />
+
+La grilla tiene una fila por participante, las seis dimensiones del esquema y en cada celda los turnos con su cita, o "sin mención". Marcó para revisar el "Una maravilla" irónico de P4 y la respuesta de la entrevista 1 a una pregunta que sugería la respuesta. La verificación encontró textuales las 52 citas.
+
+<Archivo archivo="salidas/caso-2/p3-patron-verificacion.md" rotulo="Verificación" />
+
+## Paso 4. Consensos, tensiones y diferencias
+
+<Ficha
+  datos={[
+    ['Para qué', 'Ver en qué coinciden las fuentes, en qué difieren y dónde una misma persona sostiene dos cosas.'],
+    ['Tarea', 'Comparar y buscar contraejemplos.'],
+    ['Técnica', 'Criterios definidos en el prompt. Trabaja sobre la grilla ya revisada, en una conversación nueva.'],
+  ]}
+/>
+
+<Prompt id="caso-2/p4-anti" tipo="anti" />
+
+La respuesta es una buena lectura y trae turnos. El problema es que "coinciden" no tiene definición: "Hay resignación y normalización" aparece como coincidencia con tres frases de tres personas. Otra corrida, u otra persona, podría llamar consenso a otra cosa.
+
+<Prompt id="caso-2/p4-patron" tipo="patron" anotado />
+
+La tabla clasifica cada dimensión y separa los acuerdos inducidos y las voces minoritarias. Encontró una tensión en la entrevista 1, que negocia el aumento con la dueña y a la vez dice que no puede decirle que no.
+
+La salida también muestra un problema del prompt. Con el criterio escrito, "recortar gastos" quedó como consenso porque aparece en tres materiales y nadie dice lo contrario, aunque lo mencionan 3 de 7 participantes. El criterio confunde "nadie lo niega" con "todos lo dicen". La corrección va en el prompt: el consenso pide que lo diga la mayoría de quienes participan en cada material, y lo demás queda como "presente en los tres materiales".
+
+## Paso 5. La misma grilla como skill
+
+La grilla del paso 3 es un procedimiento que se repite igual con cada entrevista nueva. Guardarlo como skill evita reescribir el prompt y asegura que todas las grillas salgan con las mismas columnas.
+
+Una skill es una carpeta con un archivo `SKILL.md`. El archivo empieza con un nombre y una descripción, que la herramienta usa para saber cuándo aplicarla, y sigue con las instrucciones. Puede traer scripts. Esta trae uno que comprueba las citas.
+
+<Texto archivo="skills/grilla-de-menciones/SKILL.md" rotulo="SKILL.md" />
+
+### Cómo se instala en Claude
+
+1. En la configuración de Claude, activar la ejecución de código y creación de archivos.
+2. Comprimir la carpeta `grilla-de-menciones` en un archivo .zip. La carpeta se tiene que llamar igual que el campo `name` del archivo.
+3. En la sección de skills de Claude, elegir crear una skill y subir el .zip.
+4. Abrir una conversación nueva, adjuntar las transcripciones y el CSV de dimensiones, y pedir la grilla.
+
+Las skills que sube una persona son privadas. En las cuentas de equipo se pueden compartir. En ChatGPT y en Gemini, el texto del `SKILL.md` se puede pegar como instrucciones de un proyecto o de un Gem. Sin ejecución de código, la verificación se hace después con el script del repositorio.
+
+### La corrida con la skill
+
+El pedido es una línea. Lo demás lo pone la skill.
+
+<Prompt id="caso-2/skill-grilla" />
+
+La respuesta trae la matriz resumida, el conteo por dimensión, lo que quedó afuera y las dudas. Además devolvió el archivo `grilla.csv`, con una fila por mención. La skill corrió el script de verificación y las 27 citas aparecieron en el turno indicado.
+
+<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="grilla.csv" />
+
+La grilla de la skill tiene menos menciones que la del paso 3: 27 contra 52 citas. La skill registra una fila por mención y fragmentos más cortos, y dejó afuera con su motivo varios turnos que el paso 3 había incluido. Las dos versiones se comparan antes de elegir una, y la elegida se guarda como procedimiento del equipo.
+
+<Seguridad titulo="Seguridad con skills">
+  <ul>
+    <li>Instalar solo skills que el equipo escribió o leyó entera, scripts incluidos.</li>
+    <li>La skill pregunta por la anonimización si encuentra nombres. No reemplaza la preparación del paso 1.</li>
+  </ul>
+</Seguridad>
+
+## Paso 6. Búsqueda de contraejemplos
 
 <Ficha
   datos={[
@@ -84,11 +178,11 @@ El equipo corrige el esquema con tres preguntas.
   ]}
 />
 
-<Prompt id="caso-2/paso-5-contraejemplos" />
+<Prompt id="caso-2/p5-contraejemplos" />
 
-Se espera que aparezcan al menos los turnos 8 y 12. Si el modelo confirma la lectura sin matices, el prompt o el modelo no sirven para esta tarea.
+El contraejemplo más directo es P5 en el turno 29: "Antes dijeron que lo peor es el aumento. Para mí no." La respuesta agrupa los matices en tres desplazamientos y advierte que el "todos coinciden" de la moderadora no se puede citar como evidencia. Si el modelo hubiera confirmado la lectura sin matices, el prompt o el modelo no servirían para esta tarea.
 
-## Paso 6. Revisión
+## Paso 7. Revisión
 
 <Ficha
   datos={[
@@ -97,19 +191,19 @@ Se espera que aparezcan al menos los turnos 8 y 12. Si el modelo confirma la lec
   ]}
 />
 
-- Citas: cada fragmento se busca en la transcripción.
-- Hablante: ningún fragmento atribuido a I corresponde a un turno de E.
-- Ironía: una persona revisa los turnos 4 y 10.
-- Contraste: dos integrantes del equipo codifican los mismos turnos sin ver la salida del modelo y discuten las diferencias.
+- Citas: cada fragmento se busca en la transcripción. El script hace la primera pasada.
+- Hablante: ningún fragmento atribuido a un participante corresponde a un turno de E o M.
+- Ironía y preguntas inductoras: una persona revisa los turnos marcados.
+- Contraste: dos integrantes del equipo grillan los mismos turnos sin ver la salida del modelo y discuten las diferencias.
 
 ## Qué cambia respecto del Caso 1
 
-| Aspecto | Caso 1, discursos | Caso 2, entrevista |
+| Aspecto | Caso 1, discursos | Caso 2, entrevistas y grupo focal |
 | --- | --- | --- |
-| Material | Público, se pega tal cual | Se anonimiza antes y el consentimiento informado tiene que contemplar el uso |
+| Material | Público, se pega tal cual | Se anonimiza antes y el consentimiento tiene que contemplar el uso |
 | Unidad de análisis | Párrafo | Turno de habla |
-| Voces | Un orador | Dos hablantes, y solo se codifica a la persona entrevistada |
-| Registro | Texto preparado para leer en público | Oral, con ironía, rodeos y sobreentendidos |
-| Posiciones | Suele sostener una línea argumental | Una misma persona expresa posiciones que se contradicen |
+| Voces | Un orador | Varias personas, y quien entrevista o modera no se codifica |
+| Registro | Texto preparado para leer en público, con interrupciones | Oral, con ironía, rodeos y sobreentendidos |
+| Dinámica | No hay | En el grupo focal, acuerdos que solo responden a una pregunta y voces que se animan al final |
 
-Una entrevista sintética sirve para mostrar el procedimiento. No permite sacar conclusiones sobre personas reales.
+Un material sintético sirve para mostrar el procedimiento. No permite sacar conclusiones sobre personas reales.

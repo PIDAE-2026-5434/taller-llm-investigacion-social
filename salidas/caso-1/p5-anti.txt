@@ -1,0 +1,9 @@
+Sí. Volví a comparar las 20 citas con el texto de los párrafos y las 20 aparecen tal cual, palabra por palabra, con la misma puntuación. No hay ninguna parafraseada ni corregida.
+
+Algunas aclaraciones para que las uses bien:
+
+- **Varias citas son fragmentos recortados de una oración más larga.** Las de los párrafos 116 ("vamos a combatir esta anomia con..."), 120 ("debemos reformarlas para que...") y 121 ("presentaremos proyectos que...") empiezan a mitad de oración. Lo que está entre comillas es textual, pero el recorte deja afuera el principio de la oración. Si el equipo necesita citas de oración completa, conviene ampliarlas.
+- **En los párrafos con varias acciones, la cita justifica solo una parte del código.** En el 121 la cita respalda lo del Poder Judicial, pero no lo del sistema electoral ni lo del financiamiento de los partidos. En el 124 la cita respalda lo ya hecho, pero no lo de los juicios por jurado. Esa diferencia está explicada en la columna de motivo, pero la cita sola no la muestra.
+- **En los párrafos con "ninguno" la cita no justifica un código.** En el 112, el 128, el 129 y el 131 la cita ilustra por qué el párrafo no nombra un problema con responsable. No es un fragmento que asigne nada. Es un criterio mío, y vale la pena revisarlo, sobre todo en el 128 y el 131, que son respuestas a interrupciones.
+
+Si querés, te armo una versión de la tabla con citas más largas en los párrafos donde el código depende de más de una frase.

@@ -1,36 +1,49 @@
 ---
 // Muestra prompts/<id>.txt con botón de copiar.
-// Si existe salidas/<id>.txt, suma la pestaña Salida con los datos del registro.
-// Con `anotado`, parte el prompt por sus líneas "#> Etiqueta" y muestra cada tramo con su rótulo.
-import { prompt, salidaDe } from '../lib/archivos.js';
+// Si existe salidas/<id>.txt, suma la pestaña Salida, formateada como en una app de chat.
+// Props:
+//  - anotado: parte el prompt por sus líneas "#> Etiqueta" y muestra cada tramo con su rótulo
+//  - tipo: "anti" o "patron", para los pares de antipatrón y patrón recomendado
+//  - variantes: suma una pestaña por cada salidas/<id>--<variante>.txt
+//  - rotuloSalida: nombre de la pestaña de la salida principal
+import { prompt, salidaDe, variantesDe } from '../lib/archivos.js';
 import { enRepo } from '../lib/sitio.js';
+import { md } from '../lib/md.js';
 
-const { id, anotado = false } = Astro.props;
+const { id, anotado = false, tipo = null, variantes = false, rotuloSalida = 'Salida' } = Astro.props;
 const p = prompt(id);
-const salida = salidaDe(id);
+const principal = salidaDe(id);
+const nombres = { haiku: 'Haiku', opus: 'Opus', sonnet: 'Sonnet', 'otra-corrida': 'Otra corrida' };
+const salidas = [
+  ...(principal ? [{ clave: 'salida', rotulo: rotuloSalida, ...principal }] : []),
+  ...(variantes ? variantesDe(id).map((v) => ({ clave: v.variante, rotulo: nombres[v.variante] ?? v.variante, ...v })) : []),
+];
 const enlace = enRepo(p.ruta);
-const c = salida?.corrida;
+const rotuloTipo = { anti: 'Antipatrón', patron: 'Patrón recomendado' }[tipo];
+const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 const fecha = (iso) => {
   const [a, m, d] = (iso || '').split('-').map(Number);
-  const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
   return a && m && d ? `${d} de ${meses[m - 1]} de ${a}` : iso;
 };
-const pie = c
-  ? [c.herramienta, c.modelo, c.esfuerzo && `esfuerzo ${c.esfuerzo}`, fecha(c.fecha)].filter(Boolean).join(' · ') + '.'
-  : null;
+const pie = (c) =>
+  c ? [c.herramienta, c.modelo, c.esfuerzo && c.esfuerzo !== 'sin dato' && `esfuerzo ${c.esfuerzo}`, fecha(c.fecha)].filter(Boolean).join(' · ') + '.' : null;
+const tieneMaterial = p.limpio !== p.completo;
 ---
 
-<div class="bloque" data-bloque>
+<div class={`bloque${tipo ? ` bloque-${tipo}` : ''}`} data-bloque>
+  {rotuloTipo && <p class="bloque-tipo">{rotuloTipo}</p>}
   <div class="bloque-barra">
     {
-      salida ? (
+      salidas.length ? (
         <div class="bloque-pestanas" role="group" aria-label="Qué mostrar">
           <button type="button" class="pestana" data-ver="prompt" aria-pressed="true">
             Prompt
           </button>
-          <button type="button" class="pestana" data-ver="salida" aria-pressed="false">
-            Salida
-          </button>
+          {salidas.map((s) => (
+            <button type="button" class="pestana" data-ver={s.clave} aria-pressed="false">
+              {s.rotulo}
+            </button>
+          ))}
         </div>
       ) : (
         <span class="bloque-rotulo">Prompt</span>
@@ -41,32 +54,34 @@ const pie = c
   </div>
 
   <div data-panel="prompt">
+    {p.continua && <p class="bloque-aviso">Se manda en la misma conversación que <code>{p.continua}</code>.</p>}
     {
       anotado ? (
-        <>
-          {p.tramos.map((t) => (
-            <div class="tramo">
-              <div class="tramo-etiqueta">{t.etiqueta && <span class="chip">{t.etiqueta}</span>}</div>
-              <pre>{t.texto}</pre>
-            </div>
-          ))}
-          <pre data-texto hidden>{p.limpio}</pre>
-        </>
+        p.tramos.map((t) => (
+          <div class="tramo">
+            <div class="tramo-etiqueta">{t.etiqueta && <span class="chip">{t.etiqueta}</span>}</div>
+            <pre>{t.texto}</pre>
+          </div>
+        ))
       ) : (
-        <pre data-texto>{p.limpio}</pre>
+        <pre>{p.limpio}</pre>
       )
     }
+    <pre data-texto hidden>{p.completo}</pre>
+    {tieneMaterial && <p class="bloque-pie">Lo que va entre corchetes se reemplaza por el material. El botón Copiar lo incluye completo.</p>}
   </div>
 
   {
-    salida && (
-      <div data-panel="salida" hidden>
-        <pre data-texto>{salida.texto}</pre>
+    salidas.map((s) => (
+      <div data-panel={s.clave} hidden>
+        <div class="salida-md" set:html={md(s.texto)} />
+        <pre data-texto hidden>{s.texto}</pre>
         <p class="bloque-pie">
-          {pie ?? 'Corrida sin datos en registro.csv.'}
-          {c?.notas && ` ${c.notas}`}
+          {pie(s.corrida) ?? 'Corrida sin datos en registro.csv.'}
+          {s.corrida?.notas && ` ${s.corrida.notas}`}{' '}
+          {enRepo(s.ruta) && <a href={enRepo(s.ruta)}>Ver archivo</a>}
         </p>
       </div>
-    )
+    ))
   }
 </div>

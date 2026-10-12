@@ -3,21 +3,23 @@
 // y las páginas del sitio lo incluyen desde acá.
 
 import { csv } from './csv.js';
+import { expandir, esquemaComoTexto as esquemaATexto, limpiar } from './prompts.js';
 
 const crudos = import.meta.glob(
   [
     '/prompts/**/*.txt',
     '/salidas/**/*.txt',
     '/entrevistas/*.txt',
+    '/salidas/**/*.{csv,md}',
     '/esquemas/*.csv',
-    '/discursos/*.csv',
+    '/discursos/fuentes.csv',
     '/discursos/*.txt',
+    '/skills/**/*.md',
+    '/plantilla/**/*.{md,csv,txt}',
     '/registro.csv',
   ],
   { query: '?raw', import: 'default', eager: true },
 );
-
-const limpiar = (texto) => texto.replace(/\r/g, '').replace(/\n{3,}/g, '\n\n').trim();
 
 /** Devuelve el contenido de un archivo del repositorio, o null si no existe. */
 export function leer(ruta) {
@@ -43,58 +45,49 @@ export function esquema(id) {
 
 /** El esquema escrito como lista, que es como entra en un prompt. */
 export function esquemaComoTexto(id) {
-  return esquema(id)
-    .filas.map((f) => {
-      let linea = `- "${f.codigo}": ${f.definicion}`;
-      if (f.incluye) linea += ` Incluye: ${f.incluye}.`;
-      if (f.excluye) linea += ` Excluye: ${f.excluye}.`;
-      return linea;
-    })
-    .join('\n');
+  return esquemaATexto(leer(`esquemas/${id}.csv`));
 }
 
 /**
  * Lee prompts/<id>.txt y devuelve:
- *  - limpio: el prompt listo para copiar, con los esquemas ya incluidos
- *  - tramos: el mismo prompt partido por las líneas "#> Etiqueta"
- *
- * Dos marcas propias dentro de un archivo de prompt:
- *  - "@esquema <id>" en una línea sola se reemplaza por esquemas/<id>.csv
- *  - "#> Etiqueta" anota el tramo que sigue. No forma parte del prompt.
+ *  - limpio: el prompt como se muestra en la página, con el material entre corchetes
+ *  - completo: el prompt listo para pegar, con esquemas, material y salidas incluidos
+ *  - tramos: el prompt de la página partido por las líneas "#> Etiqueta"
+ *  - continua: el id del prompt anterior, si va en la misma conversación
+ * Las marcas están explicadas en src/lib/prompts.js.
  */
 export function prompt(id) {
   const crudo = leer(`prompts/${id}.txt`);
   if (crudo === null) throw new Error(`No existe prompts/${id}.txt`);
-  const expandido = crudo
-    .replace(/\r/g, '')
-    .replace(/^@esquema\s+(\S+)\s*$/gm, (_, e) => esquemaComoTexto(e));
-
-  const tramos = [];
-  let actual = { etiqueta: null, lineas: [] };
-  const cerrar = () => {
-    const texto = limpiar(actual.lineas.join('\n'));
-    if (texto) tramos.push({ etiqueta: actual.etiqueta, texto });
-  };
-  for (const linea of expandido.split('\n')) {
-    if (linea.startsWith('#>')) {
-      cerrar();
-      actual = { etiqueta: linea.slice(2).trim(), lineas: [] };
-    } else {
-      actual.lineas.push(linea);
-    }
+  const sitio = expandir(crudo, leer, 'sitio');
+  // Si falta una salida que el prompt incluye, se copia la versión de la página.
+  let completo;
+  try {
+    completo = expandir(crudo, leer, 'completo').texto;
+  } catch {
+    completo = sitio.texto;
   }
-  cerrar();
-
-  return { id, ruta: `prompts/${id}.txt`, limpio: tramos.map((t) => t.texto).join('\n\n'), tramos };
+  return { id, ruta: `prompts/${id}.txt`, limpio: sitio.texto, completo, tramos: sitio.tramos, continua: sitio.continua };
 }
 
 /** La salida guardada de un prompt y la fila del registro que la describe. */
 export function salidaDe(id) {
-  const ruta = `salidas/${id}.txt`;
+  return salidaEn(`salidas/${id}.txt`);
+}
+
+function salidaEn(ruta) {
   const texto = leer(ruta);
   if (texto === null) return null;
   const corrida = registro().filas.find((f) => f.salida === ruta) ?? null;
   return { ruta, texto: limpiar(texto), corrida };
+}
+
+/** Otras corridas del mismo prompt, guardadas como salidas/<id>--<variante>.txt. */
+export function variantesDe(id) {
+  const prefijo = `salidas/${id}--`;
+  return listar(prefijo)
+    .filter((r) => r.endsWith('.txt'))
+    .map((r) => ({ variante: r.slice(prefijo.length, -4), ...salidaEn(r) }));
 }
 
 /** registro.csv, con una fila por corrida. */

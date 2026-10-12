@@ -1,3 +1,3 @@
 Clasificá el siguiente párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Respondé solo con la categoría.
 
-Párrafo: "Necesitamos que los gobernadores ordenen sus cuentas para que las escuelas abran todos los días."
+@material discursos/apertura-sesiones-2026.txt 141-141

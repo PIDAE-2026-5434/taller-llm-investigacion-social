@@ -1,0 +1,7 @@
+Retomamos un análisis que empezó en otra conversación. Esta es la nota de traspaso:
+
+<nota>
+@salida organizacion/traspaso
+</nota>
+
+El esquema vigente es el del archivo responsable.csv del proyecto. Seguimos con el próximo paso de la nota.

@@ -1,0 +1,8 @@
+@continua caso-1/p3-patron
+Vamos a cerrar esta conversación y seguir en una nueva. Escribí una nota de traspaso para pegar al empezar la próxima, con estas partes:
+1. Qué estamos haciendo, en dos oraciones.
+2. Decisiones tomadas, con el motivo de cada una.
+3. Párrafos o casos que quedaron dudosos, con su número.
+4. Próximo paso.
+
+No repitas la tabla. Que la nota no pase de 200 palabras.

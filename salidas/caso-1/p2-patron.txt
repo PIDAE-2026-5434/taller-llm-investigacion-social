@@ -1,0 +1,60 @@
+Propongo seis códigos de responsable, más el código para los problemas sin asignación. Los armé a partir de los actores a los que el discurso les atribuye la tarea de resolver, no de los que culpa por causar el problema. En el discurso los culpables suelen ser "los políticos", "el kirchnerismo" o "ustedes". Si se mezclaran los dos criterios, casi todo quedaría en un solo código. Dejé afuera a "los políticos" como responsable de resolver porque el discurso no les asigna esa tarea en ningún caso.
+
+Regla general de uso: se codifica el actor que el orador presenta como el que tiene que hacer o hizo la acción que resuelve el problema. Si hay dos, se asigna el código del actor que ejecuta y se anota el otro como secundario.
+
+## 1. Gobierno nacional
+
+- **Definición:** el Poder Ejecutivo nacional (el "nosotros" del orador) aparece como quien resuelve el problema mediante decisiones propias.
+- **Incluye:** medidas ya tomadas ("eliminamos", "redujimos", "hemos desarticulado"), compromisos futuros del Ejecutivo ("vamos a", "profundizaremos") y la acción de ministros o funcionarios nombrados como parte del Gobierno.
+- **Deja afuera:** proyectos que el Ejecutivo envía pero cuya sanción depende del Congreso, si el texto enfatiza esa dependencia (ver código 2); acciones que el texto atribuye a provincias, a la Justicia o a un aliado externo.
+- **Ilustra [43]:** "Por eso, en nuestro primer mes eliminamos un déficit fiscal del 5 % del PBI de una sola tajada."
+
+## 2. Congreso
+
+- **Definición:** el Poder Legislativo aparece como el actor que debe sancionar o aprobar la solución.
+- **Incluye:** pedidos explícitos al Congreso, reconocimiento de leyes sancionadas por él y reparto de tareas entre el Gobierno y el Congreso.
+- **Deja afuera:** menciones al Congreso solo como escenario o como blanco de ataques ("ustedes"), sin que se le asigne una tarea.
+- **Ilustra [161]:** "Nosotros haremos nuestra parte y ustedes deberán hacer la suya."
+
+## 3. Provincias y municipios
+
+- **Definición:** los gobiernos subnacionales aparecen como responsables de una parte de la solución.
+- **Incluye:** reclamos o expectativas dirigidos a gobernadores, provincias o municipios, por ejemplo sobre tasas e impuestos locales.
+- **Deja afuera:** menciones a provincias como territorio donde se aplica una política nacional, como los proyectos del RIGI "en 11 provincias".
+- **Ilustra [70]:** "Ahora solo falta que las provincias y los municipios hagan su parte, por lo cual hemos facilitado una herramienta para denunciar tasas excesivas, chequeándolo en una página."
+
+## 4. Poder Judicial
+
+- **Definición:** la Justicia aparece como el actor al que le corresponde resolver el problema, castigando o dictando sentencia.
+- **Incluye:** pedidos o expectativas de que los jueces y fiscales actúen, y casos judiciales presentados como el camino de resolución.
+- **Deja afuera:** reformas judiciales que el Gobierno anuncia o impulsa (van al código 1 o 2), porque ahí quien actúa es el Gobierno o el Congreso y no los jueces.
+- **Ilustra [83]:** "Esperemos que la Justicia avance no solo sobre los posibles actos de sedición, sino también sobre quienes pudieran ser sus beneficiarios directos e indirectos de dichas acciones."
+
+## 5. Mercado y ciudadanos
+
+- **Definición:** el problema se resuelve por la acción descentralizada de empresas, consumidores y personas, una vez que el Estado deja de interferir.
+- **Incluye:** mecanismos de mercado (competencia, apertura comercial, inversión privada, creación de empleo en otros sectores) y la ciudadanía decidiendo por sí misma.
+- **Deja afuera:** medidas que el Gobierno toma para liberar al mercado (por ejemplo, desregular). La medida va al código 1, y este código aplica cuando el texto pone el peso de la solución en lo que hacen luego los privados.
+- **Ilustra [108]:** "...ahora el consumidor ahorra dinero al comprar el bien importado y ese dinero lo utilizará para comprar otros bienes, generando así puestos de trabajo en otro sector de la economía, el cual es más productivo y, por ende, podrá pagar mayores salarios."
+
+## 6. Aliados externos
+
+- **Definición:** un gobierno u organismo extranjero aparece como quien ayuda a resolver el problema o lo hace posible.
+- **Incluye:** Estados Unidos, el FMI y la Unión Europea cuando se les atribuye una ayuda concreta o una contribución a la solución.
+- **Deja afuera:** acuerdos comerciales que el discurso presenta como logro propio del Gobierno, sin que el socio externo sea quien resuelve.
+- **Ilustra [85]:** "...el gobierno de Donald Trump acudió en ayuda de nuestro país."
+
+## 7. Sin responsable asignado
+
+- **Definición:** el párrafo nombra un problema, pero no dice quién lo resuelve ni quién lo resolvió.
+- **Incluye:** descripciones del estado heredado o de la situación del país sin una acción asociada.
+- **Deja afuera:** párrafos donde, aunque el problema aparezca en pasado, la oración siguiente dentro del mismo párrafo ya nombra un actor que lo resuelve.
+- **Ilustra [37]:** "En materia de Capital Humano, teníamos una pobreza camuflada con controles de precios del 57%, con siete de cada diez chicos pobres, y una gran mayoría de egresados escolares que no sabían leer o escribir..."
+
+## Párrafos donde dudaría entre dos códigos
+
+- **[117]:** "Además, enviaremos al Congreso proyectos que barrerán con una montaña de cadenas regulatorias y darán rienda suelta a la inversión en industrias hoy muertas..." Dudo entre **Gobierno nacional**, que redacta y envía los proyectos, y **Congreso**, que tendría que aprobarlos. Según la regla, el que ejecuta la acción es el Gobierno y el Congreso quedaría como secundario. Pero el texto nombra al Congreso como destinatario, así que la decisión depende de si el equipo quiere un código para las tareas compartidas.
+- **[92]:** "Esta política de exterminar regulaciones no solo es una forma de restaurar el derecho de propiedad, sino que además libera rendimientos crecientes, los cuales son la base del crecimiento económico." Dudo entre **Gobierno nacional**, que desregula, y **Mercado y ciudadanos**, porque el crecimiento lo producen los rendimientos que se liberan. La frase asigna la acción al Gobierno y el resultado al mercado.
+- **[70]:** "Ahora solo falta que las provincias y los municipios hagan su parte, por lo cual hemos facilitado una herramienta para denunciar tasas excesivas, chequeándolo en una página." Dudo entre **Provincias y municipios**, a quienes se les reclama la parte que falta, y **Gobierno nacional**, que aporta la herramienta de denuncia. Lo usé como ejemplo del código 3 porque el reclamo es explícito, pero el párrafo también encaja en el código 1.
+
+Antes de usar los códigos conviene definir si se admite un código secundario por problema. Con esa opción, los tres casos de duda se resuelven con una asignación doble. Sin ella, hay que fijar el criterio de precedencia que describí al principio.

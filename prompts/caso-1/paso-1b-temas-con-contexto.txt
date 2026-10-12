@@ -1,7 +1,0 @@
-Estudiamos qué problemas públicos nombran los discursos presidenciales y a quién le asignan la responsabilidad de resolverlos.
-
-Listá los problemas públicos que nombra este discurso. Para cada uno indicá en qué párrafos aparece y copiá una frase textual. Buscá rótulos específicos: "caída del empleo industrial" sirve, "economía" es demasiado inespecífico.
-
-<discurso>
-[pegar discurso A con los párrafos numerados]
-</discurso>

@@ -1,0 +1,2 @@
+@continua caso-1/p1-anti
+Dame categorías para codificar el discurso.

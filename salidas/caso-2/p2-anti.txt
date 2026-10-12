@@ -1,0 +1,80 @@
+# Variables que aparecen en el material
+
+Distingo entre **atributos de los casos** (quién habla y en qué condiciones alquila) y **dimensiones temáticas** (lo que cuentan sobre la experiencia). Con 2 entrevistas y 1 grupo focal de 5 personas, esto sirve para armar un esquema de codificación, no para medir nada.
+
+## 1. Atributos de los participantes
+
+| Variable | Cómo aparece |
+|---|---|
+| Edad | Dato explícito: 34, 41, 23, 45, 68, 31 y 27 años |
+| Ocupación | Local comercial, conductor de app, estudiante, trabajadora de casas particulares, jubilada, administrativo, repartidor |
+| Composición del hogar | Sola, solo con hijos los fines de semana, compartido con amigos, en pareja, con hijos, con subinquilina |
+| Hijos / personas a cargo | Entrevista 2 y P2 |
+| Localización | CABA, conurbano, barrio o localidad anonimizados |
+| Género | No está declarado; lo infieren la entrevistadora y las marcas gramaticales |
+
+## 2. Condiciones del alquiler
+
+- **Tipo de unidad:** dos ambientes, tres ambientes, departamento compartido, pieza en hotel familiar, habitación subalquilada.
+- **Tipo de arrendador:** persona física que vive de la renta, inmobiliaria, vecino, dueño de hotel.
+- **Formalidad:** trato directo, contrato con inmobiliaria o alquiler sin contrato.
+- **Antigüedad en la vivienda:** solo en la entrevista 1 (tres años).
+- **Rol en el mercado:** P3 es inquilina y a la vez locadora, así que ocupa una posición ambivalente.
+
+## 3. Acceso a la vivienda
+
+- Duración y dificultad de la búsqueda ("un casting").
+- Requisitos de ingreso: garantía propietaria, recibos, depósito, comisión, seguro de caución.
+- Capital familiar para entrar: garantía de los padres (P1), préstamo del hermano (entrevista 2), la madre que también alquila (entrevista 1).
+- Motivo de la mudanza: la separación, en la entrevista 2.
+
+## 4. Aumentos
+
+- **Frecuencia:** cada cuatro meses por contrato, o discrecional.
+- **Mecanismo:** negociación por WhatsApp, mail con índice, decisión unilateral del vecino.
+- **Previsibilidad:** que se sepa cuándo viene y cuánto.
+- **Brecha con el ingreso:** "el sueldo no se mueve al mismo ritmo".
+- **Vivencia emocional:** "se me cierra el estómago".
+
+## 5. Relación con el locador
+
+- Cercanía o distancia: personal ("se porta bien") frente a impersonal ("no hay persona").
+- Respuesta ante reparaciones: el termotanque se arregla rápido, la humedad queda sin resolver.
+- Capacidad de reclamo: P2 dice que no puede reclamar justamente porque lo conoce.
+- Percepción de la situación del propietario: P3 y la entrevista 1 lo ven como alguien que vive de la renta.
+
+## 6. Estrategias de afrontamiento
+
+- **Recortes:** gimnasio, comida a domicilio, club de los hijos, vacaciones.
+- **Más ingreso:** horas extra, segundo trabajo, trabajo en app.
+- **Reducción del gasto compartido:** compartir vivienda, subalquilar, comprar en el mayorista con una vecina.
+- **Gestión planificada:** la planilla de P4.
+- **Gastos protegidos:** el gasto de los hijos es intocable.
+
+## 7. Redes y apoyo
+
+- Apoyo familiar, material (dinero, garantía) o emocional.
+- Con quién se habla del tema: el hermano sí, los amigos no ("nadie quiere ser el que no llega").
+
+## 8. Movilidad e inseguridad residencial
+
+- Costo de mudarse frente al costo de quedarse.
+- Imposibilidad de bajar de tamaño (por los hijos).
+- Fantasía de volver al lugar de origen.
+- Temor a ser desalojado o a que no renueven: la entrevista 1 ("¿adónde voy?"), P2 y P5.
+
+## 9. Valoraciones y expectativas
+
+- **Futuro:** acceso a la propiedad como deseo que no se ve posible, o resignación ("es lo que hay").
+- **Sentido de la vivienda:** "es mi casa, aunque no sea mía", "trabajar para el dueño".
+- **Normalización o minimización:** "no me quejo, hay gente que está peor".
+
+## Observaciones para el análisis
+
+- **El "problema principal" no es el mismo para todos.** Para quienes tienen contrato (entrevista 2) o trato directo, lo central son los aumentos y el ahorro de dinero. Para P2 y P5, que están en la informalidad, lo central es la **inseguridad de tenencia**: que los echen de un día para el otro.
+- **El grupo focal tiene un consenso inducido.** En el turno 21 la moderadora resume que "todos coinciden en que lo peor son los aumentos", cuando P2 ya había hablado de arbitrariedad y no de monto. Después P5 lo desmiente. Conviene tratar ese turno como un dato sobre la dinámica del grupo y no como un hallazgo.
+- **El tipo de arrendador y la formalidad están confundidos.** El vecino sin contrato, la dueña directa y la inmobiliaria cambian a la vez el trato, la previsibilidad y la capacidad de reclamo. Con tan pocos casos no se pueden separar sus efectos.
+- **Hay variables que casi no se observan.** Es el caso del ingreso o del monto del alquiler. Los entrevistados hablan de la carga relativa ("lo primero que pagamos"), pero nadie da cifras, así que no hay una variable cuantitativa utilizable.
+- **El material es sintético y muy chico.** Sirve para ensayar categorías, no para sacar conclusiones sobre quienes alquilan.
+
+Si querés, el siguiente paso puede ser pasar esto a un **libro de códigos** (definición, ejemplo textual con número de turno y criterio de inclusión para cada categoría). También puedo armar una matriz caso por variable para comparar a los siete participantes.

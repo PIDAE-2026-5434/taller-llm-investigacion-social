@@ -1,0 +1,33 @@
+## Párrafo [141]
+
+**1. ¿Qué problema nombra?**
+La falta de empleo genuino: "las atrocidades en materia de empleo", frente a "1,000,000 de puestos de trabajo reales" que no existen, y el empleo público como parche ("cosas inventadas en el sector público para tapar").
+
+**2. ¿Nombra a alguien que deba resolverlo?**
+No lo nombra como responsable de la solución. Aparecen dos actores, pero ninguno con ese rol:
+- "cavernícolas como ustedes": se los nombra como el **obstáculo** ("si no fuera por..."), no como quienes tienen que actuar.
+- "hiciéramos las cosas [...] como la hace Chile": una primera persona del plural en condicional y sin sujeto claro. La comparación con Chile (un país) sugiere un "nosotros" que es la Argentina en general, no el orador hablando como gobierno.
+
+**3. ¿Qué categoría corresponde y por qué descarto la más cercana?**
+Corresponde **"no asigna"**: es un diagnóstico que culpa a otros (los "cavernícolas", probablemente la oposición o los legisladores a quienes se dirige) sin decir quién resuelve ahora.
+La categoría más cercana es **"otros poderes del Estado"**, si se entiende que "ustedes" son legisladores y que el párrafo les pide, en forma implícita, que dejen de bloquear. La descarto porque no hay ningún pedido: el "ustedes" aparece solo como culpable. **"Gobierno nacional"** también queda descartada, porque "hiciéramos" no tiene un sujeto claro de gobierno y, según la regla, la primera persona ambigua no cuenta.
+
+Categoría: no asigna
+
+---
+
+## Párrafo [150]
+
+**1. ¿Qué problema nombra?**
+La baja productividad y las trabas al agro: "nuestros rindes en Chaco sean de 600 kilos de algodón por hectárea, cuando en Brasil son de 1.400", y "Brasil triplique su producción de soja usando semillas con tecnología argentina, hecha por empresas argentinas, que no se pueden vender en Argentina".
+
+**2. ¿Nombra a alguien que deba resolverlo?**
+Sí, pero a través de un instrumento de política: "el régimen de incentivo para medianas inversiones catalizará un torrente de bienes de capital y sistemas de riego". Además: "No podemos aceptar" / "Tampoco podemos permitir", donde el orador habla desde quien puede habilitar o prohibir (la venta de semillas es una cuestión regulatoria).
+
+**3. ¿Qué categoría corresponde y por qué descarto la más cercana?**
+Corresponde **"gobierno nacional"**: la solución que se presenta es una medida del Ejecutivo (el régimen de incentivo), y el "no podemos permitir" va asociado a una restricción que depende de la regulación estatal. En este contexto el orador habla como gobierno.
+La más cercana es **"sector privado"**, porque quienes van a invertir en bienes de capital y riego son, en los hechos, privados. La descarto porque el párrafo no les pide nada a los inversores ni los nombra: el sujeto que actúa es el régimen. Las "empresas argentinas" aparecen como perjudicadas, no como responsables de resolver. También descarto **"otros poderes del Estado"**: aunque un régimen así puede requerir una ley, el párrafo no le pide nada al Congreso.
+
+**Nota de duda:** es un caso de frontera. "No podemos aceptar" se parece a los "debemos" sin sujeto claro que la consigna manda anotar como ambiguos. Si se aplica la regla de forma estricta y se considera que el régimen es solo el contexto, el párrafo podría codificarse como ambiguo. Recomiendo marcarlo para revisión.
+
+Categoría: gobierno nacional

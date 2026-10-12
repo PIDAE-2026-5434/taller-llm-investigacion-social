@@ -1,0 +1,2 @@
+La respuesta de cada corrida, sin editar, con el nombre de su prompt. Ejemplo: 02-codificacion-v2--entrevista-3.txt.
+Las correcciones del equipo van en otro archivo: 02-codificacion-v2--entrevista-3-revisada.txt.

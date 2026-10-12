@@ -1,5 +1,0 @@
-¿Cuáles son los temas principales de este discurso?
-
-<discurso>
-[pegar discurso A]
-</discurso>

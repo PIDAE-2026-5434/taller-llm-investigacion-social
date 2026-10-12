@@ -1,5 +1,3 @@
-¿A quién le habla este discurso?
+¿Qué valores destaca este discurso?
 
-<discurso>
-[pegar el discurso con los párrafos numerados]
-</discurso>
+@material discursos/dia-de-la-bandera-2026.txt

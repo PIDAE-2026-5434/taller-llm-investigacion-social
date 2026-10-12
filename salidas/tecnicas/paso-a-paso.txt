@@ -1,13 +1,15 @@
-Párrafo A
-1. Problema: "las escuelas abran todos los días". El párrafo da a entender que hoy no abren todos los días.
-2. Responsable: "los gobernadores", a quienes se les pide que "ordenen sus cuentas".
-3. Corresponde "provincias y municipios". Descarto "gobierno nacional" porque quien habla le traslada la tarea a los gobernadores.
+**Párrafo [141]**
 
-Categoría: provincias y municipios
-
-Párrafo B
-1. Problema: "perdiendo jóvenes que se van a buscar futuro a otro lado".
-2. Responsable: no lo nombra. El sujeto de la oración es "el país" y no aparece un actor que deba resolverlo.
-3. Corresponde "no asigna". Descarto "gobierno nacional" porque el esquema excluye las menciones a "el país" en general.
+1. **Problema:** la falta de empleo real, que el texto llama "atrocidades en materia de empleo". Lo contrasta con lo que podría pasar: "la cordillera nos daría 1,000,000 de puestos de trabajo reales; no cosas inventadas en el sector público".
+2. **¿Nombra a alguien que deba resolverlo?** Casi no. "Ustedes" ("cavernícolas como ustedes") aparece solo como culpable de que no se haga. "Hiciéramos las cosas... como la hace Chile" es un condicional en primera persona del plural, sin sujeto claro: no dice si habla el gobierno, el Congreso o el país. No dice quién tiene que actuar ahora.
+3. **Categoría:** "no asigna". La más cercana es "otros poderes del Estado", porque "ustedes" podría apuntar a legisladores. La descarto porque a "ustedes" no se le pide ni se le asigna nada: es un insulto que lo señala como obstáculo, y las reglas dicen que un diagnóstico que culpa a otros sin decir quién resuelve va en "no asigna". Tampoco hay un "daremos" ni un "este gobierno" que lleve a "gobierno nacional".
 
 Categoría: no asigna
+
+**Párrafo [150]**
+
+1. **Problema:** la baja productividad agropecuaria y la imposibilidad de usar tecnología propia. Lo dice con estas palabras: "nuestros rindes en Chaco sean de 600 kilos de algodón por hectárea, cuando en Brasil son de 1.400", y "semillas con tecnología argentina, hecha por empresas argentinas, que no se pueden vender en Argentina".
+2. **¿Nombra a alguien que deba resolverlo?** Sí, de forma parcial. "El régimen de incentivo para medianas inversiones catalizará un torrente de bienes de capital y sistemas de riego" presenta una medida del Ejecutivo como la respuesta al problema. "No podemos aceptar" y "Tampoco podemos permitir" no tienen un sujeto claro.
+3. **Categoría:** "gobierno nacional". La más cercana es "sector privado", porque quienes van a invertir y producir son las empresas y los productores. La descarto porque el párrafo no les pide nada a ellos: el actor que actúa es el régimen de incentivo, que es una herramienta del gobierno. Los "podemos" solos habrían sido ambiguos, pero el régimen anunciado ancla la solución en el Ejecutivo. Tampoco corresponde "no asigna", porque sí hay una medida concreta que resuelve el problema.
+
+Categoría: gobierno nacional

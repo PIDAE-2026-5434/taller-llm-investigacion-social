@@ -1,0 +1,12 @@
+| Párrafo | Problema nombrado | Responsable | Cita textual |
+|---|---|---|---|
+| 100 | marco legal ilegítimo y corrupción entre políticos y empresarios | no asigna | "estamos frente a un marco legal ilegítimo" |
+| 101 | modelo empobrecedor que beneficia a corruptos y empresarios | gobierno nacional | "para este Gobierno la respuesta es no" |
+| 102 | beneficios para pocos perjudican a 48 millones | no asigna | "beneficiar a un puñado de personas perjudicando a casi 48 millones de argentinos" |
+| 103 | sobreprecio del acero por favores a empresarios | no asigna | "pagar la tonelada de tubo de acero 4000 dólares, cuando se paga 1400" |
+| 104 | neumáticos caros y amenaza de despidos | no asigna | "pagar los neumáticos tres o cuatro veces más caros" |
+| 105 | precios internos muy superiores a los importados | no asigna | "pagar una remera básica 50 dólares, cuando la importada cuesta 5" |
+| 106 | economía argentina extremadamente cerrada (dudoso) | no asigna | "Argentina es el país más cerrado del mundo por lejos para su nivel de PBI" |
+| 107 | mentiras sobre pérdida de empleo por apertura (dudoso) | no asigna | "Una de las grandes mentiras que nos han inculcado es que abrir la economía perderá puestos de trabajo" |
+| 110 | protección, prebenda y corrupción estatal | no asigna | "El problema con la protección, con la prebenda y la corrupción estatal, es que está mal" |
+| 111 | restricción de la libertad y corrupción | gobierno nacional | "nuestro planteo de apertura comercial se basa en un fundamento moral que señala que coartar la libertad está mal" |

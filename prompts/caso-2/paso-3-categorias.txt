@@ -1,6 +1,0 @@
-Proponé entre 5 y 7 categorías para codificar lo que dice I sobre su experiencia de alquilar. Para cada una incluí:
-- nombre corto
-- definición en una oración
-- un fragmento textual de I que la ilustre, con su número de turno
-
-Para los nombres usá en lo posible palabras de la entrevistada. Dejá afuera las categorías que solo se apoyan en palabras de E.

@@ -9,19 +9,23 @@ El cierre reúne los controles que aparecieron en las secciones anteriores, mues
 
 ## Checklist de validación
 
-Cada control figura con el error de la [sección 4](../errores/) que evita.
+Cada control figura con el error de la [sección 5](../errores/) que evita.
 
 | Momento | Control | Error que evita |
 | --- | --- | --- |
 | Antes de correr | El prompt tiene pregunta de investigación, categorías con inclusión y exclusión, y salida para la duda | Categorías demasiado generales |
 | Antes de correr | El material está delimitado y numerado | Citas inventadas o retocadas |
+| Antes de correr | El material está anonimizado y la herramienta no usa las conversaciones para entrenar | Ninguno: es un control de seguridad |
 | Antes de correr | La memoria personal está apagada y las instrucciones del proyecto están anotadas | Inconsistencia |
 | Antes de correr | Los textos largos se dividieron en tramos y el esquema se repite en cada uno | Pérdida de instrucciones en textos largos |
 | Antes de correr | El prompt se probó en 20 a 30 casos que el equipo ya había codificado | Lecturas sesgadas |
-| Al revisar la salida | Cada cita aparece textual y en la ubicación indicada | Citas inventadas o retocadas |
+| Al revisar la salida | Cada cita aparece textual y en la ubicación indicada, revisado a mano o con el script | Citas inventadas o retocadas |
+| Al revisar la salida | Los fragmentos cortos no dejan afuera la parte que decide la categoría | Recortes que cambian el sentido |
+| Al revisar la salida | Todos los códigos de la salida están en el esquema | Pérdida de instrucciones |
 | Al revisar la salida | Ninguna afirmación se apoya en datos que no están en el texto | Información externa |
 | Al revisar la salida | Los conteos se hicieron a mano o en una planilla | Conteos equivocados |
 | Al revisar la salida | Una muestra se corrió de nuevo en otra conversación y el resultado coincide | Inconsistencia |
+| Al revisar la salida | La salida se revisó antes de usarla en el paso siguiente o en una conversación nueva | Todos, porque los errores se arrastran |
 | Al revisar la salida | Se pidieron contraejemplos de la lectura del equipo | Complacencia |
 | Al revisar la salida | Los casos con ambigüedad media o alta los resolvió una persona | Seguridad sin respaldo |
 | Al revisar la salida | Una persona revisó ironías, habla coloquial y atribución de hablante | Lecturas sesgadas |
@@ -29,7 +33,7 @@ Cada control figura con el error de la [sección 4](../errores/) que evita.
 
 ## Registro de corridas
 
-El registro es una planilla con una fila por corrida. La que sigue es la del repositorio de este taller.
+El registro es una planilla con una fila por corrida. La que sigue es la del repositorio de este taller, con todas las corridas que se muestran en las secciones anteriores.
 
 <Registro />
 
@@ -51,17 +55,17 @@ El registro es una planilla con una fila por corrida. La que sigue es la del rep
 
 El ejercicio aplica la secuencia completa a un discurso corto, con material, pregunta y categorías ya definidos. Se resuelve después del taller, individual o en parejas, y lleva unos 30 minutos.
 
-- Material: [discurso por el Día del Maestro del 11 de septiembre de 2026](https://www.casarosada.gob.ar/informacion/discursos/51366-discurso-del-presidente-javier-milei-en-el-acto-por-el-dia-del-maestro-en-la-biblioteca-nacional-de-maestros-del-palacio-sarmiento), del corpus de Casa Rosada. Tiene 8 párrafos y alrededor de 1.200 palabras.
-- Pregunta: ¿a quién le habla el discurso en cada párrafo y qué conductas presenta como valiosas?
-- Categorías de destinatario: alumnos, docentes, familias, autoridades, país en general.
+- Material: [discurso en el acto por el Día de la Bandera del 20 de junio de 2026](https://www.casarosada.gob.ar/informacion/discursos/51294-discurso-del-presidente-javier-milei-en-el-acto-oficial-por-el-dia-de-la-bandera-2026-en-rosario), del corpus de Casa Rosada. Tiene 26 párrafos y está en `discursos/dia-de-la-bandera-2026.txt`, ya numerado.
+- Pregunta: ¿qué valores le atribuye el discurso a Belgrano y cuáles presenta como vigentes hoy?
+- Categorías de valor: libertad política, libertad económica, trabajo y producción, mérito, educación, propiedad, otro.
 
-1. Copiar el discurso a un archivo de texto y numerar los párrafos del 1 al 8.
-2. Codificar a mano los párrafos 1, 4 y 7, antes de usar el modelo. Anotar destinatario y conducta valorada.
-3. Correr el prompt mínimo y guardar la salida.
-4. Completar los dos espacios en blanco del prompt armado, correrlo y guardar la salida.
-5. Validar: buscar 3 citas en el original, comparar los párrafos 1, 4 y 7 con la codificación propia y contar a mano cuántos párrafos tienen más de un destinatario.
+1. Abrir el archivo del discurso. Los párrafos ya están numerados.
+2. Codificar a mano los párrafos 3, 17 y 23, antes de usar el modelo. Anotar valores y si se presentan como vigentes.
+3. Abrir una conversación nueva, correr el prompt mínimo y guardar la salida.
+4. Completar los dos espacios en blanco del prompt armado, correrlo en otra conversación nueva y guardar la salida.
+5. Validar: buscar 3 citas en el original, comparar los párrafos 3, 17 y 23 con la codificación propia y contar a mano cuántos párrafos tienen más de un valor.
 6. Cambiar una sola cosa del prompt, volver a correrlo y comparar las dos salidas.
-7. Completar la ficha del ejercicio.
+7. Completar la ficha del ejercicio y sumar las corridas a un registro propio.
 
 ### Prompt mínimo, para el paso 3
 
@@ -80,14 +84,14 @@ El ejercicio aplica la secuencia completa a un discurso corto, con material, pre
 | Qué escribí en restricciones y dudas | | |
 | Citas que encontré en el original, de 3 | | |
 | Coincidencias con mi codificación, de 3 | | |
-| Párrafos con más de un destinatario, según el modelo y según mi conteo | | |
+| Párrafos con más de un valor, según el modelo y según mi conteo | | |
 | Qué cambié entre versiones y por qué | | |
 
-Pista para el control: varios párrafos de este discurso se dirigen a más de un destinatario. Si la tabla del modelo asigna uno solo por párrafo, conviene revisar lo que se escribió en criterios.
+Pista para el control: buena parte del discurso narra hechos de 1812 y no le atribuye valores a nadie. Los párrafos 23 y 25 hablan del presente. Si la tabla del modelo encuentra valores vigentes en casi todos los párrafos, conviene revisar lo que se escribió en criterios.
 
 ## Fuentes
 
-- [Casa Rosada, Discursos](https://www.casarosada.gob.ar/informacion/discursos). Consultado el 6 de octubre de 2026.
+- [Casa Rosada, Discursos](https://www.casarosada.gob.ar/informacion/discursos). Corpus de 34 discursos de 2026.
 - [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/), licencia de los contenidos de Casa Rosada.
 - [Schulhoff et al., The Prompt Report: A Systematic Survey of Prompt Engineering Techniques](https://arxiv.org/abs/2406.06608), 2024.
 - [Törnberg, Best Practices for Text Annotation with Large Language Models](https://sociologica.unibo.it/article/view/19461), Sociologica 18(2), 67-85, 2024.

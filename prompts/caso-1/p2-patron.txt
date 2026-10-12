@@ -1,0 +1,8 @@
+@continua caso-1/p1-patron
+A partir de los problemas que listaste, proponé entre 5 y 7 códigos para clasificar a quién le asigna el discurso la responsabilidad de resolver cada problema. Para cada código incluí:
+- nombre corto
+- definición en una oración
+- qué incluye y qué deja afuera
+- un párrafo del discurso que lo ilustre, con su número
+
+Sumá un código para los párrafos que nombran un problema sin asignarle a nadie la solución. Al final, señalá dos o tres párrafos donde dudarías entre dos códigos.

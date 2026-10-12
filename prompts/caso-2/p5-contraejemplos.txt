@@ -1,0 +1,17 @@
+Nuestra lectura provisoria es esta: "Para quienes alquilan, lo que más pesa son los aumentos".
+
+Buscá en los tres materiales los fragmentos que contradicen o matizan esa lectura. Para cada uno indicá material, número de turno y hablante, copiá el fragmento y explicá en una oración qué matiza.
+
+Si no encontrás ninguno, decilo. La lectura la ajusta el equipo.
+
+<entrevista_1>
+@material entrevistas/entrevista-1.txt
+</entrevista_1>
+
+<entrevista_2>
+@material entrevistas/entrevista-2.txt
+</entrevista_2>
+
+<grupo_focal>
+@material entrevistas/grupo-focal.txt
+</grupo_focal>

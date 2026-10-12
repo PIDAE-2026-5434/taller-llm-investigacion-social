@@ -10,6 +10,6 @@ Para cada párrafo, antes de clasificar, respondé en orden:
 
 Después escribí la categoría en una línea aparte que empiece con "Categoría:".
 
-Párrafo A: "Necesitamos que los gobernadores ordenen sus cuentas para que las escuelas abran todos los días."
+@material discursos/apertura-sesiones-2026.txt 141-141
 
-Párrafo B: "El país no puede seguir perdiendo jóvenes que se van a buscar futuro a otro lado."
+@material discursos/apertura-sesiones-2026.txt 150-150

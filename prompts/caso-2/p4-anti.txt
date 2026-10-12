@@ -1,0 +1,13 @@
+¿En qué coinciden y en qué no los entrevistados?
+
+<entrevista_1>
+@material entrevistas/entrevista-1.txt
+</entrevista_1>
+
+<entrevista_2>
+@material entrevistas/entrevista-2.txt
+</entrevista_2>
+
+<grupo_focal>
+@material entrevistas/grupo-focal.txt
+</grupo_focal>

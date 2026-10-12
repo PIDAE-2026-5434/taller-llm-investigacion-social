@@ -1,0 +1,15 @@
+**[141]**
+
+1. **Problema:** la falta de empleo real. El párrafo habla de "puestos de trabajo reales", de "cosas inventadas en el sector público para tapar las atrocidades en materia de empleo" y de que la cordillera "nos daría 1,000,000" si se hicieran las cosas como en Chile.
+2. **¿Quién debe resolverlo?** No lo nombra. "Cavernícolas como ustedes" aparece como obstáculo, es decir, como culpable de que no se haga. "Hiciéramos las cosas" es una primera persona del plural condicional, sin un sujeto claro que deba actuar.
+3. **Categoría:** "no asigna". La más cercana es "otros poderes del Estado", porque "ustedes" probablemente apunta a los legisladores. La descarto porque no se les pide que hagan nada: se los nombra solo como culpables de que el problema persista. "Gobierno nacional" tampoco corresponde, porque "hiciéramos" es hipotético y no es un compromiso del Ejecutivo. Es el caso de un diagnóstico que culpa a otros sin decir quién resuelve ahora.
+
+Categoría: no asigna
+
+**[150]**
+
+1. **Problema:** la baja productividad agrícola y las trabas a la tecnología local. El párrafo dice "No podemos aceptar que nuestros rindes en Chaco sean de 600 kilos de algodón por hectárea, cuando en Brasil son de 1.400". Agrega que Brasil triplica su soja con "semillas con tecnología argentina, hecha por empresas argentinas, que no se pueden vender en Argentina".
+2. **¿Quién debe resolverlo?** No lo nombra con claridad. "No podemos aceptar" y "no podemos permitir" no tienen un sujeto definido. El "régimen de incentivo para medianas inversiones" es un instrumento que "catalizará" bienes de capital y riego, pero el párrafo no dice quién lo ejecuta ni quién debe actuar.
+3. **Categoría:** "no asigna". La más cercana es "gobierno nacional", porque el régimen de incentivo es presumiblemente una política del Ejecutivo. La descarto porque el párrafo no dice que el gobierno lo vaya a hacer. Los "podemos" son fórmulas sin sujeto claro, que se anotan como ambiguas. "Sector privado" tampoco corresponde, porque las empresas aparecen como las que generan la tecnología o como beneficiarias del régimen, y no se les pide ninguna acción.
+
+Categoría: no asigna

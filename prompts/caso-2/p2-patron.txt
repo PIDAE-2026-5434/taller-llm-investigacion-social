@@ -1,0 +1,33 @@
+#> Contexto
+Somos un equipo que estudia la experiencia de alquilar vivienda. La pregunta es: ¿cómo explican quienes alquilan las decisiones que toman para sostener el alquiler?
+
+#> Tarea
+Descomponé "sostener el alquiler" en dimensiones y cada dimensión en indicadores que se puedan reconocer en lo que dicen las personas entrevistadas.
+
+#> Criterios
+Entre 4 y 7 dimensiones. Para cada una:
+- nombre corto, en lo posible con palabras de quienes participan
+- definición en una oración
+- 2 a 4 indicadores: frases o conductas que la muestran
+- un ejemplo con material, número de turno y cita textual
+
+Si una dimensión solo se apoya en preguntas de E o de M, marcala como "viene de la guía".
+
+#> Formato de salida
+Una tabla con cinco columnas: dimensión, definición, indicadores, ejemplo, material y turno del ejemplo. Debajo, una lista de lo que no entra en ninguna dimensión.
+
+#> Restricciones
+Los ejemplos salen de turnos de participantes (I, P1 a P5), nunca de E o M. Citas textuales.
+
+#> Material
+<entrevista_1>
+@material entrevistas/entrevista-1.txt
+</entrevista_1>
+
+<entrevista_2>
+@material entrevistas/entrevista-2.txt
+</entrevista_2>
+
+<grupo_focal>
+@material entrevistas/grupo-focal.txt
+</grupo_focal>

@@ -1,0 +1,43 @@
+## Grilla de menciones
+
+| Participante | Recortar gastos | Sumar ingresos | Apoyo de otros | Quedarse o irse | Trato con quien cobra | Seguridad de quedarse |
+|---|---|---|---|---|---|---|
+| **Entrevista 1 I** | [14] "Dejé el gimnasio, ya no pido comida." | [14] "los fines de semana agarré unas horas más en el local." | sin mención | [16] "Miro avisos, hago la cuenta de la mudanza, del depósito nuevo, y cierro la computadora. Me sale más caro irme que quedarme."<br>[12] "si me tengo que ir, ¿adónde voy?" | [10] "Yo le contesto que es mucho, ella baja un poco y listo."<br>[12] "yo tampoco puedo decirle que no" y "Ella vive de ese alquiler, me lo dijo." (revisar: responde a "¿Sentís que se aprovecha?", que sugería la respuesta) | sin mención |
+| **Entrevista 2 I** | [10] "cocino todo, nada de pedir. Pero el gasto de los chicos no lo toco, eso no."<br>[10] "Saqué al más chico del club" | [10] "A la noche manejo para una aplicación, tres o cuatro días por semana." | [4] "le tuve que pedir plata a mi hermano, que todavía le estoy devolviendo."<br>[12] "Con mi hermano, que me banca. Con mis amigos no, no da." | [14] "A algo más chico no puedo por los chicos." y "volver a [CIUDAD DE ORIGEN], allá tengo a mis viejos y la casa es de ellos."<br>[2] "Si no, me iba a un monoambiente y listo." | [6] "Mandan un mail con el índice, el monto nuevo, y chau. No hay con quién hablar."<br>[8] "Cada cuatro meses, por contrato. Te digo la verdad, prefiero eso." | [16] "La incertidumbre no, porque tengo contrato." |
+| **Grupo focal P1** | sin mención | sin mención | [3] "Ellos ponen la garantía y la mitad de mi parte." y "Yo comparto con dos amigos, así que se divide." | sin mención | sin mención | sin mención |
+| **Grupo focal P2** | sin mención | [10] "Yo hago más horas. Tomé una casa más los sábados." | [10] "compro todo en el mayorista con una vecina, dividimos." | sin mención | [17] "A mí el vecino me aumenta cuando quiere. A veces avisa, a veces no."<br>[25] "no puedo reclamar nada" | [4] "si mañana me dice que me vaya, me tengo que ir."<br>[30] "Sin contrato estás en el aire." |
+| **Grupo focal P3** | sin mención | [5] "alquilo y a la vez le alquilo una pieza a una chica que estudia enfermería."<br>[11] "con eso pago la mitad." | sin mención | sin mención | [18] "Yo entiendo a los dueños también, eh. [...] Si no actualizan, pierden." | sin mención |
+| **Grupo focal P4** | [9] "Nosotros hicimos una planilla con todos los gastos. Tachamos todo lo que no es alquiler, comida y transporte. Las vacaciones las tachamos hace dos años." | sin mención | sin mención | sin mención | sin mención | sin mención |
+| **Grupo focal P5** | sin mención | [13] "Laburo más horas con la moto." | sin mención | sin mención | sin mención | [29] "en el hotel te pueden sacar cuando quieren. A un compañero lo sacaron de un día para el otro"<br>[32] "Para nosotros es lo mismo. Es lo que más pesa." |
+
+## Menciones que no entran en ninguna dimensión
+
+**Entrevista 1 I**
+- [6] "Garantía propietaria de familiar directo [...] Yo garantía propietaria no tengo, mi vieja alquila. Al final entré con un seguro de caución": requisitos para entrar, no apoyo recibido.
+- [8] "se me rompió el termotanque y a los dos días tenía uno nuevo": reparación.
+- [18] "Me imagino acá, o en otro igual. Igual estoy bien, eh. Es mi casa, aunque no sea mía.": expectativa a futuro, sin cuentas ni decisión sobre mudarse.
+
+**Entrevista 2 I**
+- [4] "Necesitaba algo cerca del colegio de los chicos": motivo de la elección de la vivienda al entrar.
+- [6] "Una vez pedí que me arreglaran una humedad y me dijeron que lo tenía que ver el propietario": reparación.
+- [8] "Lo que me mata es que el sueldo no se mueve al mismo ritmo.": queja sin decisión asociada.
+- [16] "el 1 pago el alquiler y recién ahí empiezo a ver qué queda. Es como trabajar para el dueño.": queja sobre el peso del alquiler.
+- [18] "Me gustaría tener algo propio para dejarles a los chicos, pero hoy no lo veo.": expectativa a futuro.
+
+**Grupo focal**
+- P4 [2] "Una maravilla." (revisar: ironía) y "es lo primero que pagamos y lo que más pesa": queja sin decisión asociada.
+- P5 [6] "Alquilo una pieza en un hotel. Baño compartido. Es lo que hay.": descripción de la situación.
+- P1 [8] "Uno va zafando como puede.": sin contenido concreto.
+- P4 [15] "Cada vez que llega el mail de la inmobiliaria se me cierra el estómago.": reacción emocional, sin decisión.
+- P1 [16] "uno de mis compañeros casi se vuelve a su provincia": evaluación de mudarse de un tercero, no del participante.
+- P4 [19] "El dueño pierde un poco, uno se queda en la calle.": opinión en la discusión con P3.
+- P3 [20] "Tampoco tanto, querido. Yo también alquilo, sé lo que es.": opinión en la discusión con P4.
+- P1 [22] "Sí." y P4 [23] "Sí, sí." (revisar): acuerdo con la síntesis de la moderadora ("todos coinciden en que lo peor de alquilar son los aumentos"), que sugería la respuesta. P5 [29] lo contradice después.
+- P4 [26] "Con la inmobiliaria es un trámite. No hay persona.": descripción del vínculo sin relación con pagar o con seguir en la vivienda.
+- P3 [27] "Mi dueña es una señora como yo. Nos llevamos bien, nos ayudamos.": descripción del vínculo.
+- P1 [31] "Bueno, pero eso es otra cosa, es más grave.": valoración sobre lo dicho por P5 y P2, sin mención sobre la propia situación.
+
+**Notas de codificación**
+- P2 [10] ("compro todo en el mayorista con una vecina, dividimos") quedó en "apoyo de otros" por tratarse de una compra compartida; no se codificó como recorte de gastos porque no nombra un consumo que se deja.
+- E1 [12] también podría leerse en "quedarse o irse"; se citó ahí solo la parte sobre no tener adónde ir.
+- Las preguntas de E1 [13] y E2 [9] ("¿Tuviste que cambiar algo...?", "¿Hiciste cambios...?") presuponen cambios, pero las respuestas aportan decisiones concretas y no se marcaron.

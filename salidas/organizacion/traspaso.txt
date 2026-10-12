@@ -1,0 +1,17 @@
+**Nota de traspaso**
+
+**1. Qué estamos haciendo**
+Clasificamos párrafos de un discurso presidencial según a quién le asignan resolver los problemas públicos que nombran, con seis códigos (gobierno nacional, otros poderes del Estado, provincias y municipios, sector privado, ciudadanía, no asigna). Ya hicimos los párrafos 112 a 131, con una tabla de código, cita textual, ambigüedad y segundo código posible.
+
+**2. Decisiones tomadas**
+- "Debemos" o "necesitamos" sin sujeto claro van a "no asigna", con "gobierno nacional" como segundo código. Es lo que indica el esquema.
+- Si un párrafo mezcla asignaciones explícitas y ambiguas (121, 124), el código sigue la parte explícita, que es la única clara.
+- Proyectos que el Ejecutivo anuncia que va a enviar al Congreso (117) van a "gobierno nacional", porque no le pide nada al Congreso.
+- Las respuestas a interrupciones llevan fila. Si no nombran un problema público, van a "ninguno".
+
+**3. Casos dudosos**
+- Alta: 120, 122 y 123, por "debemos" o "necesitamos" sin sujeto.
+- Media: 113, 114, 115, 121, 124, 128 y 130.
+
+**4. Próximo paso**
+Pegar los párrafos siguientes y clasificarlos con el mismo esquema y formato de tabla. Antes, el equipo tiene que decidir si los "debemos" sin sujeto quedan en "no asigna" o se infiere al Ejecutivo.

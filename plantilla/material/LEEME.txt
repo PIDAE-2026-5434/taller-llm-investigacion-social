@@ -1,0 +1,2 @@
+Acá van los textos a analizar, uno por archivo, con párrafos o turnos numerados.
+Antes de copiar una entrevista acá, reemplazar nombres, lugares y otros datos que identifican por marcas como [NOMBRE] o [BARRIO].

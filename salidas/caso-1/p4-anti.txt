@@ -1,0 +1,47 @@
+Las diferencias son bastante claras, aunque comparten algunos rasgos de fondo. Por las referencias (Davos, "Toto", el acuerdo con la UE y con EE. UU., el año 2026), parecen ser dos intervenciones del presidente Javier Milei. El Discurso A sería un discurso de apertura de sesiones ante el Congreso, y el B una exposición o clase de tono académico-militante. Lo planteo como inferencia a partir del texto, no como dato confirmado.
+
+## 1. Género y función
+
+- **Discurso A:** es un discurso institucional y programático. Anuncia una agenda legislativa para el año: reforma del Código Civil y Comercial, del Código Penal, del Código Aduanero, del sistema electoral y del financiamiento de partidos, reforma tributaria, juicio por jurados, reforma educativa, defensa y política exterior. Habla desde el lugar de quien gobierna y le propone un rumbo al Congreso.
+- **Discurso B:** es una exposición explicativa y polémica. Se dedica a argumentar sobre teoría económica (ahorro vs. consumo, la "mano invisible", los rendimientos crecientes, la contradicción supuesta en Adam Smith, la crítica a la teoría neoclásica) y a defender una política puntual (la apertura comercial y la crítica a los "prebendarios"). Habla como docente y como polemista, más que como gobernante que anuncia medidas.
+
+## 2. Orientación temporal
+
+- **A** mira hacia adelante: "dedicaremos este año", "enviaremos al Congreso", "reformaremos", "ratificaremos". Es un discurso de futuro, de "arquitectura nueva" para 50 años.
+- **B** mira hacia atrás y hacia el presente para justificar: explica qué hizo mal el gobierno anterior (déficit, emisión, inflación), qué se logró (déficit cero, base monetaria estable) y qué debería pasar (inflación en cero hacia agosto). Incluye una predicción, aunque con cláusulas de salvedad ("puede pasar un salto en el petróleo...").
+
+## 3. Tipo de argumentación
+
+- **A** se apoya sobre todo en afirmaciones morales y de diagnóstico general: "la moral como política de Estado", "falsos consensos", "100 años de decadencia", "la propiedad es la piedra angular". Los datos son pocos y puntuales (65% del país con sistema acusatorio, 24 aviones F-16). Las citas de autoridad son breves y ornamentales (Tocqueville, Ayn Rand, Gary Becker).
+- **B** tiene un desarrollo argumental mucho más largo y técnico: reconstruye una discusión de historia del pensamiento económico (Mandeville, Hume, Rousseau, Smith, los neoclásicos, Hoppe, Sowell), usa conceptos formales (concavidad, óptimo de Pareto, teorema de separación, money overhang) y recurre a ejemplos (Robinson Crusoe, dos bienes idénticos con distinto precio, la tonelada de tubos a 1.400 vs. 4.000 dólares). Hay una lógica de "demostración", incluso con la frase "lo que acabo de demostrar".
+
+## 4. Registro y tono
+
+- **A** es, en su mayor parte, un registro solemne y formal (párrafos 112 a 127, 129 y 130), con frases de cierre épicas: "la hora de la visión", "naciones libres y naciones sometidas". La excepción son los párrafos 120, 128 y 131, donde el texto se rompe con interpelaciones directas a opositores presentes ("Eso es lo que hacen ustedes", "Dale, andá a defender a Cuba...", "Usted no puede ser tan, tan ignorante"). Parecen reacciones improvisadas a interrupciones en el recinto. Hay entonces un contraste interno entre lo escrito y lo improvisado.
+- **B** es coloquial y oral de punta a punta: muletillas ("o sea", "digamos", "a ver"), lunfardo ("guita", "laburo", "quilombos", "manyaba"), humor, preguntas retóricas al público ("¿ustedes están a favor del robo?"). Es el registro de una charla en vivo, con digresiones y marcha atrás ("perdón, mensual").
+
+## 5. Cómo se nombra a los adversarios
+
+Este es probablemente el contraste más notorio, y lo que más importa si estás analizando discurso.
+
+- **A** apunta a adversarios más institucionales o colectivos: "los gobiernos pasados", "falsos consensos", "mafia" política, "comunistas", "quienes solo saben vivir de lo ajeno", el "adoctrinamiento" escolar. En los pasajes improvisados, la agresión se vuelve personal e interpelativa (apuntando a una persona concreta, "esta señora").
+- **B** usa una carga de descalificación mucho más densa y sostenida, y con léxico más crudo: "cavernícolas", "mandriles", "salvajes", "bestias", "caraduras", "chorros", "delincuentes", "manga de delincuentes", "hijos de remil puta". Además hace una atribución de motivos psicológicos a todo un colectivo ("el motivo que mueve a los socialistas es la envidia", "hasta que sientan vergüenza de ser zurdos"). En B el insulto es parte estructural de la exposición, no una excepción.
+
+## 6. Quién es la audiencia implícita
+
+- **A** le habla a varias audiencias a la vez: el Congreso (a quien le pide leyes), la ciudadanía ("los argentinos de a pie") y los mercados y países socios (acuerdos comerciales, alineamiento geopolítico).
+- **B** le habla a un público al que quiere persuadir o formar: "ustedes", a quienes les hace preguntas, les pide que imaginen situaciones y los incluye en el razonamiento. Hay un tono de "clase magistral" y de militancia a la vez.
+
+## 7. Qué tienen en común
+
+- **Marco moral:** en ambos la economía se presenta como un problema moral ("inmoral", "justo", "moral occidental", "pecado capital").
+- **Eje central:** propiedad privada, libertad, reducción del Estado y apertura comercial.
+- **Figura del enemigo:** una "casta" o red de políticos, empresarios "prebendarios", periodistas y sindicalistas que viven "del que produce". Ambos usan el término "mafia" o "chorros" y la fórmula de que la justicia social es "vivir del trabajo ajeno" (A) o "envidia más retórica" (B).
+- **Relato de origen:** un pasado reciente de desastre (déficit, emisión, crisis) del que se salió gracias a las políticas propias.
+- **Idea de decadencia histórica:** A habla de un país que fue próspero a fines del siglo XIX y cayó; B, de 80 años de "industria infante" y proteccionismo.
+
+## Resumen en una línea
+
+El Discurso A es un discurso de gobierno, que mira hacia adelante, con un marco moral y de reformas institucionales, formal pero con estallidos de confrontación improvisada. El B es una exposición doctrinaria, que argumenta sobre teoría económica y justifica lo hecho, en un registro oral y coloquial donde la descalificación del adversario es constante.
+
+Si me decís para qué lo estás comparando (análisis de discurso, un trabajo de clase, clasificación de lenguaje agresivo, etc.), puedo hacer una comparación más enfocada, por ejemplo con conteo de recursos retóricos, tipos de apelaciones o categorías de lenguaje ofensivo.

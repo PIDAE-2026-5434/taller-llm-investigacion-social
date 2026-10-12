@@ -7,10 +7,11 @@ import Ficha from '../../components/Ficha.astro';
 import Eleccion from '../../components/Eleccion.astro';
 import Cadena from '../../components/Cadena.astro';
 import Iteracion from '../../components/Iteracion.astro';
+import Archivo from '../../components/Archivo.astro';
 
 Las cinco técnicas se combinan entre sí. Cada una resuelve un problema distinto de la tarea.
 
-Todos los ejemplos usan la misma tarea: clasificar párrafos de discursos presidenciales según a quién le asignan la responsabilidad de resolver un problema. Los párrafos de muestra son inventados.
+Todos los ejemplos usan la misma tarea: clasificar párrafos de discursos presidenciales según a quién le asignan la responsabilidad de resolver un problema. Los párrafos son del discurso de apertura de sesiones ordinarias de 2026, y cada prompt tiene en la pestaña Salida la respuesta que devolvió.
 
 ## Cuál usar
 
@@ -56,7 +57,11 @@ Todos los ejemplos usan la misma tarea: clasificar párrafos de discursos presid
   ]}
 />
 
+El párrafo elegido es difícil a propósito. Culpa a "cavernícolas como ustedes" de que falte empleo, pero no le pide a nadie que lo resuelva.
+
 <Prompt id="tecnicas/zero-shot" />
+
+La respuesta fue "otros poderes del Estado". El modelo tomó a los culpables como responsables de la solución, que es justo lo que el equipo quiere separar.
 
 ## Few-shot
 
@@ -74,7 +79,11 @@ Todos los ejemplos usan la misma tarea: clasificar párrafos de discursos presid
   ]}
 />
 
+Los tres ejemplos son párrafos reales del mismo discurso, de otras partes del texto.
+
 <Prompt id="tecnicas/few-shot" />
+
+La respuesta volvió a ser "otros poderes del Estado". Ninguno de los ejemplos mostraba un párrafo que culpa sin pedir, así que no había de dónde sacar el criterio. Un ejemplo de ese tipo, o una definición que lo diga, es lo que falta.
 
 ## Razonamiento paso a paso
 
@@ -94,9 +103,11 @@ También se lo llama chain of thought o CoT.
   ]}
 />
 
-El prompt trae dos párrafos. En el primero el modelo asigna una categoría y en el segundo concluye que el párrafo no asigna responsable. La pestaña Salida muestra una corrida guardada.
+El prompt trae el párrafo 141 y el 150, y suma el esquema completo, con lo que incluye y excluye cada categoría. El 150 anuncia una medida ("el régimen de incentivo para medianas inversiones") y dice "no podemos aceptar" sin aclarar quién.
 
-<Prompt id="tecnicas/paso-a-paso" />
+<Prompt id="tecnicas/paso-a-paso" variantes rotuloSalida="Salida" />
+
+Con las definiciones y los pasos a la vista, el párrafo 141 pasó a "no asigna", con el motivo escrito: "a 'ustedes' no se le pide ni se le asigna nada". El 150 es un caso de frontera. La pestaña Otra corrida es una corrida anterior del mismo prompt, con el mismo modelo, en otra conversación nueva. Ahí el 150 quedó en "no asigna". En la que muestra la pestaña Salida quedó en "gobierno nacional". La sección 4 compara la respuesta de tres modelos para este mismo prompt.
 
 ## Descomposición y salida estructurada
 
@@ -114,17 +125,27 @@ El prompt trae dos párrafos. En el primero el modelo asigna una categoría y en
   ]}
 />
 
+Los tres pasos trabajan sobre los párrafos 37 a 56 del discurso, donde el orador describe lo que recibió en 2023 y lo que hizo en el primer año.
+
 ### Paso 1. Extraer
 
 <Prompt id="tecnicas/descomposicion-1" />
+
+Antes de seguir, se revisó la lista con el script que busca cada cita en el original. De 18 citas, una no aparecía textual: en el párrafo 49 el modelo quitó "de una vez por todas" del medio de la frase. La lista corregida a mano es la que entra en el paso 2.
+
+<Archivo archivo="salidas/tecnicas/descomposicion-1-verificacion.md" rotulo="Verificación" />
 
 ### Paso 2. Clasificar
 
 <Prompt id="tecnicas/descomposicion-2" />
 
+La tabla tiene un error que viene del paso 1 y que el script no detecta, porque la cita es textual. En el párrafo 55 el pasaje extraído fue "los conocimientos básicos de lecto comprensión que las últimas décadas se perdieron". Quedó afuera el comienzo de la oración: "Por eso también estamos reformando la educación inicial y primaria". Con ese recorte, el paso 2 clasificó "no asigna". Con la oración completa correspondía "gobierno nacional". Revisar si un recorte deja afuera lo que importa es trabajo de una persona.
+
 ### Paso 3. Sintetizar
 
 <Prompt id="tecnicas/descomposicion-3" />
+
+La primera línea dice que el discurso le asigna "la mayor parte de las responsabilidades" al gobierno nacional, y en la misma línea aclara que son 4 de 18 pasajes. La síntesis repite la fórmula que traía la consigna ("la mayor parte") aunque los números digan otra cosa. Conviene leer cada afirmación contra la tabla y no quedarse con la primera frase.
 
 ### Cómo se encadenan en una app de chat
 
@@ -151,18 +172,9 @@ El prompt trae dos párrafos. En el primero el modelo asigna una categoría y en
 - Los tres mensajes pueden ir en la misma conversación. Cuando el equipo corrigió una salida, pega la versión corregida y le indica al modelo que trabaje sobre esa.
 - Con textos largos conviene abrir una conversación nueva para cada paso y pegar solo lo necesario.
 - La salida de cada paso se guarda en un archivo o en una planilla. Ese archivo es el registro del análisis.
+- La versión corregida se guarda aparte, con otro nombre, como `descomposicion-1-revisada.txt`. Así queda a la vista qué cambió el equipo.
 
-<details>
-<summary>Opción: correr la cadena sin copiar y pegar</summary>
-
-La misma cadena se puede automatizar de dos formas. En las dos, las revisiones entre pasos las sigue haciendo una persona.
-
-- Un script que llama al modelo por API, lee cada prompt de `prompts/` y guarda cada respuesta en `salidas/`.
-- Un agente, como Claude Code o Codex, que trabaja sobre la carpeta del proyecto, corre los pasos en orden y se detiene después de cada uno para que el equipo revise.
-
-Conviene pasar a una de estas opciones cuando el mismo análisis se repite sobre muchos documentos.
-
-</details>
+Cuando la cadena se repite sobre muchos documentos, se puede automatizar. Las opciones están en la [capa 3 de la sección 1](../organizar-el-trabajo/#capa-3-automatización).
 
 ## Iteración
 
@@ -177,13 +189,15 @@ Conviene pasar a una de estas opciones cuando el mismo análisis se repite sobre
   ]}
 />
 
+Las corridas de esta sección muestran una iteración completa sobre el párrafo 141.
+
 <Iteracion
-  v1="Clasificá el párrafo según a quién le asigna la responsabilidad de resolver el problema."
-  problema='Clasifica como "provincias y municipios" los párrafos que hablan de "el interior" como región, sin nombrar a ningún gobierno.'
-  v2='Agrega la definición. "Provincias y municipios" son los gobernadores, las legislaturas provinciales y los intendentes nombrados como responsables. Las menciones a "el interior" como región van a "no asigna".'
+  v1="Clasificá el párrafo según a quién le asigna la responsabilidad de resolver el problema, con la lista de categorías. Es el prompt zero-shot."
+  problema='Clasifica como "otros poderes del Estado" un párrafo que culpa a los legisladores sin pedirles nada. Con ejemplos, sin una definición que trate ese caso, pasa lo mismo.'
+  v2='Agrega el esquema con lo que incluye y excluye cada categoría. "No asigna" incluye los diagnósticos que culpan a otros sin decir quién resuelve. Pide los pasos antes de la categoría. Con esos cambios el párrafo 141 pasa a "no asigna".'
 />
 
-Así entró en el esquema de códigos la exclusión de "el interior". El esquema completo está en la [sección 3](../componentes-del-prompt/).
+El esquema completo, con esas exclusiones, está en la [sección 4](../componentes-del-prompt/).
 
 ## Cómo se combinan
 
@@ -191,15 +205,17 @@ Un mismo prompt suele reunir varias técnicas. El que sigue es el paso 2 de la d
 
 <Prompt id="tecnicas/combinado" anotado />
 
+Sobre estos párrafos, las categorías salieron iguales que en el paso 2 simple, incluido el error del párrafo 55, porque los dos usan la misma lista del paso 1. Lo que cambió es que el razonamiento queda escrito, y eso permite ver dónde se equivocó. Sumar técnicas no corrige un pasaje mal recortado.
+
 La iteración no figura en el prompt. Aparece cuando, después de cada ajuste, se lo vuelve a correr sobre los mismos casos.
 
 ## Variación entre corridas
 
 Los modelos de lenguaje no son determinísticos. El mismo prompt puede dar respuestas distintas en dos corridas. La variación se acota, y lo que queda se mide y se informa.
 
-- Correr cada prompt de 3 a 5 veces en conversaciones nuevas y anotar en qué cambian las salidas.
+- Correr cada prompt de 3 a 5 veces en conversaciones nuevas y anotar en qué cambian las salidas. El párrafo 150 de esta sección cambió de categoría entre dos corridas del mismo modelo.
 - Fijar herramienta, modelo y nivel de esfuerzo, y anotarlos en el registro de corridas, que puede ser una planilla.
 - Pedir un formato de salida fijo, como la línea que empieza con "Categoría:".
 - Dejar a la vista el contexto con el que trabaja el modelo. Las instrucciones y los archivos de un proyecto ayudan y se anotan en el registro. La memoria personal de la app conviene apagarla, porque cambia las respuestas sin figurar en el prompt.
-- En las apps de chat, el control disponible es el nivel de esfuerzo, que se explica en la sección 3. Por API, algunos modelos permiten además bajar la aleatoriedad con el parámetro de temperatura.
+- En las apps de chat, el control disponible es el nivel de esfuerzo, que se explica en la sección 4. Por API, algunos modelos permiten además bajar la aleatoriedad con el parámetro de temperatura.
 - Si un caso recibe categorías distintas en corridas distintas, lo resuelve una persona y se anota como ambiguo.

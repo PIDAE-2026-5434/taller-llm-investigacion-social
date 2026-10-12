@@ -1,0 +1,49 @@
+Tu pedido admite más de una lectura, así que antes de clasificar aclaro cuál usé. Tomé "responsable" en dos sentidos a la vez:
+
+- **A quién se le atribuye el problema** (culpa o causa).
+- **Quién debe hacer algo** (acción o promesa).
+
+Los tipos de responsable son:
+
+- **Gobierno actual:** "nosotros", el Ejecutivo.
+- **Gobiernos y política pasados:** lo que el texto llama "falsos consensos", "casta", etc.
+- **Adversario interpelado:** una persona o sector a quien el orador se dirige directamente.
+- **Actor sectorial:** medios, Justicia, empresas, fútbol.
+- **Sin agente claro:** el sujeto es difuso o abstracto.
+
+| § | Responsable del problema | Responsable de la acción | Observaciones |
+|---|---|---|---|
+| 112 | — | Gobierno actual | Encuadre general ("quienes gobernamos"). |
+| 113 | — | Gobierno actual / Estado | Se plantea como tarea ("nos corresponde"). |
+| 114 | Gobiernos pasados ("falsos consensos", 100 años) | Gobierno actual + Congreso | El mandato se atribuye a la sociedad y al Congreso. |
+| 115 | — | Gobierno actual / "Nación" | Sin culpables; es un párrafo programático. |
+| 116 | Gobiernos pasados; "quienes solo saben vivir de lo ajeno" | Gobierno actual (reformas legales) | El segundo grupo no está identificado. |
+| 117 | Sin agente claro ("cadenas regulatorias") | Gobierno actual (proyectos al Congreso) | |
+| 118 | "Recaudador de turno" (Estado, de forma genérica) | Gobierno actual (impuestos, acuerdos, Código Aduanero) | |
+| 119 | "Prejuicios ambientalistas" (sector no nombrado) | Gobierno actual | |
+| 120 | La política / interlocutores directos ("ustedes") | Sin acción asignada | Interpelación a un adversario presente. |
+| 121 | Actores sectoriales: medios, funcionarios, empresas, fútbol, política y Justicia | Gobierno actual (reforma electoral, de partidos y judicial) | Es el párrafo que más responsables distribuye. |
+| 122 | El "Estado presente" como modelo | Gobierno actual (reducir el Estado) | La causa es un modelo, no una persona. |
+| 123 | — | Gobierno actual + Congreso (Código Penal) | |
+| 124 | Sin agente claro (lentitud de la Justicia) | Gobierno actual; también provincias y jueces (jurados) | Se presentan logros propios. |
+| 125 | Sin agente claro (caída educativa; "adoctrinamiento" implícito) | Gobierno actual | |
+| 126 | Sin agente claro ("amenazas externas") | Gobierno actual | |
+| 127 | Gobiernos pasados (implícito, "décadas de postergación") | Gobierno actual | Hay un agradecimiento a un diputado, que no implica responsabilidad. |
+| 128 | Adversario interpelado y regímenes comunistas | Gobierno actual (reformas) | Interpelación directa, con una cifra de 150 millones de muertes que habría que verificar. |
+| 129 | Sin agente claro ("cooperación global sin brújula moral") | Naciones, en términos generales | Es diagnóstico geopolítico. |
+| 130 | Gobiernos pasados (implícito en "esto no nos puede volver a pasar") | "Nosotros" colectivo | |
+| 131 | Adversaria interpelada ("esta señora") | Sin acción asignada | Interpelación personal, con tono de descalificación. |
+
+**Resumen**
+
+- **Gobierno actual:** es el sujeto de la acción en casi todos los párrafos (112 a 119 y 121 a 128).
+- **Gobiernos pasados:** son la causa explícita en 114 y 116, e implícita en 127 y 130.
+- **Adversarios interpelados:** aparecen en 120, 128 y 131. Son los únicos párrafos donde el responsable es una persona o sector presente en la sala.
+- **Actores sectoriales:** solo se nombran en 121.
+- **Sin agente claro:** el problema queda sin responsable en 117, 122, 124, 125, 126 y 129.
+
+**Algunas decisiones de criterio**
+
+- Cuando el texto dice "gobiernos pasados" sin nombrar a nadie, lo traté como una categoría genérica y no lo asigné a una gestión o partido concreto.
+- Los dichos sobre "ignorancia", "mafia" o "comunistas asesinos" son atribuciones del orador, no hechos establecidos. Los clasifiqué como responsables según el texto, sin validar la acusación.
+- Si querías otra cosa por "responsable", puedo rehacer la tabla con ese criterio. Por ejemplo, el sujeto gramatical de cada párrafo, quién enuncia, o quién es el destinatario.

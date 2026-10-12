@@ -1,5 +1,5 @@
-Copiá textualmente todos los pasajes del discurso que nombran un problema público. Indicá el número de párrafo de cada uno.
+Copiá textualmente todos los pasajes del discurso que nombran un problema público. Indicá el número de párrafo de cada uno. Si un párrafo no nombra ninguno, no lo incluyas.
 
 <discurso>
-[pegar el discurso con los párrafos numerados]
+@material discursos/apertura-sesiones-2026.txt 37-56
 </discurso>

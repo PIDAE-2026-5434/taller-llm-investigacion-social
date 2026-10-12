@@ -1,0 +1,19 @@
+### Párrafo [141]
+
+1. **Problema:** El párrafo nombra la falta de empleo real. Cita: "la cordillera nos daría 1,000,000 de puestos de trabajo reales" y "para tapar las atrocidades en materia de empleo".
+
+2. **¿Quién debe resolverlo?** No lo nombra. La solución aparece en una hipótesis ("si no fuera por cavernícolas como ustedes, e hiciéramos las cosas... como la hace Chile"). Ese "hiciéramos" es condicional y no compromete una acción del Ejecutivo. "Ustedes" aparece como culpable, no como destinatario de un pedido. El párrafo sólo critica el empleo público inventado por "el sector público" sin decir quién lo corrige ahora.
+
+3. **Categoría y descarte:** "no asigna". La más cercana era "gobierno nacional", por la primera persona plural "hiciéramos", pero es una suposición contrafáctica y no un compromiso de gobierno. "Ciudadanía" también era tentadora por el "ustedes", aunque aquí funciona como insulto y no como pedido de acción.
+
+Categoría: no asigna
+
+### Párrafo [150]
+
+1. **Problemas:** El párrafo nombra dos problemas. Uno es la baja productividad agrícola: "nuestros rindes en Chaco sean de 600 kilos de algodón por hectárea, cuando en Brasil son de 1.400". El otro es la restricción comercial de semillas: "Brasil triplique su producción de soja usando semillas con tecnología argentina... que no se pueden vender en Argentina".
+
+2. **¿Quién debe resolverlo?** No lo nombra con claridad. "El régimen de incentivo para medianas inversiones catalizará un torrente de bienes de capital" describe un efecto, sin decir quién lo administra ni quién invierte. Las frases "No podemos aceptar" y "Tampoco podemos permitir" tienen un "podemos" sin sujeto claro. No queda explícito si quien habla actúa como gobierno o como otro actor, así que se anota como ambiguo.
+
+3. **Categoría y descarte:** "ambiguo". La más cercana era "gobierno nacional", por el "podemos" en primera persona plural y porque el régimen de incentivo suele ser una política estatal. La descarto porque el párrafo no le asigna a ningún organismo del Ejecutivo la solución de forma explícita. "Sector privado" también era tentadora, porque la solución descripta es la inversión, pero el párrafo no dice quién invierte.
+
+Categoría: ambiguo

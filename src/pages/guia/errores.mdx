@@ -2,18 +2,19 @@
 layout: ../../layouts/Guia.astro
 ---
 
-Los nueve errores de la tabla aparecen con cualquier modelo y se detectan revisando la salida contra el texto original.
+Los diez errores de la tabla aparecen con cualquier modelo y se detectan revisando la salida contra el texto original. La última columna señala dónde se ve cada uno en las salidas guardadas de este taller.
 
-| Error | Cómo se ve | Qué hacer |
-| --- | --- | --- |
-| Citas inventadas o retocadas | Una frase entre comillas que no está en el texto, o que está con otras palabras | Pedir cita textual con ubicación y buscar cada una en el original |
-| Categorías demasiado generales | "Economía", "sociedad", "futuro" | Dar la pregunta de investigación, el nivel de detalle y la cantidad de categorías |
-| Seguridad sin respaldo | El mismo tono firme en respuestas correctas e incorrectas | Pedir evidencia y nivel de ambigüedad, y revisar aunque la respuesta suene segura |
-| Complacencia | Confirma la hipótesis que el prompt sugiere | Redactar sin anticipar el resultado y pedir contraejemplos |
-| Inconsistencia | El mismo párrafo recibe códigos distintos en dos corridas o en dos documentos | Repetir una muestra en una conversación nueva y comparar. Fijar definiciones y ejemplos |
-| Conteos equivocados | Informa 12 apariciones y son 9 | Pedir la lista de pasajes y contar a mano o en una planilla |
-| Pérdida de instrucciones en textos largos | Respeta el formato al principio y después lo abandona, o saltea la parte media del texto | Trabajar por tramos y repetir las instrucciones clave al final del prompt |
-| Información externa | Agrega datos sobre el orador o la época que no están en el texto | Indicar que use solo el material pegado y pedir ubicación de cada afirmación |
-| Lecturas sesgadas | Interpreta peor la ironía, el habla coloquial y los usos locales | Revisar con más cuidado el material informal o regional y sumar ejemplos propios |
+| Error | Cómo se ve | Qué hacer | En este taller |
+| --- | --- | --- | --- |
+| Citas inventadas o retocadas | Una frase entre comillas que no está en el texto, o que está con otras palabras | Pedir cita textual con ubicación y buscar cada una en el original, a mano o con un script | En la [descomposición](../tecnicas/#paso-1-extraer) el modelo quitó "de una vez por todas" del medio de una cita. En la [comparación sin criterios](../caso-1/#paso-4-comparación-entre-dos-discursos) citó "naciones libres y naciones sometidas" donde el texto dice "las naciones libres y las naciones sometidas" |
+| Recortes que cambian el sentido | La cita es textual, pero deja afuera la parte que decide la categoría | Pedir el párrafo completo o revisar los fragmentos cortos contra su oración | En el [paso 2 de la descomposición](../tecnicas/#paso-2-clasificar) el recorte del párrafo 55 dejó afuera "estamos reformando la educación" y la categoría salió mal |
+| Categorías demasiado generales | "Economía", "sociedad", "futuro" | Dar la pregunta de investigación, el nivel de detalle y la cantidad de categorías | La [primera detección de temas](../caso-1/#paso-1-detección-de-temas) devolvió rótulos como "Política económica y modelo de crecimiento" |
+| Seguridad sin respaldo | El mismo tono firme en respuestas correctas e incorrectas | Pedir evidencia y nivel de ambigüedad, y revisar aunque la respuesta suene segura | Las dos corridas del párrafo 150 en la [sección 3](../tecnicas/#razonamiento-paso-a-paso) dan categorías distintas con la misma seguridad |
+| Complacencia | Confirma lo que el prompt sugiere | Redactar sin anticipar el resultado y pedir contraejemplos | La [síntesis de la descomposición](../tecnicas/#paso-3-sintetizar) repite "la mayor parte" que traía la consigna, aunque son 4 pasajes de 18 |
+| Inconsistencia | El mismo párrafo recibe códigos distintos en dos corridas o en dos documentos | Repetir una muestra en una conversación nueva y comparar. Fijar definiciones y ejemplos | El párrafo 150 cambió de categoría entre dos corridas del mismo modelo |
+| Conteos equivocados | Informa 12 apariciones y son 9 | Pedir la lista de pasajes y contar a mano o en una planilla | La comparación del Caso 1 informa cada cantidad junto a la lista de párrafos, para poder contarla de nuevo |
+| Pérdida de instrucciones | Respeta el formato al principio y después lo abandona, saltea la parte media del texto o usa categorías que no estaban | Trabajar por tramos, repetir las instrucciones clave al final y revisar que cada código esté en el esquema | En la [comparación de modelos](../componentes-del-prompt/#tres-modelos-con-el-mismo-prompt), el modelo chico respondió "ambiguo", que no es una categoría del esquema |
+| Información externa | Agrega datos o juicios que no están en el texto | Indicar que use solo el material pegado y pedir ubicación de cada afirmación | En la [codificación sin criterios](../caso-1/#paso-3-codificación-de-una-submuestra) el modelo agregó sobre una cifra del discurso que "habría que verificar" |
+| Lecturas sesgadas | Interpreta peor la ironía, el habla coloquial y los usos locales | Revisar con más cuidado el material informal o regional y sumar ejemplos propios | La grilla del [Caso 2](../caso-2/) marca para revisar el "Una maravilla" irónico del grupo focal y un turno que responde a una pregunta que ya traía la respuesta |
 
-El [checklist de la sección 7](../cierre/) ordena estos controles según el momento del análisis.
+El [checklist de la sección 8](../cierre/) ordena estos controles según el momento del análisis.

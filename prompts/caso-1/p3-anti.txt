@@ -1,0 +1,3 @@
+Clasificá estos párrafos según quién es el responsable.
+
+@material discursos/apertura-sesiones-2026.txt 112-131

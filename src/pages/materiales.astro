@@ -5,21 +5,37 @@ import { listar, leer, csv } from '../lib/archivos.js';
 import { sitio, enRepo, rutaSeccion } from '../lib/sitio.js';
 
 const grupos = [
+  { carpeta: 'prompts/organizacion/', titulo: 'Organizar el trabajo', seccion: 'organizar-el-trabajo' },
   { carpeta: 'prompts/tecnicas/', titulo: 'Técnicas', seccion: 'tecnicas' },
   { carpeta: 'prompts/componentes/', titulo: 'Componentes del prompt', seccion: 'componentes-del-prompt' },
   { carpeta: 'prompts/caso-1/', titulo: 'Caso 1: análisis de discurso', seccion: 'caso-1' },
-  { carpeta: 'prompts/caso-2/', titulo: 'Caso 2: análisis cualitativo', seccion: 'caso-2' },
+  { carpeta: 'prompts/caso-2/', titulo: 'Caso 2: entrevistas y grupo focal', seccion: 'caso-2' },
   { carpeta: 'prompts/ejercicio/', titulo: 'Ejercicio', seccion: 'cierre' },
 ].map((g) => ({ ...g, archivos: listar(g.carpeta) }));
 
 const salidas = new Set(listar('salidas/'));
 const tieneSalida = (archivo) => salidas.has(archivo.replace(/^prompts\//, 'salidas/'));
 
-const fuentes = csv(leer('discursos/fuentes.csv') ?? '').filas.map((f) => ({
-  ...f,
-  bajado: leer(`discursos/${f.id}.txt`) !== null,
-}));
-const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
+// Título, fecha y enlace salen del encabezado de cada discurso preparado.
+const fuentes = csv(leer('discursos/fuentes.csv') ?? '').filas.map((f) => {
+  const archivo = `discursos/${f.nombre}.txt`;
+  const texto = leer(archivo) ?? '';
+  const dato = (re) => texto.match(re)?.[1]?.trim() ?? '';
+  return {
+    ...f,
+    archivo,
+    titulo: dato(/^# (?!Fecha|Fuente|Casa)(.+)$/m),
+    fecha: dato(/^# Fecha: (.+)$/m),
+    url: dato(/^# Fuente: (.+)$/m),
+  };
+});
+const otros = [
+  ...listar('esquemas/').map((a) => [a, 'Esquema de códigos']),
+  ...listar('entrevistas/').map((a) => [a, 'Material sintético, escrito para el taller']),
+  ...listar('skills/').map((a) => [a, 'Skill del Caso 2']),
+  ...listar('plantilla/').map((a) => [a, 'Plantilla de carpeta de proyecto']),
+];
+const informes = listar('salidas/').filter((a) => /\.(md|csv)$/.test(a));
 ---
 
 <Base titulo="Materiales" descripcion="Prompts, esquemas, discursos, salidas y registro del taller, como archivos.">
@@ -48,8 +64,9 @@ const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
         <h2>Prompts</h2>
         <p>
           Dentro de un archivo de prompt, las líneas que empiezan con <code>#&gt;</code> son anotaciones para el sitio
-          y no forman parte del prompt. La línea <code>@esquema responsable</code> se reemplaza por el esquema de códigos.
-          El botón Copiar de cada página entrega el prompt ya armado.
+          y no forman parte del prompt. Las líneas <code>@esquema</code>, <code>@material</code> y <code>@salida</code>{' '}
+          se reemplazan por el esquema, el texto o la salida anterior, y <code>@continua</code> indica que el mensaje va
+          en la misma conversación que otro prompt. El botón Copiar de cada página entrega el prompt ya armado.
         </p>
         {
           grupos.map((g) => (
@@ -69,13 +86,13 @@ const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
           ))
         }
 
-        <h2>Esquemas y entrevistas</h2>
+        <h2>Esquemas, entrevistas, skill y plantilla</h2>
         <ul class="lista-materiales">
           {
-            otros.map((a) => (
+            otros.map(([a, tipo]) => (
               <li>
                 <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
-                <span>{a.startsWith('esquemas/') ? 'Esquema de códigos' : 'Entrevista sintética, inventada'}</span>
+                <span>{tipo}</span>
               </li>
             ))
           }
@@ -83,8 +100,9 @@ const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
 
         <h2>Discursos</h2>
         <p>
-          Los discursos salen del sitio de Casa Rosada. La lista de fuentes está en <code>discursos/fuentes.csv</code> y
-          el comando <code>npm run discursos</code> baja cada texto y numera sus párrafos.
+          Los discursos salen del sitio de Casa Rosada, que los publica con licencia Creative Commons Reconocimiento 2.5
+          Argentina. El corpus completo, con 34 discursos, es <code>discursos/discursos.csv</code>. Los que usa el taller están listados en <code>discursos/fuentes.csv</code>, y el comando{' '}
+          <code>npm run discursos</code> los guarda como texto con los párrafos numerados.
         </p>
         <ul class="lista-materiales">
           {
@@ -94,8 +112,21 @@ const otros = [...listar('esquemas/'), ...listar('entrevistas/')];
                   <a href={f.url}>{f.titulo}</a> ({f.fecha})
                 </span>
                 <span>
-                  {f.uso}. {f.bajado ? `Texto en discursos/${f.id}.txt` : 'Texto todavía sin bajar'}
+                  {f.uso}. <span class="mono">{enRepo(f.archivo) ? <a href={enRepo(f.archivo)}>{f.archivo}</a> : f.archivo}</span>
                 </span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2>Informes y planillas de salida</h2>
+        <p>Verificaciones de citas hechas con <code>scripts/verificar_citas.mjs</code> y la planilla que generó la skill.</p>
+        <ul class="lista-materiales">
+          {
+            informes.map((a) => (
+              <li>
+                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                <span>{a.endsWith('.csv') ? 'Planilla' : 'Verificación de citas'}</span>
               </li>
             ))
           }

@@ -6,12 +6,12 @@ Clasificá cada pasaje numerado según a quién le asigna la responsabilidad de 
 #> Few-shot
 Ejemplos:
 
-Pasaje: "Necesitamos que los gobernadores ordenen sus cuentas para que las escuelas abran todos los días."
-Razonamiento: nombra un problema (escuelas que no abren) y un actor que debe resolverlo (los gobernadores).
+Pasaje: "Ahora solo falta que las provincias y los municipios hagan su parte, por lo cual hemos facilitado una herramienta para denunciar tasas excesivas, chequeándolo en una página."
+Razonamiento: nombra un problema (tasas excesivas) y un actor que debe resolverlo (las provincias y los municipios).
 Categoría: provincias y municipios
 
-Pasaje: "Todos sabemos que hay rutas que llevan décadas sin arreglarse."
-Razonamiento: nombra un problema (rutas sin arreglar) y ningún actor que deba resolverlo.
+Pasaje: "Nuestras fronteras eran un colador, lo que servía como caldo de cultivo perfecto para que el narcotráfico irrumpiera en nuestra sociedad, tal como sucedió en Rosario."
+Razonamiento: nombra un problema (fronteras sin control y narcotráfico) y lo ubica en el pasado, sin decir quién lo resuelve.
 Categoría: no asigna
 
 #> Razonamiento paso a paso
@@ -22,5 +22,5 @@ Al final devolvé una tabla con tres columnas: número de párrafo, categoría, 
 
 #> Descomposición
 <pasajes>
-[pegar la lista de pasajes del paso 1, ya revisada]
+@salida tecnicas/descomposicion-1-revisada
 </pasajes>
