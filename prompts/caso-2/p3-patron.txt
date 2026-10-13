@@ -2,25 +2,25 @@
 Armá una grilla de menciones con las dimensiones que siguen.
 
 #> Criterios
-@esquema dimensiones-alquiler
+@esquema dimensiones-ia
 
 #> Formato de salida
-Una tabla con una fila por participante (Entrevista 1 I, Entrevista 2 I, Grupo focal P1 a P5) y una columna por dimensión.
-En cada celda escribí "sin mención" o los turnos donde aparece, cada uno con una cita textual breve. Si la mención es irónica o responde a una pregunta que sugería la respuesta, agregá "(revisar)".
+Una tabla con una fila por participante (DOC, EST, y E1 a E6 del grupo focal) y una columna por dimensión.
+En cada celda escribí "sin mención" o los turnos donde aparece, cada uno con una cita textual breve. Si la mención responde a una pregunta que sugería la respuesta, agregá "(revisar)".
 Debajo de la tabla, listá las menciones que no entran en ninguna dimensión.
 
 #> Restricciones
 Codificá solo turnos de participantes. No resumas: citá. "Sin mención" es una respuesta válida.
 
 #> Material
-<entrevista_1>
-@material entrevistas/entrevista-1.txt
-</entrevista_1>
+<entrevista_docente>
+@material entrevistas/oina-entrevista-docente.txt
+</entrevista_docente>
 
-<entrevista_2>
-@material entrevistas/entrevista-2.txt
-</entrevista_2>
+<entrevista_estudiante>
+@material entrevistas/oina-entrevista-estudiante.txt
+</entrevista_estudiante>
 
 <grupo_focal>
-@material entrevistas/grupo-focal.txt
+@material entrevistas/oina-grupo-focal.txt
 </grupo_focal>

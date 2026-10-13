@@ -1034,3 +1034,9 @@ details > * + * {
     padding-left: 12px;
   }
 }
+.salida-md td {
+  min-width: 180px;
+}
+.salida-md td:first-child {
+  min-width: 90px;
+}

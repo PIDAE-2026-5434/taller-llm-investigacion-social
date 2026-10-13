@@ -31,7 +31,7 @@ const fuentes = csv(leer('discursos/fuentes.csv') ?? '').filas.map((f) => {
 });
 const otros = [
   ...listar('esquemas/').map((a) => [a, 'Esquema de códigos']),
-  ...listar('entrevistas/').map((a) => [a, 'Material sintético, escrito para el taller']),
+  ...listar('entrevistas/').map((a) => [a, a.endsWith('.csv') ? 'Planilla de fuentes' : 'Corpus FOUBA (CONICET), CC BY-NC-SA 2.5']),
   ...listar('skills/').map((a) => [a, 'Skill del Caso 2']),
   ...listar('plantilla/').map((a) => [a, 'Plantilla de carpeta de proyecto']),
 ];

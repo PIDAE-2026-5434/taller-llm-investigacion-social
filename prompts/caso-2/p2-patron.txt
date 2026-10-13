@@ -1,8 +1,8 @@
 #> Contexto
-Somos un equipo que estudia la experiencia de alquilar vivienda. La pregunta es: ¿cómo explican quienes alquilan las decisiones que toman para sostener el alquiler?
+Estudiamos qué lugar le dan docentes y estudiantes de 5.º año de Odontología a la IA generativa en la formación clínica, y dónde ponen sus límites. Tenemos una entrevista a una docente, una entrevista a una estudiante y un grupo focal con seis estudiantes de la misma materia.
 
 #> Tarea
-Descomponé "sostener el alquiler" en dimensiones y cada dimensión en indicadores que se puedan reconocer en lo que dicen las personas entrevistadas.
+Descomponé "uso de la IA generativa en la formación clínica" en dimensiones y cada dimensión en indicadores que se puedan reconocer en lo que dicen las personas entrevistadas.
 
 #> Criterios
 Entre 4 y 7 dimensiones. Para cada una:
@@ -11,23 +11,23 @@ Entre 4 y 7 dimensiones. Para cada una:
 - 2 a 4 indicadores: frases o conductas que la muestran
 - un ejemplo con material, número de turno y cita textual
 
-Si una dimensión solo se apoya en preguntas de E o de M, marcala como "viene de la guía".
+Si una dimensión solo repite un eje de la guía de entrevista o se apoya solo en preguntas de ENT o MOD, marcala como "viene de la guía".
 
 #> Formato de salida
 Una tabla con cinco columnas: dimensión, definición, indicadores, ejemplo, material y turno del ejemplo. Debajo, una lista de lo que no entra en ninguna dimensión.
 
 #> Restricciones
-Los ejemplos salen de turnos de participantes (I, P1 a P5), nunca de E o M. Citas textuales.
+Los ejemplos salen de turnos de participantes (DOC, EST, E1 a E6), nunca de ENT o MOD. Citas textuales.
 
 #> Material
-<entrevista_1>
-@material entrevistas/entrevista-1.txt
-</entrevista_1>
+<entrevista_docente>
+@material entrevistas/oina-entrevista-docente.txt
+</entrevista_docente>
 
-<entrevista_2>
-@material entrevistas/entrevista-2.txt
-</entrevista_2>
+<entrevista_estudiante>
+@material entrevistas/oina-entrevista-estudiante.txt
+</entrevista_estudiante>
 
 <grupo_focal>
-@material entrevistas/grupo-focal.txt
+@material entrevistas/oina-grupo-focal.txt
 </grupo_focal>

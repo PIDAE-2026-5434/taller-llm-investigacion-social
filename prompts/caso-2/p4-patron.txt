@@ -1,38 +1,39 @@
 #> Contexto
-Estudiamos cómo explican quienes alquilan las decisiones que toman para sostener el alquiler. Tenemos dos entrevistas y un grupo focal, y una grilla de menciones ya revisada.
+Estudiamos qué lugar le dan docentes y estudiantes de 5.º año de Odontología a la IA generativa en la formación clínica, y dónde ponen sus límites. Tenemos una entrevista a una docente, una entrevista a una estudiante y un grupo focal con seis estudiantes de la misma materia. La grilla de menciones ya está revisada.
 
 #> Tarea
 Para cada dimensión de la grilla, decidí si hay consenso, diferencia o tensión.
 
 #> Criterios
-- Consenso: participantes de al menos dos materiales distintos dicen lo mismo y nadie dice lo contrario.
-- Diferencia: participantes distintos sostienen posiciones distintas.
+- Consenso: lo dicen la docente, la estudiante entrevistada y la mayoría de quienes hablan del tema en el grupo focal, y nadie dice lo contrario.
+- Presente en todos los materiales: aparece en los tres, pero no alcanza para consenso.
+- Diferencia: participantes distintos sostienen posiciones distintas. Prestá atención a lo que separa a la docente de los estudiantes.
 - Tensión: una misma persona sostiene dos cosas que tiran para lados opuestos.
-- Acuerdo inducido: en el grupo focal, un "sí" que responde a una pregunta de M que ya traía la respuesta. No cuenta como consenso.
-- Voz minoritaria: una posición que sostiene una sola persona y que nadie retoma o que el grupo descarta.
+- Acuerdo inducido: en el grupo focal, un acuerdo que responde a una pregunta de MOD que ya traía la respuesta. No cuenta como consenso.
+- EST y E1 son la misma persona. Contala una sola vez.
 
-@esquema dimensiones-alquiler
+@esquema dimensiones-ia
 
 #> Formato de salida
-Una tabla con cuatro columnas: dimensión, resultado (consenso, diferencia, tensión o sin datos suficientes), turnos que lo respaldan con material y número, y una oración de explicación. Una dimensión puede tener más de un resultado.
+Una tabla con cuatro columnas: dimensión, resultado (consenso, presente en todos, diferencia, tensión o sin datos suficientes), turnos que lo respaldan con material y número, y una oración de explicación. Una dimensión puede tener más de un resultado.
 Después, una lista aparte de acuerdos inducidos y voces minoritarias.
 
 #> Restricciones
-Cada resultado se apoya en turnos citados. Si una dimensión tiene menciones de un solo material, escribí "sin datos suficientes". No generalices a personas que alquilan en general: el material son tres registros.
+Cada resultado se apoya en turnos citados. No generalices más allá de esta materia: el material son tres registros de una misma cátedra.
 
 #> Material
 <grilla>
 @salida caso-2/p3-patron
 </grilla>
 
-<entrevista_1>
-@material entrevistas/entrevista-1.txt
-</entrevista_1>
+<entrevista_docente>
+@material entrevistas/oina-entrevista-docente.txt
+</entrevista_docente>
 
-<entrevista_2>
-@material entrevistas/entrevista-2.txt
-</entrevista_2>
+<entrevista_estudiante>
+@material entrevistas/oina-entrevista-estudiante.txt
+</entrevista_estudiante>
 
 <grupo_focal>
-@material entrevistas/grupo-focal.txt
+@material entrevistas/oina-grupo-focal.txt
 </grupo_focal>

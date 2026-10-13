@@ -1,57 +1,65 @@
-Armé la grilla con las seis dimensiones de `dimensiones-alquiler.csv`: 27 menciones en total. Corrí `verificar_citas.py` sobre las tres transcripciones y las 27 citas aparecen textuales en el turno indicado. Las transcripciones tienen los datos identificatorios reemplazados por marcas entre corchetes, así que seguí sin preguntar por anonimización. Quien entrevista o modera no se codificó.
+Armé la grilla con las 7 dimensiones de `dimensiones-ia.csv` sobre las tres transcripciones. Quedaron **77 menciones**. Corrí `verificar_citas.py` y las 77 citas aparecen textuales en el turno indicado. Los materiales no traen nombres propios ni datos que identifiquen a nadie, así que seguí sin consultar por anonimización.
+
+Dos aclaraciones sobre los hablantes:
+- Quien entrevista o modera (ENT, MOD) no se codificó.
+- La estudiante de la entrevista (EST) es la misma persona que E1 del grupo focal, según el encabezado de los archivos. La puse en una sola fila, con los turnos de cada material por separado.
 
 ## Matriz resumida
 
-Los números son turnos.
+Los números son turnos. "ent." es la entrevista a estudiante y "GF" el grupo focal.
 
-| Participante | recortar gastos | sumar ingresos | apoyo de otros | quedarse o irse | trato con quien cobra | seguridad de quedarse |
-|---|---|---|---|---|---|---|
-| entrevista-1, I | 14 | 14 | sin mención | 16 | 10, 12 | sin mención |
-| entrevista-2, I | 10 | 10 | 4, 12 | 14 | 6, 8 | 16 |
-| grupo-focal, P1 | sin mención | sin mención | 3 | sin mención | sin mención | sin mención |
-| grupo-focal, P2 | sin mención | 10 | 10 | sin mención | 17, 25 | 4, 30 |
-| grupo-focal, P3 | sin mención | 5, 11 | sin mención | sin mención | 18 | sin mención |
-| grupo-focal, P4 | 9 | sin mención | sin mención | sin mención | sin mención | sin mención |
-| grupo-focal, P5 | sin mención | 13 | sin mención | sin mención | sin mención | 29, 32 |
+| Participante | tipo de uso | criterio frente a la respuesta | lectura del paciente | frontera con la clínica | responsabilidad ante el paciente | trayectoria | visibilidad del uso |
+|---|---|---|---|---|---|---|---|
+| DOC (entrevista docente) | 4, 8, 14, 24 | 6, 8, 10, 18, 20, 22, 30 | 14, 16 | 12 | 26 | 4, 6, 10 | 24 |
+| EST / E1 | ent. 4, 10, 12, 16, 22, 30; GF 9, 15, 21, 27 | ent. 6, 8, 20; GF 3, 9 | ent. 10, 12, 14, 24; GF 15 | ent. 14, 18, 28; GF 36 | ent. 28; GF 31 | ent. 4, 6, 22, 26, 30; GF 27 | ent. 16; GF 21 |
+| E2 (GF) | 14, 34, 37 | 6 | sin mención | 24 | sin mención | 14, 34 | sin mención |
+| E3 (GF) | 26 | sin mención | 16 | 26 | sin mención | sin mención | sin mención |
+| E4 (GF) | 11 | 4, 11 | sin mención | sin mención | sin mención | 20 | 20 |
+| E5 (GF) | sin mención | 8 | 17 | 23, 30 | 30 | sin mención | sin mención |
+| E6 (GF) | sin mención | 5, 12 | 18 | sin mención | sin mención | 28 | sin mención |
 
 ## Menciones por dimensión
 
 | Dimensión | Menciones |
 |---|---|
-| recortar gastos | 3 |
-| sumar ingresos | 6 |
-| apoyo de otros | 4 |
-| quedarse o irse | 2 |
-| trato con quien cobra | 7 |
-| seguridad de quedarse | 5 |
-| **Total** | **27** |
+| tipo de uso | 19 |
+| criterio frente a la respuesta | 18 |
+| trayectoria | 13 |
+| lectura del paciente | 10 |
+| frontera con la clínica | 9 |
+| responsabilidad ante el paciente | 4 |
+| visibilidad del uso | 4 |
+| **Total** | **77** |
 
 ## Menciones que no entran en ninguna dimensión
 
-- **entrevista-1 [4]**: la búsqueda de departamento antes de entrar (cuatro meses mirando avisos, filas para ver). Es anterior a la vivienda actual, no una evaluación de mudarse.
-- **entrevista-1 [6]**: los requisitos para entrar (garantía propietaria que no tiene, seguro de caución). No hay apoyo de otros, porque dice que no tiene garantía familiar.
-- **entrevista-1 [8]**: la dueña que cambió el termotanque. Es una reparación, que la dimensión *trato con quien cobra* excluye.
-- **entrevista-2 [2]**: vive solo y necesita la tercera pieza por sus hijos. Es un motivo de elección de la vivienda actual, que *quedarse o irse* excluye.
-- **entrevista-2 [8]**: "el sueldo no se mueve al mismo ritmo". Es una queja sin decisión asociada.
-- **entrevista-2 [16]**: "el 1 pago el alquiler y recién ahí empiezo a ver qué queda". Es una queja sobre el peso del alquiler, sin una decisión asociada.
-- **grupo-focal [2]**: P4 dice que el alquiler es "lo primero que pagamos y lo que más pesa" y que no ahorran nada. Es una queja sin decisión asociada.
-- **grupo-focal [15]**: P4 cuenta que cuando llega el mail de la inmobiliaria "se me cierra el estómago". No describe cómo se fija el aumento ni qué hace.
-- **grupo-focal [16]**: P1 cuenta que un compañero casi se vuelve a su provincia. Habla de otra persona, no de P1.
-- **grupo-focal [19] y [20]**: P4 y P3 discuten si el dueño pierde más o menos que el inquilino. Es una opinión sobre los propietarios, sin una decisión asociada.
-- **grupo-focal [26] y [27]**: P4 ("con la inmobiliaria es un trámite") y P3 ("mi dueña es una señora como yo") describen el vínculo con quien cobra, sin relacionarlo con pagar ni con seguir en la vivienda.
-- **grupo-focal [22] y [23]**: P1 y P4 contestan "Sí" a la frase de la moderadora ("todos coinciden en que lo peor son los aumentos"). No sumé una dimensión, porque no aportan contenido propio. Ese "todos coinciden" lo formuló la moderadora, y la grilla no lo respalda: en [29] P5 lo rechaza.
+- **oina-entrevista-docente [28], DOC:** la IA como "asistente del juicio clínico, nunca el de reemplazo". Es un lugar general, sin marcar momentos, así que no entra en frontera con la clínica.
+- **oina-entrevista-estudiante [32], EST:** la IA como "gran compañera para pensar el caso", en la frase de cierre.
+- **oina-grupo-focal [2], E3:** la recomendación del caso "es correcta desde el protocolo". Evalúa el caso, pero no cuenta cómo decide.
+- **oina-grupo-focal [32], E4:** la "parte humana, de contención" que la IA no toca. Es una afirmación general.
+- **oina-grupo-focal [35], E6:** pide que se siga insistiendo en el juicio clínico. Es una propuesta, no un criterio.
+- **oina-grupo-focal [38], E3; [39], E4; [40], E5; [41], E6:** frases de la ronda de cierre ("Lo estándar en pediatría muchas veces no existe", "La contención del chico no la da ninguna máquina", "El paciente te necesita entero, presente", "No soltar nunca el criterio propio"). Son afirmaciones generales, sin situación ni momento.
 
 ## Dudas
 
-- **entrevista-1 [12]**: "si me tengo que ir, ¿adónde voy?" podría ir también en *quedarse o irse*, porque explica por qué no puede irse. Lo dejé solo en *trato con quien cobra*, por el "no poder decirle que no".
-- **entrevista-1 [14]**: "ya no pido comida" y las horas extra del local fueron a dos dimensiones distintas, *recortar gastos* y *sumar ingresos*, en filas separadas.
-- **entrevista-2 [2]**: "si no, me iba a un monoambiente" roza el "no poder achicar" de *quedarse o irse*. Lo traté como motivo de elección de la vivienda y lo dejé afuera. El no poder achicar sí está codificado en [14].
-- **entrevista-2 [16]**: "La incertidumbre no, porque tengo contrato" lo codifiqué como *seguridad de quedarse* (el contrato como protección), aunque la persona menciona la inseguridad para descartarla.
-- **grupo-focal [5]**: P3 subalquila una pieza. Lo codifiqué como *sumar ingresos* (subalquilar). Duda con *apoyo de otros*, que excluye la ayuda que la persona da a otros y también incluye compartir la vivienda.
-- **grupo-focal [10]**: P2 compra en el mayorista con una vecina y "dividimos". Lo codifiqué como *apoyo de otros* (compras compartidas). Podría sumarse a *recortar gastos*, pero no cuenta ningún gasto que haya dejado de hacer.
-- **grupo-focal [25]**: P2 dice "por eso no hay contrato... no puedo reclamar nada". Lo codifiqué como *trato con quien cobra* (no poder reclamar). También roza *seguridad de quedarse*, que ya está codificada en [4] y [30].
-- **grupo-focal [29]**: P5 abre con "Antes dijeron que lo peor es el aumento. Para mí no". Dejé una nota en la fila, porque rechaza la formulación de la moderadora.
-- **grupo-focal [32]**: P5 dice "es lo que más pesa" sobre que lo saquen del hotel. Lo codifiqué como *seguridad de quedarse*, por el peso que tiene en sus decisiones.
-- **grupo-focal [18]**: P3 justifica al propietario ("si no actualizan, pierden"). Lo codifiqué como *trato con quien cobra*, que incluye "justificar al propietario".
+- **oina-entrevista-docente [8], DOC:** lo codifiqué como criterio frente a la respuesta, por la consigna de distinguir "evidencia general" de "lectura clínica del caso singular". También podría leerse solo como una decisión de diseño de la actividad.
+- **oina-entrevista-docente [14], DOC:** lectura del paciente. Habla de "recitar un libreto" en vez de leer la sala, pero en un escenario hipotético y no en una situación concreta. La situación concreta aparece en el turno 16.
+- **oina-entrevista-docente [30], DOC:** dudé entre criterio frente a la respuesta y lectura del paciente. Lo dejé en criterio, porque habla de una recomendación general que "distrae" de leer al chico.
+- **oina-entrevista-estudiante [10] y [24], EST; oina-grupo-focal [17], E5 y [18], E6:** lectura del paciente. Son afirmaciones bastante generales ("no hay chat que te lo dé", "lo tenés que leer vos"), aunque con ejemplos de situaciones. Si se aplica estricto el "sin situación concreta" de la dimensión, podrían quedar afuera.
+- **oina-entrevista-estudiante [28], EST y oina-grupo-focal [30], E5:** dudé entre frontera con la clínica y responsabilidad ante el paciente. Separé en dos filas cada frase: la que marca el momento va a frontera y la que habla de que la decisión no se delega va a responsabilidad.
+- **oina-entrevista-estudiante [22], EST:** "La decisión clínica sobre el chico es mía" podría ser responsabilidad ante el paciente. No lo codifiqué porque no dice por qué no se delega.
+- **oina-grupo-focal [9], E1:** "ya no se trata de buscar información" lo codifiqué como tipo de uso, además de criterio frente a la respuesta. Es una definición del rol de la IA, no un uso concreto.
+- **oina-grupo-focal [12], E6:** "no soltar el juicio propio" quedó en criterio frente a la respuesta porque responde al filtro que describe E4 en el turno 11. En el turno 41, la misma idea quedó afuera por no tener ese anclaje.
+- **oina-grupo-focal [20], E4:** doble código, visibilidad del uso y trayectoria ("bastante más que en años anteriores").
+- **oina-grupo-focal [28], E6:** lo codifiqué como trayectoria porque retoma la preocupación de E1 por los años bajos. El fragmento citado habla solo del criterio propio.
 
-Te dejo el archivo adjunto `grilla.csv`, con una fila por mención y las columnas `material,turno,hablante,dimension,cita,nota`. La columna `nota` solo está completa en dos filas: entrevista-1 [12] y grupo-focal [29].
+## Notas en la grilla
+
+Marqué en la columna `nota` las menciones que responden a una pregunta que ya traía la respuesta. No encontré menciones irónicas ni que rechacen una palabra de quien entrevista.
+- **oina-entrevista-docente [6]:** la pregunta [5] hablaba de "esa madurez de uso".
+- **oina-entrevista-docente [26]:** la pregunta [25] pedía "qué responsabilidad aparece".
+- **oina-entrevista-estudiante [28]:** la pregunta [27] pedía "qué límite debería tener".
+- **oina-grupo-focal [14] y [15] (tipo de uso y trayectoria de E2, tipo de uso de E1):** la moderadora anticipó el uso de "pensar el caso" más que de producir.
+- **oina-grupo-focal [30] y [31]:** la pregunta [29] nombraba el límite y aclaraba que el paciente es un niño.
+
+El archivo adjunto `grilla.csv` tiene las columnas `material,turno,hablante,dimension,cita,nota`. Los nombres de material son los de los archivos sin extensión, y los hablantes figuran como en las transcripciones.

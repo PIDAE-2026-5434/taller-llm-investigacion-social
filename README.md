@@ -10,7 +10,7 @@ El repositorio tiene dos cosas: el material como archivos (discursos, entrevista
 | --- | --- |
 | `prompts/` | Un archivo `.txt` por prompt, agrupados por sección |
 | `esquemas/` | Esquemas de códigos en CSV, con una fila por categoría |
-| `entrevistas/` | Dos entrevistas y un grupo focal sintéticos, para el Caso 2. Reemplazan de forma provisoria al corpus del proyecto |
+| `entrevistas/` | Dos entrevistas y un grupo focal del corpus FOUBA (CONICET) para el Caso 2, con `fuentes.csv`. Licencia CC BY-NC-SA 2.5 |
 | `discursos/` | `discursos.csv` con el corpus completo, `fuentes.csv` con los discursos que usa el taller y esos discursos como texto numerado |
 | `salidas/` | Respuestas guardadas. `salidas/<id>.txt` corresponde a `prompts/<id>.txt`; `salidas/<id>--<variante>.txt` es otra corrida del mismo prompt. También los informes de verificación de citas |
 | `registro.csv` | Una fila por corrida, con herramienta, modelo, esfuerzo y fecha |
@@ -91,6 +91,10 @@ npm run discursos
 
 Los discursos de Casa Rosada tienen licencia [Creative Commons Reconocimiento 2.5 Argentina](https://creativecommons.org/licenses/by/2.5/ar/).
 
+## Entrevistas
+
+Los archivos de `entrevistas/` son una adaptación de tres registros de Moran, Lourdes (2026), *Corpus de entrevistas, observaciones de clase y grupos focales sobre usos de inteligencia artificial generativa en la enseñanza de Odontología (FOUBA), 2024–2026*, CONICET, http://hdl.handle.net/11336/294888. Se pasaron de .docx a texto, se numeraron los turnos y se quitaron las notas del equipo de investigación. El corpus y estas adaptaciones tienen licencia [Creative Commons Atribución-NoComercial-CompartirIgual 2.5](https://creativecommons.org/licenses/by-nc-sa/2.5/).
+
 ## Publicación
 
 El sitio se publica en GitHub Pages con cada push a `main`, mediante `.github/workflows/deploy.yml`. Queda en `https://<cuenta>.github.io/<repositorio>/`.
@@ -99,6 +103,5 @@ La primera vez hay que activar Pages: en el repositorio, **Settings**, **Pages**
 
 ## Pendientes
 
-- Reemplazar el material sintético del Caso 2 por el corpus del proyecto cuando el repositorio del CONICET vuelva a estar disponible, y volver a correr sus prompts.
 - Rechequear las salidas en ChatGPT y anotar las diferencias grandes.
 - Definir la licencia del material.

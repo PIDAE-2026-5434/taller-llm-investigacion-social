@@ -1,13 +1,13 @@
 Hacé una grilla con lo que dice cada participante.
 
-<entrevista_1>
-@material entrevistas/entrevista-1.txt
-</entrevista_1>
+<entrevista_docente>
+@material entrevistas/oina-entrevista-docente.txt
+</entrevista_docente>
 
-<entrevista_2>
-@material entrevistas/entrevista-2.txt
-</entrevista_2>
+<entrevista_estudiante>
+@material entrevistas/oina-entrevista-estudiante.txt
+</entrevista_estudiante>
 
 <grupo_focal>
-@material entrevistas/grupo-focal.txt
+@material entrevistas/oina-grupo-focal.txt
 </grupo_focal>

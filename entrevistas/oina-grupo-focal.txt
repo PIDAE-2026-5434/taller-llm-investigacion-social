@@ -1,0 +1,53 @@
+# Grupo focal con estudiantes. Odontología Integral Niños y Adolescentes, 5.º año (registro GF-EST-OINA-01)
+# Fuente: Moran, Lourdes (2026). Corpus de entrevistas, observaciones de clase y grupos focales sobre usos de inteligencia artificial generativa en la enseñanza de Odontología (FOUBA), 2024–2026. CONICET. http://hdl.handle.net/11336/294888
+# Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 2.5 (CC BY-NC-SA 2.5). Este archivo es una adaptación: turnos numerados y sin las notas del equipo de investigación.
+# MOD: moderadora. E1 a E6: estudiantes de 5.º año. E1 es la estudiante de la entrevista ENT-EST-OINA-01. Duración aproximada: 60 minutos.
+# Encuadre: se garantiza confidencialidad y anonimato, se pide consentimiento para grabar y se aclara que no se busca consenso forzado.
+# Disparador: se presenta un caso pediátrico con una recomendación de manejo generada por IA, clínicamente correcta en general pero inadecuada para las características del chico descrito (edad, miedo, contexto familiar). No se avisa.
+# Convenciones de transcripción: […] omisión · (risas)/(pausa)/(varios) · — autocorrección
+
+# EJE 1 — Concepciones compartidas sobre la IA en la enseñanza y el aprendizaje
+[1] MOD: Les dejo este caso con la recomendación que dio una IA. ¿La aplicarían tal cual?
+[2] E3: A ver… la recomendación en sí no está mal, es correcta desde el protocolo.
+[3] E1: Sí, pero fijate el chico: seis años, aterrado, con una mala experiencia previa. Para ESTE nene esta técnica no va, lo perdés en el primer minuto.
+[4] E4: Claro, es lo típico: la respuesta general está bien pero no contempla al paciente. Me pasa seguido con la IA.
+[5] E6: Es que la IA no conoce a tu paciente. Te da lo estándar, y en pediatría lo estándar muchas veces no existe.
+[6] E2: Igual sirve como punto de partida, ¿eh? El error sería aplicarla sin pensar en el chico.
+[7] MOD: ¿Qué creen que el docente espera de ustedes en este punto de la carrera?
+[8] E5: Que tengamos criterio propio. Que sepamos cuándo lo que te da la IA aplica y cuándo no.
+[9] E1: Sí, en quinto ya no se trata de buscar información, eso lo resolvimos hace rato. Se trata de decidir bien para cada paciente.
+[10] MOD: ¿Dónde está la línea entre buen uso y mal uso, para ustedes?
+[11] E4: Para mí, si la usás para pensar y después decidís vos, está bien. Si aplicás lo que te da sin filtrarlo por el paciente, mal.
+[12] E6: Coincido. La clave es no soltar el juicio propio.
+# EJE 2 — Experiencias de uso: contrastar y validar
+[13] MOD: En las entrevistas apareció un uso más de 'pensar el caso' que de producir. ¿Se reconocen?
+[14] E2: Sí, total. En primeros años la usaba para resúmenes; ahora la uso para tirar ideas de abordaje y después decido.
+[15] E1: Yo conté un caso en la entrevista: preparé el manejo de conducta con la IA, pero en el box el nene me pidió otra cosa y tuve que soltar el libreto. Lo que resolvió fue leer al chico, no lo que había preparado.
+[16] E3: A mí me pasó algo parecido con una familia. Había preparado cómo explicar el plan, y la mamá estaba preocupada por otra cosa completamente distinta. Tuve que largar todo lo que traía y escucharla.
+[17] E5: Es que eso es lo que la IA no te puede dar: la lectura de lo que pasa en la sala en ese momento.
+[18] E6: Y encima con chicos, que ni siquiera te dicen lo que les pasa. Lo tenés que leer vos.
+[19] MOD: ¿Ese uso lo hablan con los docentes?
+[20] E4: Sí, bastante más que en años anteriores. Como ya lo usamos con criterio, no da tanto pudor contarlo.
+[21] E1: Igual el uso más personal, para estudiar farmacología y esas cosas, eso queda para uno. (risas)
+[22] MOD: ¿En el box, en la atención, usan IA?
+[23] E5: No, jamás. Ahí estás vos con el chico. La IA quedó en tu casa, en la preparación.
+[24] E2: Sería impensable. El paciente te necesita entero, presente.
+# EJE 3 — Proyecciones: autonomía epistémica, uso crítico y construcción de conocimiento
+[25] MOD: ¿Cuándo los ayuda a aprender y cuándo les resuelve sin aprender?
+[26] E3: Me ayuda cuando me abre alternativas que no había pensado. No me resuelve nada en clínica, porque ahí decido yo.
+[27] E1: En este nivel siento que ya no me resuelve, la uso para pensar. El riesgo lo veo más en los que vienen atrás, en años bajos, que capaz le delegan demasiado y no arman criterio.
+[28] E6: Sí, eso me preocupa. Porque después llegás a la clínica y si no tenés criterio propio, estás en problemas. El paciente no espera.
+[29] MOD: Pensando en el paciente, y que acá es un niño, ¿qué límite debería tener?
+[30] E5: La decisión sobre el chico es tuya, sin discusión. La IA acompaña la preparación y nada más.
+[31] E1: Y con un niño la responsabilidad pesa el doble, porque no se puede defender solo. Te lo confía la familia. Eso no lo delegás a una máquina ni loco.
+[32] E4: Además hay una parte humana, de contención, que es central en pediatría y que la IA ni roza.
+[33] MOD: Si diseñaran cómo se usa en la materia, ¿qué propondrían?
+[34] E2: Que trabajen antes, en años más bajos, ese pasaje de usarla para producir a usarla para pensar. A nosotros nos costó tropiezos llegar a eso.
+[35] E6: Y que sigan insistiendo en el juicio clínico, que es lo difícil y lo que la IA no te da.
+# Cierre — ronda final
+[36] E1: La IA prepara, el juicio clínico decide.
+[37] E2: Del producir al pensar: ese es el salto.
+[38] E3: Lo estándar en pediatría muchas veces no existe.
+[39] E4: La contención del chico no la da ninguna máquina.
+[40] E5: El paciente te necesita entero, presente.
+[41] E6: No soltar nunca el criterio propio.

@@ -1,54 +1,80 @@
+Coinciden en casi todo lo sustantivo; las diferencias son de énfasis y de dónde ubican el riesgo, no de postura. Antes de entrar en detalle, una advertencia de lectura: la estudiante de la entrevista es E1 del grupo focal, así que no son tres voces independientes sino una docente, una estudiante que aparece dos veces y cinco estudiantes más. Buena parte de lo que "coincide" en el grupo focal repite casi textual lo que ya dijo E1 en la entrevista (el caso del nene de seis años, "la responsabilidad pesa el doble", "trabajar antes el pasaje de producir a pensar").
+
 ## En qué coinciden
 
-**1. El alquiler organiza el presupuesto, y el ajuste lo hacen los inquilinos con su propio consumo y trabajo.** Es lo más repetido en las tres fuentes.
-- Recortan gastos: la inquilina de la entrevista 1 dejó el gimnasio y ya no pide comida (E1 [14]). El inquilino de la entrevista 2 cocina todo y sacó a su hijo del club (E2 [10]). La pareja del grupo focal tachó las vacaciones (GF P4 [9]).
-- Trabajan más: horas extra en el local (E1 [14]), manejar para una aplicación (E2 [10]), tomar otra casa los sábados (GF P2 [10]) y más horas con la moto (GF P5 [13]).
-- Dependen de su red de apoyo: el hermano (E2 [4], [12]) y los padres, que ponen la garantía y parte del alquiler (GF P1 [3]).
-- P3 del grupo focal subalquila una habitación para pagar la mitad (GF P3 [11]).
+**1. El uso en quinto año es distinto al de los primeros años.**
+- DOC [4]: no es "buscame bibliografía" sino "ayudame a pensar este caso", un uso "entramado con la decisión clínica".
+- EST [4]: antes pedía resúmenes y cuadros "para producir rápido"; ahora la usa "para pensar".
+- GF [14], [9]: E2 pasó de resúmenes a "tirar ideas de abordaje"; E1 dice que buscar información "lo resolvimos hace rato".
 
-**2. Se sienten atrapados: irse sale más caro que quedarse.**
-- La inquilina de la entrevista 1 lo dice casi literal: "me sale más caro irme que quedarme" (E1 [16]).
-- El inquilino de la entrevista 2 no puede mudarse a algo más chico por sus hijos. Volver a su ciudad de origen es "una fantasía de los domingos a la noche" (E2 [14]).
-- P2 del grupo focal sabe que, sin contrato, si el vecino le dice que se vaya, se va (GF P2 [4]).
+**2. El riesgo central es la respuesta correcta en general pero inadecuada para este paciente.**
+- DOC [6], [20], [30]: es el riesgo "más sutil", sin error objetivo que señalar; falla el juicio de aplicación.
+- EST [6]: "suena bárbaro pero no aplica a tu caso".
+- GF [2]-[5]: ante el caso disparador reconocen que la recomendación "es correcta desde el protocolo" pero no sirve para ese chico.
 
-**3. El costo de entrada se resuelve con ayuda o con endeudamiento.** Aparecen el seguro de caución, que "es plata que no ves más" (E1 [6]), el préstamo del hermano (E2 [4]) y la garantía de los padres (GF P1 [3]).
+**3. La frontera: la IA entra en la preparación y el repaso, nunca en la decisión sobre el paciente ni en el box.**
+- DOC [12]: "nunca en la decisión final", que se construye "en el box, con el chico presente".
+- EST [18], [28]: "la IA quedó en la etapa de preparación, en tu casa"; "la IA no toca la decisión sobre el paciente".
+- GF [23], [30]: "No, jamás" en el box; "la IA acompaña la preparación y nada más".
 
-**4. Hay resignación y normalización.**
-- Las frases "no me quejo, hay gente que está peor" (E1 [14]), "es lo que hay" (E2 [18]) y "es lo que hay" (GF P5 [6]) van en la misma dirección.
-- Ninguno proyecta comprar una vivienda. Las dos personas entrevistadas lo mencionan como algo deseado pero inalcanzable (E1 [18], E2 [18]).
+**4. Lo que la IA no puede dar es la lectura del paciente y de la familia en tiempo real.**
+- DOC [14], [16]: la comunicación en pediatría es "lectura del otro en tiempo real".
+- EST [10], [24]: no se aprende con la IA "a leer al paciente"; la contención y la decisión de cambiar el plan son humanas.
+- GF [17], [18], [32]: "la lectura de lo que pasa en la sala"; "la contención... la IA ni roza".
 
-## En qué no coinciden
+**5. El peligro del "libreto" preparado con IA.**
+- DOC [16]: una estudiante siguió su guion con una madre angustiada por el costo y el tiempo, "había dejado de escuchar".
+- EST [12], [14]: soltó el plan preparado cuando el nene necesitó explorar el instrumental.
+- GF [15], [16]: E1 repite su caso y E3 cuenta uno parecido con una madre preocupada por otra cosa.
 
-**1. Qué es lo peor de alquilar.** Es el punto más delicado, porque el grupo focal parece tener un consenso que no existe.
-- La moderadora cierra con "todos coinciden en que lo peor de alquilar son los aumentos" (GF [21]). Solo P1 y P4 responden "sí" (GF [22]-[23]), y los dos con monosílabos, después de la pregunta de la moderadora.
-- P2 describe aumentos arbitrarios, pero nunca dice que sean lo peor. Después de P5 pone el eje en la falta de contrato: "sin contrato estás en el aire" (GF [30]).
-- P3 relativiza los aumentos y defiende a los propietarios (GF [18], [20]).
-- P5 contradice explícitamente la síntesis: el aumento "lo veo venir", y lo que lo desvela es que lo pueden sacar de un día para otro (GF [29]). P2 se suma a esa idea (GF [30]), y P1 la minimiza ("es otra cosa, es más grave") (GF [31]), aunque P5 la sostiene como lo que más pesa (GF [32]).
-- El inquilino de la entrevista 2 tampoco lo ubica en los aumentos. Para él es que "todo el mes gira alrededor de esa fecha", "como trabajar para el dueño" (E2 [16]).
+**6. La responsabilidad se duplica porque el paciente es un niño.**
+- DOC [26]: responsabilidad "doble: hacia el chico y hacia su familia".
+- EST [28] y GF [31]: casi la misma fórmula ("pesa el doble", "no se puede defender solo", "te lo confía la familia").
 
-Lo razonable es hablar de **dos ejes distintos**: el costo y los aumentos, por un lado, y la seguridad de la tenencia, por el otro. Cada participante pesa esos ejes de forma diferente. No conviene citar la frase de la moderadora como hallazgo.
+**7. Los usos personales de estudio (farmacología pediátrica, parciales) existen y quedan fuera del foco.**
+- DOC [24] sabe que ocurren y "no lo persigo".
+- EST [16] y GF [21] los confirman y los viven como algo propio.
 
-**2. Cómo se viven los aumentos.**
-- En la entrevista 1 se negocian por WhatsApp: ella dice que es mucho y la dueña baja un poco (E1 [10]). Es arbitrario, pero blando.
-- En la entrevista 2 se prefiere el ajuste por contrato cada cuatro meses, porque da previsibilidad (E2 [8]).
-- En el grupo focal, P4 los vive con angustia ("se me cierra el estómago") (GF [15]). P2 los recibe cuando el vecino quiere, a veces sin aviso (GF [17]).
+**8. Qué es aprender: poder readaptar.**
+- DOC [18], [22]: el que entendió "readapta", el que solo trajo lo de la IA "se queda sin herramientas" cuando se mueve una variable.
+- EST [8] y GF [8], [9]: el docente busca "criterio propio, capaz de adaptarse".
 
-Entonces, lo que molesta no es solo el monto. También importa si hay previsibilidad y si hay margen para negociar.
+## En qué no coinciden (o no del todo)
 
-**3. Qué efecto tiene el vínculo con quien alquila.** El trato personal con el propietario aparece como arma de doble filo.
-- Cuando hay trato personal, hay cuidado y cercanía: la dueña de la entrevista 1 repone el termotanque en dos días (E1 [8]), y la dueña de P3 y P3 se ayudan (GF [27]).
-- Pero ese mismo vínculo quita poder de reclamo: la inquilina de la entrevista 1 no puede decirle que no a la dueña (E1 [12]) y P2 no puede reclamar nada (GF [25]).
-- Cuando hay inmobiliaria, el trato es impersonal: "no hay con quién hablar" (E2 [6]), "no hay persona" (GF P4 [26]). Eso da previsibilidad, pero ninguna respuesta ante un problema, como la humedad que nadie atiende (E2 [6]).
+**1. Dónde ubican el riesgo.**
+Esta es la diferencia más clara.
+- La docente ve el riesgo *en quinto año*, y lo describe como "más sutil que en años anteriores": una recomendación impecable que los distraiga de leer al chico [30]. Dice que le tranquiliza y le preocupa "un poco de las dos" [6].
+- Las y los estudiantes lo desplazan hacia *los años inferiores*: EST [26], GF [27], [28] y [34] se preocupan por "los que vienen atrás" y hablan de su propio uso con seguridad ("menos que antes", "ya no me resuelve").
 
-**4. Qué lugar ocupan los propietarios.**
-- La inquilina de la entrevista 1 y P3 los entienden, porque dependen de ese ingreso (E1 [12], GF [18]).
-- P4 lo discute: "el dueño pierde un poco, uno se queda en la calle" (GF [19]).
-- El inquilino de la entrevista 2 nunca vio a su propietario.
+La docente cuenta un episodio de quinto en que una estudiante se aferró al libreto, y las y los estudiantes cuentan los suyos como casos en que supieron soltarlo. Los relatos de fallo propio son escasos: aparece el de la docente (sin identificar a la estudiante) y, con matices, el de E3.
 
-**5. La situación habitacional es muy distinta.** Hay inquilinos con contrato (entrevista 2), sin contrato (P2), en hotel con baño compartido (P5), compartiendo (P1), subalquilando (P3). La seguridad de la tenencia varía mucho, y de ahí salen las prioridades diferentes.
+**2. Cuánto se verifica la información.**
+- DOC [18]: "no me interesa evaluar si la información que trajeron es correcta —en general lo es—".
+- EST [20]: para las dosis chequea siempre contra bibliografía o formulario, "porque ahí un error se paga caro".
 
-## Cautelas
+No es una contradicción, pero muestran actitudes distintas hacia la fiabilidad del contenido: la docente da por buena la información y se concentra en el juicio de aplicación; la estudiante mantiene una verificación activa de lo que sí puede fallar (las dosis). En el grupo focal no se discute este punto.
 
-- Las entrevistas son dos casos individuales y el grupo focal tiene cinco voces. Sirve para identificar patrones, no para decir "la mayoría".
-- En el grupo hay efectos de dinámica: la pregunta de la moderadora, la deferencia a lo que dijo antes otro participante (P1 en [31]) y el hecho de que P5 solo se anima a disentir cuando le abren espacio al final.
-- Las coincidencias más sólidas son las que aparecen en los tres materiales, con distintas palabras: el esfuerzo individual para sostener el alquiler, la falta de salida y la resignación frente al futuro. El desacuerdo sobre "qué es lo peor" es en sí un resultado: los participantes con menos seguridad de tenencia (P2, P5) ponen la inestabilidad por encima del aumento.
+**3. Qué piden a la cátedra.**
+- Las y los estudiantes proponen que se trabaje *antes*, en años bajos, el pasaje de producir a pensar (EST [30], GF [34]).
+- La docente sitúa su trabajo en quinto, en afinar el juicio caso por caso [20], y no habla de intervenir en los años previos, aunque sí señala que sus estudiantes llegaron "habiendo aprendido, con más o menos golpes" [4].
+
+Es un pedido de los estudiantes que en la entrevista docente no tiene respuesta.
+
+**4. Cuánto se habla del uso con los docentes.**
+- GF [20]: E4 dice que hablan del uso "bastante más que en años anteriores", porque "no da tanto pudor".
+- GF [21] y EST [16]: el uso personal "queda para uno" (con risas).
+- La docente dice saber que lo usan y que no lo persigue [24], pero no describe cuánto se lo cuentan.
+
+Hay un margen de uso no declarado que la docente intuye y los estudiantes confirman. Es una zona opaca, no un desacuerdo.
+
+**5. Diferencias de registro más que de contenido.**
+La docente hace explícitos dispositivos que los estudiantes no mencionan: pedir que distingan en el ateneo "evidencia general" de "lectura clínica del caso singular" [8], y cambiar una variable del caso para ver si el conocimiento "está vivo" [18]. Las y los estudiantes hablan de esa evaluación solo de forma indirecta ("el docente me marcó justamente eso", EST [12]).
+
+## Cómo leer tanta coincidencia
+
+- **Homogeneidad de formulaciones.** Aparecen las mismas frases en las tres fuentes ("la IA prepara, la clínica decide", "este paciente en particular", "doble responsabilidad"). Puede reflejar un discurso compartido construido en la cursada, pero también deseabilidad social, o el efecto de las preguntas, que en las entrevistas ya sugieren esos ejes (por ejemplo, "Pensando en el paciente, ¿qué límite debería tener?").
+- **El disparador del grupo focal** presenta un caso diseñado para que la respuesta correcta en general no sirva. Que el grupo la rechace es en parte una respuesta inducida por el dispositivo, no una observación espontánea de su práctica.
+- **Poca fricción.** Ni entre estudiantes ni con la docente aparece un desacuerdo real; el encuadre del grupo focal aclara que no se busca consenso forzado, pero casi no hay disenso. Si hay posiciones distintas en la cohorte, estas fuentes no las recogen.
+- **Muestra.** Una docente, una estudiante entrevistada y un grupo de seis de un solo curso. Sirve para describir un patrón dentro de esta materia, no para generalizar.
+
+Si querés, puedo armarte una tabla comparativa por eje (concepciones, decisiones didácticas, proyecciones) o profundizar en el punto 1, que me parece el hallazgo más interesante.

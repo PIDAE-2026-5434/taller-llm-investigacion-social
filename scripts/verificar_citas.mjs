@@ -58,7 +58,7 @@ const unicas = [...new Set(citas)];
 const filas = unicas.map((cita) => {
   // Una cita con elipsis se busca por partes, en orden, dentro del mismo bloque.
   const partes = normal(cita)
-    .split(/\s*(?:\.\.\.|…|\[\.\.\.\])\s*/)
+    .split(/\s*(?:\[(?:\.\.\.|…)\]|\.\.\.|…)\s*/)
     .filter((p) => p.length > 0);
   const hallado = bloques.find((b) => {
     let desde = 0;

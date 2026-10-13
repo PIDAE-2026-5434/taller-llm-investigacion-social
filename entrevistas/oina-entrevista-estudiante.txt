@@ -1,0 +1,44 @@
+# Entrevista a estudiante. Odontología Integral Niños y Adolescentes, 5.º año (registro ENT-EST-OINA-01)
+# Fuente: Moran, Lourdes (2026). Corpus de entrevistas, observaciones de clase y grupos focales sobre usos de inteligencia artificial generativa en la enseñanza de Odontología (FOUBA), 2024–2026. CONICET. http://hdl.handle.net/11336/294888
+# Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 2.5 (CC BY-NC-SA 2.5). Este archivo es una adaptación: turnos numerados y sin las notas del equipo de investigación.
+# ENT: entrevistadora. EST: estudiante de 5.º año. Es la misma persona que E1 en el grupo focal. Duración aproximada: 27 minutos.
+# Convenciones de transcripción: […] omisión · (risas)/(pausa) · — autocorrección
+
+[1] ENT: Gracias por quedarte. Es anónimo, no incide en tu cursada, y grabo para transcribir. ¿Todo bien?
+[2] EST: Sí, perfecto.
+# EJE 1 — Concepciones sobre la incorporación de la IA a la enseñanza y el aprendizaje
+[3] ENT: ¿Qué IA usás y cómo la usás en esta materia?
+[4] EST: Uso el ChatGPT y algún buscador de evidencia clínica. Pero te diría que en quinto la uso muy distinto de como la usaba en los primeros años. Antes le pedía que me resumiera, que me armara cuadros, cosas así, más para producir rápido. Ahora la uso más para pensar. Por ejemplo, si tengo un caso de un chico con mucha ansiedad, le pregunto qué alternativas de manejo de conducta hay, y con eso armo mi propia idea, que después llevo al docente y ajustamos entre los dos. Es como tener a alguien para hacer una lluvia de ideas, pero la decisión la tomo yo con el docente, no la máquina.
+[5] ENT: ¿Y confiás en lo que te dice?
+[6] EST: Confío como punto de partida, no como palabra final. Aprendí a las patadas, en años anteriores, que la IA te puede dar algo que suena bárbaro pero que no aplica a tu caso. Así que ahora todo lo que me da lo paso por el filtro del paciente concreto: ¿esto sirve para ESTE chico, con esta edad, este miedo, esta familia? Muchas veces la respuesta general no encaja, y ahí es donde entra mi criterio, o el del docente.
+[7] ENT: ¿Qué te parece que busca el docente con todo esto?
+[8] EST: Que aprendamos a decidir, básicamente. Que no vayamos al box con un protocolo copiado sino con un criterio propio, capaz de adaptarse a lo que pasa en el momento. En odontopediatría eso es todo, porque los chicos son imprevisibles; podés tener el mejor plan del mundo y el nene ese día no colabora, y tenés que replanificar sobre la marcha. Eso la IA no te lo enseña, te lo enseña el paciente y el docente.
+[9] ENT: ¿Qué aprendés y qué no con la IA acá?
+[10] EST: Aprendo a tener un panorama más amplio de alternativas, a no quedarme con la primera opción que se me ocurre. Eso está buenísimo, me abre la cabeza. Lo que no aprendés con la IA, de ninguna manera, es a leer al paciente. A darte cuenta de que ese chico está aterrado aunque diga que está bien, o de que esa mamá te está pidiendo otra cosa distinta de la que dice con palabras. Eso es pura clínica, puro estar ahí, y no hay chat que te lo dé.
+# EJE 2 — Experiencias de uso dentro y fuera de las actividades formativas
+[11] ENT: Contame cómo trabajaste tu último caso, con la IA incluida.
+[12] EST: Bueno, tenía un paciente de seis años que necesitaba varias restauraciones y que venía muy asustado, había tenido una mala experiencia antes. Entonces primero le pregunté a la IA sobre técnicas de manejo de conducta para chicos con odontofobia, y me dio un panorama de opciones: decir-mostrar-hacer, refuerzo positivo, esas cosas que además ya habíamos visto en la parte de psicología. Con eso armé una idea de abordaje. Pero cuando lo llevé al box, me di cuenta de que con este nene puntual funcionaba mejor otra cosa, dejarlo explorar el instrumental primero, que no estaba tan destacada en lo que me había dado la IA. Así que terminé combinando lo que preparé con lo que el chico me fue mostrando que necesitaba. El docente me marcó justamente eso, que había sabido leer al paciente y no quedarme con el libreto.
+[13] ENT: ¿Y cómo viviste ese momento de soltar lo que habías preparado?
+[14] EST: Al principio con un poco de inseguridad, la verdad, porque venía con mi plan armado y me daba cosa cambiarlo sobre la marcha. Pero después me di cuenta de que ahí estaba lo importante, en poder adaptarme. La preparación con la IA me dio confianza para arrancar, pero lo que realmente resolvió el caso fue estar atenta al chico. Fue como entender para qué sirve cada cosa: la IA para prepararte, la clínica para decidir.
+[15] ENT: ¿Usás IA por fuera de lo que piden?
+[16] EST: Sí, para estudiar farmacología pediátrica sobre todo, que tiene mil detalles de dosis por peso, y para repasar antes de los parciales. Eso lo hago siempre y no lo comento particularmente, es parte de cómo estudio.
+[17] ENT: ¿La atención en el box, la decisión clínica, ahí usás algo?
+[18] EST: No, ahí es todo presente. Estás vos, el chico, el docente. La IA quedó en la etapa de preparación, en tu casa. En el box no hay pantalla que valga, hay un paciente que te necesita entero, atento.
+[19] ENT: ¿Cómo verificás lo que te da?
+[20] EST: Lo cruzo con lo que vimos en la cátedra y con el criterio del docente, sobre todo para lo clínico. Y para las dosis, que son delicadas, chequeo siempre contra la bibliografía o el formulario pediátrico, nunca me quedo solo con lo que dice el chat, porque ahí un error se paga caro.
+# EJE 3 — Proyecciones de la IA en la construcción del conocimiento
+[21] ENT: ¿El trabajo sigue siendo tuyo cuando usás IA?
+[22] EST: En este nivel siento que sí, más que antes, porque la uso para pensar, no para que piense por mí. La decisión clínica sobre el chico es mía, la construyo yo con el docente. La IA es como un insumo más entre varios, no la que resuelve. Antes, en años más bajos, capaz sí le delegaba más, y ahí el trabajo era medio prestado. Ahora no.
+[23] ENT: ¿Qué no te puede reemplazar?
+[24] EST: La relación con el paciente, completa. La lectura del miedo del chico, la contención de la familia, la decisión de cambiar el plan cuando algo no funciona. Todo eso es humano, es estar ahí presente, y es lo más difícil y lo más lindo de la odontopediatría. Ninguna IA se va a sentar a jugar con un nene para que pierda el miedo.
+[25] ENT: ¿Te preocupa depender?
+[26] EST: Menos que antes, te diría. Justamente porque aprendí a usarla en su lugar. Lo que sí me preocupa un poco, mirando a los que vienen atrás, en años más bajos, es que se acostumbren a que la IA les resuelva todo y no desarrollen el criterio propio. Porque después, cuando llegás a la clínica y hay un paciente real, ese criterio lo necesitás sí o sí.
+[27] ENT: Pensando en el paciente, ¿qué límite debería tener?
+[28] EST: Para mí el límite es clarísimo: la IA no toca la decisión sobre el paciente. Puede acompañar tu preparación, tu estudio, tu razonamiento previo, pero cuando estás frente al chico, la responsabilidad es tuya, entera. Y con un niño esa responsabilidad pesa el doble, porque es alguien que no se puede defender solo, que te lo confía la familia. Eso no se delega.
+[29] ENT: ¿Qué te gustaría que los docentes tuvieran en cuenta?
+[30] EST: Que en quinto ya la usamos con bastante criterio, así que más que enseñarnos a usarla, lo que suman es ayudarnos a afinar el juicio clínico, que es lo difícil. Y capaz que trabajen antes, en años más bajos, ese pasaje de usarla para producir a usarla para pensar, porque a mí me costó varios tropiezos llegar a eso.
+# Pregunta de cierre
+[31] ENT: En una frase, ¿qué significa usar IA para aprender?
+[32] EST: Una gran compañera para pensar el caso, siempre que no te haga perder de vista al paciente que tenés adelante, que es lo único que de verdad importa.
+[33] ENT: Hermoso cierre. Gracias.
+[34] EST: Gracias a vos.

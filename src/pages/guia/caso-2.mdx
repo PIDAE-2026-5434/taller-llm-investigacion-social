@@ -11,33 +11,39 @@ import Seguridad from '../../components/Seguridad.astro';
 
 El caso usa el modelo para tres tareas típicas del trabajo con entrevistas: descomponer una variable en dimensiones, armar una grilla de menciones y ubicar consensos, tensiones y diferencias entre fuentes. Al final, el paso de la grilla se guarda como skill para repetirlo igual sobre material nuevo.
 
-El material es sintético. Son dos entrevistas y un grupo focal escritos para el taller, que no corresponden a ninguna persona real. Reemplazan de forma provisoria al corpus del proyecto, que está publicado en el repositorio institucional del CONICET y que no estaba disponible al preparar este material. Los prompts sirven igual para el corpus real: se cambian los archivos de `entrevistas/` y se vuelven a correr.
-
 ## Material
 
-- Tema: la experiencia de alquilar vivienda.
-- Pregunta: ¿cómo explican quienes alquilan las decisiones que toman para sostener el alquiler?
-- Fuentes: una inquilina con trato directo con la dueña (entrevista 1), un inquilino que alquila por inmobiliaria con contrato (entrevista 2) y un grupo focal de cinco personas con situaciones distintas, que incluyen alquiler sin contrato y una pieza de hotel.
-- Unidad: el turno de habla, numerado. E y M son quienes entrevistan y moderan, y no se codifican.
+El material sale de un corpus publicado en el repositorio institucional del CONICET: [entrevistas, observaciones de clase y grupos focales sobre usos de IA generativa en la enseñanza de Odontología (FOUBA), 2024–2026](http://hdl.handle.net/11336/294888), de Lourdes Morán. El corpus completo tiene 20 registros de cinco materias. El caso usa tres de la misma materia, Odontología Integral Niños y Adolescentes, de 5.º año.
+
+| Archivo | Registro original | Quién habla |
+| --- | --- | --- |
+| `oina-entrevista-docente.txt` | ENT-DOC-OINA-01 | ENT, entrevistadora. DOC, docente a cargo de clínica |
+| `oina-entrevista-estudiante.txt` | ENT-EST-OINA-01 | ENT, entrevistadora. EST, estudiante |
+| `oina-grupo-focal.txt` | GF-EST-OINA-01 | MOD, moderadora. E1 a E6, estudiantes |
+
+- Pregunta: ¿qué lugar le dan docentes y estudiantes de 5.º año a la IA generativa en la formación clínica, y dónde ponen sus límites?
+- Unidad: el turno de habla, numerado. Quien entrevista o modera no se codifica.
+- Dos rasgos del material que importan para el análisis. La estudiante entrevistada es E1 del grupo focal, así que no son voces independientes. Y el grupo focal abre con un caso preparado por el equipo, una recomendación de IA correcta en general e inadecuada para el chico descrito, que no se anuncia como prueba.
+- Licencia: [Creative Commons Atribución-NoComercial-CompartirIgual 2.5](https://creativecommons.org/licenses/by-nc-sa/2.5/). Los archivos del repositorio son una adaptación y se publican con la misma licencia.
 
 <details>
-<summary>Entrevista 1</summary>
+<summary>Entrevista a la docente</summary>
 
-<Texto archivo="entrevistas/entrevista-1.txt" rotulo="Entrevista 1" />
+<Texto archivo="entrevistas/oina-entrevista-docente.txt" rotulo="Entrevista docente" />
 
 </details>
 
 <details>
-<summary>Entrevista 2</summary>
+<summary>Entrevista a la estudiante</summary>
 
-<Texto archivo="entrevistas/entrevista-2.txt" rotulo="Entrevista 2" />
+<Texto archivo="entrevistas/oina-entrevista-estudiante.txt" rotulo="Entrevista estudiante" />
 
 </details>
 
 <details>
 <summary>Grupo focal</summary>
 
-<Texto archivo="entrevistas/grupo-focal.txt" rotulo="Grupo focal" />
+<Texto archivo="entrevistas/oina-grupo-focal.txt" rotulo="Grupo focal" />
 
 </details>
 
@@ -45,20 +51,26 @@ El material es sintético. Son dos entrevistas y un grupo focal escritos para el
 
 <Ficha
   datos={[
-    ['Para qué', 'Que el texto se pueda pegar en una herramienta sin exponer a nadie y que cada cita tenga ubicación.'],
+    ['Para qué', 'Que el texto se pueda pegar en una herramienta sin exponer a nadie, que cada cita tenga ubicación y que el modelo no lea interpretaciones del equipo como si fueran datos.'],
     ['Quién', 'El equipo, sin el modelo.'],
   ]}
 />
 
-- Se reemplazan nombres, direcciones, lugares de trabajo y cualquier otro dato que identifique por marcas como [NOMBRE], [BARRIO] o [EMPLEADOR]. La entrevista 2 y el grupo focal muestran cómo quedan.
-- Se numeran los turnos de habla y se marca quién habla en cada uno.
-- El encabezado de cada archivo describe a quienes participan sin identificarlos. El modelo lo usa para entender quién es P3 o P5.
+El corpus ya viene anonimizado con códigos (DOC, EST, E1 a E6) y con el consentimiento registrado. La preparación para este caso hizo tres cosas.
+
+- Pasó cada `.docx` a texto plano y numeró los turnos de habla.
+- Dejó en el encabezado lo que el modelo necesita para leer bien: quién es cada código, que E1 y EST son la misma persona y en qué consiste el disparador del grupo focal.
+- Sacó las notas del equipo de investigación que cierran cada registro. Son interpretaciones, como "Fuerte convergencia con D-OINA", y si entran en el prompt el modelo las puede devolver como hallazgos propios.
+
+La planilla de fuentes del caso resume esas decisiones.
+
+<Archivo archivo="entrevistas/fuentes.csv" rotulo="Planilla de fuentes" />
 
 <Seguridad>
   <ul>
-    <li>Una entrevista real se anonimiza antes de pegarla en cualquier herramienta, también en una cuenta institucional.</li>
-    <li>El consentimiento informado tiene que contemplar el procesamiento con servicios externos. Si no lo contempla, el material no se sube.</li>
-    <li>Combinar datos sueltos puede identificar a alguien aunque no figure el nombre: una ocupación poco común, un barrio y una edad. Esos detalles también se generalizan.</li>
+    <li>Un corpus publicado y anonimizado se puede usar según su licencia. Esta no permite uso comercial y pide citar la fuente y compartir las adaptaciones con la misma licencia.</li>
+    <li>Con material de campo propio, la anonimización y la revisión del consentimiento van antes de pegarlo en cualquier herramienta, también en una cuenta institucional.</li>
+    <li>Combinar datos sueltos puede identificar a alguien aunque no figure el nombre: una materia, un año y un rol pueden alcanzar en una cátedra chica.</li>
     <li>La lista completa de cuidados está en la [sección 1](../organizar-el-trabajo/).</li>
   </ul>
 </Seguridad>
@@ -67,7 +79,7 @@ El material es sintético. Son dos entrevistas y un grupo focal escritos para el
 
 <Ficha
   datos={[
-    ['Para qué', 'Pasar de un concepto, "sostener el alquiler", a dimensiones e indicadores que se puedan reconocer en lo que dicen las personas.'],
+    ['Para qué', 'Pasar de un concepto, "uso de la IA generativa en la formación clínica", a dimensiones e indicadores que se puedan reconocer en lo que dicen las personas.'],
     ['Tarea', 'Proponer categorías.'],
     ['Técnica', 'Salida estructurada, con un ejemplo citado por dimensión.'],
   ]}
@@ -75,22 +87,23 @@ El material es sintético. Son dos entrevistas y un grupo focal escritos para el
 
 <Prompt id="caso-2/p2-anti" tipo="anti" />
 
-El modelo listó todo lo que se puede medir en el material: edad, ocupación, tipo de vivienda, formalidad del contrato, estrategias, redes y expectativas. Es un inventario útil para describir los casos y no está ordenado por la pregunta. Hay un acierto que vale la pena mirar: señaló que el "todos coinciden" de la moderadora en el grupo focal es un consenso inducido.
+El modelo ordenó todo lo que aparece en el material según los tres ejes de la guía de entrevista, que están en los encabezados. Es un buen índice de temas y no está ordenado por la pregunta. Dos observaciones finales valen la pena: que E1 y EST no son independientes y que el disparador del grupo focal puede inducir coincidencias.
 
 <Prompt id="caso-2/p2-patron" tipo="patron" anotado />
 
-El borrador propuso siete dimensiones, cada una con indicadores, un ejemplo citado y el turno. Usó palabras de quienes participan para los nombres, como "Uno va zafando como puede" o "¿Adónde voy?", y marcó la séptima, sobre el futuro, como "viene de la guía": aparece solo cuando quien entrevista pregunta por el futuro. También listó lo que no entra, como los requisitos para entrar y las reparaciones.
+El borrador propuso siete dimensiones con nombres tomados de los participantes, como "Del producir al pensar" o "La IA quedó en tu casa". Marcó una como "viene de la guía" y explicó por qué. También avisó que la responsabilidad ante el niño aparece casi siempre después de una pregunta que la nombra, y que dos de sus dimensiones se superponían.
 
 El equipo corrigió el borrador así.
 
 | Pregunta | Qué se cambió |
 | --- | --- |
-| ¿Alguna dimensión viene solo de la guía? | La de expectativas salió de la variable. Se analiza aparte |
-| ¿Algún indicador es una queja y no una decisión? | "El sueldo no acompaña al alquiler" salió de "sumar ingresos" y quedó como exclusión |
-| ¿Algún nombre es una cita? | Los nombres pasaron a ser descriptivos. Las palabras de quienes participan quedaron en los ejemplos |
+| ¿Hay dimensiones que se superponen? | "Punto de partida, no palabra final" y "Criterio propio" quedaron en una sola, "criterio frente a la respuesta" |
+| ¿Alguna mezcla dos cosas? | "La IA quedó en tu casa" se separó en "frontera con la clínica" y "responsabilidad ante el paciente", para poder ver aparte lo que aparece solo cuando se pregunta |
+| ¿Qué hacer con la que viene de la guía? | "Eso queda para uno" se conservó como "visibilidad del uso", porque la pregunta del equipo la necesita. Queda anotado que responde a preguntas de la guía |
+| ¿Algún nombre es una cita? | Los nombres pasaron a ser descriptivos. Las palabras de los participantes quedaron en los ejemplos |
 | ¿Cada dimensión dice qué queda afuera? | Se agregó una exclusión a cada una |
 
-<Esquema id="dimensiones-alquiler" />
+<Esquema id="dimensiones-ia" />
 
 ## Paso 3. Grilla de menciones
 
@@ -104,11 +117,11 @@ El equipo corrigió el borrador así.
 
 <Prompt id="caso-2/p3-anti" tipo="anti" />
 
-Sin dimensiones, el modelo eligió sus propias columnas: situación, acceso, aumentos, estrategias, preocupación central y futuro. Las celdas son resúmenes con el turno entre paréntesis. Resumir ya es interpretar, y una celda como "Entró por una compañera de trabajo" no se puede verificar contra el texto con un script.
+Sin dimensiones, el modelo eligió sus propias columnas: cómo usa la IA, límite y responsabilidad, riesgos y propuestas. Las celdas son resúmenes con el turno entre corchetes y algunas comillas que no son textuales. "Asistente del juicio clínico, nunca reemplazo" acorta "asistente del juicio clínico, nunca el de reemplazo". Un resumen no se puede verificar contra el texto.
 
 <Prompt id="caso-2/p3-patron" tipo="patron" anotado />
 
-La grilla tiene una fila por participante, las seis dimensiones del esquema y en cada celda los turnos con su cita, o "sin mención". Marcó para revisar el "Una maravilla" irónico de P4 y la respuesta de la entrevista 1 a una pregunta que sugería la respuesta. La verificación encontró textuales las 52 citas.
+La grilla tiene una fila por participante, las siete dimensiones y en cada celda los turnos con su cita, o "sin mención". Dejó a EST y a E1 en filas separadas, porque son dos registros, y lo aclaró. Marcó para revisar las respuestas a preguntas que sugerían la respuesta. La verificación encontró textuales las 94 citas.
 
 <Archivo archivo="salidas/caso-2/p3-patron-verificacion.md" rotulo="Verificación" />
 
@@ -124,17 +137,21 @@ La grilla tiene una fila por participante, las seis dimensiones del esquema y en
 
 <Prompt id="caso-2/p4-anti" tipo="anti" />
 
-La respuesta es una buena lectura y trae turnos. El problema es que "coinciden" no tiene definición: "Hay resignación y normalización" aparece como coincidencia con tres frases de tres personas. Otra corrida, u otra persona, podría llamar consenso a otra cosa.
+La respuesta es una buena lectura, advierte que E1 y EST son la misma persona y trae turnos. Lo que falta es un criterio para "coinciden". Abre diciendo que coinciden "en casi todo lo sustantivo" y que las diferencias son "de énfasis", sin una regla que permita revisar esa conclusión. La verificación encontró cuatro citas retocadas, como "suena bárbaro pero no aplica a tu caso", donde la estudiante dijo "suena bárbaro pero que no aplica a tu caso", o "la IA prepara, la clínica decide", que mezcla dos frases distintas.
+
+<Archivo archivo="salidas/caso-2/p4-anti-verificacion.md" rotulo="Verificación" />
 
 <Prompt id="caso-2/p4-patron" tipo="patron" anotado />
 
-La tabla clasifica cada dimensión y separa los acuerdos inducidos y las voces minoritarias. Encontró una tensión en la entrevista 1, que negocia el aumento con la dueña y a la vez dice que no puede decirle que no.
+Con criterios escritos, el resultado cambia. Hay consenso en el tipo de uso, en el criterio frente a la respuesta, en la frontera con la clínica y en la trayectoria. La lectura del paciente, la responsabilidad y la visibilidad del uso quedan como "presente en todos" y no como consenso. En la lectura del paciente, el grupo focal aporta una sola voz independiente. En la responsabilidad, casi todo responde a preguntas que la nombran. Además encontró una tensión: la docente y la estudiante valoran preparar con IA y, a la vez, cuentan que lo preparado puede frenar la escucha. Separa los acuerdos inducidos por el disparador y por la pregunta de MOD en el turno 13, que anticipaba "un uso más de 'pensar el caso'". Y señala frases que se repiten casi textuales entre participantes, lo que debilita la independencia de varios apoyos.
 
-La salida también muestra un problema del prompt. Con el criterio escrito, "recortar gastos" quedó como consenso porque aparece en tres materiales y nadie dice lo contrario, aunque lo mencionan 3 de 7 participantes. El criterio confunde "nadie lo niega" con "todos lo dicen". La corrección va en el prompt: el consenso pide que lo diga la mayoría de quienes participan en cada material, y lo demás queda como "presente en los tres materiales".
+La verificación encontró una cita retocada también en esta salida: "su preparación estaba muy bien, pero había dejado de escuchar", donde la docente dijo "pero que había dejado de escuchar". Tener criterios no reemplaza revisar las citas.
+
+<Archivo archivo="salidas/caso-2/p4-patron-verificacion.md" rotulo="Verificación" />
 
 ## Paso 5. La misma grilla como skill
 
-La grilla del paso 3 es un procedimiento que se repite igual con cada entrevista nueva. Guardarlo como skill evita reescribir el prompt y asegura que todas las grillas salgan con las mismas columnas.
+La grilla del paso 3 es un procedimiento que se repite igual con cada registro nuevo. En este corpus quedan otros 17. Guardarlo como skill evita reescribir el prompt y asegura que todas las grillas salgan con las mismas columnas.
 
 Una skill es una carpeta con un archivo `SKILL.md`. El archivo empieza con un nombre y una descripción, que la herramienta usa para saber cuándo aplicarla, y sigue con las instrucciones. Puede traer scripts. Esta trae uno que comprueba las citas.
 
@@ -155,11 +172,11 @@ El pedido es una línea. Lo demás lo pone la skill.
 
 <Prompt id="caso-2/skill-grilla" />
 
-La respuesta trae la matriz resumida, el conteo por dimensión, lo que quedó afuera y las dudas. Además devolvió el archivo `grilla.csv`, con una fila por mención. La skill corrió el script de verificación y las 27 citas aparecieron en el turno indicado.
+La respuesta trae la matriz resumida, el conteo por dimensión, lo que quedó afuera, las dudas y las notas. Devolvió además el archivo `grilla.csv`, con una fila por mención. La skill corrió el script de verificación y las 77 citas aparecieron en el turno indicado. A diferencia del paso 3, juntó a EST y E1 en una sola fila, con los turnos de cada registro separados.
 
-<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="grilla.csv" />
+<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="grilla.csv" max={12} />
 
-La grilla de la skill tiene menos menciones que la del paso 3: 27 contra 52 citas. La skill registra una fila por mención y fragmentos más cortos, y dejó afuera con su motivo varios turnos que el paso 3 había incluido. Las dos versiones se comparan antes de elegir una, y la elegida se guarda como procedimiento del equipo.
+Con 17 registros más, cada uno en su conversación, las filas se suman a la misma planilla y el análisis entre materias se hace sobre esa planilla.
 
 <Seguridad titulo="Seguridad con skills">
   <ul>
@@ -180,7 +197,7 @@ La grilla de la skill tiene menos menciones que la del paso 3: 27 contra 52 cita
 
 <Prompt id="caso-2/p5-contraejemplos" />
 
-El contraejemplo más directo es P5 en el turno 29: "Antes dijeron que lo peor es el aumento. Para mí no." La respuesta agrupa los matices en tres desplazamientos y advierte que el "todos coinciden" de la moderadora no se puede citar como evidencia. Si el modelo hubiera confirmado la lectura sin matices, el prompt o el modelo no servirían para esta tarea.
+La respuesta separa las dos mitades de la lectura. "La usan para pensar los casos" tiene sustento. "De forma abierta" y "la conversan con sus docentes" se sostienen menos: la estudiante dice que el uso para estudiar "no lo comento particularmente", en el grupo focal agrega que "eso queda para uno", y la docente sabe de esos usos y "no lo persigo". También advierte que en el grupo focal, ante la pregunta de MOD sobre si lo hablan con los docentes, responde una sola persona y otra agrega una salvedad. La respuesta incluye además lo que sostiene la lectura, que el prompt no pedía.
 
 ## Paso 7. Revisión
 
@@ -192,18 +209,17 @@ El contraejemplo más directo es P5 en el turno 29: "Antes dijeron que lo peor e
 />
 
 - Citas: cada fragmento se busca en la transcripción. El script hace la primera pasada.
-- Hablante: ningún fragmento atribuido a un participante corresponde a un turno de E o M.
-- Ironía y preguntas inductoras: una persona revisa los turnos marcados.
+- Hablante: ningún fragmento atribuido a un participante corresponde a un turno de ENT o MOD.
+- Independencia: las coincidencias que dependen de E1 y EST se cuentan una vez.
+- Preguntas inductoras: una persona revisa los turnos marcados y el tramo del disparador.
 - Contraste: dos integrantes del equipo grillan los mismos turnos sin ver la salida del modelo y discuten las diferencias.
 
 ## Qué cambia respecto del Caso 1
 
 | Aspecto | Caso 1, discursos | Caso 2, entrevistas y grupo focal |
 | --- | --- | --- |
-| Material | Público, se pega tal cual | Se anonimiza antes y el consentimiento tiene que contemplar el uso |
+| Material | Público, se pega tal cual | Publicado y anonimizado, con licencia no comercial. Con material propio, se anonimiza antes |
 | Unidad de análisis | Párrafo | Turno de habla |
-| Voces | Un orador | Varias personas, y quien entrevista o modera no se codifica |
-| Registro | Texto preparado para leer en público, con interrupciones | Oral, con ironía, rodeos y sobreentendidos |
-| Dinámica | No hay | En el grupo focal, acuerdos que solo responden a una pregunta y voces que se animan al final |
-
-Un material sintético sirve para mostrar el procedimiento. No permite sacar conclusiones sobre personas reales.
+| Voces | Un orador | Varias personas, una de ellas en dos registros, y quien entrevista o modera no se codifica |
+| Registro | Texto preparado para leer en público, con interrupciones | Oral, con reinicios, pausas y sobreentendidos |
+| Dinámica | No hay | En el grupo focal, un disparador y preguntas que anticipan la respuesta |

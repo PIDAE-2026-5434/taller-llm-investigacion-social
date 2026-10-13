@@ -28,17 +28,17 @@ Una fila por documento, con lo que hace falta saber de él sin abrirlo: tipo, fe
 
 ### 3. Preparar cada documento
 
-- Un archivo de texto plano por documento, con nombre corto y sin espacios: `entrevista-2.txt`, `apertura-sesiones-2026.txt`.
+- Un archivo de texto plano por documento, con nombre corto y sin espacios: `oina-entrevista-docente.txt`, `apertura-sesiones-2026.txt`.
 - Párrafos o turnos numerados, `[1]`, `[2]`..., para poder pedir y verificar ubicaciones.
 - Nombres, lugares y otros datos que identifican reemplazados por marcas como [NOMBRE] o [BARRIO].
 - Un encabezado con los datos de contexto que el modelo necesita, como quién es P3 en un grupo focal.
 
 ```
-# Entrevista 2. Material sintético, escrito para el taller.
-# E: entrevistador. I: inquilino, 41 años, alquila un tres ambientes en [BARRIO] por inmobiliaria, con contrato.
+# Entrevista a estudiante. Odontología Integral Niños y Adolescentes, 5.º año (registro ENT-EST-OINA-01)
+# ENT: entrevistadora. EST: estudiante de 5.º año. Es la misma persona que E1 en el grupo focal.
 
-[1] E: Contame un poco dónde vivís y con quién.
-[2] I: En [BARRIO], un tres ambientes. Vivo solo, pero los fines de semana están mis hijos...
+[3] ENT: ¿Qué IA usás y cómo la usás en esta materia?
+[4] EST: Uso el ChatGPT y algún buscador de evidencia clínica. Pero te diría que en quinto la uso muy distinto...
 ```
 
 ### 4. Guardar el esquema de códigos como archivo
@@ -62,7 +62,7 @@ Este repositorio está ordenado con esos seis pasos. La tabla dice dónde aparec
 | 1. Pregunta y unidad | La sección Material de cada caso | [Caso 1](../caso-1/#material) y [Caso 2](../caso-2/#material) |
 | 2. Planilla de fuentes | `discursos/fuentes.csv`, `entrevistas/fuentes.csv` | [Materiales](../../materiales/) |
 | 3. Documentos preparados | `discursos/*.txt`, `entrevistas/*.txt` | Todos los prompts los incluyen con la marca `@material` |
-| 4. Esquema de códigos | `esquemas/responsable.csv`, `esquemas/dimensiones-alquiler.csv` | Secciones 3 y 4, y el paso 2 de cada caso, donde se corrige el borrador del modelo |
+| 4. Esquema de códigos | `esquemas/responsable.csv`, `esquemas/dimensiones-ia.csv` | Secciones 3 y 4, y el paso 2 de cada caso, donde se corrige el borrador del modelo |
 | 5. Decisiones | `plantilla/decisiones.csv` | El [paso 3 del Caso 1](../caso-1/#paso-3-codificación-de-una-submuestra) deja una decisión pendiente |
 | 6. Prompts, salidas y registro | `prompts/`, `salidas/`, `registro.csv` | Cada bloque de prompt, su pestaña Salida y el [cierre](../cierre/#registro-de-corridas) |
 
