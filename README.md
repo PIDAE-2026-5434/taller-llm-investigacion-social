@@ -11,7 +11,7 @@ El repositorio tiene dos cosas: el material como archivos (discursos, entrevista
 | `prompts/` | Un archivo `.txt` por prompt, agrupados por sección |
 | `esquemas/` | Esquemas de códigos en CSV, con una fila por categoría |
 | `entrevistas/` | Dos entrevistas y un grupo focal del corpus FOUBA (CONICET) para el Caso 2, con `fuentes.csv`. Licencia CC BY-NC-SA 2.5 |
-| `discursos/` | `discursos.csv` con el corpus completo, `fuentes.csv` con los discursos que usa el taller y esos discursos como texto numerado |
+| `discursos/` | Los discursos que usa el taller, como texto numerado, y `fuentes.csv` con su lista |
 | `salidas/` | Respuestas guardadas. `salidas/<id>.txt` corresponde a `prompts/<id>.txt`; `salidas/<id>--<variante>.txt` es otra corrida del mismo prompt. También los informes de verificación de citas |
 | `registro.csv` | Una fila por corrida, con herramienta, modelo, esfuerzo y fecha |
 | `skills/` | La skill `grilla-de-menciones` del Caso 2 |
@@ -83,7 +83,7 @@ Las salidas de este repositorio se generaron el 12 de octubre de 2026 con agente
 
 ## Discursos
 
-El corpus es `discursos/discursos.csv`: 34 discursos presidenciales de 2026 publicados por Casa Rosada. `discursos/fuentes.csv` lista los que usa el taller. Para regenerar los textos numerados:
+Los discursos salen del [sitio de Casa Rosada](https://www.casarosada.gob.ar/informacion/discursos), y cada archivo lleva en el encabezado el enlace a su página. `discursos/fuentes.csv` lista los que usa el taller. Para regenerar los textos numerados hace falta un CSV local con las columnas `id,titulo,fecha,url,texto` en `discursos/discursos.csv`, que no se versiona:
 
 ```sh
 npm run discursos
