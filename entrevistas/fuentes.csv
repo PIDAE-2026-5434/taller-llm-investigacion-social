@@ -1,0 +1,4 @@
+id,archivo,tipo,fecha,participantes,perfil,consentimiento,anonimizado,notas
+E1,entrevista-1.txt,entrevista individual,sintética,1,"inquilina, 34 años, trato directo con la dueña",no aplica (material sintético),sí,Escrita para el taller
+E2,entrevista-2.txt,entrevista individual,sintética,1,"inquilino, 41 años, inmobiliaria con contrato",no aplica (material sintético),sí,Escrita para el taller
+GF,grupo-focal.txt,grupo focal,sintética,5,"estudiante, trabajadora sin contrato, jubilada que subalquila, administrativo en pareja, repartidor en hotel",no aplica (material sintético),sí,Escrito para el taller

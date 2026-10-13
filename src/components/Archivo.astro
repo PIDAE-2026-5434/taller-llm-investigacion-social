@@ -30,7 +30,7 @@ const filas = tabla && max ? tabla.filas.slice(0, max) : tabla?.filas;
             </thead>
             <tbody>
               {filas.map((f) => (
-                <tr>{tabla.columnas.map((c) => <td>{f[c]}</td>)}</tr>
+                <tr>{tabla.columnas.map((c) => <td class={(f[c] ?? '').length <= 16 ? 'corto' : undefined}>{f[c]}</td>)}</tr>
               ))}
             </tbody>
           </table>

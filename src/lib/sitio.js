@@ -18,7 +18,7 @@ export const secciones = [
     titulo: 'Organizar el trabajo',
     corto: 'Organizar el trabajo',
     bajada:
-      'Carpeta del proyecto, planillas, conversaciones cortas y notas de traspaso. Después, conectores, skills y automatización.',
+      'Cómo ordenar pregunta, corpus, documentos y códigos antes de usar un modelo, y cómo llevar esa carpeta a una herramienta.',
   },
   {
     slug: 'tipos-de-tareas',

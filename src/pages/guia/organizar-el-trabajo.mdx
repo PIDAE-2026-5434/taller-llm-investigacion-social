@@ -6,31 +6,91 @@ import Prompt from '../../components/Prompt.astro';
 import Archivo from '../../components/Archivo.astro';
 import Seguridad from '../../components/Seguridad.astro';
 
-Una conversación con un modelo se pierde, se resume sola cuando se alarga y no la ve el resto del equipo. Lo que tiene que durar se guarda afuera, en archivos y planillas. Esta sección ordena ese trabajo en tres capas, de menor a mayor dificultad. Con la primera alcanza para seguir el resto del taller.
+Un modelo de lenguaje no cambia cómo se organiza una investigación. La pregunta, el corpus, la preparación de los documentos y el libro de códigos se ordenan antes de abrir el chat, igual que antes de codificar a mano. Lo que cambia es que todo eso tiene que estar escrito en archivos, porque una conversación se pierde, se resume sola cuando se alarga y no la ve el resto del equipo.
 
-| Capa | Qué se arma | Qué hace falta |
+La sección tiene dos partes. La primera ordena los archivos de un proyecto de investigación social y muestra dónde aparece cada uno en el taller. La segunda lleva esa carpeta a una herramienta, en tres capas de menor a mayor dificultad. Con la primera parte y la primera capa alcanza para seguir el resto del taller.
+
+## Antes de abrir el chat
+
+Seis pasos, en este orden. Cada uno deja un archivo.
+
+### 1. Escribir la pregunta y la unidad de análisis
+
+Un archivo corto, `proyecto.md`, con la pregunta de investigación, la unidad de análisis, qué documentos entran y qué tareas se le van a pedir al modelo. Ese texto después va casi entero al rol y contexto de los prompts. En el Caso 1 la pregunta es qué problemas públicos nombran los discursos y a quién le asignan la responsabilidad de resolverlos, y la unidad es el párrafo.
+
+Escribir qué se delega obliga a decidir también qué no. Proponer categorías se le puede pedir al modelo. Cerrar el esquema lo decide el equipo.
+
+### 2. Listar el corpus en una planilla de fuentes
+
+Una fila por documento, con lo que hace falta saber de él sin abrirlo: tipo, fecha, perfil de quien habla, si hay consentimiento y si ya está anonimizado. La planilla sirve para elegir qué documentos entran en cada paso, para describir el corpus en un informe y para comprobar que nada se suba a una herramienta sin estar preparado.
+
+<Archivo archivo="entrevistas/fuentes.csv" rotulo="Planilla de fuentes del Caso 2" />
+
+### 3. Preparar cada documento
+
+- Un archivo de texto plano por documento, con nombre corto y sin espacios: `entrevista-2.txt`, `apertura-sesiones-2026.txt`.
+- Párrafos o turnos numerados, `[1]`, `[2]`..., para poder pedir y verificar ubicaciones.
+- Nombres, lugares y otros datos que identifican reemplazados por marcas como [NOMBRE] o [BARRIO].
+- Un encabezado con los datos de contexto que el modelo necesita, como quién es P3 en un grupo focal.
+
+```
+# Entrevista 2. Material sintético, escrito para el taller.
+# E: entrevistador. I: inquilino, 41 años, alquila un tres ambientes en [BARRIO] por inmobiliaria, con contrato.
+
+[1] E: Contame un poco dónde vivís y con quién.
+[2] I: En [BARRIO], un tres ambientes. Vivo solo, pero los fines de semana están mis hijos...
+```
+
+### 4. Guardar el esquema de códigos como archivo
+
+Una planilla con una fila por categoría: definición, qué incluye, qué excluye y un ejemplo con su ubicación. Se versiona como cualquier instrumento. Los prompts toman las definiciones de ahí, y cuando el equipo corrige una, la corrige en un solo lugar. El esquema del Caso 1 está en la [sección 4](../componentes-del-prompt/#el-esquema-de-códigos-como-archivo).
+
+### 5. Anotar las decisiones
+
+Cada cambio de criterio va a `decisiones.csv`, con su motivo y la fecha. Es el equivalente de los memos de codificación. Cuando se abre una conversación nueva, esa planilla dice qué se decidió sin depender de que el modelo lo recuerde.
+
+### 6. Guardar prompts, salidas y registro
+
+Cada prompt es un archivo. Cada respuesta del modelo se guarda sin editar, con el nombre de su prompt, y las correcciones del equipo van en otro archivo. Cada corrida tiene una fila en `registro.csv`, con herramienta, modelo, configuración y quién revisó. Es lo que permite reconstruir el análisis y contarlo en la sección de métodos.
+
+## Cómo se ve en el taller
+
+Este repositorio está ordenado con esos seis pasos. La tabla dice dónde aparece cada archivo.
+
+| Paso | Archivo en el repositorio | Dónde aparece |
 | --- | --- | --- |
-| 1. Carpeta y proyecto | Una carpeta con el material, los prompts y las salidas, y un proyecto en la herramienta con las instrucciones fijas | Una cuenta en cualquier herramienta de chat |
-| 2. Conectores y skills | La herramienta lee el material desde Drive u otra app, y sigue un procedimiento guardado | Una cuenta que permita conectores o skills |
-| 3. Automatización | Un agente o un script corre los pasos sobre la carpeta y deja las salidas guardadas | Algo de experiencia con la terminal o con la API |
+| 1. Pregunta y unidad | La sección Material de cada caso | [Caso 1](../caso-1/#material) y [Caso 2](../caso-2/#material) |
+| 2. Planilla de fuentes | `discursos/fuentes.csv`, `entrevistas/fuentes.csv` | [Materiales](../../materiales/) |
+| 3. Documentos preparados | `discursos/*.txt`, `entrevistas/*.txt` | Todos los prompts los incluyen con la marca `@material` |
+| 4. Esquema de códigos | `esquemas/responsable.csv`, `esquemas/dimensiones-alquiler.csv` | Secciones 3 y 4, y el paso 2 de cada caso, donde se corrige el borrador del modelo |
+| 5. Decisiones | `plantilla/decisiones.csv` | El [paso 3 del Caso 1](../caso-1/#paso-3-codificación-de-una-submuestra) deja una decisión pendiente |
+| 6. Prompts, salidas y registro | `prompts/`, `salidas/`, `registro.csv` | Cada bloque de prompt, su pestaña Salida y el [cierre](../cierre/#registro-de-corridas) |
 
-## Capa 1. La carpeta del proyecto
+## La carpeta del proyecto
 
 El repositorio trae una [plantilla de carpeta](https://github.com/RacoFernandez/taller-llm-investigacion-social/tree/main/plantilla) para copiar en cada análisis. Funciona igual en una carpeta de la computadora o de Drive.
 
 | Carpeta o archivo | Qué va |
 | --- | --- |
-| `material/` | Los textos a analizar, anonimizados, con párrafos o turnos numerados |
-| `esquemas/` | Las categorías vigentes, en CSV, con definición, qué incluye y qué excluye |
+| `proyecto.md` | Pregunta, unidad de análisis, corpus, qué se delega al modelo y cuidados |
+| `material/` | Los documentos preparados, uno por archivo |
+| `material/fuentes.csv` | La planilla de fuentes |
+| `esquemas/` | Las categorías vigentes, en CSV |
 | `prompts/` | Un archivo por prompt. Si cambia, se guarda una versión nueva |
 | `salidas/` | La respuesta de cada corrida, sin editar, con el nombre de su prompt |
 | `registro.csv` | Una fila por corrida |
-| `decisiones.csv` | Una fila por decisión del equipo sobre el esquema o el procedimiento |
+| `decisiones.csv` | Una fila por decisión del equipo |
 | `notas-de-traspaso.md` | La última nota de traspaso entre conversaciones |
 
-Este mismo repositorio está ordenado así. Cada prompt de las secciones que siguen es un archivo de `prompts/`, y cada salida es un archivo de `salidas/`.
+## Llevar la carpeta a una herramienta
 
-### El proyecto en la herramienta
+| Capa | Qué se arma | Qué hace falta |
+| --- | --- | --- |
+| 1. Proyecto | Un proyecto en la herramienta con las instrucciones fijas, el esquema y el material | Una cuenta en cualquier herramienta de chat |
+| 2. Conectores y skills | La herramienta lee el material desde Drive u otra app, y sigue un procedimiento guardado | Una cuenta que permita conectores o skills |
+| 3. Automatización | Un agente o un script corre los pasos sobre la carpeta y deja las salidas guardadas | Algo de experiencia con la terminal o con la API |
+
+## Capa 1. El proyecto en la herramienta
 
 Las cuatro herramientas que más se usan permiten fijar instrucciones y archivos que valen para varias conversaciones. Cambian el nombre y algunos límites.
 
@@ -57,9 +117,9 @@ Si el esquema cambia, se actualiza el archivo en la carpeta, se vuelve a subir a
   </ul>
 </Seguridad>
 
-## Una planilla como memoria
+### Una planilla como memoria
 
-Lo que el equipo decide no tiene que depender de que el modelo lo recuerde. Tres planillas cubren casi todo.
+Las planillas de los pasos 5 y 6 cumplen además otra función cuando se trabaja con un modelo: guardan lo que la conversación no retiene.
 
 - `registro.csv`: qué se corrió, con qué herramienta y modelo, y quién revisó. Es la del [cierre](../cierre/).
 - `decisiones.csv`: cada cambio de criterio, con su motivo. Es lo que se pega o se sube cuando una conversación nueva tiene que saber qué se decidió.
@@ -71,7 +131,7 @@ La grilla del Caso 2 es un ejemplo de planilla de resultados. Tiene una fila por
 
 <Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="Planilla de resultados" max={8} />
 
-## Conversaciones cortas y nota de traspaso
+### Conversaciones cortas y nota de traspaso
 
 En una conversación larga el modelo atiende peor lo que se dijo al principio. Algunas herramientas resumen solas la parte más vieja para seguir funcionando, y en ese resumen se pueden perder el esquema o una definición sin aviso.
 
@@ -88,7 +148,7 @@ La nota se revisa antes de usarla. En esta corrida, la primera decisión dice qu
 
 <Prompt id="organizacion/retomar" />
 
-## Configuración de la herramienta
+### Configuración de la herramienta
 
 El mismo prompt puede dar resultados distintos según cómo esté configurada la herramienta. Estos ajustes se revisan antes de empezar.
 

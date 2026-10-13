@@ -1,2 +1,4 @@
 fecha,decision,motivo,quien,afecta
-2026-10-12,"""Debemos"" o ""necesitamos"" sin sujeto claro se codifican como ambiguos, con ""gobierno nacional"" como segundo código","El modelo y el equipo los clasificaban distinto en el tramo 112-131",equipo,esquemas/responsable.csv
+2026-10-12,"Congreso y Poder Judicial se codifican juntos como ""otros poderes del Estado""","En el borrador del modelo eran dos códigos con muy pocos casos cada uno",equipo,esquemas/responsable.csv
+2026-10-12,"""Mercado y ciudadanos"" se separa en ""sector privado"" y ""ciudadanía""","Un mecanismo de mercado y un pedido a las personas son asignaciones distintas",equipo,esquemas/responsable.csv
+2026-10-12,"Pendiente: qué hacer con ""debemos"" o ""necesitamos"" sin sujeto claro","En el tramo 112-131 el modelo los puso en ""no asigna"" y el esquema pide anotarlos como ambiguos",equipo,esquemas/responsable.csv

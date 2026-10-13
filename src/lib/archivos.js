@@ -9,7 +9,7 @@ const crudos = import.meta.glob(
   [
     '/prompts/**/*.txt',
     '/salidas/**/*.txt',
-    '/entrevistas/*.txt',
+    '/entrevistas/*.{txt,csv}',
     '/salidas/**/*.{csv,md}',
     '/esquemas/*.csv',
     '/discursos/fuentes.csv',

@@ -4,7 +4,9 @@ Copiá esta carpeta para cada análisis. Lo que tiene que durar más que una con
 
 | Carpeta o archivo | Qué va |
 | --- | --- |
+| `proyecto.md` | Pregunta, unidad de análisis, corpus, qué se delega al modelo y cuidados |
 | `material/` | Los textos a analizar, ya anonimizados, con párrafos o turnos numerados: `[1]`, `[2]`... |
+| `material/fuentes.csv` | Una fila por documento: tipo, fecha, perfil, consentimiento, si está anonimizado |
 | `esquemas/` | Las categorías vigentes, en CSV: `codigo,definicion,incluye,excluye,ejemplo,fuente` |
 | `prompts/` | Un archivo de texto por prompt. Si cambia, se guarda una versión nueva con otro nombre |
 | `salidas/` | La respuesta de cada corrida, sin editar, con el mismo nombre que su prompt |

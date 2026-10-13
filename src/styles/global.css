@@ -508,6 +508,27 @@ h3 {
   display: table;
   min-width: 100%;
 }
+.bloque .tabla-ancha,
+.salida-md table {
+  padding-inline: clamp(16px, 2.5vw, 24px);
+}
+.bloque .tabla-ancha table {
+  font-size: 14px;
+}
+.bloque .tabla-ancha th,
+.bloque .tabla-ancha td {
+  min-width: 90px;
+  padding: 10px 16px 10px 0;
+}
+.bloque .tabla-ancha td:last-child,
+.bloque .tabla-ancha th:last-child,
+.salida-md td:last-child,
+.salida-md th:last-child {
+  padding-right: 0;
+}
+.bloque .tabla-ancha tbody td:first-child {
+  font-weight: 400;
+}
 .tabla-registro td,
 .tabla-registro th {
   font-size: 14px;
@@ -785,6 +806,8 @@ details > * + * {
 }
 .salida-md table {
   font-size: 14px;
+  margin-inline: calc(-1 * clamp(16px, 2.5vw, 24px));
+  width: calc(100% + 2 * clamp(16px, 2.5vw, 24px));
 }
 .salida-md th,
 .salida-md td {
@@ -991,4 +1014,23 @@ details > * + * {
 .prosa > .lista-materiales {
   max-width: none;
   padding-left: 0;
+}
+
+/* En las tablas, las palabras se cortan solo si no entran enteras. */
+.bloque td,
+.bloque th {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.bloque td {
+  overflow-wrap: break-word;
+}
+.bloque td.corto { white-space: nowrap; }
+.bloque .tabla-ancha td:not(.corto) {
+  min-width: 200px;
+}
+@media (max-width: 600px) {
+  .bloque-barra .bloque-ruta {
+    padding-left: 12px;
+  }
 }
