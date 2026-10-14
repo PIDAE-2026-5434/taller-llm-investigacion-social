@@ -1,0 +1,9 @@
+@continua organizacion/traspaso
+Con la nota que escribiste, armá las filas nuevas para nuestra planilla de decisiones. Estas son las filas que ya tiene:
+
+<decisiones>
+@material plantilla/decisiones.csv
+</decisiones>
+
+Columnas: fecha, decision, motivo, quien, afecta. La fecha es 2026-10-13 y en quien poné "a confirmar por el equipo".
+Devolvé solo las filas nuevas, en CSV. No repitas decisiones que ya están, aunque estén escritas con otras palabras. Si una decisión de la nota contradice una fila existente, marcala con "CONTRADICE" al principio del motivo.

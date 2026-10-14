@@ -79,7 +79,7 @@ Arma `corridas/caso-1/p3-patron.txt` con el mensaje completo; si el prompt conti
 npm run citas -- salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
 ```
 
-Las salidas de este repositorio se generaron el 12 de octubre de 2026 con agentes de Claude sin contexto previo, como aproximación a lo que responde claude.ai. Están pendientes de rechequeo en ChatGPT.
+Las salidas de este repositorio se generaron el 12 de octubre de 2026 con agentes de Claude sin contexto previo, como aproximación a lo que responde claude.ai.
 
 ## Discursos
 

@@ -1,0 +1,19 @@
+Armá una planilla de fuentes para estos tres archivos de un trabajo de campo. Usá solo lo que dicen los archivos.
+
+Columnas: id, archivo, tipo, participantes, perfil, duracion, consentimiento, anonimizado, notas.
+
+- Si un dato no aparece, escribí "sin dato". No lo deduzcas.
+- En notas, anotá lo que haya que tener en cuenta al analizar, como una persona que aparece en más de un registro.
+- Devolvé la planilla en formato CSV, lista para pegar.
+
+<archivo nombre="oina-entrevista-docente.txt">
+@material entrevistas/oina-entrevista-docente.txt
+</archivo>
+
+<archivo nombre="oina-entrevista-estudiante.txt">
+@material entrevistas/oina-entrevista-estudiante.txt
+</archivo>
+
+<archivo nombre="oina-grupo-focal.txt">
+@material entrevistas/oina-grupo-focal.txt
+</archivo>

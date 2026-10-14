@@ -8,6 +8,6 @@ export default defineConfig({
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'always',
   // Comillas rectas en todo el sitio, iguales a las de los prompts.
-  markdown: { smartypants: false },
+  markdown: { smartypants: false, syntaxHighlight: false },
   integrations: [mdx()],
 });

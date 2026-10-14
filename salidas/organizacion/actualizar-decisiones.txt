@@ -1,0 +1,6 @@
+```csv
+fecha,decision,motivo,quien,afecta
+2026-10-13,"Si un párrafo mezcla asignaciones explícitas y ambiguas, el código sigue la parte explícita","La parte explícita es la única que se puede atribuir con claridad a un actor (casos 121 y 124 del tramo 112-131)",a confirmar por el equipo,esquemas/responsable.csv
+2026-10-13,"Los proyectos que el Ejecutivo anuncia que va a enviar al Congreso se codifican como ""gobierno nacional""","El anuncio no le pide nada al Congreso, así que el esquema lo excluye de ""otros poderes del Estado"" (caso 117)",a confirmar por el equipo,esquemas/responsable.csv
+2026-10-13,"Las respuestas a interrupciones del público llevan fila y se codifican como ""ninguno"" si no nombran un problema público","La consigna pide una fila por cada párrafo, incluidos los que responden a interrupciones, y en esos casos (128 y 131) no había un problema con responsable",a confirmar por el equipo,esquemas/responsable.csv
+```

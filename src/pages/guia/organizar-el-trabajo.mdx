@@ -5,184 +5,242 @@ layout: ../../layouts/Guia.astro
 import Prompt from '../../components/Prompt.astro';
 import Archivo from '../../components/Archivo.astro';
 import Seguridad from '../../components/Seguridad.astro';
+import Ejemplo from '../../components/Ejemplo.astro';
 
-Un modelo de lenguaje no cambia cómo se organiza una investigación. La pregunta, el corpus, la preparación de los documentos y el libro de códigos se ordenan antes de abrir el chat, igual que antes de codificar a mano. Lo que cambia es que todo eso tiene que estar escrito en archivos, porque una conversación se pierde, se resume sola cuando se alarga y no la ve el resto del equipo.
+Usar un modelo de lenguaje en una investigación no cambia cómo se organiza el trabajo. La pregunta, los materiales y los criterios de análisis se definen antes de abrir el chat, igual que antes de codificar a mano. Lo que cambia es que todo eso tiene que quedar escrito en archivos. Una conversación se pierde, se resume sola cuando se alarga y no la ve el resto del equipo.
 
-La sección tiene dos partes. La primera ordena los archivos de un proyecto de investigación social y muestra dónde aparece cada uno en el taller. La segunda lleva esa carpeta a una herramienta, en tres capas de menor a mayor dificultad. Con la primera parte y la primera capa alcanza para seguir el resto del taller.
+## Tres ideas antes de empezar
+
+**Contexto.** El modelo no sabe nada de la investigación. Todo lo que necesita para trabajar bien hay que dárselo por escrito: para qué es la tarea, qué material es, qué significa cada categoría. A ese conjunto se lo llama contexto. Lo que el contexto no dice, el modelo lo completa con lo más común, y lo más común casi nunca es lo que necesita una investigación.
+
+**Rol.** Es la primera frase del contexto. Le dice al modelo para quién trabaja y con qué fin, por ejemplo: "Sos asistente de un equipo que estudia cómo usan la IA docentes y estudiantes de Odontología". No hace falta que sea elaborado. Orienta el vocabulario y el nivel de detalle de las respuestas.
+
+**Proyecto.** Las herramientas de chat permiten crear un espacio con instrucciones y archivos que valen para todas las conversaciones que se abran ahí. El contexto se escribe una vez y no hay que pegarlo en cada chat. Claude y ChatGPT lo llaman proyecto, Gemini lo llama Gem y NotebookLM, cuaderno.
 
 ## Antes de abrir el chat
 
-Seis pasos, en este orden. Cada uno deja un archivo.
+Siete pasos. Los seis primeros ordenan la investigación y sirven con o sin modelo. El séptimo arma el proyecto en la herramienta.
 
 ### 1. Escribir la pregunta y la unidad de análisis
 
-Un archivo corto, `proyecto.md`, con la pregunta de investigación, la unidad de análisis, qué documentos entran y qué tareas se le van a pedir al modelo. Ese texto después va casi entero al rol y contexto de los prompts. En el Caso 1 la pregunta es qué problemas públicos nombran los discursos y a quién le asignan la responsabilidad de resolverlos, y la unidad es el párrafo.
+Un archivo corto, `proyecto.md`, con cuatro cosas: la pregunta, la unidad de análisis, qué materiales entran y qué tareas se le van a pedir al modelo. Este texto es la base del contexto que después recibe el modelo.
 
-Escribir qué se delega obliga a decidir también qué no. Proponer categorías se le puede pedir al modelo. Cerrar el esquema lo decide el equipo.
+También conviene anotar lo que no se le pide. El modelo puede proponer categorías, por ejemplo, pero el esquema final lo cierra el equipo.
 
-### 2. Listar el corpus en una planilla de fuentes
+<Ejemplo rotulo="Ejemplo del Caso 1">
+  <p>Pregunta: ¿qué problemas públicos nombran los discursos presidenciales y a quién le asignan la responsabilidad de resolverlos?</p>
+  <p>Unidad de análisis: el párrafo.</p>
+  <p>Materiales: dos discursos de 2026.</p>
+  <p>Se le pide al modelo: proponer categorías, clasificar párrafos y comparar discursos. Lo decide el equipo: el esquema final y qué hacer con los párrafos dudosos.</p>
+</Ejemplo>
 
-Una fila por documento, con lo que hace falta saber de él sin abrirlo: tipo, fecha, perfil de quien habla, si hay consentimiento y si ya está anonimizado. La planilla sirve para elegir qué documentos entran en cada paso, para describir el corpus en un informe y para comprobar que nada se suba a una herramienta sin estar preparado.
+### 2. Listar los materiales en una planilla
 
-<Archivo archivo="entrevistas/fuentes.csv" rotulo="Planilla de fuentes del Caso 2" />
+Una planilla con una fila por material. Según la investigación, pueden ser entrevistas, grupos focales, notas de campo, documentos, respuestas abiertas de una encuesta o publicaciones. Lo habitual es anotar qué es cada uno, de cuándo, quién habla, si hay consentimiento y si ya está anonimizado. La planilla sirve para elegir qué entra en cada paso, para describir el material en un informe y para no subir nada a una herramienta sin haberlo preparado.
+
+El modelo puede armar un primer borrador a partir de los archivos. Este prompt lo pide para las tres transcripciones del Caso 2.
+
+<Prompt id="organizacion/planilla-fuentes" />
+
+En consentimiento puso "sin dato", porque las transcripciones solo muestran que se avisa de la grabación. La ficha del repositorio de donde salen dice que el consentimiento se registró al inicio de cada encuentro, pero el modelo no tenía esa ficha. Ese dato lo completa el equipo.
+
+<Ejemplo rotulo="Ejemplo: la planilla revisada del Caso 2">
+  <Archivo archivo="entrevistas/fuentes.csv" rotulo="Planilla de fuentes" />
+</Ejemplo>
 
 ### 3. Preparar cada documento
 
-- Un archivo de texto plano por documento, con nombre corto y sin espacios: `oina-entrevista-docente.txt`, `apertura-sesiones-2026.txt`.
-- Párrafos o turnos numerados, `[1]`, `[2]`..., para poder pedir y verificar ubicaciones.
+- Un archivo de texto por documento, con nombre corto y sin espacios.
+- Párrafos o turnos numerados, `[1]`, `[2]`..., para poder pedir ubicaciones y verificarlas.
 - Nombres, lugares y otros datos que identifican reemplazados por marcas como [NOMBRE] o [BARRIO].
-- Un encabezado con los datos de contexto que el modelo necesita, como quién es P3 en un grupo focal.
+- Un encabezado con lo que el modelo necesita para leer bien, como quién es cada código de hablante.
+
+El modelo puede ayudar con las tareas mecánicas: pasar de Word a texto, numerar turnos, proponer qué datos anonimizar. El resultado se revisa antes de usarlo, sobre todo la anonimización.
+
+<Ejemplo rotulo="Ejemplo del Caso 2">
 
 ```
-# Entrevista a estudiante. Odontología Integral Niños y Adolescentes, 5.º año (registro ENT-EST-OINA-01)
+# Entrevista a estudiante. Odontología Integral Niños y Adolescentes, 5.º año
 # ENT: entrevistadora. EST: estudiante de 5.º año. Es la misma persona que E1 en el grupo focal.
 
 [3] ENT: ¿Qué IA usás y cómo la usás en esta materia?
 [4] EST: Uso el ChatGPT y algún buscador de evidencia clínica. Pero te diría que en quinto la uso muy distinto...
 ```
 
-### 4. Guardar el esquema de códigos como archivo
+</Ejemplo>
 
-Una planilla con una fila por categoría: definición, qué incluye, qué excluye y un ejemplo con su ubicación. Se versiona como cualquier instrumento. Los prompts toman las definiciones de ahí, y cuando el equipo corrige una, la corrige en un solo lugar. El esquema del Caso 1 está en la [sección 4](../componentes-del-prompt/#el-esquema-de-códigos-como-archivo).
+### 4. Guardar las categorías en una planilla
+
+Una planilla con una fila por categoría y cinco columnas: nombre, definición, qué incluye, qué excluye y un ejemplo con su ubicación. Es el libro de códigos. Cuando el equipo corrige una definición, la corrige ahí, y todos los prompts toman la versión nueva.
+
+<Ejemplo rotulo="Ejemplo: dos filas del esquema del Caso 1">
+
+| Código | Definición | Incluye | Excluye | Ejemplo |
+| --- | --- | --- | --- | --- |
+| provincias y municipios | El párrafo le asigna la solución a un gobierno provincial o municipal | Gobernadores, legislaturas provinciales, intendentes | "El interior" nombrado como región | "Ahora solo falta que las provincias y los municipios hagan su parte" (párrafo 70) |
+| no asigna | El párrafo nombra un problema y ningún actor que deba resolverlo | Diagnósticos que culpan a gobiernos anteriores sin decir quién lo resuelve ahora | | "Nuestras fronteras eran un colador" (párrafo 36) |
+
+</Ejemplo>
 
 ### 5. Anotar las decisiones
 
-Cada cambio de criterio va a `decisiones.csv`, con su motivo y la fecha. Es el equivalente de los memos de codificación. Cuando se abre una conversación nueva, esa planilla dice qué se decidió sin depender de que el modelo lo recuerde.
+Durante el análisis aparecen casos que la definición no resuelve, y el equipo decide qué hacer con ellos. Cada decisión va a una planilla, `decisiones.csv`, con la fecha y el motivo. Cumple la función de los memos de codificación: más adelante permite saber por qué un caso quedó donde quedó.
 
-### 6. Guardar prompts, salidas y registro
+Decisiones de este tipo son, por ejemplo:
 
-Cada prompt es un archivo. Cada respuesta del modelo se guarda sin editar, con el nombre de su prompt, y las correcciones del equipo van en otro archivo. Cada corrida tiene una fila en `registro.csv`, con herramienta, modelo, configuración y quién revisó. Es lo que permite reconstruir el análisis y contarlo en la sección de métodos.
+- Juntar dos categorías porque cada una tenía muy pocos casos.
+- Separar una categoría que mezclaba dos cosas distintas.
+- Fijar qué hacer con un caso ambiguo que se repite, como los "debemos" sin sujeto claro en los discursos.
 
-## Cómo se ve en el taller
+<Ejemplo rotulo="Ejemplo del Caso 1">
+  <Archivo archivo="plantilla/decisiones.csv" rotulo="Planilla de decisiones" />
+</Ejemplo>
 
-Este repositorio está ordenado con esos seis pasos. La tabla dice dónde aparece cada archivo.
+### 6. Guardar los prompts que se reutilizan y las salidas que se usan
 
-| Paso | Archivo en el repositorio | Dónde aparece |
+No hace falta guardar cada mensaje. Se guardan dos cosas:
+
+- Los prompts que abren una conversación o que se van a repetir con otro material. Si cambian, se guarda la versión nueva con otro nombre.
+- Las salidas que entran al análisis, sin editar. Las correcciones del equipo van en otro archivo.
+
+Cada una de esas salidas tiene una fila en `registro.csv`, con la herramienta, el modelo y quién revisó. Con eso después se puede contar el procedimiento en la sección de métodos.
+
+<Ejemplo rotulo="Ejemplo del Caso 1">
+  <p>El prompt que clasifica los párrafos 112 a 131 se guardó como archivo, y su salida también. Los mensajes intermedios de esa conversación no se guardaron.</p>
+</Ejemplo>
+
+### 7. Armar el proyecto en la herramienta
+
+Con los seis pasos anteriores, el proyecto se arma en unos minutos.
+
+1. Crear el proyecto en la herramienta.
+2. Pegar como instrucciones un texto basado en `proyecto.md`: rol, pregunta, material y forma de trabajar.
+3. Subir el esquema de categorías y los documentos preparados.
+4. Abrir una conversación por documento o por paso del análisis.
+
+| Herramienta | Cómo se llama | Qué guarda |
 | --- | --- | --- |
-| 1. Pregunta y unidad | La sección Material de cada caso | [Caso 1](../caso-1/#material) y [Caso 2](../caso-2/#material) |
-| 2. Planilla de fuentes | `discursos/fuentes.csv`, `entrevistas/fuentes.csv` | [Materiales](../../materiales/) |
-| 3. Documentos preparados | `discursos/*.txt`, `entrevistas/*.txt` | Todos los prompts los incluyen con la marca `@material` |
-| 4. Esquema de códigos | `esquemas/responsable.csv`, `esquemas/dimensiones-ia.csv` | Secciones 3 y 4, y el paso 2 de cada caso, donde se corrige el borrador del modelo |
-| 5. Decisiones | `plantilla/decisiones.csv` | El [paso 3 del Caso 1](../caso-1/#paso-3-codificación-de-una-submuestra) deja una decisión pendiente |
-| 6. Prompts, salidas y registro | `prompts/`, `salidas/`, `registro.csv` | Cada bloque de prompt, su pestaña Salida y el [cierre](../cierre/#registro-de-corridas) |
+| Claude | Proyecto | Instrucciones, archivos, las conversaciones del proyecto y una memoria propia del proyecto |
+| ChatGPT | Proyecto | Instrucciones, archivos y conversaciones. Se puede configurar para que su memoria quede aislada del resto de la cuenta |
+| Gemini | Gem | Instrucciones fijas y archivos opcionales |
+| NotebookLM | Cuaderno | Fuentes subidas. Responde solo a partir de ellas y cita el pasaje |
 
-## La carpeta del proyecto
-
-El repositorio trae una [plantilla de carpeta](https://github.com/RacoFernandez/taller-llm-investigacion-social/tree/main/plantilla) para copiar en cada análisis. Funciona igual en una carpeta de la computadora o de Drive.
-
-| Carpeta o archivo | Qué va |
-| --- | --- |
-| `proyecto.md` | Pregunta, unidad de análisis, corpus, qué se delega al modelo y cuidados |
-| `material/` | Los documentos preparados, uno por archivo |
-| `material/fuentes.csv` | La planilla de fuentes |
-| `esquemas/` | Las categorías vigentes, en CSV |
-| `prompts/` | Un archivo por prompt. Si cambia, se guarda una versión nueva |
-| `salidas/` | La respuesta de cada corrida, sin editar, con el nombre de su prompt |
-| `registro.csv` | Una fila por corrida |
-| `decisiones.csv` | Una fila por decisión del equipo |
-| `notas-de-traspaso.md` | La última nota de traspaso entre conversaciones |
-
-## Llevar la carpeta a una herramienta
-
-| Capa | Qué se arma | Qué hace falta |
-| --- | --- | --- |
-| 1. Proyecto | Un proyecto en la herramienta con las instrucciones fijas, el esquema y el material | Una cuenta en cualquier herramienta de chat |
-| 2. Conectores y skills | La herramienta lee el material desde Drive u otra app, y sigue un procedimiento guardado | Una cuenta que permita conectores o skills |
-| 3. Automatización | Un agente o un script corre los pasos sobre la carpeta y deja las salidas guardadas | Algo de experiencia con la terminal o con la API |
-
-## Capa 1. El proyecto en la herramienta
-
-Las cuatro herramientas que más se usan permiten fijar instrucciones y archivos que valen para varias conversaciones. Cambian el nombre y algunos límites.
-
-| Herramienta | Cómo se llama | Qué guarda | Conviene para |
-| --- | --- | --- | --- |
-| Claude | Proyecto | Instrucciones, archivos y las conversaciones del proyecto | Trabajar con el esquema y el material siempre a mano |
-| ChatGPT | Proyecto | Instrucciones, archivos y conversaciones, con memoria propia del proyecto | Lo mismo. La cantidad de archivos depende del plan |
-| Gemini | Gem | Instrucciones fijas y archivos opcionales | Una tarea que se repite con el mismo formato |
-| NotebookLM | Cuaderno | Fuentes subidas. Responde solo a partir de ellas y cita el pasaje | Consultar el material y ubicar citas |
-
-Las instrucciones del proyecto se escriben una vez y se aplican a todas las conversaciones. Conviene que tengan rol, material, forma de trabajar y qué hacer al cerrar. El texto que sigue es el que usaría el Caso 1.
+Estas son las instrucciones que usaría el proyecto del Caso 1. A la derecha de cada tramo figura qué aporta.
 
 <Prompt id="organizacion/instrucciones-proyecto" anotado />
-
-Si el esquema cambia, se actualiza el archivo en la carpeta, se vuelve a subir al proyecto y se anota en `decisiones.csv`.
 
 <Seguridad>
   <p>Antes de subir material de campo a cualquier herramienta:</p>
   <ul>
     <li>Reemplazar nombres, direcciones, lugares de trabajo y otros datos que identifican por marcas como [NOMBRE] o [BARRIO].</li>
     <li>Revisar que el consentimiento informado contemple el procesamiento con servicios externos.</li>
-    <li>Revisar en la configuración de privacidad si las conversaciones se usan para entrenar modelos. En Claude y en ChatGPT es una opción de la configuración de privacidad o de controles de datos. En las cuentas institucionales suele venir desactivada, pero conviene comprobarlo.</li>
+    <li>Revisar en la configuración de privacidad si las conversaciones se usan para entrenar modelos. En las cuentas institucionales suele venir desactivado, pero conviene comprobarlo.</li>
     <li>Material confidencial, como el de un convenio, no se sube sin autorización de quien lo cedió.</li>
   </ul>
 </Seguridad>
 
-### Una planilla como memoria
+El repositorio trae una [plantilla de carpeta](https://github.com/RacoFernandez/taller-llm-investigacion-social/tree/main/plantilla) con estos archivos, lista para copiar en cada análisis.
 
-Las planillas de los pasos 5 y 6 cumplen además otra función cuando se trabaja con un modelo: guardan lo que la conversación no retiene.
+## Cuánto contexto dar
 
-- `registro.csv`: qué se corrió, con qué herramienta y modelo, y quién revisó. Es la del [cierre](../cierre/).
-- `decisiones.csv`: cada cambio de criterio, con su motivo. Es lo que se pega o se sube cuando una conversación nueva tiene que saber qué se decidió.
-- Una planilla de resultados que crece por filas. Si cada conversación trabaja un documento y devuelve filas con el mismo formato, las filas se suman a la misma planilla y el análisis no depende de ninguna conversación en particular.
+Más contexto no siempre es mejor. Si el proyecto tiene diez documentos largos y la tarea es clasificar veinte párrafos de uno, el modelo tiene que buscar lo relevante entre mucho material y se distrae con más facilidad. Además, en las herramientas que cobran por uso o que tienen límites de mensajes, cada palabra de contexto cuenta en cada mensaje.
 
-<Archivo archivo="plantilla/decisiones.csv" rotulo="Planilla de decisiones" />
+- Dar en cada conversación el material que esa tarea necesita, no todo el corpus.
+- Escribir instrucciones del proyecto cortas: rol, pregunta y forma de trabajar. Los detalles de cada tarea van en el prompt.
+- Sacar del proyecto los archivos que ya no se usan.
 
-La grilla del Caso 2 es un ejemplo de planilla de resultados. Tiene una fila por mención y las mismas columnas para cualquier entrevista, así que una entrevista nueva suma filas sin rehacer las anteriores.
+## Conversaciones cortas y nota de traspaso
 
-<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="Planilla de resultados" max={8} />
+En una conversación larga el modelo atiende peor lo que se dijo al principio. Algunas herramientas resumen solas la parte más vieja para seguir funcionando, y en ese resumen se pueden perder el esquema o una definición sin aviso. Conviene trabajar con conversaciones cortas, una por documento o por paso, y pasar de una a otra con una nota de traspaso.
 
-### Conversaciones cortas y nota de traspaso
+El pasaje tiene tres momentos.
 
-En una conversación larga el modelo atiende peor lo que se dijo al principio. Algunas herramientas resumen solas la parte más vieja para seguir funcionando, y en ese resumen se pueden perder el esquema o una definición sin aviso.
-
-- Abrir una conversación por documento o por paso del análisis.
-- Lo que tiene que durar va al proyecto o a la carpeta, no a la conversación.
-- Antes de cerrar, pedir una nota de traspaso y guardarla en `notas-de-traspaso.md`.
-- La conversación nueva empieza con la nota y con el esquema vigente.
-
-El prompt que sigue pide la nota al final de la conversación del paso 3 del Caso 1. La pestaña Salida muestra la nota que devolvió.
+**1. Pedir la nota al cerrar.** Al final de la conversación se le pide al modelo un resumen con lo que se hizo, lo que se decidió, los casos dudosos y el próximo paso. El ejemplo cierra la conversación en la que se clasificaron los párrafos 112 a 131 del Caso 1.
 
 <Prompt id="organizacion/traspaso" />
 
-La nota se revisa antes de usarla. En esta corrida, la primera decisión dice que los "debemos" sin sujeto van a "no asigna". El esquema decía que se anotan como ambiguos, sin elegir código. Es el tipo de corrimiento que hay que detectar antes de que pase a la conversación siguiente, y que después se anota en `decisiones.csv`.
+La nota se lee antes de usarla. En esta, la primera decisión dice que los "debemos" sin sujeto van a "no asigna". El esquema decía que se anotan como ambiguos, sin elegir código. El modelo cambió un criterio que nadie había decidido.
+
+**2. Actualizar los archivos de contexto.** Lo nuevo de la nota se pasa a los archivos del proyecto. El modelo puede preparar las filas para la planilla de decisiones.
+
+<Prompt id="organizacion/actualizar-decisiones" />
+
+Propuso tres filas razonables, todas marcadas "a confirmar por el equipo". La del "debemos" no la incluyó ni la marcó como contradicción, aunque contradice lo que estaba pendiente. Las filas se revisan antes de copiarlas.
+
+En Claude y en ChatGPT, los archivos de un proyecto no se actualizan desde la conversación. Hay que editar el archivo en la carpeta propia y volver a subirlo en lugar del anterior. La excepción es trabajar con los archivos en Google Drive a través de un conector: en ese caso Claude puede editar un documento o una planilla de Drive desde la conversación.
+
+**3. Abrir la conversación siguiente con la nota.** La conversación nueva arranca con la nota revisada. El resto del contexto ya está en el proyecto.
 
 <Prompt id="organizacion/retomar" />
 
-### Configuración de la herramienta
+## Configuración de la herramienta
 
-El mismo prompt puede dar resultados distintos según cómo esté configurada la herramienta. Estos ajustes se revisan antes de empezar.
+Hay dos ajustes personales que pueden cambiar las respuestas sin que figuren en el prompt.
 
-| Ajuste | Qué hace | Efecto sobre el análisis | Qué conviene |
-| --- | --- | --- | --- |
-| Memoria personal entre conversaciones | La app guarda datos de chats anteriores de cada persona y los usa en los nuevos | Dos integrantes con el mismo prompt reciben respuestas distintas, y la diferencia no figura en ningún lado | Apagarla o usar un chat temporal durante el análisis, y anotar cómo estaba |
-| Preferencias o instrucciones personalizadas | Texto fijo de cada persona que se suma a todos sus chats | Cambia el tono, el formato o los criterios sin que figure en el prompt | Desactivarlas para el análisis o copiarlas en el registro |
-| Instrucciones y archivos del proyecto | Texto y documentos que se aplican a todas las conversaciones de un proyecto compartido | Fijan rol, esquema y formato para todo el equipo | Escribirlas pensando en el análisis, guardar cada versión en la carpeta y anotarla en el registro |
+**Memoria entre conversaciones.** La herramienta guarda datos de chats anteriores y los usa en los nuevos. Si una persona trabajó antes en otro tema, eso se puede filtrar en el análisis.
 
-La diferencia entre la primera fila y la tercera es quién ve el contexto. Las instrucciones de un proyecto las lee todo el equipo. La memoria personal es distinta para cada integrante.
+- En ChatGPT, un proyecto se puede configurar con memoria solo del proyecto. En ese modo no usa la memoria de la cuenta ni otras conversaciones. Los proyectos compartidos funcionan siempre así.
+- En Claude, cada proyecto tiene su propia memoria, pero por defecto también usa la de la cuenta. Para separarlo del todo hay que desactivar "Use account memory" en la página del proyecto.
+- En las dos herramientas se puede abrir una conversación sin memoria.
 
-## Capa 2. Conectores y skills
+**Preferencias personales.** Texto fijo de cada persona que se suma a sus chats, como "respondé en tono informal" o "usá listas con viñetas". En un análisis cambia el tono o el formato de las respuestas. En ChatGPT, las instrucciones del proyecto reemplazan a las personales dentro del proyecto. En Claude conviene revisar qué dicen las preferencias del perfil antes de empezar.
 
-### Conectores
+Un proyecto compartido y con la memoria aislada resuelve casi todo: el equipo trabaja con el mismo contexto, y ese contexto está escrito.
+
+## Conectores
 
 Un conector le da a la herramienta acceso a otra aplicación, como Google Drive, Gmail o Notion. En lugar de subir el material a cada conversación, el modelo lo lee desde la carpeta de Drive del proyecto. Si alguien corrige el esquema en Drive, la próxima conversación ya lee la versión corregida.
 
-- Claude, ChatGPT y Gemini tienen conectores con Google Drive. En las cuentas de organización, quien administra la cuenta suele tener que habilitarlos primero.
-- El conector respeta los permisos de la cuenta. El modelo puede leer lo mismo que puede abrir la persona conectada.
-- NotebookLM no usa conectores. Trabaja con las fuentes que se suben o se eligen de Drive.
+Un conector no es lo mismo que darle a la herramienta el control de la computadora. El conector se comunica con la aplicación por una vía prevista para eso y solo puede hacer lo que esa vía permite, como buscar, leer o crear archivos. El control de la computadora, que algunas herramientas ofrecen como función aparte, mueve el mouse y escribe en la pantalla. Acá se habla solo de conectores.
+
+Así funciona el conector de Google Drive de Claude:
+
+- Accede a la cuenta de Google que se conecta, con sus permisos: puede abrir lo mismo que puede abrir esa persona.
+- La ayuda de Claude no describe una forma de limitarlo a una carpeta. Se puede apagar el conector, desactivar acciones puntuales o desconectar la cuenta.
+- Además de leer, puede crear y editar archivos. Compartir, mover o mandar a la papelera pide aprobación por defecto.
+- En las cuentas de organización, quien administra la cuenta puede desactivarlo.
+
+ChatGPT y Gemini tienen conectores parecidos, con sus propias reglas.
 
 <Seguridad titulo="Seguridad con conectores">
   <ul>
-    <li>El modelo ve todo lo que la cuenta conectada puede abrir, no solo la carpeta del proyecto. Conviene trabajar con una cuenta o una unidad compartida que tenga solo el material del análisis.</li>
+    <li>Como el modelo accede a toda la cuenta conectada, conviene trabajar con una cuenta o una unidad compartida que tenga solo el material del análisis.</li>
     <li>Un documento leído por el conector puede traer texto que el modelo interprete como instrucciones. Con material de terceros, revisar la salida con el mismo cuidado que siempre.</li>
     <li>Las políticas sobre uso de datos de los conectores son propias de cada herramienta y cambian. Se leen antes de conectar una cuenta con material de campo.</li>
   </ul>
 </Seguridad>
 
-### Skills
+## Skills
 
-Una skill es un procedimiento guardado: un archivo con instrucciones, y a veces scripts, que la herramienta usa cuando la tarea lo pide. Sirve para pasos que el equipo repite igual sobre muchos documentos, como armar una grilla de menciones.
+Una skill es un procedimiento escrito en un archivo, para que la herramienta lo siga cada vez que la tarea lo pide. Sirve para pasos que el equipo repite igual sobre muchos documentos, como armar una grilla de menciones.
 
-El [Caso 2](../caso-2/#paso-5-la-misma-grilla-como-skill) trae una skill completa, cómo se instala en Claude y la corrida que la usa. En las otras herramientas se consigue algo parecido pegando el mismo procedimiento en las instrucciones de un proyecto o de un Gem.
+El archivo se llama `SKILL.md` y es texto en formato Markdown, el mismo que usa este sitio: títulos con `#`, listas con guiones. Tiene dos partes.
+
+- Un encabezado con un nombre y una descripción. La herramienta lee solo la descripción para decidir cuándo usar la skill.
+- Las instrucciones, escritas como una receta: qué necesita, qué pasos sigue, qué devuelve y qué reglas respeta.
+
+La carpeta de la skill puede traer además scripts, como uno que verifica las citas.
+
+```
+---
+name: grilla-de-menciones
+description: Arma una grilla de menciones a partir de entrevistas o grupos focales
+  con turnos numerados y una lista de dimensiones.
+---
+
+# Grilla de menciones
+
+## Qué necesita
+- Transcripciones con turnos numerados.
+- Una lista de dimensiones con su definición. Si falta, pedila.
+
+## Pasos
+1. Identificá los hablantes. Quien entrevista o modera no se codifica.
+2. Recorré cada turno y decidí qué dimensiones aparecen.
+...
+```
+
+El Caso 2 trae la skill completa, cómo se instala en Claude y una corrida que la usa. En las otras herramientas se consigue algo parecido pegando el mismo texto en las instrucciones de un proyecto o de un Gem.
 
 <Seguridad titulo="Seguridad con skills">
   <ul>
@@ -191,33 +249,32 @@ El [Caso 2](../caso-2/#paso-5-la-misma-grilla-como-skill) trae una skill complet
   </ul>
 </Seguridad>
 
-## Capa 3. Automatización
+## Automatizar
 
-Cuando el mismo análisis se repite sobre decenas de documentos, copiar y pegar deja de ser práctico. Hay dos caminos, y en los dos las revisiones las sigue haciendo una persona.
+Cuando el mismo análisis se repite sobre muchos documentos, copiar y pegar deja de ser práctico. Una misma tarea, armar la grilla de menciones de 20 entrevistas, se puede hacer de tres maneras.
 
-- Un agente, como Claude Code o Codex, que trabaja sobre la carpeta del proyecto. Lee los prompts, corre cada paso, guarda las salidas y se detiene para que el equipo revise.
-- Un script que llama al modelo por API. Lee cada prompt de `prompts/`, arma el mensaje con el material y guarda la respuesta en `salidas/`.
+| Cómo | Qué hace la persona | Qué hace la herramienta | Conviene cuando |
+| --- | --- | --- | --- |
+| Proyecto de chat | Abre 20 conversaciones, adjunta una entrevista en cada una, pega el prompt y guarda cada salida | Responde en cada conversación | Son pocos documentos o el procedimiento todavía cambia |
+| Agente, como Claude Code o Codex | Escribe un pedido: "para cada archivo de `material/`, armá la grilla con `prompts/grilla.txt` y guardala en `salidas/`". Revisa las salidas cuando termina | Abre cada archivo, corre el prompt, guarda las salidas y avisa | Son muchos documentos y el procedimiento ya está probado |
+| Programa que llama al modelo por API | Escribe o adapta un programa una vez y lo corre | El programa manda cada documento al modelo y guarda la respuesta, sin intervención | El análisis se repite seguido o con cientos de documentos |
 
-Este repositorio tiene dos scripts de ese tipo, que se usaron para preparar el taller.
+En los tres casos, las salidas las revisa una persona.
 
-| Script | Qué hace |
-| --- | --- |
-| `scripts/armar_corridas.mjs` | Arma el mensaje completo de cada prompt, con el material, el esquema y las salidas anteriores ya incluidos |
-| `scripts/verificar_citas.mjs` | Busca en el texto original cada cita entre comillas de una salida e informa cuáles no aparecen textuales |
-
-El segundo no usa ningún modelo. Hace una comparación de texto, y por eso sirve para controlar lo que el modelo devolvió. Su informe aparece en los dos casos.
+Para preparar este taller se usaron dos programas de este tipo. Uno arma el mensaje completo de cada prompt, con el material y el esquema incluidos. El otro busca en el texto original cada cita entre comillas de una salida e informa cuáles no aparecen textuales. El segundo no usa ningún modelo: compara texto, y por eso sirve para controlar lo que el modelo devolvió.
 
 <Seguridad titulo="Seguridad con la API y los agentes">
   <ul>
-    <li>La clave de la API no se escribe en un prompt ni en un archivo del repositorio. Va en una variable de entorno.</li>
+    <li>La clave de la API no se escribe en un prompt ni en un archivo compartido. Va en una variable de entorno.</li>
     <li>Lo que se manda por API también queda sujeto a los términos del proveedor. Las reglas sobre datos personales son las mismas que en el chat.</li>
-    <li>Un agente que trabaja sobre una carpeta puede modificar o borrar archivos. Conviene que trabaje sobre una copia o sobre un repositorio con historial.</li>
+    <li>Un agente que trabaja sobre una carpeta puede modificar o borrar archivos. Conviene que trabaje sobre una copia o sobre una carpeta con historial de versiones.</li>
   </ul>
 </Seguridad>
 
 ## Fuentes
 
+- [Anthropic, Use Claude's chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context). Consultado el 14 de octubre de 2026.
+- [Anthropic, Use Google Workspace connectors](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Consultado el 14 de octubre de 2026.
 - [Anthropic, Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Consultado el 12 de octubre de 2026.
-- [Anthropic, Use Google Workspace connectors](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Consultado el 12 de octubre de 2026.
-- [OpenAI, Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Consultado el 12 de octubre de 2026.
+- [OpenAI, Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Consultado el 14 de octubre de 2026.
 - [Boston College, Gemini Gems vs. NotebookLM](https://cdil.bc.edu/resources/google-ai/gems-vs-notebooklm/). Consultado el 12 de octubre de 2026.

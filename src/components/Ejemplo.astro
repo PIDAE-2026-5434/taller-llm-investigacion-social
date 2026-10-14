@@ -1,0 +1,9 @@
+---
+// Recuadro con un ejemplo concreto al final de un paso.
+const { rotulo = 'Ejemplo' } = Astro.props;
+---
+
+<aside class="ejemplo">
+  <p class="ejemplo-rotulo">{rotulo}</p>
+  <slot />
+</aside>

@@ -1040,3 +1040,48 @@ details > * + * {
 .salida-md td:first-child {
   min-width: 90px;
 }
+.prosa > pre,
+.ejemplo pre {
+  margin-top: 20px;
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  padding: clamp(14px, 2.5vw, 20px);
+  font-family: var(--f-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--tinta);
+}
+.prosa > pre code,
+.ejemplo pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+.ejemplo {
+  border-left: 3px solid var(--tinta);
+  padding: 4px 0 4px 18px;
+}
+.ejemplo-rotulo {
+  margin: 0 0 6px;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+.ejemplo > * + * {
+  margin-top: 8px;
+}
+.ejemplo {
+  min-width: 0;
+  max-width: 100%;
+}
+.ejemplo > table {
+  display: block;
+  overflow-x: auto;
+}
+.ejemplo .bloque {
+  max-width: 100%;
+}
