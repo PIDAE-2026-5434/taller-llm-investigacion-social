@@ -67,7 +67,7 @@ export function prompt(id) {
   } catch {
     completo = sitio.texto;
   }
-  return { id, ruta: `prompts/${id}.txt`, limpio: sitio.texto, completo, tramos: sitio.tramos, continua: sitio.continua };
+  return { id, ruta: `prompts/${id}.txt`, limpio: sitio.texto, completo, tramos: sitio.tramos, continua: sitio.continua, acotado: sitio.acotado };
 }
 
 /** La salida guardada de un prompt y la fila del registro que la describe. */

@@ -64,6 +64,7 @@ export function expandir(crudo, leer, modo = 'completo') {
   };
   const sitio = modo === 'sitio';
   let continua = null;
+  let acotado = false;
 
   const texto = crudo
     .replace(/\r/g, '')
@@ -75,14 +76,20 @@ export function expandir(crudo, leer, modo = 'completo') {
     .replace(/^@material\s+(\S+)(?:\s+(\d+)-(\d+))?[ \t]*$/gm, (_, ruta, a, b) => {
       const crudoMaterial = exigir(ruta);
       if (sitio) {
-        const tramo = !a ? ', completo' : a === b ? `, párrafo ${a}` : `, párrafos ${a} a ${b}`;
-        return `[${nombreArchivo(ruta)}${tramo}]`;
+        // En la página: hasta 3 bloques se muestran enteros; si son más, los dos primeros y [...].
+        const partes = (a ? bloques(crudoMaterial, Number(a), Number(b)) : bloques(crudoMaterial)).split('\n\n');
+        if (partes.length <= 3) return partes.join('\n\n');
+        acotado = true;
+        return [...partes.slice(0, 2), '[...]'].join('\n\n');
       }
       // El archivo completo va con su encabezado; un tramo, solo con los bloques pedidos.
       return a ? bloques(crudoMaterial, Number(a), Number(b)) : limpiar(crudoMaterial);
     })
     .replace(/^@salida\s+(\S+)[ \t]*$/gm, (_, id) => {
-      if (sitio) return `[salida de ${id}]`;
+      if (sitio) {
+        acotado = true;
+        return `[salida de ${id}]`;
+      }
       return limpiar(exigir(`salidas/${id}.txt`));
     });
 
@@ -103,7 +110,7 @@ export function expandir(crudo, leer, modo = 'completo') {
   }
   cerrar();
 
-  return { texto: tramos.map((t) => t.texto).join('\n\n'), tramos, continua };
+  return { texto: tramos.map((t) => t.texto).join('\n\n'), tramos, continua, acotado };
 }
 
 /**

@@ -105,9 +105,9 @@ También se lo llama chain of thought o CoT.
 
 El prompt trae el párrafo 141 y el 150, y suma el esquema completo, con lo que incluye y excluye cada categoría. El 150 anuncia una medida ("el régimen de incentivo para medianas inversiones") y dice "no podemos aceptar" sin aclarar quién.
 
-<Prompt id="tecnicas/paso-a-paso" variantes rotuloSalida="Salida" />
+<Prompt id="tecnicas/paso-a-paso" variantes={['otra-corrida']} rotuloSalida="Salida" />
 
-Con las definiciones y los pasos a la vista, el párrafo 141 pasó a "no asigna", con el motivo escrito: "a 'ustedes' no se le pide ni se le asigna nada". El 150 es un caso de frontera. La pestaña Otra corrida es una corrida anterior del mismo prompt, con el mismo modelo, en otra conversación nueva. Ahí el 150 quedó en "no asigna". En la que muestra la pestaña Salida quedó en "gobierno nacional". La sección 4 compara la respuesta de tres modelos para este mismo prompt.
+Con las definiciones y los pasos a la vista, el párrafo 141 pasó a "no asigna", con el motivo escrito: "a 'ustedes' no se le pide ni se le asigna nada". El 150 es un caso de frontera. La pestaña Otra corrida muestra que el mismo prompt, con el mismo modelo, puede dar respuestas distintas. Es una corrida anterior, en otra conversación nueva: ahí el 150 quedó en "no asigna", y en la de la pestaña Salida quedó en "gobierno nacional". Por eso conviene correr cada prompt más de una vez, como se explica al final de esta sección.
 
 ## Descomposición y salida estructurada
 
