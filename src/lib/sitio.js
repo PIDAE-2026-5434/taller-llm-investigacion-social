@@ -2,7 +2,7 @@
 
 export const sitio = {
   titulo: 'LLMs en investigación social',
-  proyecto: 'PIDAE 2026',
+  proyecto: 'Workshop AcademIA',
   descripcion:
     'Material del taller PIDAE sobre uso de modelos de lenguaje en investigación social: organización del trabajo, tareas, técnicas, armado de prompts, errores frecuentes y dos casos de aplicación.',
   institucion: 'Proyecto PIDAE 2026. Facultad de Ciencias Sociales, Universidad de Buenos Aires.',

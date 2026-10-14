@@ -5,10 +5,12 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
 
 <Base>
   <main>
+    <div class="portada-eje">
     <section class="contenedor portada">
       <div class="portada-texto">
-        <div class="antetitulo">Taller PIDAE 2026 · Parte 2 · 75 minutos</div>
-        <h1>Interactuando con <span class="marca">LLMs</span></h1>
+        <img class="portada-logo" src={ruta('marca/eje04-claro.png')} alt="" width="110" height="110" />
+        <div class="antetitulo-eje">Eje 04 · Workshop AcademIA · 75 minutos</div>
+        <h1>Cómo interactuamos con los modelos de lenguaje</h1>
         <p>
           Material de apoyo para usar modelos de lenguaje en investigación social: cómo organizar el trabajo, tipos de
           tareas, técnicas, armado de prompts, errores frecuentes y dos casos con sus salidas guardadas.
@@ -20,7 +22,7 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
       </div>
 
       <figure class="ejemplo-marcado">
-        <figcaption>Apertura de sesiones ordinarias 2026, párrafo 70. Codificado con el esquema de la sección 4.</figcaption>
+        <figcaption>Apertura de sesiones ordinarias 2026, párrafo 70. Codificado con el esquema del Caso 1.</figcaption>
         <blockquote>
           "Ahora solo falta que <span class="marca">las provincias y los municipios</span> hagan su parte, por lo cual hemos
           facilitado una herramienta para denunciar{' '}<span class="subrayado">tasas excesivas</span>."
@@ -33,6 +35,7 @@ import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
         </dl>
       </figure>
     </section>
+    </div>
 
     <section class="contenedor bloque-secciones" id="secciones">
       <div class="bloque-secciones-titulo">

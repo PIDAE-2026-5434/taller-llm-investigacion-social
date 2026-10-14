@@ -1,14 +1,17 @@
 :root {
-  --tinta: #111111;
-  --papel: #ffffff;
-  --gris: #444444;
-  --linea: #d0d0cc;
-  --panel: #f3f3f0;
-  --marca: #ffe45c;
-  --enlace: #1b3fb5;
-  --enlace-activo: #0f2a85;
-  --f-texto: 'IBM Plex Sans', system-ui, sans-serif;
-  --f-titulo: 'Bricolage Grotesque Variable', 'IBM Plex Sans', system-ui, sans-serif;
+  /* Colores y tipografías del template AcademIA, eje 04. */
+  --tinta: #2b1a17;
+  --papel: #fbf3e6;
+  --gris: #6b4a3e;
+  --linea: #e3cdb0;
+  --panel: #f6e7d0;
+  --marca: #f7c59f;
+  --acento: #d2552a;
+  --acento-oscuro: #a63a22;
+  --enlace: #a63a22;
+  --enlace-activo: #6e2a1f;
+  --f-texto: 'DM Sans Variable', system-ui, sans-serif;
+  --f-titulo: 'Zilla Slab', Georgia, serif;
   --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
   --ancho: 1200px;
   --margen: clamp(20px, 4vw, 32px);
@@ -141,7 +144,7 @@ a:hover {
   text-decoration: none;
 }
 .boton:hover {
-  background: #333333;
+  background: var(--enlace-activo);
   color: var(--papel);
 }
 .boton-linea {
@@ -187,8 +190,8 @@ h3 {
 }
 .portada-texto h1 {
   font-weight: 700;
-  font-size: clamp(44px, 7vw, 88px);
-  line-height: 0.98;
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.05;
   letter-spacing: -0.02em;
 }
 .portada-texto p {
@@ -1084,4 +1087,133 @@ details > * + * {
 }
 .ejemplo .bloque {
   max-width: 100%;
+}
+
+
+/* Tema AcademIA */
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+}
+.cabecera-marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: var(--tinta);
+}
+.cabecera-marca img.academia {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.cabecera-eje {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--acento-oscuro);
+  border-left: 1px solid var(--linea);
+  padding-left: 14px;
+}
+.cabecera-eje img {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 700px) {
+  .cabecera-eje span {
+    display: none;
+  }
+}
+.pie-logos {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.pie-logos img.uba {
+  height: 30px;
+  width: auto;
+}
+.pie-logos img.sello {
+  height: 38px;
+  width: 38px;
+}
+.antetitulo-eje {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-texto);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acento-oscuro);
+}
+.antetitulo-eje img {
+  width: 20px;
+  height: 20px;
+}
+.portada-eje {
+  background: var(--acento);
+  color: var(--papel);
+}
+.portada-eje .portada {
+  align-items: center;
+}
+.portada-eje .antetitulo-eje {
+  color: var(--papel);
+}
+.portada-eje h1 {
+  color: var(--papel);
+}
+.portada-eje .portada-texto p {
+  color: var(--papel);
+}
+.portada-eje .boton {
+  background: var(--papel);
+  color: var(--tinta);
+  border-color: var(--papel);
+}
+.portada-eje .boton:hover {
+  background: var(--panel);
+}
+.portada-eje .boton-linea {
+  background: transparent;
+  color: var(--papel);
+}
+.portada-eje .boton-linea:hover {
+  background: rgba(251, 243, 230, 0.15);
+  color: var(--papel);
+}
+.portada-logo {
+  width: clamp(72px, 9vw, 110px);
+  height: auto;
+}
+.portada-eje .ejemplo-marcado {
+  background: var(--papel);
+  color: var(--tinta);
+  border: 0;
+}
+.lista-titulo {
+  font-weight: 700;
+}
+.bloque-patron .bloque-tipo {
+  background: var(--acento);
+  color: var(--papel);
+}
+.bloque-patron {
+  border-color: var(--acento);
+}
+.seguridad {
+  border-color: var(--acento-oscuro);
+  background: var(--panel);
+}
+.ejemplo {
+  border-left-color: var(--acento);
 }

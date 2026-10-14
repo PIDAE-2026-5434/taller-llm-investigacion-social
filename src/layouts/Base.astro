@@ -1,8 +1,6 @@
 ---
-import '@fontsource-variable/bricolage-grotesque/opsz.css';
-import '@fontsource/ibm-plex-sans/400.css';
-import '@fontsource/ibm-plex-sans/500.css';
-import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/zilla-slab/700.css';
+import '@fontsource-variable/dm-sans/index.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
@@ -33,7 +31,13 @@ const menu = [
   <body>
     <header class="cabecera">
       <div class="contenedor">
-        <a class="cabecera-nombre" href={ruta('')}>{sitio.proyecto} / {sitio.titulo}</a>
+        <a class="cabecera-marca" href={ruta('')}>
+          <img class="academia" src={ruta('marca/academia.png')} alt="AcademIA" width="140" height="22" />
+          <span class="cabecera-eje">
+            <img src={ruta('marca/eje04.png')} alt="" width="16" height="16" />
+            <span>Eje 04 · Cómo interactuamos con los modelos de lenguaje</span>
+          </span>
+        </a>
         <nav aria-label="Principal">
           {
             menu.map((m) => (
@@ -51,6 +55,10 @@ const menu = [
 
     <footer class="pie">
       <div class="contenedor">
+        <div class="pie-logos">
+          <img class="uba" src={ruta('marca/uba-sociales.png')} alt="UBA Sociales, Facultad de Ciencias Sociales" width="190" height="30" />
+          <img class="sello" src={ruta('marca/sello-uba.png')} alt="Sello de la Universidad de Buenos Aires" width="38" height="38" />
+        </div>
         <p>{sitio.institucion}</p>
         <p>
           Discursos: Casa Rosada, bajo licencia{' '}

@@ -2,7 +2,7 @@
 // Layout de las páginas de src/pages/guia/. El título, la numeración y la
 // navegación salen de la lista de secciones de src/lib/sitio.js.
 import Base from './Base.astro';
-import { secciones, rutaSeccion } from '../lib/sitio.js';
+import { secciones, rutaSeccion, ruta } from '../lib/sitio.js';
 
 const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 const i = secciones.findIndex((s) => s.slug === slug);
@@ -31,7 +31,7 @@ const siguiente = secciones[i + 1];
 
     <main class="guia-cuerpo">
       <div class="guia-encabezado">
-        <div class="antetitulo">Sección {i + 1} de {secciones.length}</div>
+        <div class="antetitulo-eje"><img src={ruta('marca/eje04.png')} alt="" width="20" height="20" />Eje 04 · Sección {i + 1} de {secciones.length}</div>
         <h1>{seccion.titulo}</h1>
       </div>
 
