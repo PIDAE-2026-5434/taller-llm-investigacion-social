@@ -174,7 +174,17 @@ La primera línea dice que el discurso le asigna "la mayor parte de las responsa
 - La salida de cada paso se guarda en un archivo o en una planilla. Ese archivo es el registro del análisis.
 - La versión corregida se guarda aparte, con otro nombre, como `descomposicion-1-revisada.txt`. Así queda a la vista qué cambió el equipo.
 
-Cuando la cadena se repite sobre muchos documentos, se puede automatizar. Las opciones están en [Organizar el trabajo](../organizar-el-trabajo/#automatizar).
+Cuando la cadena se repite sobre muchos documentos, copiar y pegar se vuelve lento. Con un agente, como Claude Code o Codex, que trabaja sobre la carpeta del proyecto, alcanza con un pedido como este:
+
+```
+Para cada discurso de la carpeta discursos/:
+1. Corré prompts/tecnicas/descomposicion-1.txt y guardá la salida en salidas/.
+2. Frená y esperá a que revise la lista.
+3. Cuando te confirme, corré descomposicion-2.txt con la lista revisada y guardá la tabla.
+4. Frená de nuevo antes del paso 3.
+```
+
+El agente abre cada archivo, arma los mensajes y guarda las salidas. Las revisiones entre pasos las sigue haciendo una persona. Las otras opciones están en [Organizar el trabajo](../organizar-el-trabajo/#automatizar).
 
 ## Iteración
 

@@ -1,4 +1,13 @@
-Clasificá el párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Si hay más de un responsable, listalos separados por punto y coma. Respondé solo con la categoría.
+Clasificá el párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra. Usá estas categorías:
+
+- gobierno nacional
+- otros poderes del Estado
+- provincias y municipios
+- sector privado
+- ciudadanía
+- no asigna
+
+Si hay más de un responsable, listalos separados por punto y coma. Respondé solo con la categoría.
 
 Ejemplos:
 Párrafo: "Ahora solo falta que las provincias y los municipios hagan su parte, por lo cual hemos facilitado una herramienta para denunciar tasas excesivas, chequeándolo en una página." -> provincias y municipios

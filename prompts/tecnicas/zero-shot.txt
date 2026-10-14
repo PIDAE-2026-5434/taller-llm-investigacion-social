@@ -1,3 +1,12 @@
-Clasificá el siguiente párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra: "gobierno nacional", "otros poderes del Estado", "provincias y municipios", "sector privado", "ciudadanía" o "no asigna". Respondé solo con la categoría.
+Clasificá el siguiente párrafo de un discurso presidencial según a quién le asigna la responsabilidad de resolver el problema que nombra. Usá una de estas categorías:
+
+- gobierno nacional
+- otros poderes del Estado
+- provincias y municipios
+- sector privado
+- ciudadanía
+- no asigna
+
+Respondé solo con la categoría.
 
 @material discursos/apertura-sesiones-2026.txt 141-141
