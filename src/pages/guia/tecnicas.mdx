@@ -5,9 +5,6 @@ layout: ../../layouts/Guia.astro
 import Prompt from '../../components/Prompt.astro';
 import Ficha from '../../components/Ficha.astro';
 import Eleccion from '../../components/Eleccion.astro';
-import Cadena from '../../components/Cadena.astro';
-import Iteracion from '../../components/Iteracion.astro';
-import Archivo from '../../components/Archivo.astro';
 
 Las cinco técnicas se combinan entre sí. Cada una resuelve un problema distinto de la tarea.
 
@@ -109,113 +106,21 @@ El prompt trae el párrafo 141 y el 150, y suma el esquema completo, con lo que 
 
 Con las definiciones y los pasos a la vista, el párrafo 141 pasó a "no asigna", con el motivo escrito: "a 'ustedes' no se le pide ni se le asigna nada". El 150 es un caso de frontera. La pestaña Otra corrida muestra que el mismo prompt, con el mismo modelo, puede dar respuestas distintas. Es una corrida anterior, en otra conversación nueva: ahí el 150 quedó en "no asigna", y en la de la pestaña Salida quedó en "gobierno nacional". Por eso conviene correr cada prompt más de una vez, como se explica al final de esta sección.
 
-## Descomposición y salida estructurada
+## Descomposición
 
-<Ficha
-  datos={[
-    [
-      'Qué es',
-      'Partir una tarea grande en pasos, cada uno con su prompt, y pedir cada salida en un formato fijo, como una tabla o una lista numerada.',
-    ],
-    [
-      'Cuándo conviene',
-      'Textos largos, tareas que mezclan extraer, clasificar y sintetizar, y resultados que después van a una planilla.',
-    ],
-    ['Cuidado', 'Revisar la salida de cada paso antes de usarla en el siguiente.'],
-  ]}
-/>
-
-Los tres pasos trabajan sobre los párrafos 37 a 56 del discurso, donde el orador describe lo que recibió en 2023 y lo que hizo en el primer año.
-
-### Paso 1. Extraer
-
-<Prompt id="tecnicas/descomposicion-1" />
-
-Antes de seguir, se revisó la lista con el script que busca cada cita en el original. De 18 citas, una no aparecía textual: en el párrafo 49 el modelo quitó "de una vez por todas" del medio de la frase. La lista corregida a mano es la que entra en el paso 2.
-
-<Archivo archivo="salidas/tecnicas/descomposicion-1-verificacion.md" rotulo="Verificación" />
-
-### Paso 2. Clasificar
-
-<Prompt id="tecnicas/descomposicion-2" />
-
-La tabla tiene un error que viene del paso 1 y que el script no detecta, porque la cita es textual. En el párrafo 55 el pasaje extraído fue "los conocimientos básicos de lecto comprensión que las últimas décadas se perdieron". Quedó afuera el comienzo de la oración: "Por eso también estamos reformando la educación inicial y primaria". Con ese recorte, el paso 2 clasificó "no asigna". Con la oración completa correspondía "gobierno nacional". Revisar si un recorte deja afuera lo que importa es trabajo de una persona.
-
-### Paso 3. Sintetizar
-
-<Prompt id="tecnicas/descomposicion-3" />
-
-La primera línea dice que el discurso le asigna "la mayor parte de las responsabilidades" al gobierno nacional, y en la misma línea aclara que son 4 de 18 pasajes. La síntesis repite la fórmula que traía la consigna ("la mayor parte") aunque los números digan otra cosa. Conviene leer cada afirmación contra la tabla y no quedarse con la primera frase.
-
-### Cómo se encadenan en una app de chat
-
-<Cadena
-  pasos={[
-    {
-      pega: 'El prompt del paso 1 y el discurso con los párrafos numerados.',
-      devuelve: 'Una lista de pasajes con su número de párrafo.',
-      revisa: 'Busca cada pasaje en el original y corrige o borra los que no coinciden.',
-    },
-    {
-      pega: 'El prompt del paso 2 y la lista ya corregida.',
-      devuelve: 'Una tabla con número de párrafo, pasaje y responsable.',
-      revisa: 'Mira las filas dudosas y corrige la categoría a mano.',
-    },
-    {
-      pega: 'El prompt del paso 3 y la tabla ya corregida.',
-      devuelve: 'Un resumen de 5 líneas con números de párrafo.',
-      revisa: 'Comprueba que cada afirmación tenga respaldo en la tabla.',
-    },
-  ]}
-/>
-
-- Los tres mensajes pueden ir en la misma conversación. Cuando el equipo corrigió una salida, pega la versión corregida y le indica al modelo que trabaje sobre esa.
-- Con textos largos conviene abrir una conversación nueva para cada paso y pegar solo lo necesario.
-- La salida de cada paso se guarda en un archivo o en una planilla. Ese archivo es el registro del análisis.
-- La versión corregida se guarda aparte, con otro nombre, como `descomposicion-1-revisada.txt`. Así queda a la vista qué cambió el equipo.
-
-Cuando la cadena se repite sobre muchos documentos, copiar y pegar se vuelve lento. Con un agente, como Claude Code o Codex, que trabaja sobre la carpeta del proyecto, alcanza con un pedido como este:
-
-```
-Para cada discurso de la carpeta discursos/:
-1. Corré prompts/tecnicas/descomposicion-1.txt y guardá la salida en salidas/.
-2. Frená y esperá a que revise la lista.
-3. Cuando te confirme, corré descomposicion-2.txt con la lista revisada y guardá la tabla.
-4. Frená de nuevo antes del paso 3.
-```
-
-El agente abre cada archivo, arma los mensajes y guarda las salidas. Las revisiones entre pasos las sigue haciendo una persona. Las otras opciones están en [Organizar el trabajo](../organizar-el-trabajo/#automatizar).
+Partir una tarea grande en pasos, cada uno con su prompt, y revisar la salida de cada paso antes de usarla en el siguiente. Conviene con textos largos o cuando la tarea mezcla extraer, clasificar y sintetizar. El [Caso 1](../caso-1/) es una descomposición completa, de la detección de temas a la comparación.
 
 ## Iteración
 
-<Ficha
-  datos={[
-    ['Qué es', 'Revisar la respuesta, ajustar el prompt y volver a correrlo.'],
-    ['Cuándo conviene', 'En todos los casos. El primer prompt rara vez queda como definitivo.'],
-    [
-      'Cómo',
-      'Cambiar una cosa por vez, probar sobre los mismos 10 a 20 casos y guardar cada versión con su resultado.',
-    ],
-  ]}
-/>
-
-Las corridas de esta sección muestran una iteración completa sobre el párrafo 141.
-
-<Iteracion
-  v1="Clasificá el párrafo según a quién le asigna la responsabilidad de resolver el problema, con la lista de categorías. Es el prompt zero-shot."
-  problema='Clasifica como "otros poderes del Estado" un párrafo que culpa a los legisladores sin pedirles nada. Con ejemplos, sin una definición que trate ese caso, pasa lo mismo.'
-  v2='Agrega el esquema con lo que incluye y excluye cada categoría. "No asigna" incluye los diagnósticos que culpan a otros sin decir quién resuelve. Pide los pasos antes de la categoría. Con esos cambios el párrafo 141 pasa a "no asigna".'
-/>
-
-El esquema completo, con esas exclusiones, está en la [sección 4](../componentes-del-prompt/).
+Revisar la respuesta, ajustar el prompt y volver a correrlo, cambiando una cosa por vez y sobre los mismos casos. Es lo que pasó con el párrafo 141 en esta sección: el zero-shot y el few-shot lo clasificaron mal, y el prompt pasó a "no asigna" cuando se le sumaron el esquema con exclusiones y el razonamiento paso a paso.
 
 ## Cómo se combinan
 
-Un mismo prompt suele reunir varias técnicas. El que sigue es el paso 2 de la descomposición, con ejemplos resueltos, razonamiento antes de la categoría y formato de salida fijo. A la derecha de cada tramo figura la técnica que aporta.
+Un mismo prompt suele reunir varias técnicas. El que sigue clasifica los párrafos 37 a 56 del discurso a partir de una lista de pasajes que se extrajo en un paso anterior y que el equipo ya revisó. Suma ejemplos resueltos, razonamiento antes de la categoría y formato de salida fijo. A la derecha de cada tramo figura la técnica que aporta.
 
 <Prompt id="tecnicas/combinado" anotado />
 
-Sobre estos párrafos, las categorías salieron iguales que en el paso 2 simple, incluido el error del párrafo 55, porque los dos usan la misma lista del paso 1. Lo que cambió es que el razonamiento queda escrito, y eso permite ver dónde se equivocó. Sumar técnicas no corrige un pasaje mal recortado.
+El razonamiento queda escrito, y eso permite ver dónde se equivocó. En el párrafo 55 el pasaje extraído dejaba afuera el comienzo de la oración, "Por eso también estamos reformando la educación inicial y primaria", y la categoría salió "no asigna" cuando correspondía "gobierno nacional". Sumar técnicas no corrige un pasaje mal recortado. Eso lo revisa una persona.
 
 La iteración no figura en el prompt. Aparece cuando, después de cada ajuste, se lo vuelve a correr sobre los mismos casos.
 

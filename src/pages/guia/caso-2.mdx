@@ -9,9 +9,9 @@ import Archivo from '../../components/Archivo.astro';
 import Esquema from '../../components/Esquema.astro';
 import Seguridad from '../../components/Seguridad.astro';
 
-El caso usa el modelo para tres tareas típicas del trabajo con entrevistas: descomponer una variable en dimensiones, armar una grilla de menciones y ubicar consensos, tensiones y diferencias entre fuentes. Al final, el paso de la grilla se guarda como skill para repetirlo igual sobre material nuevo.
+El caso usa el modelo para tres tareas típicas del trabajo con entrevistas: descomponer una variable en dimensiones, armar una grilla de menciones y ubicar consensos, tensiones y diferencias entre fuentes. La grilla se arma con una skill, para repetirla igual sobre material nuevo.
 
-## Material
+## Paso 1. Material y preparación
 
 El material sale de un corpus publicado en el repositorio institucional del CONICET: [entrevistas, observaciones de clase y grupos focales sobre usos de IA generativa en la enseñanza de Odontología (FOUBA), 2024–2026](http://hdl.handle.net/11336/294888), de Lourdes Morán. El corpus completo tiene 20 registros de cinco materias. El caso usa tres de la misma materia, Odontología Integral Niños y Adolescentes, de 5.º año.
 
@@ -47,15 +47,6 @@ El material sale de un corpus publicado en el repositorio institucional del CONI
 
 </details>
 
-## Paso 1. Preparar el material
-
-<Ficha
-  datos={[
-    ['Para qué', 'Que el texto se pueda pegar en una herramienta sin exponer a nadie, que cada cita tenga ubicación y que el modelo no lea interpretaciones del equipo como si fueran datos.'],
-    ['Quién', 'El equipo, sin el modelo.'],
-  ]}
-/>
-
 El corpus ya viene anonimizado con códigos (DOC, EST, E1 a E6) y con el consentimiento registrado. La preparación para este caso hizo tres cosas.
 
 - Pasó cada `.docx` a texto plano y numeró los turnos de habla.
@@ -70,7 +61,6 @@ La planilla de fuentes del caso resume esas decisiones.
   <ul>
     <li>Un corpus publicado y anonimizado se puede usar según su licencia. Esta no permite uso comercial y pide citar la fuente y compartir las adaptaciones con la misma licencia.</li>
     <li>Con material de campo propio, la anonimización y la revisión del consentimiento van antes de pegarlo en cualquier herramienta, también en una cuenta institucional.</li>
-    <li>Combinar datos sueltos puede identificar a alguien aunque no figure el nombre: una materia, un año y un rol pueden alcanzar en una cátedra chica.</li>
     <li>La lista completa de cuidados está en la [sección 1](../organizar-el-trabajo/).</li>
   </ul>
 </Seguridad>
@@ -105,25 +95,55 @@ El equipo corrigió el borrador así.
 
 <Esquema id="dimensiones-ia" />
 
-## Paso 3. Grilla de menciones
+## Paso 3. Grilla de menciones con una skill
 
 <Ficha
   datos={[
     ['Para qué', 'Registrar en qué turnos aparece cada dimensión, para cada participante, con la cita que lo muestra.'],
     ['Tarea', 'Clasificar con categorías dadas y recuperar fragmentos.'],
-    ['Técnica', 'Salida estructurada. "Sin mención" como respuesta válida.'],
+    ['Técnica', 'Salida estructurada, guardada como skill. "Sin mención" como respuesta válida.'],
   ]}
 />
 
-<Prompt id="caso-2/p3-anti" tipo="anti" />
+La grilla es un procedimiento que se repite igual con cada registro nuevo. En este corpus quedan otros 17. Guardarlo como skill evita reescribir el prompt y asegura que todas las grillas salgan con las mismas columnas.
 
-Sin dimensiones, el modelo eligió sus propias columnas: cómo usa la IA, límite y responsabilidad, riesgos y propuestas. Las celdas son resúmenes con el turno entre corchetes y algunas comillas que no son textuales. "Asistente del juicio clínico, nunca reemplazo" acorta "asistente del juicio clínico, nunca el de reemplazo". Un resumen no se puede verificar contra el texto.
+Una skill es una carpeta con un archivo `SKILL.md`. El archivo empieza con un nombre y una descripción, que la herramienta usa para saber cuándo aplicarla, y sigue con las instrucciones. Puede traer scripts. Esta trae uno que comprueba las citas.
 
-<Prompt id="caso-2/p3-patron" tipo="patron" anotado />
+<details>
+<summary>El SKILL.md de la grilla</summary>
 
-La grilla tiene una fila por participante, las siete dimensiones y en cada celda los turnos con su cita, o "sin mención". Dejó a EST y a E1 en filas separadas, porque son dos registros, y lo aclaró. Marcó para revisar las respuestas a preguntas que sugerían la respuesta. La verificación encontró textuales las 94 citas.
+<Texto archivo="skills/grilla-de-menciones/SKILL.md" rotulo="SKILL.md" />
 
-<Archivo archivo="salidas/caso-2/p3-patron-verificacion.md" rotulo="Verificación" />
+</details>
+
+<details>
+<summary>Cómo se instala en Claude</summary>
+
+1. En la configuración de Claude, activar la ejecución de código y creación de archivos.
+2. Comprimir la carpeta `grilla-de-menciones` en un archivo .zip. La carpeta se tiene que llamar igual que el campo `name` del archivo.
+3. En la sección de skills de Claude, elegir crear una skill y subir el .zip.
+4. Abrir una conversación nueva, adjuntar las transcripciones y el CSV de dimensiones, y pedir la grilla.
+
+Las skills que sube una persona son privadas. En las cuentas de equipo se pueden compartir. En ChatGPT y en Gemini, el texto del `SKILL.md` se puede pegar como instrucciones de un proyecto o de un Gem. Sin ejecución de código, la verificación se hace después con el script del repositorio.
+
+</details>
+
+El pedido es una línea. Lo demás lo pone la skill.
+
+<Prompt id="caso-2/skill-grilla" />
+
+La respuesta trae la matriz resumida, el conteo por dimensión, lo que quedó afuera, las dudas y las notas. Devolvió además el archivo `grilla.csv`, con una fila por mención. La skill corrió el script de verificación y las 77 citas aparecieron en el turno indicado. Juntó a EST y E1 en una sola fila, con los turnos de cada registro separados.
+
+<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="grilla.csv" max={12} />
+
+Con 17 registros más, cada uno en su conversación, las filas se suman a la misma planilla y el análisis entre materias se hace sobre esa planilla.
+
+<Seguridad titulo="Seguridad con skills">
+  <ul>
+    <li>Instalar solo skills que el equipo escribió o leyó entera, scripts incluidos.</li>
+    <li>La skill pregunta por la anonimización si encuentra nombres. No reemplaza la preparación del material.</li>
+  </ul>
+</Seguridad>
 
 ## Paso 4. Consensos, tensiones y diferencias
 
@@ -141,6 +161,8 @@ La respuesta es una buena lectura, advierte que E1 y EST son la misma persona y 
 
 <Archivo archivo="salidas/caso-2/p4-anti-verificacion.md" rotulo="Verificación" />
 
+El patrón trabaja sobre una grilla ya revisada, armada con las mismas siete dimensiones.
+
 <Prompt id="caso-2/p4-patron" tipo="patron" anotado />
 
 Con criterios escritos, el resultado cambia. Hay consenso en el tipo de uso, en el criterio frente a la respuesta, en la frontera con la clínica y en la trayectoria. La lectura del paciente, la responsabilidad y la visibilidad del uso quedan como "presente en todos" y no como consenso. En la lectura del paciente, el grupo focal aporta una sola voz independiente. En la responsabilidad, casi todo responde a preguntas que la nombran. Además encontró una tensión: la docente y la estudiante valoran preparar con IA y, a la vez, cuentan que lo preparado puede frenar la escucha. Separa los acuerdos inducidos por el disparador y por la pregunta de MOD en el turno 13, que anticipaba "un uso más de 'pensar el caso'". Y señala frases que se repiten casi textuales entre participantes, lo que debilita la independencia de varios apoyos.
@@ -149,77 +171,20 @@ La verificación encontró una cita retocada también en esta salida: "su prepar
 
 <Archivo archivo="salidas/caso-2/p4-patron-verificacion.md" rotulo="Verificación" />
 
-## Paso 5. La misma grilla como skill
+### Contraejemplos de una lectura del equipo
 
-La grilla del paso 3 es un procedimiento que se repite igual con cada registro nuevo. En este corpus quedan otros 17. Guardarlo como skill evita reescribir el prompt y asegura que todas las grillas salgan con las mismas columnas.
-
-Una skill es una carpeta con un archivo `SKILL.md`. El archivo empieza con un nombre y una descripción, que la herramienta usa para saber cuándo aplicarla, y sigue con las instrucciones. Puede traer scripts. Esta trae uno que comprueba las citas.
-
-<Texto archivo="skills/grilla-de-menciones/SKILL.md" rotulo="SKILL.md" />
-
-### Cómo se instala en Claude
-
-1. En la configuración de Claude, activar la ejecución de código y creación de archivos.
-2. Comprimir la carpeta `grilla-de-menciones` en un archivo .zip. La carpeta se tiene que llamar igual que el campo `name` del archivo.
-3. En la sección de skills de Claude, elegir crear una skill y subir el .zip.
-4. Abrir una conversación nueva, adjuntar las transcripciones y el CSV de dimensiones, y pedir la grilla.
-
-Las skills que sube una persona son privadas. En las cuentas de equipo se pueden compartir. En ChatGPT y en Gemini, el texto del `SKILL.md` se puede pegar como instrucciones de un proyecto o de un Gem. Sin ejecución de código, la verificación se hace después con el script del repositorio.
-
-### La corrida con la skill
-
-El pedido es una línea. Lo demás lo pone la skill.
-
-<Prompt id="caso-2/skill-grilla" />
-
-La respuesta trae la matriz resumida, el conteo por dimensión, lo que quedó afuera, las dudas y las notas. Devolvió además el archivo `grilla.csv`, con una fila por mención. La skill corrió el script de verificación y las 77 citas aparecieron en el turno indicado. A diferencia del paso 3, juntó a EST y E1 en una sola fila, con los turnos de cada registro separados.
-
-<Archivo archivo="salidas/caso-2/skill-grilla.csv" rotulo="grilla.csv" max={12} />
-
-Con 17 registros más, cada uno en su conversación, las filas se suman a la misma planilla y el análisis entre materias se hace sobre esa planilla.
-
-<Seguridad titulo="Seguridad con skills">
-  <ul>
-    <li>Instalar solo skills que el equipo escribió o leyó entera, scripts incluidos.</li>
-    <li>La skill pregunta por la anonimización si encuentra nombres. No reemplaza la preparación del paso 1.</li>
-  </ul>
-</Seguridad>
-
-## Paso 6. Búsqueda de contraejemplos
-
-<Ficha
-  datos={[
-    ['Para qué', 'Poner a prueba una lectura del equipo antes de darla por buena.'],
-    ['Tarea', 'Buscar contraejemplos.'],
-    ['Técnica', 'Zero-shot, con la lectura del equipo escrita en el prompt.'],
-  ]}
-/>
+Antes de dar por buena una lectura propia, se le pide al modelo que la ponga a prueba contra el material.
 
 <Prompt id="caso-2/p5-contraejemplos" />
 
 La respuesta separa las dos mitades de la lectura. "La usan para pensar los casos" tiene sustento. "De forma abierta" y "la conversan con sus docentes" se sostienen menos: la estudiante dice que el uso para estudiar "no lo comento particularmente", en el grupo focal agrega que "eso queda para uno", y la docente sabe de esos usos y "no lo persigo". También advierte que en el grupo focal, ante la pregunta de MOD sobre si lo hablan con los docentes, responde una sola persona y otra agrega una salvedad. La respuesta incluye además lo que sostiene la lectura, que el prompt no pedía.
 
-## Paso 7. Revisión
-
-<Ficha
-  datos={[
-    ['Para qué', 'Decidir si el resultado se puede usar.'],
-    ['Quién', 'El equipo, sin el modelo.'],
-  ]}
-/>
-
-- Citas: cada fragmento se busca en la transcripción. El script hace la primera pasada.
-- Hablante: ningún fragmento atribuido a un participante corresponde a un turno de ENT o MOD.
-- Independencia: las coincidencias que dependen de E1 y EST se cuentan una vez.
-- Preguntas inductoras: una persona revisa los turnos marcados y el tramo del disparador.
-- Contraste: dos integrantes del equipo grillan los mismos turnos sin ver la salida del modelo y discuten las diferencias.
-
 ## Qué cambia respecto del Caso 1
 
 | Aspecto | Caso 1, discursos | Caso 2, entrevistas y grupo focal |
 | --- | --- | --- |
-| Material | Público, se pega tal cual | Publicado y anonimizado, con licencia no comercial. Con material propio, se anonimiza antes |
 | Unidad de análisis | Párrafo | Turno de habla |
-| Voces | Un orador | Varias personas, una de ellas en dos registros, y quien entrevista o modera no se codifica |
-| Registro | Texto preparado para leer en público, con interrupciones | Oral, con reinicios, pausas y sobreentendidos |
+| Voces | Un orador | Varias personas, una de ellas en dos registros. Quien entrevista o modera no se codifica |
 | Dinámica | No hay | En el grupo focal, un disparador y preguntas que anticipan la respuesta |
+
+Los controles de revisión de los dos casos están en el [checklist de la sección 8](../cierre/).

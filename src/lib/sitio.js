@@ -49,7 +49,7 @@ export const secciones = [
     slug: 'caso-1',
     titulo: 'Caso 1: análisis de discurso',
     corto: 'Caso 1: discursos',
-    bajada: 'Cinco pasos sobre dos discursos presidenciales de 2026, cada uno con un antipatrón y un patrón recomendado.',
+    bajada: 'Cuatro pasos sobre dos discursos presidenciales de 2026, de la detección de temas a la comparación.',
   },
   {
     slug: 'caso-2',
