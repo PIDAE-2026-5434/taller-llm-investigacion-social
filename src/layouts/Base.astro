@@ -6,18 +6,18 @@ import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import { sitio, ruta, rutaSeccion } from '../lib/sitio.js';
 
-// eje: el rótulo de la cabecera. Por defecto, el del Eje 04; la sección Leer pasa el suyo.
-const { titulo, descripcion = sitio.descripcion, eje = null } = Astro.props;
+// eje e icono: el rótulo y el símbolo de la cabecera. Por defecto, los del Eje 04; Leer pasa los suyos.
+const { titulo, descripcion = sitio.descripcion, eje = null, icono = 'marca/eje04.png' } = Astro.props;
 const rotuloEje = eje ?? 'Eje 04 · Cómo interactuamos con los modelos de lenguaje';
 const tituloPagina = titulo ? `${titulo} · ${sitio.titulo}` : `${sitio.titulo} · ${sitio.proyecto}`;
 
 const camino = Astro.url.pathname;
 const en = (parte) => camino.includes(parte);
 const menu = [
-  { texto: 'Guía', href: rutaSeccion('organizar-el-trabajo'), actual: en('/guia/') && !en('/guia/caso-') },
+  { texto: 'HABLAR', href: rutaSeccion('organizar-el-trabajo'), actual: en('/guia/') && !en('/guia/caso-') },
   { texto: 'Caso 1', href: rutaSeccion('caso-1'), actual: en('/guia/caso-1/') },
   { texto: 'Caso 2', href: rutaSeccion('caso-2'), actual: en('/guia/caso-2/') },
-  { texto: 'Leer', href: ruta('leer/'), actual: en('/leer/') },
+  { texto: 'LEER', href: ruta('leer/'), actual: en('/leer/') },
   { texto: 'Materiales', href: ruta('materiales/'), actual: en('/materiales/') },
 ];
 ---
@@ -37,7 +37,7 @@ const menu = [
         <a class="cabecera-marca" href={ruta('')}>
           <img class="academia" src={ruta('marca/academia.png')} alt="AcademIA" width="140" height="22" />
           <span class="cabecera-eje">
-            {!eje && <img src={ruta('marca/eje04.png')} alt="" width="16" height="16" />}
+            <img src={ruta(icono)} alt="" width="16" height="16" />
             <span>{rotuloEje}</span>
           </span>
         </a>

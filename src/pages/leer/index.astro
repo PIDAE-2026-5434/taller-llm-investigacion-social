@@ -1,87 +1,76 @@
 ---
-// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
-// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
-import GuiaLeer from '../../layouts/GuiaLeer.astro';
-import { rutaLeer } from '../../lib/leer.js';
+// Portada del bloque Leer (Eje 05), con la misma estructura que la portada del Eje 04:
+// banda de color con el título y la lista de secciones (src/lib/leer.js).
+import Base from '../../layouts/Base.astro';
+import { ruta } from '../../lib/sitio.js';
+import { seccionesLeer, rutaLeer, eje, icono } from '../../lib/leer.js';
 ---
 
-<GuiaLeer slug="">
-<p>
-          La IA puede leer y muy rápido. La comprensión queda de nuestro lado. Estas cuatro skills acompañan los tres pasos
-          del trabajo con bibliografía: buscar, verificar lo que se encontró y sintetizar sin perder el alcance de los
-          textos. Las armamos y las probamos para el taller con Gemini y la cuenta de la facultad. Cada una trae sus
-          instrucciones, listas para copiar, y una salida real de las pruebas.
-        </p>
-
-        <h2>Tres pasos</h2>
-        <ol>
-          <li><a href={rutaLeer('buscar')}>Buscar</a>: formular la búsqueda con IA y hacerla en las bases.</li>
-          <li><a href={rutaLeer('verificar')}>Verificar</a>: que lo encontrado exista y diga lo que se le atribuye.</li>
-          <li><a href={rutaLeer('sintetizar')}>Sintetizar</a>: leer y sintetizar sin perder el alcance de los textos.</li>
-        </ol>
-        <p>
-          Cada paso tiene su página, con las skills que lo acompañan. La última sección cuenta <a href={rutaLeer('como-las-probamos')}>cómo las probamos</a>.
-        </p>
-
-        <h2>Qué es una skill</h2>
-        <ul>
-          <li>
-            <strong>Qué es:</strong> un asistente con instrucciones guardadas (rol, regla central, procedimiento,
-            prohibiciones y formato) que se reutiliza y se comparte. En Gemini figuran como Gems.
-          </li>
-          <li>
-            <strong>Cómo funciona:</strong> detrás sigue el mismo modelo. Las instrucciones acotan lo que hace, pero no
-            garantizan resultados fijos: la misma skill puede responder distinto en otra conversación.
-          </li>
-          <li>
-            <strong>Cómo adaptarla:</strong> cambiar una regla por vez y probarla con casos cuya respuesta ya se conoce.
-          </li>
-        </ul>
-
-        <h2>Cómo usarlas</h2>
-        <ol>
-          <li>En Gemini, con la cuenta de la facultad, creá una skill (Gem) nueva.</li>
-          <li>Copiá las instrucciones con el botón Copiar y pegalas en el campo de instrucciones. Guardala con el nombre de la skill.</li>
-          <li>Elegí el modelo Pensar. En las pruebas, el modelo pesó más que las instrucciones.</li>
-          <li>Abrí una conversación nueva con la skill y pasale el material: la pregunta, la lista de referencias o el PDF.</li>
-        </ol>
-
-        <div class="tabla-ancha">
-          <table>
-            <thead>
-              <tr>
-                <th>Skill</th>
-                <th>Para qué</th>
-                <th>Qué la hace funcionar</th>
-                <th>Cómo adaptarla</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href={rutaLeer('buscar')}>Asistente de búsqueda</a></td>
-                <td>Formular la búsqueda: términos en tres idiomas y cadenas para cada base</td>
-                <td>Formula la búsqueda; no lista trabajos</td>
-                <td>Sumar las bases y los términos de tu campo</td>
-              </tr>
-              <tr>
-                <td><a href={rutaLeer('verificar')}>Verificador de referencias</a></td>
-                <td>Primer filtro para listas de referencias</td>
-                <td>No valida desde la memoria: da enlaces para verificar</td>
-                <td>Ajustarlo a tu norma de cita y a tus repositorios</td>
-              </tr>
-              <tr>
-                <td><a href={rutaLeer('verificar') + '#cita-fuente'}>Cita vs. fuente</a></td>
-                <td>Revisar si la fuente dice lo que se le atribuye</td>
-                <td>Ocho tipos de distorsión definidos</td>
-                <td>Sumar las distorsiones frecuentes en tu disciplina</td>
-              </tr>
-              <tr>
-                <td><a href={rutaLeer('sintetizar')}>Ficha de lectura</a></td>
-                <td>Fichar un paper sin perder alcance ni salvedades</td>
-                <td>Página y fragmento textual para cada hallazgo</td>
-                <td>Cambiar los campos según tu tipo de fuente</td>
-              </tr>
-            </tbody>
-          </table>
+<Base titulo="Leer" descripcion="Leer con IA: cuatro skills y un cuaderno para buscar, verificar y sintetizar papers y fuentes, con sus instrucciones y salidas reales." eje={eje} icono={icono}>
+  <main>
+    <div class="portada-eje">
+      <section class="contenedor portada">
+        <div class="portada-texto">
+          <img class="portada-logo" src={ruta('marca/eje05-portada.png')} alt="" width="110" height="110" />
+          <div class="antetitulo-eje">Eje 05 · Workshop AcademIA</div>
+          <h1>Leer</h1>
+          <h2 class="portada-bajada">Trabajar con papers y fuentes</h2>
+          <p>
+            La IA puede leer y muy rápido. La comprensión queda de nuestro lado. Este bloque recorre los tres pasos del
+            trabajo con bibliografía: buscar, verificar lo que se encontró y sintetizar sin perder el alcance de los
+            textos. Trae cuatro skills con sus instrucciones para copiar, y las salidas reales de las pruebas que hicimos
+            con Gemini, Gemini Notebook y la cuenta de la facultad.
+          </p>
+          <div class="portada-botones">
+            <a class="boton" href={rutaLeer('skills')}>Empezar</a>
+            <a class="boton boton-linea" href={rutaLeer('skills') + '#skills'}>Ver las cuatro skills</a>
+          </div>
         </div>
-</GuiaLeer>
+
+        <figure class="ejemplo-marcado">
+          <figcaption>Pérez, Miguel y Cotik (2025), p. 7194, y la ficha de lectura que armó una IA con ese paper.</figcaption>
+          <blockquote>
+            "They stay equal or get better when regionalisms are present in the text. This{' '}
+            <span class="marca">might be due</span> to the fact that regionalisms are likely to be matched with slang
+            slurs."
+          </blockquote>
+          <dl class="ejemplo-codigos">
+            <dt><span class="marca">El paper</span></dt>
+            <dd>«might be due»: una hipótesis</dd>
+            <dt><span class="subrayado">La IA</span></dt>
+            <dd>«dado que»: una certeza</dd>
+          </dl>
+        </figure>
+      </section>
+    </div>
+
+    <section class="contenedor bloque-secciones" id="secciones">
+      <div class="bloque-secciones-titulo">
+        <h2>Seis secciones</h2>
+        <p>Se pueden leer en orden o entrar por un paso.</p>
+      </div>
+      <ol class="lista-secciones">
+        {
+          seccionesLeer.map((s) => (
+            <li>
+              <a href={rutaLeer(s.slug)}>
+                <span class="lista-n">{s.n}</span>
+                <span class="lista-titulo">{s.titulo}</span>
+                <span class="lista-bajada">{s.bajada}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .portada-bajada {
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.15;
+    margin-top: -12px;
+  }
+</style>

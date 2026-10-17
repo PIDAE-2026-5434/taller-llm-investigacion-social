@@ -1,9 +1,10 @@
 ---
 // Layout de las páginas del bloque Leer (Eje 05). Igual que Guia.astro, pero con
 // su propia lista de secciones (src/lib/leer.js) y el rótulo del Eje 05.
-// Cada página pasa su slug: '' para la portada del bloque.
+// Cada página pasa su slug, que tiene que figurar en src/lib/leer.js.
 import Base from './Base.astro';
-import { seccionesLeer, rutaLeer, eje } from '../lib/leer.js';
+import { seccionesLeer, rutaLeer, eje, icono } from '../lib/leer.js';
+import { ruta } from '../lib/sitio.js';
 
 const { slug } = Astro.props;
 const i = seccionesLeer.findIndex((s) => s.slug === slug);
@@ -13,7 +14,7 @@ const anterior = seccionesLeer[i - 1];
 const siguiente = seccionesLeer[i + 1];
 ---
 
-<Base titulo={`${seccion.titulo} · Leer`} descripcion={seccion.bajada} eje={eje}>
+<Base titulo={`${seccion.titulo} · Leer`} descripcion={seccion.bajada} eje={eje} icono={icono}>
   <div class="contenedor guia">
     <nav class="guia-indice" aria-label="Secciones de Leer">
       <div class="guia-indice-titulo">Leer</div>
@@ -32,7 +33,7 @@ const siguiente = seccionesLeer[i + 1];
 
     <main class="guia-cuerpo">
       <div class="guia-encabezado">
-        <div class="antetitulo-eje">Eje 05 · Sección {i + 1} de {seccionesLeer.length}</div>
+        <div class="antetitulo-eje"><img src={ruta(icono)} alt="" width="20" height="20" />Eje 05 · Sección {i + 1} de {seccionesLeer.length}</div>
         <h1>{seccion.titulo}</h1>
       </div>
 

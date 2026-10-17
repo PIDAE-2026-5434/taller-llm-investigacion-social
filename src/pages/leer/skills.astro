@@ -1,0 +1,74 @@
+---
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import { rutaLeer } from '../../lib/leer.js';
+---
+
+<GuiaLeer slug="skills">
+        <p>
+          Una skill es un asistente con instrucciones guardadas. En lugar de reescribir un prompt largo cada vez, se abre la
+          skill y se trabaja siempre con el mismo encuadre. Las cuatro de este bloque las armamos y las probamos para el
+          taller con Gemini y la cuenta de la facultad.
+        </p>
+        <ul>
+          <li>
+            <strong>Qué es:</strong> un asistente con instrucciones guardadas (rol, regla central, procedimiento,
+            prohibiciones y formato) que se reutiliza y se comparte. En Gemini figuran como Gems.
+          </li>
+          <li>
+            <strong>Cómo funciona:</strong> detrás sigue el mismo modelo. Las instrucciones acotan lo que hace, pero no
+            garantizan resultados fijos: la misma skill puede responder distinto en otra conversación.
+          </li>
+          <li>
+            <strong>Cómo adaptarla:</strong> cambiar una regla por vez y probarla con casos cuya respuesta ya se conoce.
+          </li>
+        </ul>
+
+        <h2>Cómo usarlas</h2>
+        <ol>
+          <li>En Gemini, con la cuenta de la facultad, creá una skill (Gem) nueva.</li>
+          <li>Copiá las instrucciones con el botón Copiar y pegalas en el campo de instrucciones. Guardala con el nombre de la skill.</li>
+          <li>Elegí el modelo Pensar. En las pruebas, el modelo pesó más que las instrucciones.</li>
+          <li>Abrí una conversación nueva con la skill y pasale el material: la pregunta, la lista de referencias o el PDF.</li>
+        </ol>
+
+        <div class="tabla-ancha" id="skills">
+          <table>
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Para qué</th>
+                <th>Qué la hace funcionar</th>
+                <th>Cómo adaptarla</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href={rutaLeer('buscar')}>Asistente de búsqueda</a></td>
+                <td>Formular la búsqueda: términos en tres idiomas y cadenas para cada base</td>
+                <td>Formula la búsqueda; no lista trabajos</td>
+                <td>Sumar las bases y los términos de tu campo</td>
+              </tr>
+              <tr>
+                <td><a href={rutaLeer('verificar')}>Verificador de referencias</a></td>
+                <td>Primer filtro para listas de referencias</td>
+                <td>No valida desde la memoria: da enlaces para verificar</td>
+                <td>Ajustarlo a tu norma de cita y a tus repositorios</td>
+              </tr>
+              <tr>
+                <td><a href={rutaLeer('verificar') + '#cita-fuente'}>Cita vs. fuente</a></td>
+                <td>Revisar si la fuente dice lo que se le atribuye</td>
+                <td>Ocho tipos de distorsión definidos</td>
+                <td>Sumar las distorsiones frecuentes en tu disciplina</td>
+              </tr>
+              <tr>
+                <td><a href={rutaLeer('sintetizar')}>Ficha de lectura</a></td>
+                <td>Fichar un paper sin perder alcance ni salvedades</td>
+                <td>Página y fragmento textual para cada hallazgo</td>
+                <td>Cambiar los campos según tu tipo de fuente</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</GuiaLeer>

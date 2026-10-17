@@ -1,0 +1,97 @@
+A continuación se presenta la verificación detallada de cada una de las 16 afirmaciones frente al contenido del artículo de investigación Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish (Pérez, Miguel y Cotik, 2025):
+
+#### A01. El conjunto de prueba incluyó 5670 mensajes, de los cuales 479 contenían discurso de odio.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** En la Sección 4 (Data), los autores indican que por razones presupuestarias redujeron el conjunto de prueba al 50 % (5670 ejemplos), de los cuales exactamente 479 comentarios contenían discurso de odio (8,45 %).
+
+#### A02. Los autores estiman que clasificar el corpus completo con modelos de lenguaje cuesta menos que anotarlo manualmente.
+
+**Estado:** No respaldada (Falsa)
+
+**Detalle:** El artículo no incluye ninguna estimación o comparación de costos entre la clasificación con LLM y la anotación manual. Únicamente se menciona que usaron una submuestra del conjunto de prueba debido a limitaciones presupuestarias ("for budget reasons, we subsampled the test set...").
+
+#### A03. La presencia de regionalismos hace que los clasificadores detecten mejor el discurso de odio.
+
+**Estado:** Parcialmente respaldada / Con matices
+
+**Detalle:** En la Sección 6 (Results), se explica que en presencia de regionalismos el rendimiento se mantuvo igual o mejoró (Tabla 6). Sin embargo, los autores aclaran que no se detectaron diferencias conclusivas ("no conclusive differences are detected") y que la mejora se debe principalmente a que los regionalismos suelen coincidir con insultos o términos despectivos explícitos (slurs), lo que facilita la tarea de detección.
+
+#### A04. Pérez, Miguel y Cotik (2025) evaluaron el desempeño de los modelos de lenguaje en distintas variantes del español latinoamericano.
+
+**Estado:** No respaldada (Falsa)
+
+**Detalle:** El estudio se enfocó exclusivamente en el español rioplatense (Argentina y Uruguay). Evaluar otras variantes del español (como la mexicana o la ibérica) fue propuesto expresamente como trabajo futuro.
+
+#### A05. El estudio, que analizó tuits publicados durante la pandemia de COVID-19, muestra que GPT-3.5 logra un mejor equilibrio entre precisión y exhaustividad que Mixtral.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** El corpus proviene de respuestas en Twitter a noticias (muchas contextualizadas durante la pandemia de COVID-19). En la Sección 6, los autores señalan expresamente que Mixtral obtiene una mayor exhaustividad (recall) a costa de una baja precisión, mientras que GPT-3.5 logra un mejor equilibrio ("better trade-off") entre ambas métricas.
+
+#### A06. Pérez, Miguel y Cotik (2025) encontraron que las explicaciones generadas por los modelos de lenguaje son tan buenas como las escritas por humanos, e incluso preferidas.
+
+**Estado:** No respaldada (Atribución errónea)
+
+**Detalle:** Dicha afirmación pertenece a trabajos previos de otros investigadores (Wang et al., 2023; Huang et al., 2023), citados en la Sección 3 (Related Work). Por el contrario, Pérez et al. señalan en la Sección 1 que las explicaciones de ChatGPT "si bien no son iguales a las de anotadores humanos, son convincentes en la mayoría de los casos".
+
+#### A07. Como trabajo futuro, los autores proponen extender el análisis a otras variantes del español, como la ibérica o la mexicana.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** En la Sección 9 (Future work), los autores mencionan explícitamente que sería de interés realizar experimentos similares en otras variantes del español, como la ibérica o la mexicana.
+
+#### A08. Según este estudio, los modelos de lenguaje entienden el lunfardo y los regionalismos del español rioplatense.
+
+**Estado:** No respaldada / Falsa (Afirmación categórica incorrecta)
+
+**Detalle:** Aunque los modelos lograron identificar algunos matices regionales, los autores concluyen explícitamente en la Sección 7 que los LLM "fueron capaces de detectar algunos, pero no todos, perdiendo algunos insultos, expresiones y modismos típicos del dialecto rioplatense". En la Tabla 7 se exponen diversos errores de interpretación cultural/regional de los modelos.
+
+#### A09. Según Pérez, Miguel y Cotik (2025), ChatGPT alcanza resultados cercanos al estado del arte en la detección de discurso de odio sin ejemplos previos (zero-shot).
+
+**Estado:** No respaldada (Atribución errónea)
+
+**Detalle:** Esa conclusión corresponde a un estudio sobre portugués brasileño (Oliveira et al., 2023) citado en la Sección 3 (Related Work). Para su propio experimento, Pérez et al. evaluaron zero-shot, one-shot y few-shot, seleccionando finalmente la estrategia de few-shot con cadena de pensamiento (CoT).
+
+#### A10. En el corpus analizado, cerca del 16 % de los mensajes contenía discurso de odio.
+
+**Estado:** No respaldada (Falsa)
+
+**Detalle:** En el conjunto de datos general probado, la proporción de mensajes con discurso de odio fue del 8,45 % (479 de 5670). La cifra del 16 % corresponde únicamente al subconjunto de mensajes que contenían regionalismos.
+
+#### A11. En ese estudio, el clasificador supervisado fue más preciso, pero los modelos de lenguaje recuperaron una proporción mayor de los mensajes con discurso de odio.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** El clasificador BETO ajustado obtuvo una precisión significativamente mayor (72,9 % frente al 39,2 % de GPT-3.5 y 25,1 % de Mixtral). Sin embargo, los modelos de lenguaje lograron un mayor recall (exhaustividad) recuperando una mayor proporción de mensajes con discurso de odio (GPT-3.5: 61,2 %; Mixtral: 83,8 %; Aya: 93,0 % vs. BETO: 56,3 %).
+
+#### A12. Pérez, Miguel y Cotik (2025) compararon tres modelos de lenguaje de gran escala (GPT-3.5, Mixtral y Aya) con un clasificador BETO ajustado, sobre un corpus de respuestas en Twitter a publicaciones de medios de noticias argentinos.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** En las Secciones 4 y 5, los autores describen exactamente esta metodología: compararon GPT-3.5-turbo, Mixtral y Aya contra BETO fine-tuned en un corpus de respuestas de Twitter a noticias argentinas.
+
+#### A13. Según el estudio, los modelos de lenguaje detectan mejor que los clasificadores supervisados el discurso de odio contra personas LGBTI.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** En la Sección 6, los autores señalan que en la categoría LGBTI, GPT-3.5 superó estadísticamente al clasificador supervisado BETO ($p < 10^{-6}$), destacando que los LLM mostraron mayor sensibilidad para detectar matices complejos, ironías y metáforas en esta categoría.
+
+#### A14. Los resultados demuestran que los modelos de lenguaje captan los matices culturales del español rioplatense.
+
+**Estado:** No respaldada / Parcialmente falsa
+
+**Detalle:** Afirmar que "demuestran que captan los matices" resulta incompleto y erróneo. Si bien captaron algunos aspectos mejor de lo esperado en comparación con clasificadores tradicionales, los autores concluyen que omiten muchos insultos y expresiones típicas ("missing some slurs, expressions, and insults typical of the Rioplatense dialect").
+
+#### A15. Los autores reconocen que la evaluación de las explicaciones generadas por los modelos fue limitada, porque solo la realizaron ellos mismos.
+
+**Estado:** Respaldada (Verdadera)
+
+**Detalle:** En la Sección 8 (Limitations), los autores explicitan como limitación que el análisis de las explicaciones de los LLM fue limitado, dado que la solidez de las mismas fue evaluada únicamente por ellos mismos.
+
+#### A16. Pérez, Miguel y Cotik (2025) muestran que los modelos de lenguaje superan a los clasificadores supervisados en la detección de discurso de odio.
+
+**Estado:** No respaldada (Falsa)
+
+**Detalle:** Ocurre lo contrario: el clasificador supervisado (BETO ajustado) superó a todos los LLM en el desempeño general, logrando un F1 macro de 63,5 frente al 47,8 de GPT-3.5 y 38,6 de Mixtral. Los autores concluyen que los clasificadores supervisados siguen siendo superiores en el caso general.

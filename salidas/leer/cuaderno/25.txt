@@ -1,0 +1,9 @@
+En el estudio específico sobre el español rioplatense, los autores concluyen que las explicaciones generadas por los LLM no son equivalentes a las de los anotadores humanos, aunque resultan convincentes en la mayoría de los casos.
+
+Puntos clave sobre la calidad de las explicaciones
+
+* Evaluación en la investigación actual: La evaluación de las explicaciones en este trabajo tuvo un alcance limitado, ya que la solidez (soundness) de los razonamientos fue analizada únicamente por los propios autores del estudio. Para realizar una comparación rigurosa frente a la capacidad humana, los investigadores señalan que se requerirían muestras más amplias, una mayor cantidad de anotadores y la medición de otras métricas como la informatividad (informativeness).
+
+* Antecedentes en la literatura científica: El trabajo cita estudios previos en otros contextos e idiomas (como Wang et al., 2023 y Huang et al., 2023), los cuales hallaron que las explicaciones generadas por modelos como GPT-3 y GPT-3.5 para detectar discurso de odio pueden llegar a ser tan buenas e incluso preferidas frente a las escritas por humanos.
+
+* Utilidad en casos complejos y sutiles: Aunque la evaluación formal no haya sido exhaustiva, el razonamiento paso a paso (chain-of-thought) permitió a ChatGPT y Mixtral argumentar y detectar casos sutiles —como agresiones indirectas hacia la identidad de género trans o el uso de expresiones de jerga local— que el modelo supervisado especializado (BETO) pasó por alto.

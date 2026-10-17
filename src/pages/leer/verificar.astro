@@ -49,9 +49,10 @@ import Texto from '../../components/Texto.astro';
         <p>
           La probamos con 16 afirmaciones sobre un paper (Pérez, Miguel y Cotik, 2025). Gemini con el PDF y sin la skill
           acertó 14: dio por respaldadas una mezcla y una generalización. Con la skill acertó las 16, y los 19 pasajes
-          que transcribió existen en el PDF con su página.
+          que transcribió existen en el PDF con su página. Las dos salidas están en las pestañas: sin la skill, Gemini no transcribe
+          los pasajes, así que no hay cómo chequear en qué se basa cada veredicto.
         </p>
-        <Prompt id="leer/cita-fuente" rotuloSalida="Salida (medio)" />
+        <Prompt id="leer/cita-fuente" variantes={['sin-skill']} rotuloSalida="Con la skill (medio)" />
         <details>
           <summary>Las afirmaciones de la prueba</summary>
           <Texto archivo="leer/entradas/cita-fuente.txt" rotulo="Afirmaciones" />

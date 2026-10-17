@@ -1,0 +1,23 @@
+En el trabajo de Pérez, Miguel y Cotik (2025), Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish, los autores concluyen que la presencia de regionalismos no perjudica el rendimiento de los modelos, sino que tiende a mantenerlo o incluso mejorarlo.
+
+*Fuente web citada: ACL Anthology*
+
+Específicamente, el impacto de los regionalismos en el desempeño de la detección se resume en los siguientes puntos clave:
+
+* Mapeo explícito de peyorativos (slurs y modismos): Los regionalismos en el español rioplatense (incluyendo términos del lunfardo o insultos locales) suelen funcionar como marcadores explícitos de agresión o discriminación. Al estar presentes en el texto, facilitan la identificación directa del mensaje de odio tanto para modelos clasificadores afinados (como BETO) como para modelos de lenguaje grandes (como GPT-3.5).
+
+*Fuente web citada: Own Your AI*
+
+* Dificultad relativa del discurso sin regionalismos: La tarea de moderación se vuelve significativamente más compleja cuando el odio es implícito, sutil o carece de insultos dialectales explícitos (por ejemplo, discursos discriminatorios hacia la comunidad LGBTI o basados en sarcasmo contextual). En esos casos, los modelos pierden las referencias léxicas directas que suelen aportar los regionalismos.
+
+*Fuente web citada: ACL Anthology*
+
+* Diferencias según el tipo de modelo:
+
+*Fuente web citada: Google*
+
+* Modelos especializados afinados (BETO): Obtienen el nivel de precisión más alto al haber sido preentrenados y ajustados con corpus locales en español rioplatense, manejando de forma sólida los modismos autóctonos.
+
+*Fuente web citada: Own Your AI+ 1*
+
+* LLMs generativos (GPT-3.5, Mixtral, Aya): Capta gran parte del contexto cultural y lingüístico local, aunque suelen registrar una tasa más alta de falsos positivos (alto recall, menor precisión) e ignorar ocasionalmente el significado preciso de ciertos términos hiperlocales.

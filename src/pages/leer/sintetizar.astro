@@ -1,12 +1,125 @@
 ---
-// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
-// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+// Bloque Leer (Eje 05) · Sintetizar un paper. Las preguntas al cuaderno están en
+// prompts/leer/cuaderno/ y sus respuestas en salidas/leer/cuaderno/ (<id>--chat.txt
+// es la misma pregunta en un chat sin archivo). La Ficha, en prompts/leer/ficha-lectura.txt.
 import GuiaLeer from '../../layouts/GuiaLeer.astro';
 import Prompt from '../../components/Prompt.astro';
 ---
 
 <GuiaLeer slug="sintetizar">
-<h2 id="ficha">Ficha de lectura</h2>
+        <p>
+          Hay tres formas de leer un paper con IA, y cada una tiene su riesgo típico. Para compararlas hicimos las mismas
+          preguntas sobre un mismo paper (Pérez, Miguel y Cotik, 2025) en un chat de Gemini sin el archivo y en un
+          cuaderno de Gemini Notebook con el PDF. Después armamos fichas de lectura con la skill y sin ella.
+        </p>
+
+        <h2>Tres formas de leer con IA</h2>
+        <div class="tabla-ancha">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Chat sin archivo</th>
+                <th>Chat con PDF y skill</th>
+                <th>Cuaderno (Gemini Notebook)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Responde desde</td>
+                <td>Lo que sabe y la web</td>
+                <td>El PDF y lo que sabe</td>
+                <td>Lo que recupera de tus fuentes</td>
+              </tr>
+              <tr>
+                <td>Muestra la fuente</td>
+                <td>No</td>
+                <td>Página y fragmento, si se lo pedís</td>
+                <td>Sí: el pasaje citado</td>
+              </tr>
+              <tr>
+                <td>Se verifica</td>
+                <td>Todo</td>
+                <td>Con Ctrl+F en el PDF</td>
+                <td>Contra el pasaje</td>
+              </tr>
+              <tr>
+                <td>Riesgo típico</td>
+                <td>Inventa</td>
+                <td>Generaliza</td>
+                <td>Cita bien y afirma de más</td>
+              </tr>
+              <tr>
+                <td>Sirve para</td>
+                <td>Discutir y razonar</td>
+                <td>Fichar un paper</td>
+                <td>Localizar y comparar en muchas fuentes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Cómo responde el cuaderno</h2>
+        <p>
+          Gemini Notebook (ex NotebookLM) trabaja con una lógica llamada RAG, generación aumentada por recuperación. Ante
+          cada pregunta, primero recupera de las fuentes cargadas los fragmentos que parecen pertinentes; después, el
+          modelo redacta la respuesta a partir de ellos e indica de qué pasaje sale cada afirmación. Google no documenta
+          en detalle cómo lo implementa: esta es la lógica general, no su arquitectura exacta.
+        </p>
+        <p>
+          Eso tiene dos consecuencias para la lectura. Lo que el cuaderno no recupera, no lo ve: si el pasaje clave está
+          formulado con otras palabras o en una tabla mal extraída del PDF, la respuesta no lo tiene en cuenta. Y lo que
+          recupera, igual puede interpretarlo mal: citar el pasaje correcto y sacar de él más de lo que dice.
+        </p>
+
+        <h2 id="misma-pregunta">Misma pregunta, dos herramientas</h2>
+        <p>
+          Las preguntas se hicieron con el modelo medio (Pensar) y la cuenta de la facultad: en un cuaderno con el PDF y
+          en un chat temporal sin archivo. En el chat, cada pregunta empezó con «Según el paper de Pérez, Miguel y Cotik
+          (2025) sobre discurso de odio en español rioplatense», para que supiera de qué paper se trataba.
+        </p>
+        <p>
+          La primera pregunta tiene una respuesta contraintuitiva. Según el paper, con regionalismos no hay diferencias
+          concluyentes: el desempeño se mantiene o mejora, y los autores lo atribuyen, como hipótesis («might be due»), a
+          que los regionalismos suelen coincidir con insultos explícitos (p. 7194).
+        </p>
+        <Prompt id="leer/cuaderno/24a" variantes={['chat']} rotuloSalida="Cuaderno (medio)" />
+        <p>
+          Esperábamos que el chat respondiera con el estereotipo de que a los modelos les cuesta el lunfardo, y no pasó:
+          buscó en la web y acertó la dirección del hallazgo. Pero se equivocó en los detalles: dijo que en la categoría
+          LGBTI los modelos pierden referencias, cuando el paper dice que GPT-3.5 supera al clasificador justamente ahí, y
+          no trajo ninguna cifra. El cuaderno trajo todas las cifras bien, incluido el 16 % con su subconjunto correcto.
+          Pero donde los autores escriben «might be due», el cuaderno dice «facilitan»; y donde escriben «suggest… somehow
+          able», dice «demuestran capacidad».
+        </p>
+        <p>
+          La segunda pregunta es sobre algo que el paper no estudia: trabaja solo con español rioplatense, y el mexicano
+          queda como trabajo futuro (p. 7197).
+        </p>
+        <Prompt id="leer/cuaderno/24b" variantes={['chat']} rotuloSalida="Cuaderno (medio)" />
+        <p>
+          Las dos herramientas respondieron bien que el paper no lo trata. El error del chat apareció en lo que agregó sin
+          que se lo pidiéramos: dijo que evaluaron «GPT-3.5-turbo, LLaMA-3-8B-Instruct, Aya 23». LLaMA no aparece en el
+          paper, y Mixtral, uno de los dos modelos centrales del análisis, desapareció. Cuando completa por su cuenta, el
+          chat inventa con total naturalidad.
+        </p>
+
+        <h2 id="anclado">Anclado no es lo mismo que correcto</h2>
+        <p>
+          Esta pregunta era una trampa pensada para el cuaderno. El paper cita a Wang et al. y a Huang et al., que
+          encontraron explicaciones tan buenas como las humanas (p. 7191), pero la posición de los autores es otra: no son
+          equivalentes, aunque resultan convincentes en la mayoría de los casos (p. 7190).
+        </p>
+        <Prompt id="leer/cuaderno/25" variantes={['chat']} rotuloSalida="Cuaderno (medio)" />
+        <p>
+          El cuaderno no cayó: separó los antecedentes de la posición de los autores y sumó una limitación que el paper
+          declara (las explicaciones las evaluaron solo ellos). El que se equivocó fue el chat: dio vuelta el balance,
+          dijo que los modelos «sufren» con el lunfardo cuando el paper concluye lo contrario, y cerró con una conclusión
+          atribuida a los autores que no está en el texto. No se puede anticipar qué va a fallar: por eso se verifica
+          todo, también lo que salió bien.
+        </p>
+
+        <h2 id="ficha">Ficha de lectura</h2>
         <p>
           Al resumir papers, los modelos tienden a convertir hallazgos acotados en afirmaciones generales, y pedirles
           que eviten inexactitudes hizo casi el doble de probable que generalizaran (Peters y Chin-Yee, 2025, p. 13). Por
@@ -15,12 +128,28 @@ import Prompt from '../../components/Prompt.astro';
           fragmento textual que se pueda buscar con Ctrl+F.
         </p>
         <p>
-          La probamos con el mismo paper. Los 9 fragmentos de anclaje existen en el PDF y no agregó datos externos. Pero
-          perdió una salvedad: donde los autores escriben que la mejora con regionalismos «might be due» a los insultos
-          explícitos, la ficha dice «dado que». Ni siquiera una skill pensada para conservar las salvedades las conserva
-          todas.
+          La probamos con tres papers y la comparamos con Gemini sin la skill, con el mismo PDF y el pedido «Resumí este
+          paper». Las cuatro salidas están en las pestañas.
         </p>
-        <Prompt id="leer/ficha-lectura" rotuloSalida="Salida (medio)" />
+        <ul>
+          <li>
+            <strong>Todo queda verificable.</strong> Los 37 fragmentos de anclaje de las tres fichas existen textualmente
+            en los PDF. Sin la skill, el resumen no da páginas ni fragmentos.
+          </li>
+          <li>
+            <strong>No evita perder salvedades.</strong> Con Pérez et al., la ficha y el resumen sin skill pierden el mismo
+            «might be due»: la ficha dice «dado que» y el resumen, «ya que».
+          </li>
+          <li>
+            <strong>No inventa limitaciones, pero puede cambiarles el estatus.</strong> Walters y Wilder no tiene sección de
+            limitaciones; la ficha presenta como «declaradas» dos descripciones del método.
+          </li>
+          <li>
+            <strong>Conserva el alcance de las cifras.</strong> En la ficha de Walters y Wilder, el 55 % de citas inventadas
+            es de GPT-3.5, el 18 % de GPT-4, «en el corpus analizado» de 84 textos de abril de 2023.
+          </li>
+        </ul>
+        <Prompt id="leer/ficha-lectura" variantes={['walters', 'fontanelli', 'sin-skill']} rotuloSalida="Pérez et al. (medio)" />
         <p class="nota">
           Sacá tus conclusiones antes de leer la ficha. Si pegás tu propia síntesis, la skill la compara con la ficha sin
           corregirla.
