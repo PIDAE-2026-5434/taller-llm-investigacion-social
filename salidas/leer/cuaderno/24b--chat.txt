@@ -1,0 +1,21 @@
+En el trabajo "Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish" (Pérez, Miguel y Cotik, NAACL Findings 2025), los modelos no fueron evaluados sobre español mexicano.
+
+Clarificación y contexto sobre el paper
+
+1. Mención en el estado del arte: La referencia al español mexicano aparece únicamente en la revisión de literatura / trabajos previos. Allí citan el corpus MEX-A3T (Álvarez-Carmona et al., 2018) de tweets mexicanos annotados para agresividad, usándolo como antecedente de recursos desarrollados para variantes específicas del español, en contraste con la escasez de datasets orientados al español rioplatense.
+
+2. Foco del estudio: Los experimentos y evaluaciones de este paper se realizaron exclusivamente sobre un dataset de español rioplatense (contexto de Argentina y Uruguay, con vocabulario regional y lunfardo).
+
+¿Cómo les fue a los modelos con el español rioplatense?
+
+En caso de que te interesen los resultados reales del estudio sobre la variante estudiada:
+
+* Modelos evaluados: Evaluaron GPT-3.5-turbo, LLaMA-3-8B-Instruct, Aya 23 (mediante prompting few-shot y Chain-of-Thought) y los compararon contra clasificadores finamente ajustados como BETO.
+
+* Desempeño general:
+
+* Los LLM mostraron una gran capacidad para capturar formas sutiles o complejas de discurso de odio (especialmente ataques dirigidos a la comunidad LGBTIQ+ o basados en clasismo/racismo) y para lidiar con modismos y regionalismos (como el lunfardo).
+
+* Sin embargo, los LLM tendieron a generar un índice más alto de falsos positivos en comparación con clasificadores dedicados como BETO.
+
+* Modelos como BETO obtuvieron alta precisión general en tareas estandarizadas, pero pasaron por alto comentarios discriminatorios sutiles que no contenían insultos explícitos.

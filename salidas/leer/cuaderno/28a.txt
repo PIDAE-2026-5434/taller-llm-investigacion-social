@@ -1,0 +1,29 @@
+La confiabilidad de los modelos más nuevos en comparación con sus predecesores depende del aspecto específico que se evalúe, ya que la literatura muestra tendencias opuestas según la tarea:
+
+1. Sí son más confiables para reducir alucinaciones y datos inventados
+
+En tareas de generación de información factual donde los modelos anteriores fallaban con frecuencia, los modelos más recientes han mostrado mejoras drásticas:
+
+* Reducción de alucinaciones bibliográficas: En un análisis de citas académicas, GPT-3.5 fabricó el 55% de las referencias solicitadas, mientras que GPT-4 redujo esta tasa de invención al 18%.
+
+* Menos errores sustantivos: En las citas reales que sí existían, los errores en autores, títulos o fechas cayeron del 43% en GPT-3.5 al 24% en GPT-4.
+
+2. No son más confiables (e incluso empeoran) al resumir hallazgos sin sobregeneralizar
+
+A la hora de sintetizar literatura científica manteniendo la cautela y el alcance original de la evidencia, los modelos más recientes tienden a ser menos precisos que los anteriores:
+
+* Un estudio con 10 modelos comprobó que sistemas más nuevos como ChatGPT-4o, LLaMA 3.3 70B y DeepSeek presentan una marcada tendencia a la sobregeneralización en comparación con modelos anteriores como GPT-3.5 Turbo o la familia Claude.
+
+* Mayor tasa de exageración: LLaMA 3.3 70B tuvo una probabilidad 39 veces mayor que el texto original de presentar conclusiones genéricas o no justificadas, mientras que ChatGPT-4o fue 9 veces más propenso.
+
+* Causa del deterioro: Los métodos de alineación recientes (como el aprendizaje por refuerzo con retroalimentación humana o RLHF) priorizan que el modelo parezca útil, directo y seguro, lo que provoca que las versiones más nuevas pierdan matices y límites metodológicos en favor de afirmaciones categóricas y fluidas.
+
+3. Mayor sensibilidad a matices culturales, pero con menor precisión global
+
+En tareas de clasificación lingüística compleja (como la detección de discurso de odio en español rioplatense):
+
+* Modelos generativos más recientes (como ChatGPT 3.5 o Mixtral) logran identificar casos sutiles, metáforas e insultos velados que clasificadores anteriores específicos (como BETO) pasan por alto.
+
+* Sin embargo, estos modelos más nuevos obtienen una menor precisión global y una tasa más alta de falsos positivos que los clasificadores supervisados tradicionales.
+
+En conclusión: Los modelos más nuevos son más confiables para no inventar datos específicos (como referencias o nombres), pero resultan menos confiables si se busca una síntesis objetiva que no exagere el alcance de la evidencia, debido a una tendencia creciente a emitir respuestas excesivamente confiadas y generalizadas.

@@ -1,0 +1,45 @@
+Resumen del artículo: "Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish"
+
+Este trabajo de investigación (publicado en NAACL 2025) analiza el desempeño de los Modelos de Lenguaje Grandes (LLM) frente a clasificadores supervisados tradicionales en la tarea de detección de discurso de odio para el español rioplatense (variante hablada principalmente en Argentina y Uruguay).
+
+### 1. Contexto y Desafío
+
+* La detección de discurso de odio requiere comprender variantes dialectales, jerga local, lunfardo e insultos contextuales.
+
+* El español rioplatense posee expresiones y modismos específicos (como planero, trola, yegua, pelotudo) cuyos significados difieren significativamente del español ibérico o general, lo que presenta un reto particular para los modelos automáticos.
+
+### 2. Modelos y Metodología Evaluados
+
+* Clasificadores BERT supervisados: Se evaluaron los modelos preentrenados en español BETO y RoBERTuito, los cuales fueron reentrenados de manera no supervisada en un corpus masivo de comentarios rioplatenses de Twitter y posteriormente ajustados (fine-tuned) con datos etiquetados.
+
+* Modelos de Lenguaje Grandes (LLM): Se probaron ChatGPT (GPT-3.5-turbo), Mixtral y Aya utilizando una estrategia de aprendizaje de pocos ejemplos (few-shot) combinada con razonamiento paso a paso (Chain-of-Thought - CoT).
+
+* Dataset y Categorías: Se utilizó un corpus de comentarios en respuestas a noticias argentinas en Twitter, evaluando el discurso de odio en cuatro categorías principales:
+
+* WOMEN: Misoginia y ataques contra las mujeres o el movimiento feminista.
+
+* LGBTI: Homofobia, transfobia y ataques por identidad u orientación sexual.
+
+* RACISM: Xenofobia, racismo o discriminación hacia inmigrantes y pueblos originarios.
+
+* CLASS: Clasismo y odio enfocado en sectores de bajos recursos económicos.
+
+### 3. Principales Resultados
+
+* Desempeño Global: El modelo supervisado BETO (fine-tuned) obtuvo el rendimiento global más alto, alcanzando un valor F1 macro del 63.5% y la mayor precisión con un 72.9%.
+
+* Precisión vs. Recall: Los LLM (especialmente ChatGPT y Mixtral) mostraron una menor precisión que BETO, pero alcanzaron un recall (exhaustividad) significativamente mayor en la mayoría de las categorías. El modelo Aya tuvo un rendimiento bajo en la tarea.
+
+* Detección en la categoría LGBTI: En la categoría LGBTI, ChatGPT superó a BETO. El LLM demostró capacidad para detectar e interpretar casos complejos, sutiles e implícitos de transfobia e ironía que el modelo BETO no logró captar.
+
+* Comprensión de Regionalismos: Sorprendentemente, la presencia de regionalismos y lunfardo no redujo la efectividad de los modelos. En muchos casos facilitó la detección, ya que los slur y modismos regionales actúan como fuertes indicadores léxicos de hostilidad.
+
+* Tasa de Falsos Positivos: Los LLM arrojaron una mayor proporción de falsos positivos en comparación con BETO frente a las etiquetas de consenso humano, lo que sugiere una mayor sensibilidad a la toxicidad, posiblemente derivada de sus procesos de alineación de seguridad.
+
+### 4. Conclusiones
+
+* Aunque no están entrenados específicamente para el dialecto rioplatense, los LLM demuestran una capacidad notable para captar matices culturales y explicaciones contextualmente válidas.
+
+* Para tareas a gran escala y con alta precisión, los clasificadores supervisados específicos (como BETO) continúan siendo la opción superior y más eficiente.
+
+* Los autores enfatizan la necesidad de seguir creando corpus especializados para variantes regionales como punto de referencia para medir y mejorar la detección de discurso de odio en un entorno lingüístico diverso.

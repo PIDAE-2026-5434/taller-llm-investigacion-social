@@ -17,6 +17,7 @@ const crudos = import.meta.glob(
     '/skills/**/*.md',
     '/plantilla/**/*.{md,csv,txt}',
     '/registro.csv',
+    '/leer/**/*.{txt,csv}',
   ],
   { query: '?raw', import: 'default', eager: true },
 );
@@ -78,7 +79,7 @@ export function salidaDe(id) {
 function salidaEn(ruta) {
   const texto = leer(ruta);
   if (texto === null) return null;
-  const corrida = registro().filas.find((f) => f.salida === ruta) ?? null;
+  const corrida = [...registro().filas, ...registroLeer().filas].find((f) => f.salida === ruta) ?? null;
   return { ruta, texto: limpiar(texto), corrida };
 }
 
@@ -93,6 +94,12 @@ export function variantesDe(id) {
 /** registro.csv, con una fila por corrida. */
 export function registro() {
   const crudo = leer('registro.csv');
+  return crudo === null ? { columnas: [], filas: [] } : csv(crudo);
+}
+
+/** leer/registro.csv: las corridas del bloque Leer (Eje 05), separadas del registro del Eje 04. */
+export function registroLeer() {
+  const crudo = leer('leer/registro.csv');
   return crudo === null ? { columnas: [], filas: [] } : csv(crudo);
 }
 

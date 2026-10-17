@@ -106,6 +106,10 @@ a:hover {
   color: var(--tinta);
   text-decoration: none;
 }
+.cabecera nav a.secundario {
+  font-size: 14px;
+  color: var(--gris);
+}
 .cabecera nav a:hover,
 .cabecera nav a[aria-current='page'] {
   text-decoration: underline;
@@ -120,14 +124,37 @@ a:hover {
 }
 .pie .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px 48px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
   padding-block: 32px 48px;
 }
-.pie .contenedor > * {
-  flex: 1 1 320px;
+.pie p {
   margin: 0;
+}
+/* Logos y línea del proyecto, en una sola fila. */
+.pie-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+@media (min-width: 900px) {
+  .pie-proyecto {
+    white-space: nowrap;
+  }
+}
+/* Enlace a fuentes y licencias: chico y en una sola línea. */
+.pie-fuentes {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.pie-fuentes-titulo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  margin-bottom: 2px;
 }
 
 /* Botones */
@@ -251,6 +278,17 @@ h3 {
 
 .bloque-secciones {
   padding-bottom: clamp(56px, 8vw, 96px);
+}
+/* Subtítulo de las portadas (h2 debajo del h1), igual en Hablar y en Leer. */
+.portada-texto h2 {
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  margin-top: -12px;
+}
+/* Aire entre la banda de color de una portada y la lista de secciones (Hablar y Leer). */
+.portada-eje + .bloque-secciones {
+  padding-top: clamp(40px, 6vw, 72px);
 }
 .bloque-secciones-titulo {
   display: flex;
@@ -1216,4 +1254,98 @@ h3 {
 }
 .ejemplo {
   border-left-color: var(--acento);
+}
+
+/* Índice de enlaces internos al principio de una página (Materiales). */
+.prosa > .indice-interno {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  padding: 14px 0;
+  margin-top: 24px;
+  border-block: 1px solid var(--linea);
+}
+.prosa > .indice-interno li + li {
+  margin-top: 0;
+}
+
+/* Portada general: presenta el taller y lleva a cada eje. */
+.portada-general {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: clamp(40px, 7vw, 72px) clamp(56px, 8vw, 88px);
+}
+.portada-general h1 {
+  font-weight: 700;
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.05;
+  color: var(--papel);
+}
+.portada-general > p {
+  margin: 0;
+  max-width: 40em;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.ejes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+.eje-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(24px, 3vw, 36px);
+  background: var(--papel);
+  color: var(--tinta);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: border-color 0.15s;
+}
+.eje-tarjeta:hover,
+.eje-tarjeta:focus-visible {
+  border-color: var(--tinta);
+}
+.eje-tarjeta-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.eje-tarjeta-logo img {
+  width: 96px;
+  height: 96px;
+}
+.eje-tarjeta-eje {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+.eje-tarjeta-titulo {
+  font-family: var(--f-titulo);
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 52px);
+  line-height: 1;
+}
+.eje-tarjeta-bajada {
+  font-family: var(--f-titulo);
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 1.2;
+}
+.eje-tarjeta-texto {
+  color: var(--gris);
+  line-height: 1.5;
+}
+.eje-tarjeta-entrar {
+  margin-top: auto;
+  padding-top: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }

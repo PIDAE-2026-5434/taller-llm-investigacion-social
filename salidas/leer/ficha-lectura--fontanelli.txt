@@ -1,0 +1,141 @@
+### 1. Referencia completa del artículo
+
+Fontanelli, O., Schulz, M. S., Alba Udave, J., Quintana Nedelcu, D., Tavera Fenollosa, L., & Dussauge Laguna, M. I. (2025). Uso y valoración de la inteligencia artificial generativa en los estudios sociales. Reporte sobre la experiencia de la comunidad académica de la Flacso México. Perfiles Latinoamericanos, 33(66), 267-279. DOI: dx.doi.org/10.18504/pl3365-013-2025.
+
+### 2. Pregunta u objetivo de investigación
+
+El estudio tiene como objetivo generar evidencia empírica sobre cómo se emplean las herramientas de inteligencia artificial generativa (IAG) en la docencia e investigación social entre la comunidad académica de la Flacso México. En específico, aborda dos preguntas clave: ¿en qué medida se emplea la IAG en los procesos de investigación? y ¿de qué manera específica se integra en dicho proceso?. Busca capturar una "fotografía" del estado actual sobre el uso, la percepción entre pares y la valoración de la IAG dentro de la institución para servir como línea base e insumo de reflexión.
+
+### 3. Enfoque y diseño: tipo de estudio, métodos y técnicas
+
+Tipo de estudio: Estudio empírico cuantitativo de carácter exploratorio y descriptivo.
+
+Diseño e instrumento: Encuesta estructurada digital, adaptada a partir de un estudio previo realizado en universidades de Dinamarca (Andersen et al., 2025).
+
+Dimensiones evaluadas: Uso en investigación, percepción del uso entre pares y valoración general de la IAG, articuladas en torno a cinco fases del proceso de investigación (generación de ideas, diseño de investigación, recolección de datos, análisis de datos, y redacción y publicación).
+
+Validación y administración: Aplicación de prueba piloto previa con docentes y estudiantes. Administración en línea mediante licencia institucional de SurveyMonkey.
+
+Análisis de datos: Procesamiento analítico cuantitativo en lenguaje R (versión 4.3.2).
+
+### 4. Datos: población o corpus, tamaño, lugar, período
+
+Población objetivo: Profesorado de tiempo completo y estudiantado de posgrado (maestrías semipresenciales —5 programas— y de dedicación exclusiva —3 maestrías y 1 doctorado—) de la Flacso México.
+
+Lugar: Facultad Latinoamericana de Ciencias Sociales, Sede México (Flacso México), Ciudad de México.
+
+Período de relevamiento: Del 25 de marzo al 2 de abril de 2025 (distribuido por correo institucional con dos recordatorios).
+
+Muestra obtenida: Tasa de respuesta general del 41.4% (154 respuestas en total). Corresponde a 24 profesores (tasa de respuesta del 66.7%) y 130 estudiantes (tasa de respuesta del 38.6%).
+
+### 5. Conceptos clave
+
+Inteligencia artificial generativa (IAG): Entendidas en el texto como aquellas herramientas "que aprenden patrones de grandes modelos de lenguaje y bases de datos para generar texto, imágenes y video" (p. 268).
+
+Proceso de investigación (fases): Operacionalizado en cinco fases: "generación de ideas, diseño de investigación, recolección de datos, análisis de datos, y redacción y publicación" (p. 271).
+
+### 6. Hallazgos principales
+
+Frecuencia general de uso: En la muestra encuestada de Flacso México, el 58% de los profesores y el 49% de los estudiantes reportaron utilizar la IAG con regularidad (al menos una vez a la semana) en sus labores académicas; mientras que un 21% de profesores y 14% de estudiantes dijeron no usarla nunca.
+
+Ubicación: Sección "Resultados", p. 272.
+
+Anclaje textual: «El 58% de los profesores y 49% de los estudiantes señalaron utilizar la IAG con regularidad».
+
+Razones del no uso: Entre quienes no usan IAG en la muestra, las principales razones señaladas fueron el desconocimiento sobre cómo hacerlo (40% de profesores, 27% de estudiantes) o la oposición expresada al uso de dichas herramientas (40% de profesores, 12% de estudiantes).
+
+Ubicación: Sección "Resultados", p. 272.
+
+Anclaje textual: «desconocimiento sobre cómo hacerlo (40% de profesores, 27% de estudiantes) o expresaron su oposición al uso».
+
+Uso diferenciado según la fase de investigación: Los profesores encuestados recurren a la IAG sobre todo en el diseño de investigación y en la escritura; en cambio, los estudiantes se valen de ella en especial para generar ideas (fase que muestra la mayor diferencia de uso entre ambos grupos).
+
+Ubicación: Sección "Resultados", p. 272.
+
+Anclaje textual: «profesores recurren a ella sobre todo en diseño de investigación y escritura, mientras que los estudiantes se valen de ella en especial para generar ideas».
+
+Tareas específicas más frecuentes: Entre los docentes usuarios destacan traducir texto (76%), editar/refinar lenguaje (65%) y proponer títulos/palabras clave (53%). Entre los estudiantes usuarios destacan identificar literatura y autores (65%), editar/refinar lenguaje (54%), traducir texto (54%) y crear código para analizar datos (50%).
+
+Ubicación: Sección "Resultados", p. 272.
+
+Anclaje textual: «las que obtuvieron mayor frecuencia son: traducir texto (76%), editar o refinar lenguaje con fines de legibilidad (65%)».
+
+Valoración e incertidumbre generalizada: El profesorado evalúa positivamente el uso en las fases finales (análisis de datos y escritura), y mantiene valoraciones neutras en generación de ideas, recolección y diseño. Los estudiantes dan una valoración muy positiva al análisis de datos y moderadamente positiva en ideas, recolección y escritura. No obstante, la opción más frecuente en todas las etapas para ambos grupos fue "No sabría decir".
+
+Ubicación: Sección "Resultados", p. 272-273.
+
+Anclaje textual: «en todas las etapas del proceso, la respuesta más frecuente de ambos grupos ante la pregunta sobre la valoración del uso de la IAG fue "No sabría decir"».
+
+Tareas con valoración negativa: El profesorado otorga valoraciones negativas a ayudar a desarrollar modelos teóricos o marcos conceptuales (-18.2%), diseñar la metodología (-18.2%) e identificar cuestiones éticas (-13.6%). El estudiantado otorga valoración negativa únicamente al desarrollo de modelos teóricos o marcos conceptuales (-12.8%).
+
+Ubicación: Sección "Resultados", p. 274.
+
+Anclaje textual: «este mismo grupo otorga valoraciones negativas a las tareas de ayudar a desarrollar modelos teóricos o marcos conceptuales (-18.2%)».
+
+Demandas institucionales: Ambos grupos coinciden en la necesidad de lineamientos claros y orientación; sin embargo, el profesorado enfatiza la regulación (normas, reglamentos, límites), mientras que el estudiantado destaca la capacitación (talleres, cursos, guías).
+
+Ubicación: Sección "Resultados", p. 274.
+
+Anclaje textual: «profesorado enfatiza en la regulación del uso de estas herramientas [...] el estudiantado destaca recibir capacitación».
+
+Desconocimiento de normativas e información entre pares: Solo alrededor del 15% de los encuestados afirmó conocer alguna normativa institucional sobre uso académico de IAG. Asimismo, de manera generalizada, docentes y estudiantes reportaron no tener información sobre el uso que hacen sus colegas o compañeros.
+
+Ubicación: Sección "Resultados", p. 274.
+
+Anclaje textual: «solo alrededor de 15% de las personas encuestadas en ambos grupos afirmó conocer alguna normativa institucional».
+
+Usos en docencia y labores de estudio: De manera generalizada, los profesores dijeron no usar la IAG para su labor docente. Por su parte, los estudiantes reportaron usar la IAG en sus estudios sobre todo para resumir lecturas, identificar literatura/autores y aclarar conceptos confusos.
+
+Ubicación: Sección "Resultados", p. 274-275.
+
+Anclaje textual: «de manera generalizada, los profesores dijeron no usar la IAG para su labor docente».
+
+### 7. Limitaciones declaradas por los autores
+
+El ejercicio refleja únicamente el momento actual de una sola institución académica.
+
+Ubicación: Sección "Conclusiones", p. 276.
+
+Anclaje textual: «se trata de un ejercicio que refleja el momento actual de una sola institución».
+
+La población estudiada es relativamente pequeña en comparación con otras instituciones de educación superior.
+
+Ubicación: Sección "Conclusiones", p. 276.
+
+Anclaje textual: «la población estudiada es relativamente pequeña, en comparación con las poblaciones de otras instituciones de educación superior».
+
+Se señalan posibles sesgos en la ventana temporal de la encuesta y en la cobertura de perfiles (al no incluir generaciones previas, docentes de asignatura o investigadores a tiempo parcial).
+
+Ubicación: Sección "Conclusiones", p. 276.
+
+Anclaje textual: «podríamos haber obtenido resultados ligeramente distintos si la encuesta se hubiera dejado abierta más tiempo, o si la muestra hubiera incluido a otros integrantes».
+
+### 8. Limitaciones que no declaran [Observación de la Gem]
+
+¿Podría haber existido un sesgo de auto-selección o de deseabilidad social en la respuesta digital voluntaria, donde personas menos familiarizadas o con opiniones más críticas hacia la tecnología hayan omitido responder? [Observación de la Gem]
+
+¿En qué medida la asimetría en el tamaño muestral entre docentes (N=24) y estudiantes (N=130) condiciona la precisión estadística al comparar porcentajes relativos entre ambos grupos? [Observación de la Gem]
+
+¿Hasta qué punto la estructura de opciones prefijadas (adaptada del modelo danés) pudo limitar la captura de prácticas cualitativas o usos emergentes específicos del contexto de las ciencias sociales latinoamericanas? [Observación de la Gem]
+
+### 9. Lo que el texto no dice
+
+No analiza ni evalúa la calidad, precisión o validez científica de los textos o análisis producidos mediante IAG por docentes o alumnos.
+
+No examina contenidos curriculares, planes de estudio ni asignaturas específicas de los posgrados.
+
+No formula un cuerpo normativo, código de ética ni borrador reglamentario institucional concreto.
+
+No indaga en la brecha de acceso o costo económico asociado al uso de herramientas pagas frente a gratuitas entre la comunidad.
+
+### 10. Preguntas para la lectura propia
+
+¿De qué modo la condición de estudiantes de posgrado (tiempo completo vs. semipresencial) influye en la mayor inclinación a usar IAG para la generación de ideas y búsqueda de literatura?
+
+¿Por qué existe un marcado rechazo o escepticismo expresado hacia el uso de IAG en tareas teóricas y metodológicas por parte del profesorado social?
+
+¿De qué manera la institución puede articular la demanda de regulación (solicitada por docentes) con la demanda de capacitación práctica (solicitada por estudiantes) sin desincentivar la innovación académica?
+
+Esta ficha es un apoyo, no un reemplazo de la lectura. Verificá los fragmentos citados en el documento.
+
+Si escribiste tu propia síntesis del artículo, pegala y la comparo con esta ficha.

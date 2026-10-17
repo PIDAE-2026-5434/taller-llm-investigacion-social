@@ -1,0 +1,90 @@
+---
+// Bloque Leer (Eje 05) · Sintetizar varios papers. Preguntas en prompts/leer/cuaderno/,
+// respuestas en salidas/leer/cuaderno/ (29--con-fontanelli.txt: la misma pregunta
+// después de sumar Fontanelli et al. al cuaderno).
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import Prompt from '../../components/Prompt.astro';
+---
+
+<GuiaLeer slug="varios-papers">
+        <p>
+          Cuando se trabaja con varios papers a la vez aparecen dos errores de síntesis. El <strong>falso consenso</strong>{' '}
+          presenta como acuerdo lo que en realidad es un debate, o promedia posiciones distintas. La{' '}
+          <strong>falsa brecha</strong> declara que «falta investigar» algo que ya fue estudiado, porque no está entre las
+          fuentes que le dimos. Las dos son difíciles de ver: la respuesta está bien escrita y cita pasajes reales.
+        </p>
+        <p>
+          Para buscarlas armamos un cuaderno de Gemini Notebook con tres papers que hablan de modelos de lenguaje desde
+          lugares distintos: Walters y Wilder (2023), sobre citas inventadas; Peters y Chin-Yee (2025), sobre la tendencia a
+          generalizar al resumir; y Pérez, Miguel y Cotik (2025), sobre discurso de odio. Todas las preguntas se hicieron
+          con el modelo medio (Pensar) y la cuenta de la Facultad.
+        </p>
+
+        <h2 id="falso-consenso">Falso consenso</h2>
+        <p>
+          Los dos primeros papers parecen decir cosas opuestas sobre los modelos nuevos: según Walters y Wilder, GPT-4 es
+          una mejora importante sobre GPT-3.5 en la exactitud de las citas (p. 5); según Peters y Chin-Yee, los modelos más
+          nuevos generalizan más que los anteriores al resumir, salvo ChatGPT-4.5 (pp. 5 y 13). Miden tareas distintas, con
+          modelos y fechas distintos. La respuesta buena es «depende de la tarea»; el falso consenso es «sí, mejoran» o
+          «no, empeoran».
+        </p>
+        <Prompt id="leer/cuaderno/28a" rotuloSalida="Cuaderno (medio)" />
+        <p>
+          El cuaderno no cayó en el falso consenso grosero: respondió «depende» y separó bien las dos tendencias, con las
+          cifras correctas. Los errores fueron más finos. Peters y Chin-Yee proponen el RLHF como posible explicación
+          («may stem from», p. 13), y el cuaderno lo tituló «Causa del deterioro». Omitió la excepción de ChatGPT-4.5. Y
+          para sumar el tercer paper llamó «más recientes» a GPT-3.5 y Mixtral frente a BETO, una comparación que Pérez et
+          al. no hacen.
+        </p>
+        <Prompt id="leer/cuaderno/28b" rotuloSalida="Cuaderno (medio)" />
+        <p>
+          Tampoco armó un ranking único: separó por tarea. Pero cada estudio se convirtió en un veredicto general. «GPT-4
+          lidera en exactitud» sale de un estudio que solo comparó GPT-3.5 con GPT-4. «Claude es el más confiable» omite
+          que GPT-3.5 Turbo tampoco se apartó del texto original. El falso consenso también es sutil: borra los empates y
+          las excepciones.
+        </p>
+
+        <h2 id="falsa-brecha">Falsa brecha</h2>
+        <p>
+          La pregunta es sobre el campo, y el cuaderno responde con su muestra. Primero la hicimos con los tres papers;
+          después sumamos al cuaderno a Fontanelli et al. (2025), una encuesta a la comunidad académica de la Flacso México,
+          y la repetimos en un chat nuevo del cuaderno. Las dos respuestas están en las pestañas.
+        </p>
+        <Prompt id="leer/cuaderno/29" variantes={['con-fontanelli']} rotuloSalida="Tres papers (medio)" />
+        <p>
+          Con tres papers, el cuaderno listó el trabajo futuro que declaran los autores (otras variantes del español, más
+          anotadores, otros dominios) y agregó ítems que no están, como comparar «ciencias sociales frente a biomédicas».
+          Nunca aclaró que respondía con tres textos.
+        </p>
+        <p>
+          Con Fontanelli apareció América Latina, con el matiz correcto: la evidencia empírica proviene «principalmente» de
+          países desarrollados (p. 269). No lo convirtió en «no hay estudios». Pero declaró como pendiente analizar las
+          citas fabricadas en repositorios de preprints, cuando Walters y Wilder cuentan que eso ya lo estudió otro trabajo
+          (p. 6). El cuaderno convirtió un hallazgo citado en una vacancia.
+        </p>
+        <p class="nota">
+          La brecha que declara el cuaderno es la de las fuentes que le dimos, no la del campo. Para afirmar que algo falta
+          investigar hay que buscar en las bases.
+        </p>
+
+        <h2>El riesgo no es inventar</h2>
+        <p>
+          En estas pruebas, el cuaderno casi no inventó: las cifras que citó estaban en los papers. Su error típico fue
+          otro: <strong>afirmar más de lo que dice la fuente</strong>. Convirtió hipótesis en causas, «suggest» en
+          «demuestra» y un estudio en un veredicto general. Lo hizo en cinco de las siete respuestas. Es el mismo sesgo de
+          generalización que describen Peters y Chin-Yee, y el que la Ficha de lectura intenta contener.
+        </p>
+        <p>
+          El cuaderno sirve como un índice inteligente de las fuentes: localiza, recupera y compara con cita. No es un
+          analista. Se puede combinar con un chat general para discutir una interpretación, pero cada afirmación que vaya
+          a un texto se verifica contra el pasaje.
+        </p>
+
+        <h2>Los papers del cuaderno</h2>
+        <ul>
+          <li>Fontanelli, O., Schulz, M. S., Alba Udave, J., Quintana Nedelcu, D., Tavera Fenollosa, L. y Dussauge Laguna, M. I. (2025). Uso y valoración de la inteligencia artificial generativa en los estudios sociales. <em>Perfiles Latinoamericanos</em>, 33(66), 267–279. <a href="https://doi.org/10.18504/pl3366-013-2025">doi.org/10.18504/pl3366-013-2025</a></li>
+          <li>Pérez, J. M., Miguel, P. y Cotik, V. (2025). Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish. <em>Findings of NAACL 2025</em>, 7189–7202. <a href="https://aclanthology.org/2025.findings-naacl.400/">aclanthology.org/2025.findings-naacl.400</a></li>
+          <li>Peters, U. y Chin-Yee, B. (2025). Generalization bias in large language model summarization of scientific research. <em>Royal Society Open Science</em>, 12, 241776. <a href="https://doi.org/10.1098/rsos.241776">doi.org/10.1098/rsos.241776</a></li>
+          <li>Walters, W. H. y Wilder, E. I. (2023). Fabrication and errors in the bibliographic citations generated by ChatGPT. <em>Scientific Reports</em>, 13, 14045. <a href="https://doi.org/10.1038/s41598-023-41032-5">doi.org/10.1038/s41598-023-41032-5</a></li>
+        </ul>
+</GuiaLeer>

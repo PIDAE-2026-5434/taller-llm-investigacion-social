@@ -1,0 +1,35 @@
+Los estudios destacan varias áreas abiertas y limitaciones metodológicas que requieren mayor investigación:
+
+1. Estrategias avanzadas de mitigación e ingeniería de prompts:
+
+* Probar un abanico más amplio y exhaustivo de técnicas de prompting para controlar tanto la sobregeneralización como los sesgos dialécticos.
+
+* Evaluar mecanismos automatizados como el shadow prompting (modificación interna del prompt por el desarrollador) para forzar el uso del tiempo pasado al resumir investigaciones y evitar extender hallazgos del pasado al presente de forma injustificada.
+
+* Investigar el impacto de ajustar parámetros como la temperatura del modelo para equilibrar la fluidez y la precisión.
+
+2. Diferencias entre disciplinas y campos del conocimiento:
+
+* Analizar cómo varía la tendencia a sobregeneralizar según el dominio científico (por ejemplo, comparando investigación básica frente a aplicada, o ciencias sociales frente a biomédicas).
+
+3. Comparación con diversos perfiles de comunicadores humanos:
+
+* Comparar la precisión de los LLM no solo contra resúmenes de expertos científicos, sino también contra redactores de oficinas de prensa universitarias, relaciones públicas o periodistas, donde existen otros incentivos de sobreexageración (hype).
+
+4. Cobertura dialéctica y procesamiento de lenguaje figurado:
+
+* Ampliar la evaluación a múltiples variantes regionales del español (como el español ibérico o el mexicano) y construir corpora localizados más amplios.
+
+* Profundizar en la capacidad de los modelos para interpretar elementos lingüísticos complejos como metáforas culturales, ironía, juegos de palabras y jerga regional.
+
+5. Explicabilidad, evaluación humana y perspectivismo:
+
+* Evaluar la validez de las explicaciones paso a paso de los LLM mediante paneles más amplios de evaluadores humanos y métricas estandarizadas de informatividad y solidez.
+
+* Utilizar enfoques perspectivistas en las métricas de evaluación para considerar explícitamente el desacuerdo entre anotadores humanos en tareas complejas o subjetivas.
+
+6. Mecanismos internos y verificación bibliográfica:
+
+* Investigar los mecanismos internos (abriendo la "caja negra" de los modelos) para comprender por qué generan citas fabricadas o pierden matices metodológicos.
+
+* Desarrollar e integrar herramientas automáticas de detección capaces de verificar en tiempo real la validez bibliográfica de las fuentes citadas por IA.

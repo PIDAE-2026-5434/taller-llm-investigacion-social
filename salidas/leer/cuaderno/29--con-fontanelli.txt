@@ -1,0 +1,33 @@
+A partir de los vacíos metodológicos y las limitaciones identificadas en los estudios de la fuente, las principales líneas de investigación pendientes sobre el uso de los modelos de lenguaje (LLM) en el ámbito académico abarcan los siguientes aspectos:
+
+1. Uso práctico, percepción y normativas institucionales
+
+* Estudios comparativos regionales y disciplinarios: La mayoría de la evidencia empírica sobre el uso académico de la IA proviene de países desarrollados. Falta extender las investigaciones a más comunidades universitarias de América Latina y analizar cómo varían los patrones de uso según la disciplina.
+
+* Evolución longitudinal: Se requiere monitorear cómo cambia el uso de la IA a lo largo del tiempo utilizando las encuestas actuales como líneas de base.
+
+* Inclusión de otros perfiles académicos: Falta estudiar el impacto en poblaciones no consideradas en los primeros sondeos, como docentes de tiempo parcial o investigadores adjuntos.
+
+* Diseño de políticas y capacitaciones: Es necesario investigar cómo estructurar capacitaciones técnicas y normativas éticas que atiendan las demandas diferenciadas de regulación (priorizadas por los docentes) y formación práctica (priorizada por los estudiantes).
+
+2. Fidelidad en la síntesis y comunicación científica
+
+* Diferencias entre áreas del conocimiento: Falta investigar si la tendencia de los LLM a sobregeneralizar hallazgos varía según la materia (por ejemplo, entre investigación básica frente a ciencias aplicadas o médicas).
+
+* Comparación con diversos comunicadores humanos: Es necesario comparar los resúmenes de la IA no solo con resúmenes de expertos, sino también con comunicadores de oficinas de prensa, relaciones públicas o periodistas, donde existen incentivos de exageración (hype).
+
+* Estrategias de mitigación en la interfaz (shadow prompting): Conviene evaluar el uso de la modificación interna del prompt por parte de los desarrolladores (shadow prompting) para forzar la redacción de resúmenes en tiempo pasado y evitar la extensión injustificada de resultados al presente.
+
+3. Procesamiento de dialectos y lenguaje figurado
+
+* Cobertura de múltiples variantes del español: Se requiere ampliar los experimentos a otras variantes lingüísticas (como el español ibérico o el mexicano) para evaluar el comportamiento del modelo ante diferentes sesgos regionales.
+
+* Comprensión de ironías, metáforas y jerga: Falta profundizar en la capacidad de los LLM para interpretar elementos discursivos complejos como juegos de palabras, metáforas contextuales y expresiones coloquiales.
+
+* Evaluación humana y métricas perspectivistas: Es necesario evaluar las explicaciones de la IA mediante paneles más amplios de evaluadores humanos y aplicar marcos perspectivistas que consideren el desacuerdo entre anotadores.
+
+4. Tratamiento de referencias y citas bibliográficas
+
+* Mecanismos diferenciados para datos bibliográficos: Es preciso investigar cómo lograr que los LLM procesen la información bibliográfica de forma diferenciada respecto al texto predictivo habitual, reduciendo la alteración o invención de títulos y datos numéricos.
+
+* Detección de alucinaciones en servidores de preprints: Falta analizar el grado de infiltración de citas fabricadas en repositorios académicos no revisados por pares y desarrollar detectores de IA capaces de identificar referencias falsas.

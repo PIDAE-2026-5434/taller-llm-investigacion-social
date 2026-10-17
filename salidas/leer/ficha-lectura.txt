@@ -1,0 +1,113 @@
+### 1. Referencia completa del artículo
+
+Pérez, Juan Manuel; Miguel, Paula; Cotik, Viviana. (2025). "Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish". En Findings of the Association for Computational Linguistics: NAACL 2025, páginas 7189–7202, 29 de abril - 4 de mayo de 2025. Association for Computational Linguistics.
+
+### 2. Pregunta u objetivo de investigación
+
+Los autores exploran la efectividad de los Grandes Modelos de Lenguaje (LLM) para la detección de discurso de odio en la variante dialectal del español rioplatense, comparando su desempeño mediante razonamiento chain-of-thought (CoT) frente a clasificadores supervisados basados en BERT.
+
+### 3. Enfoque y diseño: tipo de estudio, métodos y técnicas
+
+Estudio cuantitativo experimental de clasificación multietiqueta (multi-label classification) en procesamiento del lenguaje natural (PLN):
+
+Modelos supervisados basados en BERT: BETO y RoBERTuito, previamente preentrenados en un corpus no supervisado en español rioplatense y afinados (fine-tuned) con búsqueda de hiperparámetros (épocas, tasa de aprendizaje, warmup ratio).
+
+Grandes Modelos de Lenguaje (LLM): ChatGPT (GPT-3.5 turbo-0125), Mixtral (mezcla de expertos) y Aya (modelo multilingüe secuencia a secuencia).
+
+Estrategia de prompting: Aprendizaje con pocos ejemplos (few-shot learning, 12 ejemplos del conjunto de entrenamiento) combinado con razonamiento chain-of-thought (CoT) para solicitar una explicación paso a paso antes de clasificar.
+
+Métricas de evaluación: Precisión (precision), exhaustividad (recall) y F1-score macro, con intervalos de confianza del 95% vía bootstrapping. Se incluyó un análisis cualitativo sobre el impacto de regionalismos.
+
+### 4. Datos: población o corpus, tamaño, lugar, período
+
+Corpus principal: Dataset anonimizado de comentarios/respuestas en Twitter a publicaciones de medios de comunicación de noticias de Argentina.
+
+Muestra de prueba analizada: Submuestra de 5.670 comentarios (50% del conjunto de prueba original de Pérez et al., 2023, reducida por razones presupuestarias).
+
+Prevalencia de odio en la muestra: 479 comentarios contienen discurso de odio (8,45% del total de la muestra), analizados en 4 categorías: Racismo/Xenofobia (230 casos, 4,06%), Mujeres/Misoginia (131 casos, 2,31%), LGBTI/Homofobia/Transfobia (88 casos, 1,55%) y Clase/Clasismo (76 casos, 1,34%).
+
+Corpus no supervisado: ~5.000.000 de comentarios en tuits rioplatenses, junto con 288.000 tuits de noticias y artículos completos de contexto.
+
+Lugar y dialecto: Argentina, contexto dialectal del español rioplatense.
+
+### 5. Conceptos clave
+
+Discurso de odio (Hate Speech): Definido en la instrucción del estudio a partir de los lineamientos del Plan Nacional contra la Discriminación de Argentina como "declaraciones de carácter intenso y/o irracional de rechazo, enemistad o aborrecimiento contra un individuo o contra un grupo, siendo el individuo o el grupo objetivo de las expresiones por poseer una característica protegida".
+
+Español Rioplatense (Rioplatense Spanish): Variante dialectal hablada principalmente en Argentina y Uruguay (utilizada por más de un décimo de los hispanohablantes nativos), caracterizada por la confluencia de ruralismos, indigenismos, argots y jergas populares.
+
+Lunfardo: Repertorio léxico integrado de aproximadamente 6.000 voces surgido de procesos migratorios en Argentina (con epicentro en Buenos Aires durante los siglos XIX y primera mitad del XX).
+
+Razonamiento Chain-of-Thought (CoT): Técnica de prompting ("pensemos paso a paso") empleada para guiar a los LLM en la generación de explicaciones justificadas en lenguaje natural antes de ofrecer la etiqueta final.
+
+Regionalismos: Expresiones modismáticas, palabras de uso exclusivo en el español rioplatense o vocablos con un significado diferencial en Argentina.
+
+### 6. Hallazgos principales
+
+Precisión general de BERT vs. Exhaustividad de LLMs: El clasificador BETO afinado superó a los LLM en precisión (72,9%) y F1 macro (63,5%), pero los LLM mostraron mayor exhaustividad (recall) en varias categorías (sección 6, pág. 7194).
+
+Anclaje textual: "BETO classifier outperforms their counterparts in terms of precision and F1, the LLMs have higher recall" (pág. 7194).
+
+Superioridad de GPT-3.5 en la categoría LGBTI: GPT-3.5 superó significativamente al clasificador BETO en la detección de discurso de odio contra el colectivo LGBTI (p < 10⁻⁶) (sección 6, pág. 7194).
+
+Anclaje textual: "is particularly interesting given that is the case where GPT-3.5 outperforms the fine-tuned classifier" (pág. 7194).
+
+Desempeño ante la presencia de regionalismos: Los clasificadores mantuvieron o mejoraron su desempeño F1 cuando los textos contenían regionalismos, dado que estos coinciden frecuentemente con insultos peyorativos explícitos (sección 6, pág. 7194).
+
+Anclaje textual: "they stay equal or get better when regionalisms are present in the text" (pág. 7194).
+
+Capacidad cualitativa para captar agresiones sutiles: GPT-3.5 y Mixtral lograron identificar y explicar instancias complejas o implícitas de odio transfóbico/homofóbico que el modelo BETO no detectó (sección 6, pág. 7194 y Tabla 7, pág. 7196).
+
+Anclaje textual: "LLMs, sometimes are able to detect, explain, and provide information about regional slang not detected by the fine-tuned BETO classifier" (pág. 7195).
+
+Mayor tasa de falsos positivos en los LLM: Los LLM presentaron una tasa más alta de falsos positivos que BETO respecto de las etiquetas de voto mayoritario del dataset, atribuida a su sensibilidad a la toxicidad o a ajustes de seguridad/preferencia (sección 6, pág. 7195).
+
+Anclaje textual: "LLMs show a higher rate of false positives than the fine-tuned BETO classifier, when it comes to the reference of majority-vote labels in the dataset" (pág. 7195).
+
+### 7. Limitaciones declaradas por los autores
+
+Falta de explicaciones humanas en el corpus de origen: El dataset utilizado no incluía explicaciones originales redactadas por anotadores humanos para contrastar directamente las justificativas de los LLM (sección 8, pág. 7197).
+
+Anclaje textual: "the original dataset lacked natural language explanations for the annotations" (pág. 7197).
+
+Detección limitada de regionalismos: La lista de regionalismos se construyó de forma básica a partir de raspado de un diccionario colaborativo sin anotación humana profunda (sección 8, pág. 7197).
+
+Anclaje textual: "the task of regionalism detection could be enhanced, whether by human annotation or by dictionary enrichment" (pág. 7197).
+
+Análisis cualitativo acotado de explicaciones: La corrección y solidez de las explicaciones emitidas por los LLM fue evaluada únicamente de manera limitada por los propios autores (sección 8, pág. 7197).
+
+Anclaje textual: "analysis of LLMs explanations was performed in a very limited way, being their soundness assessed solely by the authors" (pág. 7197).
+
+Uso de modelos como "caja negra" y exploración no exhaustiva de prompts: Los modelos comerciales cerrados impidieron auditar sus mecanismos internos y no se exploraron todas las variaciones posibles de prompts (sección 8, pág. 7197).
+
+Anclaje textual: "In this study LLMs were employed as a 'black box'" (pág. 7197).
+
+### 8. Limitaciones que no declaran [Observación de la Gem]
+
+¿De qué manera la reducción de la muestra de prueba al 50% (5.670 ejemplos) afecta la robustez estadística en categorías con una frecuencia absoluta muy baja de casos positivos, como clase social (76 casos) o LGBTI (88 casos)?
+
+¿Hasta qué punto los filtros de seguridad preexistentes (RLHF / safety tuning) de modelos comerciales inflan la tasa de falsos positivos al interpretar desacuerdos o jergas coloquiales argentinas como agresión o discurso tóxico?
+
+¿Cómo impacta la depreciación y actualización opaca de las versiones de API de LLM propietarios (como GPT-3.5 turbo-0125) en la reproducibilidad científica a largo plazo del experimento?
+
+### 9. Lo que el texto no dice
+
+No analiza desacuerdos entre anotadores humanos ni utiliza marcos perspectivistas para evaluar la pluralidad de opiniones en la anotación original.
+
+No realiza pruebas empíricas directas en otras variantes dialectales del español (como el español mexicano e ibérico, limitándose a mencionarlos como trabajo futuro).
+
+No abarca las otras 4 categorías de discurso de odio contempladas en el corpus base de Pérez et al. (2023) (apariencia física, política, discapacidad y odio a criminales).
+
+No analiza los costos monetarios, la latencia ni los requerimientos computacionales necesarios para desplegar sistemas basados en LLM frente a clasificadores BERT en tareas de moderación en tiempo real.
+
+### 10. Preguntas para la lectura propia
+
+¿En qué medida la técnica de Chain-of-Thought genera una comprensión semántica real del lunfardo o constituye una racionalización plausible generada post-hoc por el modelo?
+
+¿Qué rasgos lingüísticos discursivos de la violencia homofóbica/transfóbica en redes sociales explican la brecha de rendimiento a favor de GPT-3.5 frente a modelos basados en BERT?
+
+¿Cómo influye la presencia de la noticia contextual (tuit del medio) en la desambiguación entre el uso coloquial de un insulto dialectal y una agresión de odio dirigida?
+
+Esta ficha es un apoyo, no un reemplazo de la lectura. Verificá los fragmentos citados en el documento.
+
+Si escribiste tu propia síntesis del artículo, pegala y la comparo con esta ficha.

@@ -1,0 +1,66 @@
+---
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import { enRepo } from '../../lib/sitio.js';
+
+const registro = enRepo('leer/registro.csv');
+---
+
+<GuiaLeer slug="como-las-probamos">
+        <p>
+          Todas las salidas de este bloque son corridas reales, con la cuenta de la Facultad y en conversaciones nuevas,
+          entre el 13 y el 17 de octubre de 2026: las skills en Gemini, y las preguntas en Gemini Notebook y en un chat de
+          Gemini sin archivo. Las cifras, los pasajes y los fragmentos de anclaje se verificaron contra los PDF. Al copiar
+          las salidas desde Gemini se perdieron las tablas y los saltos de línea: se restituyó solo el formato, sin tocar el
+          texto.
+        </p>
+        <p>
+          Antes de dárselas a la sala, probamos las skills con casos cuya respuesta ya conocíamos: 23 referencias para el
+          Verificador, 16 afirmaciones para Cita vs. fuente, tres papers para la Ficha. Cuando una versión fallaba, cambiamos
+          una regla y volvimos a probar. Una skill, el buscador de bibliografía, no pasó la prueba y la rediseñamos como
+          Asistente de búsqueda.
+        </p>
+
+        <h2>Lo que aprendimos</h2>
+        <ul>
+          <li>
+            <strong>El modelo pesa más que las instrucciones.</strong> La misma versión del Verificador acertó 23 de 23
+            veredictos con el modelo medio y 16 con el chico.
+          </li>
+          <li><strong>La misma skill, con el mismo modelo, cambia entre corridas.</strong></li>
+          <li>
+            <strong>Cerrar una vía de invención no la elimina.</strong> Al prohibirle escribir DOI, el Verificador inventó
+            URL.
+          </li>
+          <li>
+            <strong>Las instrucciones también se prueban.</strong> Una regla de seguridad desactivó el Verificador, que pasó
+            a responder todo como «No localizada». Por eso, una regla por vez.
+          </li>
+          <li>
+            <strong>Con el documento, las cifras suelen estar bien; sin él, se inventa al completar.</strong> Todas las
+            cifras del cuaderno, de la Ficha y de Cita vs. fuente estaban en los PDF. El chat sin archivo inventó un modelo
+            que el paper no usó y una conclusión que los autores no escribieron.
+          </li>
+          <li>
+            <strong>El error más repetido no fue inventar, sino endurecer.</strong> El mismo «might be due» de Pérez, Miguel
+            y Cotik lo perdieron cinco herramientas distintas: Gemini con el PDF y sin skill (dos veces), la Ficha, el
+            cuaderno y el chat. Siempre de la misma forma: una hipótesis convertida en certeza.
+          </li>
+          <li>
+            <strong>Las trampas previstas no siempre funcionan.</strong> El cuaderno no cayó en la atribución errónea ni en
+            el falso consenso grosero; los errores aparecieron en otro lado. No se puede anticipar qué va a fallar: por eso
+            se verifica todo.
+          </li>
+        </ul>
+
+        <h2>Antes de usar lo que da la IA</h2>
+        <ul>
+          <li>Los números, contra la tabla o el pasaje original.</li>
+          <li>Las salvedades: ¿la fuente dice «sugiere» y el resumen dice «demuestra»?</li>
+          <li>La cita del cuaderno es un localizador, no una referencia: lo verificado va al gestor bibliográfico.</li>
+          <li>«No localizada» no es «no existe», sobre todo para la producción latinoamericana y la literatura gris.</li>
+          <li>¿Consenso o debate? ¿La brecha es del campo o del cuaderno? ¿Quién dijo qué?</li>
+        </ul>
+        {registro && <p>Las corridas de este bloque están en <a href={registro}>leer/registro.csv</a>.</p>}
+</GuiaLeer>

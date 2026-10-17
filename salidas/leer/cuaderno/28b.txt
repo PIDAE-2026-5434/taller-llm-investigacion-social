@@ -1,0 +1,17 @@
+Según estos estudios, no existe un único modelo superior en todos los ámbitos, ya que la confiabilidad depende de la tarea evaluada:
+
+1. Para resumir literatura científica sin sobregeneralizar: Claude
+
+En la síntesis de investigaciones científicas y médicas, la familia de modelos Claude (Claude 2, Claude 3.5 Sonnet y Claude 3.7 Sonnet) demostró ser la más confiable y fiel al alcance del texto original. A diferencia de modelos como ChatGPT-4o, DeepSeek o LLaMA 3.3, las versiones de Claude no mostraron desviaciones estadísticamente significativas hacia la sobregeneralización no justificada de hallazgos.
+
+2. Para exactitud en citas bibliográficas y evitar alucinaciones: GPT-4
+
+Al evaluar la precisión de las referencias y citas académicas, GPT-4 es considerablemente más confiable que GPT-3.5. GPT-4 redujo la invención de fuentes bibliográficas del 55% al 18% y disminuyó los errores sustanciales en citas reales del 43% al 24%.
+
+3. Para detección de discurso de odio en español rioplatense: BETO (y ChatGPT-3.5 en sutilezas)
+
+* Mayor precisión global a gran escala: El modelo enfocado supervisado BETO (BERT ajustado) es el más confiable de forma general, logrando la mayor precisión (72.9%) y puntuación F1 (63.5%).
+
+* Mayor sensibilidad en matices complejos e ironías (LGBTI): Entre los modelos generativos evaluados, ChatGPT-3.5 ofreció el mejor equilibrio entre precisión y cobertura, llegando a superar a BETO en la detección de ataques sutiles o metafóricos dirigidos a la comunidad LGBTI.
+
+Resumen: Claude destaca por su fidelidad al resumir evidencia, GPT-4 lidera en exactitud de datos factuales/referencias, y BETO mantiene el mejor rendimiento global en clasificación dialectal supervisada.

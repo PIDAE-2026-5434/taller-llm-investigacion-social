@@ -1,0 +1,7 @@
+El estudio no evaluó el desempeño de los modelos en español mexicano, ya que la investigación se centra de manera exclusiva en el español rioplatense.
+
+Sin embargo, en el texto se menciona el español mexicano en dos momentos específicos:
+
+* Trabajos relacionados: Los autores citan el conjunto de datos de la tarea MEX-A3T, que incluye más de 11.000 tweets en español mexicano anotados para medir niveles de agresividad.
+
+* Trabajo futuro: Proponen como una línea de investigación futura llevar a cabo experimentos similares en otras variantes lingüísticas, señalando expresamente al español mexicano por representar la variante dialectal con el mayor número de hablantes nativos.

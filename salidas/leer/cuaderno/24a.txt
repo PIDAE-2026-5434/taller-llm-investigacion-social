@@ -1,0 +1,19 @@
+En el estudio del español rioplatense, la presencia de regionalismos no empeora el desempeño de los modelos, sino que tiende a mantenerlo o incluso a mejorarlo (medido en la métrica F1).
+
+Factores clave del impacto de los regionalismos
+
+* Asociación con insultos y peyorativos explícitos: En el ámbito del discurso de odio, los regionalismos suelen presentarse en forma de insultos dialectales o términos peyorativos específicos (como planero, villero, trola, yegua o abortera). Al actuar como marcas léxicas explícitas de desprecio, estos términos facilitan la tarea de detección en comparación con comentarios que carecen de expresiones regionales.
+
+* Mayor concentración de discurso de odio: Mientras que en el conjunto de datos general el discurso de odio representa el 9 % de los mensajes, en el subconjunto que contiene regionalismos esa proporción asciende al 16 %.
+
+* Mejora notable en categorías específicas: Las categorías de odio de clase (71 % de los mensajes con regionalismos) y odio hacia la mujer (62 % de los mensajes) son las que más se benefician de la presencia de estos términos:
+
+* En la categoría de Clase, la puntuación F1 del modelo BETO sube de 0,30 (sin regionalismos) a 0,67 (con regionalismos), y la de GPT-3.5 aumenta de 0,11 a 0,46.
+
+* En la categoría Mujer, la F1 de BETO sube de 0,27 a 0,51, y la de GPT-3.5 pasa de 0,25 a 0,42.
+
+* En el promedio general (Macro F1), BETO pasa de 0,48 a 0,60, GPT-3.5 de 0,37 a 0,50 y Mixtral de 0,32 a 0,42.
+
+Capacidad de comprensión de los LLM
+
+A pesar de ser entrenados principalmente en variantes lingüísticas dominantes, modelos de lenguaje grandes como GPT-3.5 y Mixtral demuestran capacidad para captar matices culturales y jerga coloquial rioplatense. Sin embargo, los LLM suelen mostrar una mayor tasa de falsos positivos que los modelos supervisados tipo BERT, clasificando como odio comentarios que contienen lenguaje informal o tóxico pero que no atacan una característica protegida.

@@ -1,0 +1,20 @@
+Fuente: Pérez, J. M., Miguel, P. y Cotik, V. (2025). Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish. Findings of NAACL 2025, pp. 7189–7202 (PDF adjunto).
+
+Afirmaciones a verificar:
+
+A01. El conjunto de prueba incluyó 5670 mensajes, de los cuales 479 contenían discurso de odio.
+A02. Los autores estiman que clasificar el corpus completo con modelos de lenguaje cuesta menos que anotarlo manualmente.
+A03. La presencia de regionalismos hace que los clasificadores detecten mejor el discurso de odio.
+A04. Pérez, Miguel y Cotik (2025) evaluaron el desempeño de los modelos de lenguaje en distintas variantes del español latinoamericano.
+A05. El estudio, que analizó tuits publicados durante la pandemia de COVID-19, muestra que GPT-3.5 logra un mejor equilibrio entre precisión y exhaustividad que Mixtral.
+A06. Pérez, Miguel y Cotik (2025) encontraron que las explicaciones generadas por los modelos de lenguaje son tan buenas como las escritas por humanos, e incluso preferidas.
+A07. Como trabajo futuro, los autores proponen extender el análisis a otras variantes del español, como la ibérica o la mexicana.
+A08. Según este estudio, los modelos de lenguaje entienden el lunfardo y los regionalismos del español rioplatense.
+A09. Según Pérez, Miguel y Cotik (2025), ChatGPT alcanza resultados cercanos al estado del arte en la detección de discurso de odio sin ejemplos previos (zero-shot).
+A10. En el corpus analizado, cerca del 16 % de los mensajes contenía discurso de odio.
+A11. En ese estudio, el clasificador supervisado fue más preciso, pero los modelos de lenguaje recuperaron una proporción mayor de los mensajes con discurso de odio.
+A12. Pérez, Miguel y Cotik (2025) compararon tres modelos de lenguaje de gran escala (GPT-3.5, Mixtral y Aya) con un clasificador BETO ajustado, sobre un corpus de respuestas en Twitter a publicaciones de medios de noticias argentinos.
+A13. Según el estudio, los modelos de lenguaje detectan mejor que los clasificadores supervisados el discurso de odio contra personas LGBTI.
+A14. Los resultados demuestran que los modelos de lenguaje captan los matices culturales del español rioplatense.
+A15. Los autores reconocen que la evaluación de las explicaciones generadas por los modelos fue limitada, porque solo la realizaron ellos mismos.
+A16. Pérez, Miguel y Cotik (2025) muestran que los modelos de lenguaje superan a los clasificadores supervisados en la detección de discurso de odio.

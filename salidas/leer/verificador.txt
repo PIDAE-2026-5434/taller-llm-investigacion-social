@@ -1,0 +1,353 @@
+| ID | Veredicto | Problema principal |
+|---|---|---|
+| R01 | No localizada | Título no localizado (posible confusión con Glickman & Sharot, 2025) |
+| R02 | Coincide | Ninguno |
+| R03 | Con discrepancias | Título altera «Rioplatense» por «Argentine» y orden de autores cambiado |
+| R04 | Coincide | Ninguno |
+| R05 | Coincide | Ninguno |
+| R06 | Con discrepancias | Título altera «big» por «biased» |
+| R07 | No localizada | Revista y artículo inexistentes / no localizados |
+| R08 | Con discrepancias | Año de publicación incorrecto (2021 en lugar de 2023) |
+| R09 | No localizada | DOI redirige a otra obra (Jobin et al., 2019) y obra citada no fue localizada |
+| R10 | Con discrepancias | Autor adicional no perteneciente a la publicación (Krauss, A.) |
+| R11 | No localizada | Artículo no localizado en JAIR / obra no encontrada |
+| R12 | Coincide | Ninguno |
+| R13 | Coincide | Ninguno |
+| R14 | Coincide | Ninguno |
+| R15 | Coincide | Ninguno |
+| R16 | Con discrepancias | Número de volumen incorrecto (3 en lugar de 1) |
+| R17 | Con discrepancias | Nombre de revista incorrecto (Nature en lugar de Nature Human Behaviour) |
+| R18 | Coincide | Ninguno |
+| R19 | No localizada | Artículo no localizado en Science / obra no encontrada |
+| R20 | Coincide | Ninguno |
+| R21 | Con discrepancias | Revista incorrecta (Revista Mexicana de Sociología en lugar de Perfiles Latinoamericanos) |
+| R22 | Coincide | Ninguno |
+| R23 | No localizada | Artículo no localizado en Perfiles Latinoamericanos |
+
+#### R01 — No localizada
+
+Discrepancias u observaciones: No se encontró ninguna fuente que confirme la existencia de un artículo con el título "Algorithmic amplification of political beliefs in human–AI interaction" publicado por Sharot & Glickman en Nature Human Behaviour (2023). Podría tratarse de una confusión con el trabajo "How human–AI feedback loops alter human perceptual, emotional and social judgements" de Glickman & Sharot (2025) disponible en https://www.nature.com/articles/s41562-024-02077-2.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Algorithmic+amplification+of+political+beliefs+in+human%E2%80%93AI+interaction%22
+
+#### R02 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://www.unsamedita.unsam.edu.ar/libro/discursos-de-odio-una-alarma-para-la-vida-democratica/
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Discursos+de+odio.+Una+alarma+para+la+vida+democr%C3%A1tica%22
+
+Búsqueda en SciELO: "Discursos de odio. Una alarma para la vida democrática" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Discursos de odio. Una alarma para la vida democrática" en https://www.redalyc.org
+
+#### R03 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: "Exploring large language models for hate speech detection in Argentine Spanish"
+
+Dato en la fuente: "Exploring large language models for hate speech detection in Rioplatense Spanish"
+
+Enlace a la fuente: https://aclanthology.org/2025.findings-naacl.400/
+
+Dato en la referencia: Autores: Pérez, J. M., Cotik, V., & Miguel, P.
+
+Dato en la fuente: Autores: Pérez, J. M., Miguel, P., & Cotik, V.
+
+Enlace a la fuente: https://aclanthology.org/2025.findings-naacl.400/
+
+Fuente encontrada: https://aclanthology.org/2025.findings-naacl.400/
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Exploring+large+language+models+for+hate+speech+detection+in+Argentine+Spanish%22
+
+Búsqueda en SciELO: "Exploring large language models for hate speech detection in Argentine Spanish" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Exploring large language models for hate speech detection in Argentine Spanish" en https://www.redalyc.org
+
+#### R04 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://www.nature.com/articles/s41598-023-41235-8
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Fabrication+and+errors+in+the+bibliographic+citations+generated+by+ChatGPT%22
+
+#### R05 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://perfileslatinoamericanos.flacso.edu.mx/index.php/perfileslatinoamericanos/article/view/1785
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Uso+y+valoraci%C3%B3n+de+la+inteligencia+artificial+generativa+en+los+estudios+sociales%22
+
+DOI: https://doi.org/10.18504/pl3365-013-2025
+
+Búsqueda en SciELO: "Uso y valoración de la inteligencia artificial generativa en los estudios sociales" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Uso y valoración de la inteligencia artificial generativa en los estudios sociales" en https://www.redalyc.org
+
+#### R06 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: "On the dangers of stochastic parrots: Can language models be too biased?"
+
+Dato en la fuente: "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?"
+
+Enlace a la fuente: https://dl.acm.org/doi/10.1145/3442188.3445922
+
+Fuente encontrada: https://dl.acm.org/doi/10.1145/3442188.3445922
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22On+the+dangers+of+stochastic+parrots:+Can+language+models+be+too+biased%3F%22
+
+#### R07 — No localizada
+
+Discrepancias u observaciones: No se encontró registro de la existencia de la revista "Revista Latinoamericana de Ciencias Sociales y Computación" ni del artículo citado.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Modelos+de+lenguaje+y+discurso+de+odio+en+el+espa%C3%B1ol+rioplatense:+una+evaluaci%C3%B3n+comparativa%22
+
+Búsqueda en SciELO: "Modelos de lenguaje y discurso de odio en el español rioplatense: una evaluación comparativa" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Modelos de lenguaje y discurso de odio en el español rioplatense: una evaluación comparativa" en https://www.redalyc.org
+
+#### R08 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: Año 2021
+
+Dato en la fuente: Año 2023
+
+Enlace a la fuente: https://www.nature.com/articles/s41598-023-41235-8
+
+Fuente encontrada: https://www.nature.com/articles/s41598-023-41235-8
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Fabrication+and+errors+in+the+bibliographic+citations+generated+by+ChatGPT%22
+
+#### R09 — No localizada
+
+Discrepancias u observaciones: El DOI proporcionado ([https://doi.org/10.1038/s42256-019-0088-2](https://doi.org/10.1038/s42256-019-0088-2)) redirige a una obra completamente diferente: "The global landscape of AI ethics guidelines" de Anna Jobin, Marcello Ienca y Effy Vayena (2019) en Nature Machine Intelligence (ver fuente: https://www.nature.com/articles/s42256-019-0088-2). No se encontró fuente que confirme el artículo citado de W. H. Walters (2024) en Scientific Reports.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Citation+accuracy+of+large+language+models+in+the+social+sciences%22
+
+DOI: https://doi.org/10.1038/s42256-019-0088-2
+
+#### R10 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: Autores: Peters, U., Krauss, A., & Chin-Yee, B.
+
+Dato en la fuente: Autores: Peters, U., & Chin-Yee, B. (Krauss, A. no es autor del trabajo).
+
+Enlace a la fuente: https://royalsocietypublishing.org/doi/10.1098/rsos.241776
+
+Fuente encontrada: https://royalsocietypublishing.org/doi/10.1098/rsos.241776
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Generalization+bias+in+large+language+model+summarization+of+scientific+research%22
+
+#### R11 — No localizada
+
+Discrepancias u observaciones: No existe fuente que confirme la existencia de un trabajo titulado "Stochastic parrots revisited: Language models and the limits of understanding" de Emily M. Bender en Journal of Artificial Intelligence Research.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Stochastic+parrots+revisited:+Language+models+and+the+limits+of+understanding%22
+
+#### R12 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://proceedings.mlr.press/v235/liang24c.html
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Monitoring+AI-modified+content+at+scale:+A+case+study+on+the+impact+of+ChatGPT+on+AI+conference+peer+reviews%22
+
+#### R13 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://www.nature.com/articles/s42256-024-00913-7
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Guidelines+for+ethical+use+and+acknowledgement+of+large+language+models+in+academic+writing%22
+
+#### R14 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://aclanthology.org/2025.findings-naacl.400/
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Exploring+large+language+models+for+hate+speech+detection+in+Rioplatense+Spanish%22
+
+DOI: https://doi.org/10.18653/v1/2025.findings-naacl.400
+
+Búsqueda en SciELO: "Exploring large language models for hate speech detection in Rioplatense Spanish" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Exploring large language models for hate speech detection in Rioplatense Spanish" en https://www.redalyc.org
+
+#### R15 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://dl.acm.org/doi/10.1145/3442188.3445922
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22On+the+dangers+of+stochastic+parrots:+Can+language+models+be+too+big%3F%22
+
+DOI: https://doi.org/10.1145/3442188.3445922
+
+#### R16 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: Volumen 3(9)
+
+Dato en la fuente: Volumen 1(9)
+
+Enlace a la fuente: https://www.nature.com/articles/s42256-019-0088-2
+
+Fuente encontrada: https://www.nature.com/articles/s42256-019-0088-2
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22The+global+landscape+of+AI+ethics+guidelines%22
+
+#### R17 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: Revista Nature
+
+Dato en la fuente: Revista Nature Human Behaviour
+
+Enlace a la fuente: https://www.nature.com/articles/s41562-024-02077-2
+
+Fuente encontrada: https://www.nature.com/articles/s41562-024-02077-2
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22How+human%E2%80%93AI+feedback+loops+alter+human+perceptual,+emotional+and+social+judgements%22
+
+DOI: https://doi.org/10.1038/s41562-024-02077-2
+
+#### R18 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://periodicos.ufmg.br/index.php/textolivre/article/view/46002
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Bases+sociocognitivas+do+discurso+de+%C3%B3dio+online+no+Brasil:+uma+revis%C3%A3o+narrativa+interdisciplinar%22
+
+DOI: https://doi.org/10.1590/1983-3652.2023.46002
+
+Búsqueda en SciELO: "Bases sociocognitivas do discurso de ódio online no Brasil: uma revisão narrativa interdisciplinar" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Bases sociocognitivas do discurso de ódio online no Brasil: uma revisão narrativa interdisciplinar" en https://www.redalyc.org
+
+#### R19 — No localizada
+
+Discrepancias u observaciones: No se encontró publicación en la revista Science ni registro oficial para el artículo "LLM-assisted peer review in the social sciences: Evidence from 12,000 journal reports" de Liang, Zou & McFarland.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22LLM-assisted+peer+review+in+the+social+sciences:+Evidence+from+12,000+journal+reports%22
+
+DOI: https://doi.org/10.1126/science.adq4521
+
+#### R20 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://www.nature.com/articles/s41562-024-02077-2
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22How+human%E2%80%93AI+feedback+loops+alter+human+perceptual,+emotional+and+social+judgements%22
+
+DOI: https://doi.org/10.1038/s41562-024-02077-2
+
+#### R21 — Con discrepancias
+
+Discrepancias u observaciones:
+
+Dato en la referencia: Revista Revista Mexicana de Sociología
+
+Dato en la fuente: Revista Perfiles Latinoamericanos
+
+Enlace a la fuente: https://perfileslatinoamericanos.flacso.edu.mx/index.php/perfileslatinoamericanos/article/view/1785
+
+Fuente encontrada: https://perfileslatinoamericanos.flacso.edu.mx/index.php/perfileslatinoamericanos/article/view/1785
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Uso+y+valoraci%C3%B3n+de+la+inteligencia+artificial+generativa+en+los+estudios+sociales%22
+
+Búsqueda en SciELO: "Uso y valoración de la inteligencia artificial generativa en los estudios sociales" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Uso y valoración de la inteligencia artificial generativa en los estudios sociales" en https://www.redalyc.org
+
+#### R22 — Coincide
+
+Discrepancias u observaciones: Ninguna.
+
+Fuente encontrada: https://royalsocietypublishing.org/doi/10.1098/rsos.241776
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Generalization+bias+in+large+language+model+summarization+of+scientific+research%22
+
+#### R23 — No localizada
+
+Discrepancias u observaciones: No se encontró ninguna fuente que confirme la existencia del artículo "Inteligencia artificial generativa y prácticas de lectura en la universidad argentina" de Gómez & Ferreyra en Perfiles Latinoamericanos.
+
+Fuente encontrada: No se encontró fuente
+
+Enlaces de verificación:
+
+Google Scholar: https://scholar.google.com/scholar?q=%22Inteligencia+artificial+generativa+y+pr%C3%A1cticas+de+lectura+en+la+universidad+argentina%22
+
+Búsqueda en SciELO: "Inteligencia artificial generativa y prácticas de lectura en la universidad argentina" en https://search.scielo.org
+
+Búsqueda en Redalyc: "Inteligencia artificial generativa y prácticas de lectura en la universidad argentina" en https://www.redalyc.org
+
+Este es un primer filtro. Abrí los enlaces y confirmá cada referencia antes de usarla.

@@ -1,0 +1,195 @@
+«Esto es un punto de partida para tu búsqueda. Revisá la reformulación, los supuestos y los términos antes de usar las cadenas, y ajustalas según lo que encuentres en cada base.»
+
+### 1. La pregunta, reformulada
+
+Conceptos centrales:
+
+Fecundidad / maternidad adolescente.
+
+Factores explicativos, determinantes y dinámicas de cambio (descenso / caída).
+
+Delimitación territorial y comparativa: Argentina en el contexto de América Latina.
+
+Propuesta para acotarla:
+
+Analizar los determinantes sociodemográficos, institucionales, educativos y de políticas públicas que explican la tendencia al descenso de la fecundidad adolescente en Argentina durante el período 2010–2024, en perspectiva comparada con las tendencias registradas en América Latina.
+
+### 2. Supuestos de esta reformulación
+
+Asume la existencia de una tendencia decreciente sostenida en los indicadores de fecundidad en la población adolescente argentina e hispanoamericana dentro del marco temporal seleccionado (2010–2024).
+
+Asume que el descenso no responde a un único factor biológico o aislado, sino a una interacción multicausal de variables sociodemográficas, acceso a insumos de salud reproductiva, marcos normativos y trasformaciones socioeducativas.
+
+Asume que el análisis comparativo con otros países de América Latina permite diferenciar dinámicas estructurales de la transición demográfica regional de factores normativos o institucionales específicos del caso argentino.
+
+### 3. Términos de búsqueda
+
+| Concepto | Castellano | Inglés | Portugués | Sinónimos y términos vecinos |
+|---|---|---|---|---|
+| Fecundidad adolescente | "fecundidad adolescente" | "adolescent fertility" | "fecundidade adolescente" | "maternidad adolescente", "fecundidad juvenil", "adolescent motherhood", "teenage fertility", "maternidade na adolescência" |
+| Descenso / Tendencia | "descenso" OR "disminución" | "decline" OR "drop" | "queda" OR "declínio" | "caída", "reducción", "tendencia decreciente", "decrease", "reduction", "diminuição" |
+| Factores explicativos | "factores" OR "determinantes" | "factors" OR "determinants" | "fatores" OR "determinantes" | "causas", "condicionantes", "drivers", "razones", "variáveis explicativas" |
+| Recorte geográfico | "Argentina" OR "América Latina" | "Argentina" OR "Latin America" | "Argentina" OR "América Latina" | "Cono Sur", "Southern Cone", "América do Sul", "América del Sur" |
+
+### 3b. Términos para ampliar la búsqueda
+
+| Dimensión | Castellano | Inglés | Portugués |
+|---|---|---|---|
+| Temas vecinos | "salud sexual y reproductiva" | "sexual and reproductive health" | "saúde sexual e reprodutiva" |
+| Temas vecinos | "anticoncepción" OR "planificación familiar" | "contraception" OR "family planning" | "contracepção" OR "planejamento familiar" |
+| Temas vecinos | "embarazo no planeado" | "unintended pregnancy" | "gravidez não planejada" |
+| Ejes analíticos | "desigualdad social" OR "disparidades territoriales" | "social inequality" OR "regional disparities" | "desigualdade social" OR "disparidades territoriais" |
+| Ejes analíticos | "políticas públicas" OR "programas de salud" | "public policies" OR "health programs" | "políticas públicas" OR "programas de saúde" |
+| Ejes analíticos | "género" OR "trayectorias educativas" | "gender" OR "educational pathways" | "gênero" OR "trajetórias educativas" |
+| Conceptos y enfoques teóricos | "educación sexual integral" | "comprehensive sexuality education" | "educação sexual integral" |
+| Conceptos y enfoques teóricos | "autonomía reproductiva" | "reproductive autonomy" | "autonomia reprodutiva" |
+| Conceptos y enfoques teóricos | "segunda transición demográfica" | "second demographic transition" | "segunda transição demográfica" |
+| Conceptos y enfoques teóricos | "curso de vida" | "life course" | "curso de vida" |
+| Estrategias metodológicas | "estadísticas vitales" OR "series temporales" | "vital statistics" OR "time series" | "estatísticas vitais" OR "séries temporais" |
+| Estrategias metodológicas | "encuestas demográficas" OR "encuestas de hogares" | "demographic surveys" OR "household surveys" | "pesquisas demográficas" |
+| Estrategias metodológicas | "estudio longitudinal" | "longitudinal study" | "estudo longitudinal" |
+| Estrategias metodológicas | "entrevistas en profundidad" OR "historias de vida" | "in-depth interviews" OR "life histories" | "entrevistas em profundidade" OR "histórias de vida" |
+
+### 4. Cadenas listas para pegar
+
+Google Scholar
+
+Cadenas cortas de concepto central:
+
+Cadena 1:
+
+"fecundidad adolescente" "Argentina"
+
+https://scholar.google.com/scholar?q=%22fecundidad+adolescente%22+%22Argentina%22&as_ylo=2010&as_yhi=2024
+
+Cadena 2:
+
+"fecundidad adolescente" descenso OR disminucion "Argentina"
+
+https://scholar.google.com/scholar?q=%22fecundidad+adolescente%22+descenso+OR+disminucion+%22Argentina%22&as_ylo=2010&as_yhi=2024
+
+Cadena 3:
+
+"fecundidad adolescente" "América Latina" OR "Latin America"
+
+https://scholar.google.com/scholar?q=%22fecundidad+adolescente%22+%22Am%C3%A9rica+Latina%22+OR+%22Latin+America%22&as_ylo=2010&as_yhi=2024
+
+Cadenas combinadas con la tabla 3b:
+
+Cadena 4 (Combinada con concepto/enfoque teórico):
+
+"fecundidad adolescente" "educación sexual integral" OR "autonomía reproductiva"
+
+https://scholar.google.com/scholar?q=%22fecundidad+adolescente%22+%22educaci%C3%B3n+sexual+integral%22+OR+%22autonom%C3%ADa+reproductiva%22&as_ylo=2010&as_yhi=2024
+
+Cadena 5 (Combinada con estrategia metodológica):
+
+"fecundidad adolescente" "estadísticas vitales" OR "series temporales"
+
+https://scholar.google.com/scholar?q=%22fecundidad+adolescente%22+%22estad%C3%ADsticas+vitales%22+OR+%22series+temporales%22&as_ylo=2010&as_yhi=2024
+
+SciELO
+
+Las siguientes cadenas se ingresan en la Búsqueda Avanzada de SciELO (https://search.scielo.org/advanced/?lang=es).
+
+Cadena en castellano:
+
+"fecundidad adolescente" AND (descenso$ OR disminuci$ OR factor$)
+
+Cadena en portugués:
+
+"fecundidade adolescente" AND (queda$ OR declinio$ OR fator$)
+
+Campo recomendado: Título (ti) o Resumen (ab).
+
+Filtros a aplicar en SciELO:
+
+País: Argentina, Brasil, Chile, Colombia, México, Uruguay.
+
+Año de publicación: 2010 a 2024.
+
+Idioma: Español, Inglés, Portugués.
+
+Redalyc
+
+Página de acceso: https://www.redalyc.org
+
+Términos para el buscador:
+
+Castellano: "fecundidad adolescente" Argentina factores
+
+Portugués: "fecundidade adolescente" América Latina fatores
+
+Filtros a aplicar:
+
+Año: 2010 a 2024.
+
+País del estudio / Revista: Argentina, Brasil, México, Colombia.
+
+Disciplina: Demografía, Sociología, Ciencias Sociales, Salud Pública.
+
+Idioma: Español, Portugués, Inglés.
+
+Nota: Si la búsqueda simple devuelve resultados muy amplios o poco pertinentes, utilizar la búsqueda avanzada de Redalyc filtrando por los campos de Resumen o Palabras clave.
+
+### 5. Pistas para rastrear
+
+(Verificar en las bases)
+
+Autores clave e investigadores de referencia:
+
+Mario Pecheny
+
+Edith Pantelides
+
+Jorge Rodríguez Vignoli
+
+Susana Torrado
+
+Georgina Binstock
+
+Eleonor Faur
+
+Instituciones y centros de investigación de referencia:
+
+CENEP (Centro de Estudios de Población, Argentina)
+
+CIPPEC (Centro de Implementación de Políticas Públicas para la Equidad y el Crecimiento)
+
+CELADE / CEPAL (División de Población de la Comisión Económica para América Latina y el Caribe)
+
+UNFPA (Fondo de Población de las Naciones Unidas – Representación Argentina y Oficina Regional)
+
+INDEC (Instituto Nacional de Estadística y Censos) y Ministerio de Salud de la Nación (evaluaciones e informes del Plan ENIA)
+
+AEPA (Asociación de Estudios de Población de la República Argentina) y ALAP (Asociación Latinoamericana de Población)
+
+Tradiciones, debates y líneas de trabajo:
+
+Debates sobre el impacto de la implementación del Plan Nacional de Prevención del Embarazo No Intencionado en la Adolescencia (Plan ENIA) y la Ley de Educación Sexual Integral (ESI).
+
+Investigaciones sobre el rol del acceso e innovación en tecnologías anticonceptivas (en particular, métodos anticonceptivos de larga duración reversible - LARC / implantes subdérmicos).
+
+Discusiones teóricas en demografía sobre la Segunda Transición Demográfica en América Latina.
+
+Estudios sobre la intersección entre desigualdad socioeconómica, brechas regionales/provinciales y la autonomía reproductiva de las adolescentes.
+
+### 6. Qué bases consultar y por qué
+
+SciELO y Redalyc: Son los repositorios de acceso abierto de mayor jerarquía científica en Iberoamérica para sociología, demografía y salud pública. Permiten filtrar específicamente por revistas arbitradas de la región.
+
+Google Scholar: Indispensable para capturar de forma amplia artículos académicos, tesis doctorales y de maestría, documentos de trabajo e informes institucionales que aún no han sido compilados en índices formales.
+
+CLACSO (Red de Bibliotecas Virtuales de CLACSO): Central para acceder a documentos de trabajo, informes de investigación y capítulos de libros producidos por centros de investigación en ciencias sociales de toda América Latina.
+
+Repositorios institucionales y literatura gris:
+
+Repositorios del INDEC y Ministerio de Salud de la Nación (Argentina): Fundamentales para consultar las publicaciones de estadísticas vitales, series de datos y evaluaciones del Plan ENIA.
+
+Biblioteca Digital CEPAL / CELADE y UNFPA: Esenciales para la dimensión comparativa regional, aportando boletines demográficos, proyecciones y análisis panamericanos.
+
+Repositorios universitarios (IIGG - UBA, UNLP, UNC, IDES): Para consultar tesis e informes de proyectos de investigación científica radicados en institutos de ciencias sociales.
+
+Scopus y Web of Science (si se cuenta con acceso institucional): Recomendadas para identificar artículos de demografía y sociología publicados en revistas internacionales de alto impacto, utilizando las adaptaciones en inglés de la Tabla 3 (TITLE-ABS-KEY("adolescent fertility" AND Argentina)).
+
+Realizar las búsquedas en bases y revisar las referencias de interés con el Verificador.

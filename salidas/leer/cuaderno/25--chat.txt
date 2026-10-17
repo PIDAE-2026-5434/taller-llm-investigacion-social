@@ -1,0 +1,19 @@
+No, las explicaciones de los modelos de lenguaje (LLM) no son tan buenas ni tan confiables como las humanas cuando se trata de detectar discurso de odio en el contexto específico del español rioplatense.
+
+En el trabajo "Exploring Large Language Models for Hate Speech Detection in Rioplatense Spanish" (Pérez, Miguel y Cotik, publicado en NAACL Findings 2025), los autores evaluaron el uso de modelos como GPT-3.5 Turbo, Mixtral y Aya mediante técnicas de razonamiento en cadena de pensamiento (Chain-of-Thought, CoT). Los resultados respecto a las explicaciones generadas muestran un panorama con luces y sombras:
+
+Aspectos positivos de las explicaciones de los LLM
+
+* Detección de violencia implícita o sutil: En ciertos casos de agresiones menos explícitas (como ataques sutiles contra personas LGBTI+ o mujeres), los LLM generaron explicaciones conceptuales acertadas. Esto permitió identificar mensajes dañinos que clasificadores tradicionales supervisados (como BETO) pasaron por alto.
+
+* Transparencia en el razonamiento: El uso de CoT ayudó a que los modelos desglosaran el sentido del mensaje antes de asignar una etiqueta (ej. racismo, misoginia), aportando interpretabilidad al proceso de moderación.
+
+Por qué no alcanzan el nivel humano
+
+* Desconocimiento y mala interpretación del lunfardo: Los LLM sufren al interpretar modismos, expresiones locales y deformaciones del habla urbana (como el "vesre"). Por ejemplo, ante el texto "el gaver del peruano", los LLM explicaron que "gaver" era un insulto racista hacia la comunidad peruana, errando al no reconocer que es la inversión de "verga" (un comentario vulgar/machista, no racista).
+
+* Alucinaciones con apariencia de coherencia: Los modelos suelen redactar explicaciones bien estructuradas y convincentes en la forma, pero conceptualmente incorrectas sobre el motivo del ataque o la categoría objetivo.
+
+* Mayor tasa de falsos positivos: Al intentar justificar cualquier rasgo sospechoso mediante lenguaje natural, los LLM tienden a sobregenerar explicaciones de odio en comentarios neutros o en ironías locales.
+
+Aunque el razonamiento CoT en los LLM es una herramienta valiosa para automatizar y explicar decisiones de moderación, los autores concluyen que la intervención y el criterio humano siguen siendo indispensables para comprender la carga cultural, la ironía y la jerga rioplatense.
