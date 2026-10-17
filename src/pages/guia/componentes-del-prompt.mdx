@@ -43,33 +43,41 @@ Este es el esquema que usan todas las corridas del taller. Salió de corregir el
 
 ## Elección de modelo
 
-Cada proveedor ofrece modelos en escalones de capacidad, velocidad y costo. En Claude los tres escalones habituales se llaman Haiku, Sonnet y Opus. OpenAI usa una escala equivalente en GPT, con los nombres Luna, Sol y Astra. Otros proveedores tienen las suyas.
+Cada proveedor ofrece una familia de modelos que varían en escala de capacidad, velocidad y costo. 
 
-| Escalón | Perfil | Conviene para |
+| Escalón  | Perfil | Conviene para |
 | --- | --- | --- |
-| Chico (Haiku en Claude, Luna en GPT) | Rápido y barato | Clasificar con categorías cerradas, extraer datos, grandes volúmenes con criterio claro |
-| Intermedio (Sonnet en Claude, Sol en GPT) | Equilibrio entre calidad y costo | Uso general: resumir, proponer categorías, codificar con evidencia |
-| Grande (Opus en Claude, Astra en GPT) | Más capaz, más lento y más caro | Textos largos y ambiguos, comparación entre documentos, revisión crítica de un esquema. También preparar el plan y las instrucciones de un análisis de varios pasos, que después ejecuta un modelo más chico |
+| Chico | Rápido y barato | Clasificar con categorías cerradas, extraer datos, grandes volúmenes con criterio claro |
+| Medio | Equilibrio entre calidad y costo | Uso general: resumir, proponer categorías, codificar con evidencia |
+| Grande | Más capaz, más lento y más caro | Textos largos y ambiguos, comparación entre documentos, revisión crítica de un esquema. También preparar el plan y las instrucciones de un análisis de varios pasos, que después ejecuta un modelo más chico |
+
+En las familias más comunes, sus variantes tienen las siguientes nomenclaturas:
+
+| Escalón  | ChatGPT | Claude | Gemini |
+| --- | --- | --- | --- |
+| Chico | Luna | Haiku | Nano/Lite |
+| Medio | Sol | Sonnet | Flash |
+| Grande | Astra | Opus | Pro |
+
+La equivalencia entre las escalas son aproximadas, los nombres pueden cambiar con las actualizaciones y pueden aparecer otras opciones según el tipo de licencia (individual, empresa, etc.). Además de elegir el modelo, varias herramientas permiten elegir cuánto razona antes de responder, en algunas por ejemplo, el nivel de razonamiento se elige en las preferencias, aparte del modelo.
 
 1. Empezar por el escalón intermedio.
 2. Bajar al chico si la tarea es simple y el volumen grande, después de comprobar en 20 casos que rinde igual.
 3. Subir al grande si el intermedio falla en los matices o pierde instrucciones en textos largos.
 4. Registrar nombre y versión del modelo. Los nombres de familia se mantienen y las versiones cambian varias veces por año.
 
-La equivalencia entre las dos escalas es aproximada y vale a octubre de 2026, según la [página de modelos de OpenAI](https://developers.openai.com/api/docs/models). Los nombres cambian de lugar entre generaciones: en GPT-5.6, Sol era el escalón más alto.
-
 ### Tres modelos con el mismo prompt
 
-El prompt de razonamiento paso a paso de la [sección 3](../tecnicas/#razonamiento-paso-a-paso) se corrió con los tres escalones de Claude. Las pestañas muestran cada respuesta.
+El prompt de razonamiento paso a paso de la [sección 3](../tecnicas/#razonamiento-paso-a-paso) se corrió en tres escalas de capacidad. Las pestañas muestran cada respuesta.
 
-<Prompt id="tecnicas/paso-a-paso" variantes rotuloSalida="Sonnet" />
+<Prompt id="tecnicas/paso-a-paso" variantes rotuloSalida="Medio" />
 
 | Modelo | Párrafo 141 | Párrafo 150 |
 | --- | --- | --- |
-| Haiku | no asigna | "ambiguo", que no es una de las categorías |
-| Sonnet, primera corrida | no asigna | no asigna |
-| Sonnet, segunda corrida | no asigna | gobierno nacional |
-| Opus | no asigna | gobierno nacional, con una nota que recomienda revisarlo |
+| Chico | no asigna | "ambiguo", que no es una de las categorías |
+| Medio, primera corrida | no asigna | no asigna |
+| Medio, segunda corrida | no asigna | gobierno nacional |
+| Grande | no asigna | gobierno nacional, con una nota que recomienda revisarlo |
 
 En el párrafo claro los tres coinciden. En el de frontera, el modelo chico inventó una categoría fuera del esquema, el intermedio cambió de respuesta entre corridas y el grande eligió una y avisó que era dudosa. Es una prueba sobre dos párrafos y solo ilustra el tipo de diferencias que aparecen. La prueba que decide es la de 20 a 30 casos propios.
 
