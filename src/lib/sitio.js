@@ -5,7 +5,7 @@ export const sitio = {
   proyecto: 'Workshop AcademIA',
   descripcion:
     'Material del taller PIDAE sobre uso de modelos de lenguaje en investigación social: organización del trabajo, tareas, técnicas, armado de prompts, errores frecuentes y dos casos de aplicación.',
-  institucion: 'Proyecto PIDAE 2026. Facultad de Ciencias Sociales, Universidad de Buenos Aires.',
+  institucion: 'Proyecto PIDAE 2026-5434. Facultad de Ciencias Sociales, Universidad de Buenos Aires.',
   // La define el workflow de deploy. En local queda vacía y los enlaces a GitHub no se muestran.
   repo: (import.meta.env.PUBLIC_REPO_URL || '').replace(/\/$/, ''),
 };
