@@ -7,7 +7,7 @@ import Archivo from '../../components/Archivo.astro';
 import Seguridad from '../../components/Seguridad.astro';
 import Ejemplo from '../../components/Ejemplo.astro';
 
-Usar un modelo de lenguaje en una investigación no cambia cómo se organiza el trabajo. La pregunta, los materiales y los criterios de análisis se definen antes de abrir el chat, igual que antes de codificar a mano. Lo que cambia es que todo eso tiene que quedar escrito en archivos. Una conversación se pierde, se resume sola cuando se alarga y no la ve el resto del equipo.
+Usar un modelo de lenguaje en una investigación no cambia cómo se organiza el trabajo. La pregunta de investigación, los materiales y los criterios de análisis se definen antes de abrir el chat, igual que antes de codificar a mano. Lo que cambia es que todo eso tiene que quedar escrito y guardarse en archivos. Una conversación se puede perder, o resumirse sola cuando se extiende y se pierde parte importante del proceso o información que no ve el resto del equipo.
 
 ## Tres ideas antes de empezar
 
@@ -15,7 +15,7 @@ Usar un modelo de lenguaje en una investigación no cambia cómo se organiza el 
 
 **Rol.** Es la primera frase del contexto. Le dice al modelo para quién trabaja y con qué fin, por ejemplo: "Sos asistente de un equipo que estudia cómo usan la IA docentes y estudiantes de Odontología". No hace falta que sea elaborado. Orienta el vocabulario y el nivel de detalle de las respuestas.
 
-**Proyecto.** Las herramientas de chat permiten crear un espacio con instrucciones y archivos que valen para todas las conversaciones que se abran ahí. El contexto se escribe una vez y no hay que pegarlo en cada chat. Claude y ChatGPT lo llaman proyecto, Gemini lo llama Gem y NotebookLM, cuaderno.
+**Proyecto.** Las herramientas de chat permiten crear un espacio con instrucciones y archivos que valen para todas las conversaciones que se abran ahí. El contexto se escribe una vez y no hay que pegarlo en cada chat. En las familias de modelos más usadas ChatGPT y Claude lo llaman proyecto, Gemini lo llama cuaderno (Notebook).
 
 ## Antes de abrir el chat
 
@@ -122,8 +122,8 @@ Con los seis pasos anteriores, el proyecto se arma en unos minutos.
 | --- | --- | --- |
 | Claude | Proyecto | Instrucciones, archivos, las conversaciones del proyecto y una memoria propia del proyecto |
 | ChatGPT | Proyecto | Instrucciones, archivos y conversaciones. Se puede configurar para que su memoria quede aislada del resto de la cuenta |
-| Gemini | Gem | Instrucciones fijas y archivos opcionales |
-| NotebookLM | Cuaderno | Fuentes subidas. Responde solo a partir de ellas y cita el pasaje |
+| Gemini | Cuaderno | Instrucciones, archivos y conversaciones del proyecto y una memoria propia del proyecto | 
+| Gemini Notebook | (ex NotebookLM) | Fuentes subidas. Responde solo a partir de ellas y cita el pasaje |
 
 Estas son las instrucciones que usaría el proyecto del Caso 1. A la derecha de cada tramo figura qué aporta.
 
@@ -167,7 +167,8 @@ La nota se lee antes de usarla. En esta, la primera decisión dice que los "debe
 
 Propuso tres filas razonables, todas marcadas "a confirmar por el equipo". La del "debemos" no la incluyó ni la marcó como contradicción, aunque contradice lo que estaba pendiente. Las filas se revisan antes de copiarlas.
 
-En Claude y en ChatGPT, los archivos de un proyecto no se actualizan desde la conversación. Hay que editar el archivo en la carpeta propia y volver a subirlo en lugar del anterior. La excepción es trabajar con los archivos en Google Drive a través de un conector: en ese caso Claude puede editar un documento o una planilla de Drive desde la conversación.
+Los archivos que se suben a un proyecto o cuaderno, en general, no se modifican desde la conversación: se editan en la carpeta propia, se guardan y se vuelven a compartir. 
+La excepción es trabajar con conectores, por ejemplo con un conector a Google Drive: si la herramienta tiene acceso a Drive, el modelo puede editarlos directamente.
 
 **3. Abrir la conversación siguiente con la nota.** La conversación nueva arranca con la nota revisada. El resto del contexto ya está en el proyecto.
 
@@ -181,9 +182,10 @@ Hay dos ajustes personales que pueden cambiar las respuestas sin que figuren en 
 
 - En ChatGPT, un proyecto se puede configurar con memoria solo del proyecto. En ese modo no usa la memoria de la cuenta ni otras conversaciones. Los proyectos compartidos funcionan siempre así.
 - En Claude, cada proyecto tiene su propia memoria, pero por defecto también usa la de la cuenta. Para separarlo del todo hay que desactivar "Use account memory" en la página del proyecto.
-- En las dos herramientas se puede abrir una conversación sin memoria.
+- En Gemini, cada cuaderno puede usar memoria propia, que se activa desde el menú del cuaderno. La memoria de la cuenta (chats anteriores e información guardada) se maneja aparte, en la configuración general. 
+- En las tres herramientas se puede abrir una conversación sin memoria.
 
-**Preferencias personales.** Texto fijo de cada persona que se suma a sus chats, como "respondé en tono informal" o "usá listas con viñetas". En un análisis cambia el tono o el formato de las respuestas. En ChatGPT, las instrucciones del proyecto reemplazan a las personales dentro del proyecto. En Claude conviene revisar qué dicen las preferencias del perfil antes de empezar.
+**Preferencias personales.** Texto fijo de cada persona que se suma a sus chats, como "respondé en tono informal" o "usá listas con viñetas". En un análisis cambia el tono o el formato de las respuestas. Los modelos guardan preferencias generales del usuario y también específicas dentro de cada proyecto. Siempre conviene revisar qué dicen las preferencias del perfil y las del proyecto o cuaderno antes de empezar.
 
 Un proyecto compartido y con la memoria aislada resuelve casi todo: el equipo trabaja con el mismo contexto, y ese contexto está escrito.
 
@@ -193,14 +195,13 @@ Un conector le da a la herramienta acceso a otra aplicación, como Google Drive,
 
 Un conector no es lo mismo que darle a la herramienta el control de la computadora. El conector se comunica con la aplicación por una vía prevista para eso y solo puede hacer lo que esa vía permite, como buscar, leer o crear archivos. El control de la computadora, que algunas herramientas ofrecen como función aparte, mueve el mouse y escribe en la pantalla. Acá se habla solo de conectores.
 
-Así funciona el conector de Google Drive de Claude:
+Así funciona el conector de Google Drive:
 
-- Accede a la cuenta de Google que se conecta, con sus permisos: puede abrir lo mismo que puede abrir esa persona.
-- La ayuda de Claude no describe una forma de limitarlo a una carpeta. Se puede apagar el conector, desactivar acciones puntuales o desconectar la cuenta.
+- Cada familia de modelos tiene conectores parecidos, con sus propias reglas específicas.
+- El modelo accede a la cuenta de Google que se conecta, con sus permisos: puede abrir lo mismo que puede abrir esa persona.
 - Además de leer, puede crear y editar archivos. Compartir, mover o mandar a la papelera pide aprobación por defecto.
-- En las cuentas de organización, quien administra la cuenta puede desactivarlo.
-
-ChatGPT y Gemini tienen conectores parecidos, con sus propias reglas.
+- No siempre hay una forma de limitar los conectores a una carpeta. 
+- Siempre se puede apagar el conector, desactivar acciones puntuales o desconectar la cuenta. 
 
 <Seguridad titulo="Seguridad con conectores">
   <ul>
@@ -240,7 +241,7 @@ description: Arma una grilla de menciones a partir de entrevistas o grupos focal
 ...
 ```
 
-El Caso 2 trae la skill completa, cómo se instala en Claude y una corrida que la usa. En las otras herramientas se consigue algo parecido pegando el mismo texto en las instrucciones de un proyecto o de un Gem.
+El Caso 2 trae la skill completa, cómo se la vincula con las instrucciones de un proyecto y una corrida que la usa. 
 
 <Seguridad titulo="Seguridad con skills">
   <ul>
@@ -256,7 +257,7 @@ Cuando el mismo análisis se repite sobre muchos documentos, copiar y pegar deja
 | Cómo | Qué hace la persona | Qué hace la herramienta | Conviene cuando |
 | --- | --- | --- | --- |
 | Proyecto de chat | Abre 20 conversaciones, adjunta una entrevista en cada una, pega el prompt y guarda cada salida | Responde en cada conversación | Son pocos documentos o el procedimiento todavía cambia |
-| Agente, como Claude Code o Codex | Escribe un pedido: "para cada archivo de `material/`, armá la grilla con `prompts/grilla.txt` y guardala en `salidas/`". Revisa las salidas cuando termina | Abre cada archivo, corre el prompt, guarda las salidas y avisa | Son muchos documentos y el procedimiento ya está probado |
+| Agente | Escribe un pedido: "para cada archivo de `material/`, armá la grilla con `prompts/grilla.txt` y guardala en `salidas/`". Revisa las salidas cuando termina | Abre cada archivo, corre el prompt, guarda las salidas y avisa | Son muchos documentos y el procedimiento ya está probado |
 | Programa que llama al modelo por API | Escribe o adapta un programa una vez y lo corre | El programa manda cada documento al modelo y guarda la respuesta, sin intervención | El análisis se repite seguido o con cientos de documentos |
 
 En los tres casos, las salidas las revisa una persona.
