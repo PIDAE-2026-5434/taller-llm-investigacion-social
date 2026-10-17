@@ -252,6 +252,10 @@ h3 {
 .bloque-secciones {
   padding-bottom: clamp(56px, 8vw, 96px);
 }
+/* Aire entre la banda de color de una portada y la lista de secciones (Hablar y Leer). */
+.portada-eje + .bloque-secciones {
+  padding-top: clamp(40px, 6vw, 72px);
+}
 .bloque-secciones-titulo {
   display: flex;
   flex-wrap: wrap;
