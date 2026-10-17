@@ -1,107 +1,56 @@
 ---
+// Portada general del sitio: presenta el taller y lleva a cada eje.
+// Cada eje tiene su propia portada (src/pages/hablar/index.astro y src/pages/leer/index.astro).
 import Base from '../layouts/Base.astro';
-import { sitio, secciones, ruta, rutaSeccion } from '../lib/sitio.js';
+import { ruta } from '../lib/sitio.js';
+
+const ejes = [
+  {
+    href: ruta('hablar/'),
+    logo: ruta('marca/eje04-claro.png'),
+    eje: 'Eje 04',
+    titulo: 'Hablar',
+    bajada: '¿Cómo interactuamos con los modelos de lenguaje?',
+    texto:
+      'Cómo organizar el trabajo, tipos de tareas, técnicas, armado de prompts, errores frecuentes y dos casos con sus salidas guardadas.',
+  },
+  {
+    href: ruta('leer/'),
+    logo: ruta('marca/eje05-portada.png'),
+    eje: 'Eje 05',
+    titulo: 'Leer',
+    bajada: 'Trabajar con papers y fuentes',
+    texto:
+      'Buscar, verificar y sintetizar bibliografía con IA: cuatro skills para copiar, un cuaderno y las salidas reales de las pruebas.',
+  },
+];
 ---
 
-<Base>
+<Base eje="Workshop AcademIA" icono={null}>
   <main>
     <div class="portada-eje">
-    <section class="contenedor portada">
-      <div class="portada-texto">
-        <img class="portada-logo" src={ruta('marca/eje04-claro.png')} alt="" width="110" height="110" />
-        <div class="antetitulo-eje">Eje 04 · Workshop AcademIA · 40 minutos</div>
-        <h1>Hablar</h1>
-        <h2>¿Cómo interactuamos con los modelos de lenguaje?</h2>
+      <section class="contenedor portada-general">
+        <div class="antetitulo-eje">Workshop AcademIA · Proyecto PIDAE 2026-5434</div>
+        <h1>LLMs en investigación social</h1>
         <p>
-          Material de apoyo para usar modelos de lenguaje en investigación social: cómo organizar el trabajo, tipos de
-          tareas, técnicas, armado de prompts, errores frecuentes y dos casos con sus salidas guardadas.
+          Material del taller sobre el uso de modelos de lenguaje en la investigación social. Cada eje tiene su guía, sus
+          prompts y sus salidas guardadas.
         </p>
-        <div class="portada-botones">
-          <a class="boton" href={rutaSeccion('organizar-el-trabajo')}>Empezar</a>
-          <a class="boton boton-linea" href={ruta('materiales/')}>Ver los materiales</a>
-        </div>
-      </div>
-
-      <figure class="ejemplo-marcado">
-        <figcaption>Apertura de sesiones ordinarias 2026, párrafo 70. Codificado con el esquema del Caso 1.</figcaption>
-        <blockquote>
-          "Ahora solo falta que <span class="marca">las provincias y los municipios</span> hagan su parte, por lo cual hemos
-          facilitado una herramienta para denunciar{' '}<span class="subrayado">tasas excesivas</span>."
-        </blockquote>
-        <dl class="ejemplo-codigos">
-          <dt><span class="subrayado">Problema</span></dt>
-          <dd>tasas locales excesivas</dd>
-          <dt><span class="marca">Responsable</span></dt>
-          <dd>provincias y municipios</dd>
-        </dl>
-      </figure>
-    </section>
-    </div>
-
-    <section class="contenedor bloque-secciones" id="secciones">
-      <div class="bloque-secciones-titulo">
-        <h2>Ocho secciones</h2>
-        <p>Se pueden leer en orden o entrar por un caso.</p>
-      </div>
-      <ol class="lista-secciones">
-        {
-          secciones.map((s) => (
-            <li>
-              <a href={rutaSeccion(s.slug)}>
-                <span class="lista-n">{s.n}</span>
-                <span class="lista-titulo">{s.titulo}</span>
-                <span class="lista-bajada">{s.bajada}</span>
+        <div class="ejes">
+          {
+            ejes.map((e) => (
+              <a class="eje-tarjeta" href={e.href}>
+                <span class="eje-tarjeta-logo"><img src={e.logo} alt="" width="72" height="72" /></span>
+                <span class="eje-tarjeta-eje">{e.eje}</span>
+                <span class="eje-tarjeta-titulo">{e.titulo}</span>
+                <span class="eje-tarjeta-bajada">{e.bajada}</span>
+                <span class="eje-tarjeta-texto">{e.texto}</span>
+                <span class="eje-tarjeta-entrar">Entrar</span>
               </a>
-            </li>
-          ))
-        }
-      </ol>
-    </section>
-
-    <section class="repositorio" id="repositorio">
-      <div class="contenedor">
-        <div class="repositorio-texto">
-          <h2>Todo el material es un archivo</h2>
-          <p>
-            Los discursos, las entrevistas, los prompts y las salidas están en el repositorio, guardados con el mismo
-            registro que propone el taller. El taller no tiene demostraciones en vivo: todo lo que se muestra está acá.
-          </p>
-          <ul>
-            <li>Copiar cada prompt con un clic.</li>
-            <li>Comparar la salida guardada con una corrida propia.</li>
-            <li>Reemplazar el material por uno propio, con la plantilla de carpeta.</li>
-          </ul>
-          <div class="portada-botones">
-            <a class="boton" href={ruta('materiales/')}>Ver los materiales</a>
-            {
-              sitio.repo && (
-                <a class="boton boton-linea" href={sitio.repo}>
-                  Abrir en GitHub
-                </a>
-              )
-            }
-          </div>
+            ))
+          }
         </div>
-
-        <dl class="arbol">
-          <dt>prompts/</dt>
-          <dd>un archivo por prompt</dd>
-          <dt>esquemas/</dt>
-          <dd>categorías con su definición, en CSV</dd>
-          <dt>discursos/</dt>
-          <dd>textos con los párrafos numerados</dd>
-          <dt>entrevistas/</dt>
-          <dd>dos entrevistas y un grupo focal del corpus FOUBA</dd>
-          <dt>salidas/</dt>
-          <dd>respuestas guardadas de cada prompt</dd>
-          <dt>skills/</dt>
-          <dd>la skill que arma grillas de menciones</dd>
-          <dt>plantilla/</dt>
-          <dd>una carpeta de proyecto lista para copiar</dd>
-          <dt><span class="marca">registro.csv</span></dt>
-          <dd>una fila por corrida, con modelo y fecha</dd>
-        </dl>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 </Base>
