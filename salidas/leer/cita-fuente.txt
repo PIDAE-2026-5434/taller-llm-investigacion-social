@@ -1,0 +1,216 @@
+### Tabla resumen
+
+| N.º | Veredicto | Tipo de distorsión |
+|---|---|---|
+| A01 | Respaldada | — |
+| A02 | La fuente no trata el tema | — |
+| A03 | Parcialmente respaldada | Inflación causal / Pérdida de salvedades |
+| A04 | No respaldada | Cambio de población o contexto |
+| A05 | Parcialmente respaldada | Mezcla |
+| A06 | No respaldada | Atribución errónea |
+| A07 | Respaldada | — |
+| A08 | Parcialmente respaldada | Pérdida de salvedades |
+| A09 | No respaldada | Atribución errónea |
+| A10 | Parcialmente respaldada | Dato alterado / Cambio de población o contexto |
+| A11 | Respaldada | — |
+| A12 | Respaldada | — |
+| A13 | Parcialmente respaldada | Generalización |
+| A14 | Parcialmente respaldada | Pérdida de salvedades / Inflación causal |
+| A15 | Respaldada | — |
+| A16 | No respaldada | Inversión |
+
+### Análisis detallado por afirmación
+
+#### A01. El conjunto de prueba incluyó 5670 mensajes, de los cuales 479 contenían discurso de odio.
+
+**Veredicto:** Respaldada
+
+**Pasaje de la fuente:** "...for budget reasons, we subsampled the test set to 5670 examples (50% of the original test set). Among these, 479 comments contain hate speech, distributed as shown in Table 1." (Sección 4, p. 7191)
+
+**Explicación:** La fuente respalda exactamente las cifras y el contexto expuestos.
+
+[Sugerencia] «El conjunto de prueba incluyó 5670 mensajes, de los cuales 479 contenían discurso de odio.»
+
+#### A02. Los autores estiman que clasificar el corpus completo con modelos de lenguaje cuesta menos que anotarlo manualmente.
+
+**Veredicto:** La fuente no trata el tema
+
+**Pasaje de la fuente:** N/A (No hay pasajes pertinentes en el documento).
+
+**Explicación:** La fuente menciona limitaciones presupuestarias para reducir el conjunto de prueba (Sección 4), pero no realiza ninguna estimación ni comparación de costos entre la clasificación mediante LLM y la anotación manual.
+
+[Sugerencia] N/A (Se recomienda eliminar la afirmación o sustituirla por un aspecto del presupuesto mencionado en el texto).
+
+#### A03. La presencia de regionalismos hace que los clasificadores detecten mejor el discurso de odio.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "Focusing in those messages that contain regionalisms, no conclusive differences are detected. As seen in 6, in general, the performance of all the classifiers follows similar patterns: they stay equal or get better when regionalisms are present in the text." (Sección 6, p. 7194)
+
+**Explicación:** La fuente señala que no se observaron diferencias concluyentes y que el desempeño se mantuvo similar o mejoró, explicando además que esto puede deberse a que los regionalismos suelen coincidir con insultos. La afirmación establece una relación causal categórica ("hace que... detecten mejor") que la fuente relativiza implícitamente.
+
+**Tipo de distorsión:** Inflación causal / Pérdida de salvedades
+
+[Sugerencia] «En el estudio, el rendimiento de los clasificadores se mantuvo igual o mejoró en presencia de regionalismos, aunque los autores aclaran que no se observaron diferencias concluyentes.»
+
+#### A04. Pérez, Miguel y Cotik (2025) evaluaron el desempeño de los modelos de lenguaje en distintas variantes del español latinoamericano.
+
+**Veredicto:** No respaldada
+
+**Pasaje de la fuente:** "This work presents a brief analysis of the performance of large language models in the detection of Hate Speech for Rioplatense Spanish." (Abstract, p. 7189)
+
+"As a future work, it would be interesting to develop a multi-variant of Spanish evaluation... In particular, it could be of interest to conduct similar experiments with other Spanish variants, such as Iberian... or Mexican Spanish..." (Sección 9, p. 7197)
+
+**Explicación:** El trabajo evalúa exclusivamente la variante del español rioplatense (Argentina). Extender el análisis a otras variantes del español latinoamericano o ibérico se propone únicamente como trabajo futuro.
+
+**Tipo de distorsión:** Cambio de población o contexto
+
+[Sugerencia] «Pérez, Miguel y Cotik (2025) evaluaron el desempeño de los modelos de lenguaje en la detección de discurso de odio en español rioplatense.»
+
+#### A05. El estudio, que analizó tuits publicados durante la pandemia de COVID-19, muestra que GPT-3.5 logra un mejor equilibrio entre precisión y exhaustividad que Mixtral.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "It is shown that Mixtral obtains a better recall for all of the characteristics but at the cost of low precision, while GPT-3.5 has a better trade-off between them." (Sección 6, p. 7194)
+
+"Our experiments are based on an anonymized dataset available in Rioplatense Spanish, consisting of Twitter replies to posts from Argentinean news outlets..." (Sección 4, p. 7191)
+
+**Explicación:** La fuente confirma que GPT-3.5 logra un mejor equilibrio (trade-off) entre precisión y exhaustividad que Mixtral. Sin embargo, el corpus no se define de manera general como tuits sobre la pandemia de COVID-19, sino como respuestas en Twitter a noticias de medios argentinos (aunque algunos ejemplos traten sobre la pandemia).
+
+**Tipo de distorsión:** Mezcla
+
+[Sugerencia] «El estudio muestra que GPT-3.5 logra un mejor equilibrio entre precisión y exhaustividad que Mixtral.»
+
+#### A06. Pérez, Miguel y Cotik (2025) encontraron que las explicaciones generadas por los modelos de lenguaje son tan buenas como las escritas por humanos, e incluso preferidas.
+
+**Veredicto:** No respaldada
+
+**Pasaje de la fuente:** "Wang et al. (2023); Huang et al. (2023) evaluated the performance of GPT-3/GPT-3.5 to detect and explain hate speech messages, finding that LLM-generated explanations are equally good (and even preferred to) human-written explanations." (Sección 3, p. 7191)
+
+**Explicación:** Este hallazgo no pertenece a los autores de la fuente, sino a investigaciones previas (Wang et al., 2023; Huang et al., 2023) citadas en el estado del arte. De hecho, Pérez, Miguel y Cotik señalan en sus limitaciones que la evaluación de las explicaciones en su propio estudio fue muy acotada (Sección 8).
+
+**Tipo de distorsión:** Atribución errónea
+
+[Sugerencia] «Antecedentes citados en el trabajo (Wang et al., 2023; Huang et al., 2023) indican que las explicaciones generadas por modelos de lenguaje pueden ser tan buenas como las escritas por humanos, e incluso preferidas.»
+
+#### A07. Como trabajo futuro, los autores proponen extender el análisis a otras variantes del español, como la ibérica o la mexicana.
+
+**Veredicto:** Respaldada
+
+**Pasaje de la fuente:** "In particular, it could be of interest to conduct similar experiments with other Spanish variants, such as Iberian, where there are more available corpora and/or Mexican Spanish, which represents the major variant of spoken Spanish." (Sección 9, p. 7197)
+
+**Explicación:** La afirmación coincide fielmente con lo expresado en las conclusiones/trabajo futuro del documento.
+
+[Sugerencia] «Como trabajo futuro, los autores proponen extender el análisis a otras variantes del español, como la ibérica o la mexicana.»
+
+#### A08. Según este estudio, los modelos de lenguaje entienden el lunfardo y los regionalismos del español rioplatense.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "Regarding cultural and linguistic nuances, we found that LLMs were able to detect some of them, but not all, missing some slurs, expressions, and insults typical of the Rioplatense dialect." (Sección 7, p. 7197)
+
+**Explicación:** Los autores concluyen que los modelos captan algunos matices y expresiones del español rioplatense, pero aclaran explícitamente que no captan todos y que pasan por alto varios modismos e insultos típicos del dialecto.
+
+**Tipo de distorsión:** Pérdida de salvedades
+
+[Sugerencia] «Según este estudio, los modelos de lenguaje captan algunos matices y expresiones del español rioplatense, aunque omiten ciertos insultos y regionalismos típicos del dialecto.»
+
+#### A09. Según Pérez, Miguel y Cotik (2025), ChatGPT alcanza resultados cercanos al estado del arte en la detección de discurso de odio sin ejemplos previos (zero-shot).
+
+**Veredicto:** No respaldada
+
+**Pasaje de la fuente:** "Oliveira et al. (2023) tested ChatGPT for hate speech detection in Portuguese, particularly in its Brazilian dialect, achieving almost state-of-the-art results in a zero-shot setting." (Sección 3, p. 7191)
+
+**Explicación:** El hallazgo sobre ChatGPT alcanzando resultados cercanos al estado del arte en modalidad zero-shot pertenece a Oliveira et al. (2023) para el portugués brasileño. Pérez, Miguel y Cotik (2025) utilizaron una estrategia de few-shot learning (pocos ejemplos) con razonamiento en cadena de pensamientos para sus experimentos centrales.
+
+**Tipo de distorsión:** Atribución errónea
+
+[Sugerencia] «Según trabajos previos citados en el artículo (Oliveira et al., 2023), ChatGPT alcanzó resultados cercanos al estado del arte en la detección de discurso de odio sin ejemplos previos en portugués brasileño.»
+
+#### A10. En el corpus analizado, cerca del 16 % de los mensajes contenía discurso de odio.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "Among these, 479 comments contain hate speech, distributed as shown in Table 1." [479/5670 = 8.45%] (Sección 4, p. 7191)
+
+"Indeed, hate speech messages represented 9% of the original dataset, and this rises to a 16% of hateful messages within those that have regionalisms." (Sección 6, p. 7194)
+
+**Explicación:** En el corpus general, la proporción de discurso de odio es del 8.45 % (o ~9 %). La cifra del 16 % corresponde únicamente al subconjunto de mensajes que contienen regionalismos.
+
+**Tipo de distorsión:** Dato alterado / Cambio de población o contexto
+
+[Sugerencia] «En el corpus analizado, cerca del 8.5 % de los mensajes contenía discurso de odio, proporción que se eleva al 16 % en el subconjunto de mensajes con regionalismos.»
+
+#### A11. En ese estudio, el clasificador supervisado fue más preciso, pero los modelos de lenguaje recuperaron una proporción mayor de los mensajes con discurso de odio.
+
+**Veredicto:** Respaldada
+
+**Pasaje de la fuente:** "Our experiments point out that LLMs show a lower precision compared to the fine-tuned BERT classifier, but a higher recall for highly nuanced cases..." (Sección 1, p. 7190)
+
+**Explicación:** La afirmación refleja adecuadamente los hallazgos: menor precisión pero mayor exhaustividad/recuperación (recall) en los modelos de lenguaje respecto al clasificador BERT supervisado.
+
+[Sugerencia] «En ese estudio, el clasificador supervisado fue más preciso, pero los modelos de lenguaje recuperaron una proporción mayor de los mensajes con discurso de odio.»
+
+#### A12. Pérez, Miguel y Cotik (2025) compararon tres modelos de lenguaje de gran escala (GPT-3.5, Mixtral y Aya) con un clasificador BETO ajustado, sobre un corpus de respuestas en Twitter a publicaciones de medios de noticias argentinos.
+
+**Veredicto:** Respaldada
+
+**Pasaje de la fuente:** "We performed classification experiments leveraging the chain-of-thought (CoT) reasoning within the LLMs ChatGPT, Mixtral and Aya, and compare their results against a fine-tuned BERT classifier." (Sección 1, p. 7190)
+
+"Our experiments are based on an anonymized dataset available in Rioplatense Spanish, consisting of Twitter replies to posts from Argentinean news outlets..." (Sección 4, p. 7191)
+
+**Explicación:** La afirmación sintetiza con precisión los modelos y el corpus utilizados en el estudio.
+
+[Sugerencia] «Pérez, Miguel y Cotik (2025) compararon tres modelos de lenguaje de gran escala (GPT-3.5, Mixtral y Aya) con un clasificador BETO ajustado, sobre un corpus de respuestas en Twitter a publicaciones de medios de noticias argentinos.»
+
+#### A13. Según el estudio, los modelos de lenguaje detectan mejor que los clasificadores supervisados el discurso de odio contra personas LGBTI.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "The case of the LGBTI characteristic, is particularly interesting given that is the case where GPT-3.5 outperforms the fine-tuned classifier (Mann-Whitney U=16386, p < 10^-6)." (Sección 6, p. 7194)
+
+"Conversely, ChatGPT offers a more balanced performance, particularly in detecting the LGBTI characteristic, where it outperforms traditional fine-tuned classifiers, such as BETO." (Sección 7, p. 7195)
+
+**Explicación:** La ventaja frente al clasificador supervisado BETO se constató concretamente para GPT-3.5 / ChatGPT, y no de forma indistinta para todos "los modelos de lenguaje" (modelos como Aya mostraron un rendimiento muy inferior en general).
+
+**Tipo de distorsión:** Generalización
+
+[Sugerencia] «Según el estudio, ChatGPT detecta mejor que el clasificador supervisado BETO el discurso de odio contra personas LGBTI.»
+
+#### A14. Los resultados demuestran que los modelos de lenguaje captan los matices culturales del español rioplatense.
+
+**Veredicto:** Parcialmente respaldada
+
+**Pasaje de la fuente:** "These results suggest that despite possible preconceptions about the lack of cultural grounding of LLMs, they are somehow able to grasp cultural nuances from Rioplatense Spanish..." (Sección 6, p. 7195)
+
+"Regarding cultural and linguistic nuances, we found that LLMs were able to detect some of them, but not all..." (Sección 7, p. 7197)
+
+**Explicación:** Los autores afirman que los resultados "sugieren" (no "demuestran") que los modelos son capaces de captar algunos matices culturales del dialecto, señalando expresamente que no los captan todos.
+
+**Tipo de distorsión:** Pérdida de salvedades / Inflación causal
+
+[Sugerencia] «Los resultados sugieren que los modelos de lenguaje logran captar algunos matices culturales del español rioplatense.»
+
+#### A15. Los autores reconocen que la evaluación de las explicaciones generadas por los modelos fue limitada, porque solo la realizaron ellos mismos.
+
+**Veredicto:** Respaldada
+
+**Pasaje de la fuente:** "Finally, the analysis of LLMs explanations was performed in a very limited way, being their soundness assessed solely by the authors." (Sección 8, p. 7197)
+
+**Explicación:** La afirmación refleja exactamente una de las limitaciones explícitamente señaladas por los autores.
+
+[Sugerencia] «Los autores reconocen que la evaluación de las explicaciones generadas por los modelos fue limitada, porque solo la realizaron ellos mismos.»
+
+#### A16. Pérez, Miguel y Cotik (2025) muestran que los modelos de lenguaje superan a los clasificadores supervisados en la detección de discurso de odio.
+
+**Veredicto:** No respaldada
+
+**Pasaje de la fuente:** "While LLMs have proven to be a powerful tool for hate speech detection, supervised classifiers still outperform them in the general case and are more suitable for detecting hate speech at a large scale." (Sección 7, p. 7195)
+
+**Explicación:** La afirmación invierte la conclusión de la fuente: los autores concluyen que los clasificadores supervisados (como BETO) continúan superando a los modelos de lenguaje en el caso general.
+
+**Tipo de distorsión:** Inversión
+
+[Sugerencia] «Pérez, Miguel y Cotik (2025) muestran que los clasificadores supervisados siguen superando a los modelos de lenguaje en el caso general para la detección de discurso de odio.»
+
+Confirmá los pasajes en el documento antes de corregir el texto.

@@ -13,7 +13,7 @@ import { md } from '../lib/md.js';
 const { id, anotado = false, tipo = null, variantes = false, rotuloSalida = 'Salida' } = Astro.props;
 const p = prompt(id);
 const principal = salidaDe(id);
-const nombres = { haiku: 'Chico', opus: 'Grande', sonnet: 'Sonnet', 'otra-corrida': 'Otra corrida' };
+const nombres = { haiku: 'Chico', opus: 'Grande', sonnet: 'Sonnet', 'otra-corrida': 'Otra corrida', flash: 'Salida con Flash' };
 const salidas = [
   ...(principal ? [{ clave: 'salida', rotulo: rotuloSalida, ...principal }] : []),
   ...(variantes ? variantesDe(id).filter((v) => variantes === true || variantes.includes(v.variante)).map((v) => ({ clave: v.variante, rotulo: nombres[v.variante] ?? v.variante, ...v })) : []),
