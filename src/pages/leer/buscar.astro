@@ -1,0 +1,33 @@
+---
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import Prompt from '../../components/Prompt.astro';
+import Texto from '../../components/Texto.astro';
+---
+
+<GuiaLeer slug="buscar">
+<h2 id="asistente">Asistente de búsqueda</h2>
+        <p>
+          Un chatbot no es un buscador bibliográfico: no accede a bases licenciadas, no dice de dónde saca lo que
+          responde y puede inventar referencias con formato impecable. Por eso esta skill no busca ni lista trabajos.
+          Toma una pregunta de investigación y devuelve la pregunta reformulada, los supuestos que esa reformulación da
+          por sentados, términos en castellano, inglés y portugués, y cadenas para Google Scholar, SciELO y Redalyc. La
+          búsqueda se hace en las bases.
+        </p>
+        <p>
+          Empezó como un buscador que listaba trabajos. En las pruebas, los trabajos existían, pero solo 1 de 12 citas
+          estaba sin errores y los resúmenes exageraban los hallazgos. Lo convertimos en un asistente para formular la
+          búsqueda. La sección de supuestos también salió de una prueba: una versión anterior afirmó un «quiebre de
+          tendencia a partir de 2014-2015» como si fuera un dato.
+        </p>
+        <Prompt id="leer/asistente-busqueda" rotuloSalida="Salida con Pensar" />
+        <details>
+          <summary>La consulta de la prueba</summary>
+          <Texto archivo="leer/entradas/asistente-busqueda.txt" rotulo="Consulta" />
+        </details>
+        <p class="nota">
+          Revisá los supuestos antes de usar las cadenas. Y no abras todos los enlaces de Scholar a la vez desde la
+          misma red: Scholar bloquea el tráfico masivo.
+        </p>
+</GuiaLeer>

@@ -1,0 +1,67 @@
+---
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import Prompt from '../../components/Prompt.astro';
+import Texto from '../../components/Texto.astro';
+---
+
+<GuiaLeer slug="verificar">
+<p>
+          Que una referencia exista no significa que esté bien citada, ni que diga lo que se le atribuye. Por eso hay dos
+          controles: el Verificador revisa si las referencias existen y si sus datos coinciden; Cita vs. fuente revisa si la
+          fuente dice lo que el texto afirma.
+        </p>
+
+        <h2 id="verificador">Verificador de referencias</h2>
+        <p>
+          Recibe una lista de referencias y, para cada una, busca en la web, compara los datos con la fuente que
+          encuentra y asigna un veredicto: «Coincide», «Con discrepancias» o «No localizada». Su regla central es que no
+          puede dar una referencia por válida desde su memoria. Para cada referencia genera enlaces a Google Scholar y,
+          si es latinoamericana, sugiere buscarla en SciELO y Redalyc.
+        </p>
+        <p>
+          La probamos con 23 referencias de respuesta conocida (17 reales, algunas con errores a propósito, y 6
+          inventadas), en 8 corridas y 4 versiones de las instrucciones. La versión final acertó los 23 veredictos con
+          Pensar, pero inventó 6 URL de «fuente encontrada». Con Flash, la misma versión acertó 16 y negó un paper real.
+          Las dos salidas están en las pestañas.
+        </p>
+        <Prompt id="leer/verificador" variantes={['flash']} rotuloSalida="Salida con Pensar" />
+        <details>
+          <summary>La lista de prueba (incluye referencias inventadas)</summary>
+          <Texto archivo="leer/entradas/verificador-referencias.txt" rotulo="Referencias" />
+        </details>
+        <p class="nota">
+          Es un primer filtro, no una prueba de existencia. Abrí los enlaces. «No localizada» no significa «no existe»:
+          en las pruebas dio por no localizados artículos de SciELO y un informe de ONU Mujeres que existen.
+        </p>
+
+        <h2 id="cita-fuente">Cita vs. fuente</h2>
+        <p>
+          Compara una afirmación con la fuente que supuestamente la respalda y dice si la fuente dice eso. Cuando no,
+          identifica el tipo de distorsión. Sirve para revisar textos producidos con IA y también los propios: la
+          atribución errónea incluye la cita de segunda mano.
+        </p>
+        <ul>
+          <li><strong>Cambian el alcance:</strong> generalización, pérdida de salvedades, inflación causal, cambio de población o contexto.</li>
+          <li><strong>Cambian el contenido:</strong> dato alterado, inversión, atribución errónea, mezcla.</li>
+        </ul>
+        <p>
+          La probamos con 16 afirmaciones sobre un paper (Pérez, Miguel y Cotik, 2025). Gemini con el PDF y sin la skill
+          acertó 14: dio por respaldadas una mezcla y una generalización. Con la skill acertó las 16, y los 19 pasajes
+          que transcribió existen en el PDF con su página.
+        </p>
+        <Prompt id="leer/cita-fuente" rotuloSalida="Salida con Pensar" />
+        <details>
+          <summary>Las afirmaciones de la prueba</summary>
+          <Texto archivo="leer/entradas/cita-fuente.txt" rotulo="Afirmaciones" />
+          <p>
+            El paper está publicado en acceso abierto en la{' '}
+            <a href="https://aclanthology.org/2025.findings-naacl.400/">ACL Anthology</a>.
+          </p>
+        </details>
+        <p class="nota">
+          No alcanza con que un número aparezca en el texto: hay que leer a qué se refiere. El «16 %» de la afirmación A10
+          está en el paper, pero describe otro subconjunto.
+        </p>
+</GuiaLeer>

@@ -1,0 +1,28 @@
+---
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import Prompt from '../../components/Prompt.astro';
+---
+
+<GuiaLeer slug="sintetizar">
+<h2 id="ficha">Ficha de lectura</h2>
+        <p>
+          Al resumir papers, los modelos tienden a convertir hallazgos acotados en afirmaciones generales, y pedirles
+          que eviten inexactitudes hizo casi el doble de probable que generalizaran (Peters y Chin-Yee, 2025, p. 13). Por
+          eso la Ficha no pide «precisión»: pide conductas concretas. Mantener el tiempo verbal, indicar a quiénes,
+          dónde y cuándo se refieren los hallazgos, conservar las salvedades y anclar cada hallazgo en la página y en un
+          fragmento textual que se pueda buscar con Ctrl+F.
+        </p>
+        <p>
+          La probamos con el mismo paper. Los 9 fragmentos de anclaje existen en el PDF y no agregó datos externos. Pero
+          perdió una salvedad: donde los autores escriben que la mejora con regionalismos «might be due» a los insultos
+          explícitos, la ficha dice «dado que». Ni siquiera una skill pensada para conservar las salvedades las conserva
+          todas.
+        </p>
+        <Prompt id="leer/ficha-lectura" rotuloSalida="Salida con Pensar" />
+        <p class="nota">
+          Sacá tus conclusiones antes de leer la ficha. Si pegás tu propia síntesis, la skill la compara con la ficha sin
+          corregirla.
+        </p>
+</GuiaLeer>

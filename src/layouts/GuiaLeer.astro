@@ -1,0 +1,67 @@
+---
+// Layout de las páginas del bloque Leer (Eje 05). Igual que Guia.astro, pero con
+// su propia lista de secciones (src/lib/leer.js) y el rótulo del Eje 05.
+// Cada página pasa su slug: '' para la portada del bloque.
+import Base from './Base.astro';
+import { seccionesLeer, rutaLeer, eje } from '../lib/leer.js';
+
+const { slug } = Astro.props;
+const i = seccionesLeer.findIndex((s) => s.slug === slug);
+if (i === -1) throw new Error(`La sección "${slug}" no figura en src/lib/leer.js`);
+const seccion = seccionesLeer[i];
+const anterior = seccionesLeer[i - 1];
+const siguiente = seccionesLeer[i + 1];
+---
+
+<Base titulo={`${seccion.titulo} · Leer`} descripcion={seccion.bajada} eje={eje}>
+  <div class="contenedor guia">
+    <nav class="guia-indice" aria-label="Secciones de Leer">
+      <div class="guia-indice-titulo">Leer</div>
+      <ol>
+        {
+          seccionesLeer.map((s) => (
+            <li>
+              <a href={rutaLeer(s.slug)} aria-current={s.slug === slug ? 'page' : undefined}>
+                {s.n} {s.corto}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <main class="guia-cuerpo">
+      <div class="guia-encabezado">
+        <div class="antetitulo-eje">Eje 05 · Sección {i + 1} de {seccionesLeer.length}</div>
+        <h1>{seccion.titulo}</h1>
+      </div>
+
+      <div class="prosa">
+        <slot />
+      </div>
+
+      <nav class="pasar" aria-label="Sección anterior y siguiente">
+        {
+          anterior && (
+            <a href={rutaLeer(anterior.slug)}>
+              <span>Anterior</span>
+              <span>
+                {anterior.n} {anterior.corto}
+              </span>
+            </a>
+          )
+        }
+        {
+          siguiente && (
+            <a href={rutaLeer(siguiente.slug)}>
+              <span>Siguiente</span>
+              <span>
+                {siguiente.n} {siguiente.corto}
+              </span>
+            </a>
+          )
+        }
+      </nav>
+    </main>
+  </div>
+</Base>

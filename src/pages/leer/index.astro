@@ -1,31 +1,26 @@
 ---
-// Sección Leer (Eje 05): las cuatro skills del bloque de lectura, con sus
-// instrucciones para copiar y una salida real de las pruebas.
-// Las instrucciones viven en prompts/leer/, las salidas en salidas/leer/
-// y las entradas de prueba en leer/entradas/. Las corridas, en leer/registro.csv.
-import Base from '../../layouts/Base.astro';
-import Prompt from '../../components/Prompt.astro';
-import Texto from '../../components/Texto.astro';
-import { enRepo } from '../../lib/sitio.js';
-
-const eje = 'Eje 05 · Leer con IA: trabajar con papers y fuentes';
-const registro = enRepo('leer/registro.csv');
+// Bloque Leer (Eje 05). Instrucciones en prompts/leer/, salidas en salidas/leer/,
+// entradas de prueba en leer/entradas/ y corridas en leer/registro.csv.
+import GuiaLeer from '../../layouts/GuiaLeer.astro';
+import { rutaLeer } from '../../lib/leer.js';
 ---
 
-<Base titulo="Leer" descripcion="Cuatro skills para buscar, verificar y sintetizar bibliografía con IA, con sus instrucciones y salidas reales." eje={eje}>
-  <div class="contenedor guia">
-    <main class="guia-cuerpo">
-      <div class="guia-encabezado">
-        <div class="antetitulo-eje">Eje 05 · Leer · Workshop AcademIA</div>
-        <h1>Cuatro skills para leer con IA</h1>
-      </div>
-
-      <div class="prosa">
-        <p>
+<GuiaLeer slug="">
+<p>
           La IA puede leer y muy rápido. La comprensión queda de nuestro lado. Estas cuatro skills acompañan los tres pasos
           del trabajo con bibliografía: buscar, verificar lo que se encontró y sintetizar sin perder el alcance de los
           textos. Las armamos y las probamos para el taller con Gemini y la cuenta de la facultad. Cada una trae sus
           instrucciones, listas para copiar, y una salida real de las pruebas.
+        </p>
+
+        <h2>Tres pasos</h2>
+        <ol>
+          <li><a href={rutaLeer('buscar')}>Buscar</a>: formular la búsqueda con IA y hacerla en las bases.</li>
+          <li><a href={rutaLeer('verificar')}>Verificar</a>: que lo encontrado exista y diga lo que se le atribuye.</li>
+          <li><a href={rutaLeer('sintetizar')}>Sintetizar</a>: leer y sintetizar sin perder el alcance de los textos.</li>
+        </ol>
+        <p>
+          Cada paso tiene su página, con las skills que lo acompañan. La última sección cuenta <a href={rutaLeer('como-las-probamos')}>cómo las probamos</a>.
         </p>
 
         <h2>Qué es una skill</h2>
@@ -63,25 +58,25 @@ const registro = enRepo('leer/registro.csv');
             </thead>
             <tbody>
               <tr>
-                <td><a href="#asistente">Asistente de búsqueda</a></td>
+                <td><a href={rutaLeer('buscar')}>Asistente de búsqueda</a></td>
                 <td>Formular la búsqueda: términos en tres idiomas y cadenas para cada base</td>
                 <td>Formula la búsqueda; no lista trabajos</td>
                 <td>Sumar las bases y los términos de tu campo</td>
               </tr>
               <tr>
-                <td><a href="#verificador">Verificador de referencias</a></td>
+                <td><a href={rutaLeer('verificar')}>Verificador de referencias</a></td>
                 <td>Primer filtro para listas de referencias</td>
                 <td>No valida desde la memoria: da enlaces para verificar</td>
                 <td>Ajustarlo a tu norma de cita y a tus repositorios</td>
               </tr>
               <tr>
-                <td><a href="#cita-fuente">Cita vs. fuente</a></td>
+                <td><a href={rutaLeer('verificar') + '#cita-fuente'}>Cita vs. fuente</a></td>
                 <td>Revisar si la fuente dice lo que se le atribuye</td>
                 <td>Ocho tipos de distorsión definidos</td>
                 <td>Sumar las distorsiones frecuentes en tu disciplina</td>
               </tr>
               <tr>
-                <td><a href="#ficha">Ficha de lectura</a></td>
+                <td><a href={rutaLeer('sintetizar')}>Ficha de lectura</a></td>
                 <td>Fichar un paper sin perder alcance ni salvedades</td>
                 <td>Página y fragmento textual para cada hallazgo</td>
                 <td>Cambiar los campos según tu tipo de fuente</td>
@@ -89,125 +84,4 @@ const registro = enRepo('leer/registro.csv');
             </tbody>
           </table>
         </div>
-
-        <h2 id="asistente">Buscar · Asistente de búsqueda</h2>
-        <p>
-          Un chatbot no es un buscador bibliográfico: no accede a bases licenciadas, no dice de dónde saca lo que
-          responde y puede inventar referencias con formato impecable. Por eso esta skill no busca ni lista trabajos.
-          Toma una pregunta de investigación y devuelve la pregunta reformulada, los supuestos que esa reformulación da
-          por sentados, términos en castellano, inglés y portugués, y cadenas para Google Scholar, SciELO y Redalyc. La
-          búsqueda se hace en las bases.
-        </p>
-        <p>
-          Empezó como un buscador que listaba trabajos. En las pruebas, los trabajos existían, pero solo 1 de 12 citas
-          estaba sin errores y los resúmenes exageraban los hallazgos. Lo convertimos en un asistente para formular la
-          búsqueda. La sección de supuestos también salió de una prueba: una versión anterior afirmó un «quiebre de
-          tendencia a partir de 2014-2015» como si fuera un dato.
-        </p>
-        <Prompt id="leer/asistente-busqueda" rotuloSalida="Salida con Pensar" />
-        <details>
-          <summary>La consulta de la prueba</summary>
-          <Texto archivo="leer/entradas/asistente-busqueda.txt" rotulo="Consulta" />
-        </details>
-        <p class="nota">
-          Revisá los supuestos antes de usar las cadenas. Y no abras todos los enlaces de Scholar a la vez desde la
-          misma red: Scholar bloquea el tráfico masivo.
-        </p>
-
-        <h2 id="verificador">Verificar · Verificador de referencias</h2>
-        <p>
-          Recibe una lista de referencias y, para cada una, busca en la web, compara los datos con la fuente que
-          encuentra y asigna un veredicto: «Coincide», «Con discrepancias» o «No localizada». Su regla central es que no
-          puede dar una referencia por válida desde su memoria. Para cada referencia genera enlaces a Google Scholar y,
-          si es latinoamericana, sugiere buscarla en SciELO y Redalyc.
-        </p>
-        <p>
-          La probamos con 23 referencias de respuesta conocida (17 reales, algunas con errores a propósito, y 6
-          inventadas), en 8 corridas y 4 versiones de las instrucciones. La versión final acertó los 23 veredictos con
-          Pensar, pero inventó 6 URL de «fuente encontrada». Con Flash, la misma versión acertó 16 y negó un paper real.
-          Las dos salidas están en las pestañas.
-        </p>
-        <Prompt id="leer/verificador" variantes={['flash']} rotuloSalida="Salida con Pensar" />
-        <details>
-          <summary>La lista de prueba (incluye referencias inventadas)</summary>
-          <Texto archivo="leer/entradas/verificador-referencias.txt" rotulo="Referencias" />
-        </details>
-        <p class="nota">
-          Es un primer filtro, no una prueba de existencia. Abrí los enlaces. «No localizada» no significa «no existe»:
-          en las pruebas dio por no localizados artículos de SciELO y un informe de ONU Mujeres que existen.
-        </p>
-
-        <h2 id="cita-fuente">Verificar · Cita vs. fuente</h2>
-        <p>
-          Compara una afirmación con la fuente que supuestamente la respalda y dice si la fuente dice eso. Cuando no,
-          identifica el tipo de distorsión. Sirve para revisar textos producidos con IA y también los propios: la
-          atribución errónea incluye la cita de segunda mano.
-        </p>
-        <ul>
-          <li><strong>Cambian el alcance:</strong> generalización, pérdida de salvedades, inflación causal, cambio de población o contexto.</li>
-          <li><strong>Cambian el contenido:</strong> dato alterado, inversión, atribución errónea, mezcla.</li>
-        </ul>
-        <p>
-          La probamos con 16 afirmaciones sobre un paper (Pérez, Miguel y Cotik, 2025). Gemini con el PDF y sin la skill
-          acertó 14: dio por respaldadas una mezcla y una generalización. Con la skill acertó las 16, y los 19 pasajes
-          que transcribió existen en el PDF con su página.
-        </p>
-        <Prompt id="leer/cita-fuente" rotuloSalida="Salida con Pensar" />
-        <details>
-          <summary>Las afirmaciones de la prueba</summary>
-          <Texto archivo="leer/entradas/cita-fuente.txt" rotulo="Afirmaciones" />
-          <p>
-            El paper está publicado en acceso abierto en la{' '}
-            <a href="https://aclanthology.org/2025.findings-naacl.400/">ACL Anthology</a>.
-          </p>
-        </details>
-        <p class="nota">
-          No alcanza con que un número aparezca en el texto: hay que leer a qué se refiere. El «16 %» de la afirmación A10
-          está en el paper, pero describe otro subconjunto.
-        </p>
-
-        <h2 id="ficha">Sintetizar · Ficha de lectura</h2>
-        <p>
-          Al resumir papers, los modelos tienden a convertir hallazgos acotados en afirmaciones generales, y pedirles
-          que eviten inexactitudes hizo casi el doble de probable que generalizaran (Peters y Chin-Yee, 2025, p. 13). Por
-          eso la Ficha no pide «precisión»: pide conductas concretas. Mantener el tiempo verbal, indicar a quiénes,
-          dónde y cuándo se refieren los hallazgos, conservar las salvedades y anclar cada hallazgo en la página y en un
-          fragmento textual que se pueda buscar con Ctrl+F.
-        </p>
-        <p>
-          La probamos con el mismo paper. Los 9 fragmentos de anclaje existen en el PDF y no agregó datos externos. Pero
-          perdió una salvedad: donde los autores escriben que la mejora con regionalismos «might be due» a los insultos
-          explícitos, la ficha dice «dado que». Ni siquiera una skill pensada para conservar las salvedades las conserva
-          todas.
-        </p>
-        <Prompt id="leer/ficha-lectura" rotuloSalida="Salida con Pensar" />
-        <p class="nota">
-          Sacá tus conclusiones antes de leer la ficha. Si pegás tu propia síntesis, la skill la compara con la ficha sin
-          corregirla.
-        </p>
-
-        <h2>Cómo las probamos</h2>
-        <p>
-          Todas las salidas de esta página son corridas reales en Gemini, con la cuenta de la facultad y en
-          conversaciones nuevas, entre el 13 y el 15 de octubre de 2026. Las cifras y los pasajes se verificaron contra
-          las fuentes. Al copiarlas desde Gemini se perdieron las tablas y los saltos de línea: se restituyó solo el
-          formato, sin tocar el texto. Lo que aprendimos al probarlas:
-        </p>
-        <ul>
-          <li>El modelo pesa más que las instrucciones: la misma skill rindió muy distinto con Pensar y con Flash.</li>
-          <li>La misma skill, con el mismo modelo, cambia entre corridas.</li>
-          <li>Cerrar una vía de invención no la elimina: al prohibirle escribir DOI, el Verificador inventó URL.</li>
-          <li>
-            Las instrucciones también se prueban: una regla de seguridad desactivó el Verificador, que pasó a responder
-            todo como «No localizada». Por eso, una regla por vez.
-          </li>
-          <li>
-            El error más repetido no fue inventar, sino endurecer: convertir hipótesis en certezas. Lo vimos en cuatro
-            herramientas distintas.
-          </li>
-        </ul>
-        {registro && <p>Las corridas de esta página están en <a href={registro}>leer/registro.csv</a>.</p>}
-      </div>
-    </main>
-  </div>
-</Base>
+</GuiaLeer>
