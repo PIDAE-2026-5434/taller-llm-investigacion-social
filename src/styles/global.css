@@ -106,6 +106,10 @@ a:hover {
   color: var(--tinta);
   text-decoration: none;
 }
+.cabecera nav a.secundario {
+  font-size: 14px;
+  color: var(--gris);
+}
 .cabecera nav a:hover,
 .cabecera nav a[aria-current='page'] {
   text-decoration: underline;
@@ -1309,15 +1313,11 @@ h3 {
 .eje-tarjeta-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 104px;
-  height: 104px;
   margin-bottom: 8px;
-  background: var(--acento);
 }
 .eje-tarjeta-logo img {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
 }
 .eje-tarjeta-eje {
   font-size: 12px;
