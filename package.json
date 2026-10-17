@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "discursos": "node scripts/preparar_discursos.mjs",
     "corridas": "node scripts/armar_corridas.mjs",
-    "citas": "node scripts/verificar_citas.mjs"
+    "citas": "python3 scripts/verificar_citas.py"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.3",

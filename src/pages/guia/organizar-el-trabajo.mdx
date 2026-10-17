@@ -19,8 +19,6 @@ Usar un modelo de lenguaje en una investigación no cambia cómo se organiza el 
 
 ## Antes de abrir el chat
 
-Siete pasos. Los seis primeros ordenan la investigación y sirven con o sin modelo. El séptimo arma el proyecto en la herramienta.
-
 ### 1. Escribir la pregunta y la unidad de análisis
 
 Un archivo corto, `proyecto.md`, con cuatro cosas: la pregunta, la unidad de análisis, qué materiales entran y qué tareas se le van a pedir al modelo. Este texto es la base del contexto que después recibe el modelo.
@@ -215,7 +213,7 @@ Así funciona el conector de Google Drive:
 
 Una skill es un procedimiento escrito en un archivo, para que la herramienta lo siga cada vez que la tarea lo pide. Sirve para pasos que el equipo repite igual sobre muchos documentos, como armar una grilla de menciones.
 
-El archivo se llama `SKILL.md` y es texto en formato Markdown, el mismo que usa este sitio: títulos con `#`, listas con guiones. Tiene dos partes.
+Una skill es una carpeta, y lo único obligatorio es un archivo que se llama `SKILL.md`, con ese nombre exacto. Es texto en formato Markdown, el mismo que usa este sitio: títulos con `#`, listas con guiones. El nombre de la skill, en cambio, lo elige el equipo, y va en el encabezado del archivo, en minúsculas y con guiones. En Claude, la carpeta tiene que llamarse igual que ese nombre. El archivo tiene dos partes.
 
 - Un encabezado con un nombre y una descripción. La herramienta lee solo la descripción para decidir cuándo usar la skill.
 - Las instrucciones, escritas como una receta: qué necesita, qué pasos sigue, qué devuelve y qué reglas respeta.
@@ -241,7 +239,7 @@ description: Arma una grilla de menciones a partir de entrevistas o grupos focal
 ...
 ```
 
-El Caso 2 trae la skill completa, cómo se la vincula con las instrucciones de un proyecto y una corrida que la usa. 
+El Caso 2 trae la skill completa, cómo se sube en Claude, ChatGPT y Gemini, y una corrida que la usa.
 
 <Seguridad titulo="Seguridad con skills">
   <ul>
@@ -252,15 +250,17 @@ El Caso 2 trae la skill completa, cómo se la vincula con las instrucciones de u
 
 ## Automatizar
 
-Cuando el mismo análisis se repite sobre muchos documentos, copiar y pegar deja de ser práctico. Una misma tarea, armar la grilla de menciones de 20 entrevistas, se puede hacer de tres maneras.
+Cuando el mismo análisis se repite sobre muchos documentos, copiar y pegar deja de ser práctico. Una misma tarea, armar la grilla de menciones de 20 entrevistas, se puede hacer de varias maneras.
 
 | Cómo | Qué hace la persona | Qué hace la herramienta | Conviene cuando |
 | --- | --- | --- | --- |
 | Proyecto de chat | Abre 20 conversaciones, adjunta una entrevista en cada una, pega el prompt y guarda cada salida | Responde en cada conversación | Son pocos documentos o el procedimiento todavía cambia |
 | Agente | Escribe un pedido: "para cada archivo de `material/`, armá la grilla con `prompts/grilla.txt` y guardala en `salidas/`". Revisa las salidas cuando termina | Abre cada archivo, corre el prompt, guarda las salidas y avisa | Son muchos documentos y el procedimiento ya está probado |
+| Agente con hooks | Además del pedido, deja configurado un hook: un comando que el agente corre solo cuando pasa algo, por ejemplo cada vez que guarda una salida | Cada vez que guarda una salida, corre el verificador de citas y avisa si alguna no aparece textual | Se quiere que un control corra siempre, sin acordarse de pedirlo |
+| Tarea programada | Describe una vez qué hacer y cada cuánto | Lo repite solo en el horario elegido, por ejemplo cada semana sobre las entrevistas nuevas de la carpeta | El material llega de a poco y el análisis es siempre el mismo |
 | Programa que llama al modelo por API | Escribe o adapta un programa una vez y lo corre | El programa manda cada documento al modelo y guarda la respuesta, sin intervención | El análisis se repite seguido o con cientos de documentos |
 
-En los tres casos, las salidas las revisa una persona.
+En todos los casos, las salidas las revisa una persona.
 
 Para preparar este taller se usaron dos programas de este tipo. Uno arma el mensaje completo de cada prompt, con el material y el esquema incluidos. El otro busca en el texto original cada cita entre comillas de una salida e informa cuáles no aparecen textuales. El segundo no usa ningún modelo: compara texto, y por eso sirve para controlar lo que el modelo devolvió.
 
@@ -276,6 +276,10 @@ Para preparar este taller se usaron dos programas de este tipo. Uno arma el mens
 
 - [Anthropic, Use Claude's chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context). Consultado el 14 de octubre de 2026.
 - [Anthropic, Use Google Workspace connectors](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Consultado el 14 de octubre de 2026.
+- [Anthropic, Create custom skills](https://claude.com/docs/skills/how-to). Consultado el 17 de octubre de 2026.
+- [OpenAI, Build skills](https://learn.chatgpt.com/docs/build-skills). Consultado el 17 de octubre de 2026.
+- [Google, Skills in the Gemini app and Workspace](https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html). Consultado el 17 de octubre de 2026.
+- [Eesel, Gemini skills: how they work, who gets them, and the Gems switch](https://www.eesel.ai/blog/gemini-skills). Consultado el 17 de octubre de 2026.
 - [Anthropic, Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Consultado el 12 de octubre de 2026.
 - [OpenAI, Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Consultado el 14 de octubre de 2026.
 - [Boston College, Gemini Gems vs. NotebookLM](https://cdil.bc.edu/resources/google-ai/gems-vs-notebooklm/). Consultado el 12 de octubre de 2026.

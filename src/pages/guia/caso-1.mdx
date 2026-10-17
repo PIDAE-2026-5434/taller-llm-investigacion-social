@@ -97,10 +97,10 @@ Preguntarle al mismo modelo si sus citas son textuales parece una revisión y no
 
 El modelo respondió que las 20 citas "aparecen tal cual, palabra por palabra". En este caso era cierto, y se sabe porque el script lo comprobó. Un modelo puede afirmar que revisó sin haberlo hecho, y el tono de la respuesta es el mismo en los dos casos.
 
-El patrón es buscar cada cita en el texto original. El script `scripts/verificar_citas.mjs` lo hace para todas las citas de una salida y escribe un informe.
+El patrón es buscar cada cita en el texto original. El script `scripts/verificar_citas.py`, escrito en Python, lo hace para todas las citas de una salida y escribe un informe. Se corre desde una terminal con el comando de abajo (en Windows se escribe `python` en lugar de `python3`). Sin terminal, se puede adjuntar la salida y el texto original en una herramienta con ejecución de código y pedirle lo mismo.
 
 ```
-npm run citas -- salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
+python3 scripts/verificar_citas.py salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
 ```
 
 <Archivo archivo="salidas/caso-1/p3-patron-verificacion.md" rotulo="Verificación" />
@@ -121,8 +121,6 @@ El prompt se corre en una conversación nueva, con el esquema y la tabla del pas
 
 La tabla por código muestra que en A domina "gobierno nacional" (10 de 20 párrafos) y en B, "no asigna" (7 de 19). B tiene el único caso de "ciudadanía", en el párrafo 46. El punto 5 encuentra contraejemplos de la propia diferencia: en A, los párrafos 124 y 127 rinden cuentas de lo hecho, como B. El modelo aclara que las citas de A salen de la tabla pegada, porque no tenía el discurso completo.
 
-<Archivo archivo="salidas/caso-1/p4-patron-verificacion.md" rotulo="Verificación" />
-
-El informe marca cuatro citas como no encontradas. Al leerlas, son frases del propio modelo entre comillas, como "A es prospectivo en gobierno nacional". El script señala y una persona decide.
+Pasado por el script, el informe de esta salida marca cuatro citas como no encontradas. Al leerlas, son frases del propio modelo entre comillas, como "A es prospectivo en gobierno nacional". El script señala y una persona decide.
 
 Los resultados valen para dos tramos de dos discursos de ocasiones distintas. Para decir algo sobre el corpus hace falta clasificar más. Los demás controles están en el [checklist de la sección 8](../cierre/).

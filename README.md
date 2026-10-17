@@ -16,7 +16,7 @@ El repositorio tiene dos cosas: el material como archivos (discursos, entrevista
 | `registro.csv` | Una fila por corrida, con herramienta, modelo, esfuerzo y fecha |
 | `skills/` | La skill `grilla-de-menciones` del Caso 2 |
 | `plantilla/` | Una carpeta de proyecto para copiar en cada análisis |
-| `scripts/` | `preparar_discursos.mjs`, `armar_corridas.mjs` y `verificar_citas.mjs` |
+| `scripts/` | `preparar_discursos.mjs`, `armar_corridas.mjs` (Node) y `verificar_citas.py` (Python) |
 | `src/pages/guia/` | El texto de las ocho secciones, en MDX |
 | `src/lib/sitio.js` | Título del sitio y lista de secciones, que define orden y navegación |
 | `src/components/`, `src/layouts/`, `src/styles/` | Componentes y diseño del sitio |
@@ -76,7 +76,7 @@ Arma `corridas/caso-1/p3-patron.txt` con el mensaje completo; si el prompt conti
 3. Verificar las citas:
 
 ```sh
-npm run citas -- salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
+python3 scripts/verificar_citas.py salidas/caso-1/p3-patron.txt discursos/apertura-sesiones-2026.txt
 ```
 
 Las salidas de este repositorio se generaron el 12 de octubre de 2026 con agentes de Claude sin contexto previo, como aproximación a lo que responde claude.ai.
