@@ -61,26 +61,92 @@ const informes = listar('salidas/').filter((a) => /\.(md|csv)$/.test(a));
           )
         }
 
+        <ul class="indice-interno">
+          <li><a href="#prompts">Prompts</a></li>
+          <li><a href="#esquemas">Esquemas</a></li>
+          <li><a href="#informes">Informes</a></li>
+          <li><a href="#fuentes">Fuentes</a></li>
+          <li><a href="#registro">Registro de corridas</a></li>
+        </ul>
+
+        <h2 id="prompts">Prompts</h2>
+        <p>
+          Dentro de un archivo de prompt, las líneas que empiezan con <code>#&gt;</code> son anotaciones para el sitio
+          y no forman parte del prompt. Las líneas <code>@esquema</code>, <code>@material</code> y <code>@salida</code>{' '}
+          se reemplazan por el esquema, el texto o la salida anterior, y <code>@continua</code> indica que el mensaje va
+          en la misma conversación que otro prompt. El botón Copiar de cada página entrega el prompt ya armado.
+        </p>
+        {
+          grupos.map((g) => (
+            <>
+              <h3>
+                <a href={rutaSeccion(g.seccion)}>{g.titulo}</a>
+              </h3>
+              <ul class="lista-materiales">
+                {g.archivos.map((a) => (
+                  <li>
+                    <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                    <span>{tieneSalida(a) ? 'Con salida guardada' : 'Sin salida guardada'}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))
+        }
+
+        <h2 id="esquemas">Esquemas</h2>
+        <p>Esquemas de códigos, entrevistas, la skill del Caso 2 y la plantilla de carpeta de proyecto.</p>
+        <ul class="lista-materiales">
+          {
+            otros.map(([a, tipo]) => (
+              <li>
+                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                <span>{tipo}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2 id="informes">Informes</h2>
+        <p>Verificaciones de citas hechas con <code>scripts/verificar_citas.mjs</code> y la planilla que generó la skill.</p>
+        <ul class="lista-materiales">
+          {
+            informes.map((a) => (
+              <li>
+                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
+                <span>{a.endsWith('.csv') ? 'Planilla' : 'Verificación de citas'}</span>
+              </li>
+            ))
+          }
+        </ul>
+
         <h2 id="fuentes">Fuentes</h2>
         <p>El material de terceros que usa el sitio, con su licencia.</p>
-        <h3>Hablar (Eje 04)</h3>
+
+        <h3>Discursos</h3>
+        <p>
+          Los discursos salen del sitio de Casa Rosada, que los publica con licencia Creative Commons Reconocimiento 2.5
+          Argentina. Los que usa el taller están en <code>discursos/</code> como texto con los párrafos numerados, y cada uno enlaza a su página original.
+        </p>
         <ul class="lista-materiales">
-          <li>
-            <span>Discursos presidenciales de 2026</span>
-            <span>
-              Casa Rosada, bajo licencia{' '}
-              <a href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento 2.5 Argentina</a>.
-            </span>
-          </li>
-          <li>
-            <span>Entrevistas y grupo focal</span>
-            <span>
-              Corpus FOUBA de Lourdes Moran (CONICET), bajo licencia{' '}
-              <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Atribución-NoComercial-CompartirIgual 2.5</a>.
-            </span>
-          </li>
+          {
+            fuentes.map((f) => (
+              <li>
+                <span>
+                  <a href={f.url}>{f.titulo}</a> ({f.fecha})
+                </span>
+                <span>
+                  {f.uso}. <span class="mono">{enRepo(f.archivo) ? <a href={enRepo(f.archivo)}>{f.archivo}</a> : f.archivo}</span>
+                </span>
+              </li>
+            ))
+          }
         </ul>
-        <h3>Leer (Eje 05)</h3>
+
+        <h3>Entrevistas y grupo focal</h3>
+        <p>Corpus FOUBA de Lourdes Moran (CONICET), bajo licencia{' '} <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Atribución-NoComercial-CompartirIgual 2.5</a>.</p>
+
+        <h3>Papers del bloque Leer (Eje 05)</h3>
         <p>
           Los papers no se suben al repositorio: se enlazan a su publicación original. En el sitio se citan solo pasajes
           breves, con su página.
@@ -125,77 +191,7 @@ const informes = listar('salidas/').filter((a) => /\.(md|csv)$/.test(a));
           </li>
         </ul>
 
-        <h2>Prompts</h2>
-        <p>
-          Dentro de un archivo de prompt, las líneas que empiezan con <code>#&gt;</code> son anotaciones para el sitio
-          y no forman parte del prompt. Las líneas <code>@esquema</code>, <code>@material</code> y <code>@salida</code>{' '}
-          se reemplazan por el esquema, el texto o la salida anterior, y <code>@continua</code> indica que el mensaje va
-          en la misma conversación que otro prompt. El botón Copiar de cada página entrega el prompt ya armado.
-        </p>
-        {
-          grupos.map((g) => (
-            <>
-              <h3>
-                <a href={rutaSeccion(g.seccion)}>{g.titulo}</a>
-              </h3>
-              <ul class="lista-materiales">
-                {g.archivos.map((a) => (
-                  <li>
-                    <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
-                    <span>{tieneSalida(a) ? 'Con salida guardada' : 'Sin salida guardada'}</span>
-                  </li>
-                ))}
-              </ul>
-            </>
-          ))
-        }
-
-        <h2>Esquemas, entrevistas, skill y plantilla</h2>
-        <ul class="lista-materiales">
-          {
-            otros.map(([a, tipo]) => (
-              <li>
-                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
-                <span>{tipo}</span>
-              </li>
-            ))
-          }
-        </ul>
-
-        <h2>Discursos</h2>
-        <p>
-          Los discursos salen del sitio de Casa Rosada, que los publica con licencia Creative Commons Reconocimiento 2.5
-          Argentina. Los que usa el taller están en <code>discursos/</code> como texto con los párrafos numerados, y cada uno enlaza a su página original.
-        </p>
-        <ul class="lista-materiales">
-          {
-            fuentes.map((f) => (
-              <li>
-                <span>
-                  <a href={f.url}>{f.titulo}</a> ({f.fecha})
-                </span>
-                <span>
-                  {f.uso}. <span class="mono">{enRepo(f.archivo) ? <a href={enRepo(f.archivo)}>{f.archivo}</a> : f.archivo}</span>
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-
-        <h2>Informes y planillas de salida</h2>
-        <p>Verificaciones de citas hechas con <code>scripts/verificar_citas.mjs</code> y la planilla que generó la skill.</p>
-        <ul class="lista-materiales">
-          {
-            informes.map((a) => (
-              <li>
-                <span class="mono">{enRepo(a) ? <a href={enRepo(a)}>{a}</a> : a}</span>
-                <span>{a.endsWith('.csv') ? 'Planilla' : 'Verificación de citas'}</span>
-              </li>
-            ))
-          }
-        </ul>
-
-        <h2>Registro de corridas</h2>
+        <h2 id="registro">Registro de corridas</h2>
         <p>Cada salida guardada tiene su fila, con herramienta, modelo, nivel de esfuerzo y fecha.</p>
         <Registro />
       </div>

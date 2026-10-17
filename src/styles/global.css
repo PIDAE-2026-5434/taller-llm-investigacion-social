@@ -1254,3 +1254,17 @@ h3 {
 .ejemplo {
   border-left-color: var(--acento);
 }
+
+/* Índice de enlaces internos al principio de una página (Materiales). */
+.prosa > .indice-interno {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  padding: 14px 0;
+  margin-top: 24px;
+  border-block: 1px solid var(--linea);
+}
+.prosa > .indice-interno li + li {
+  margin-top: 0;
+}
