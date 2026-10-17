@@ -8,7 +8,7 @@ import { sitio, ruta, rutaSeccion } from '../lib/sitio.js';
 
 // eje e icono: el rótulo y el símbolo de la cabecera. Por defecto, los del Eje 04; Leer pasa los suyos.
 const { titulo, descripcion = sitio.descripcion, eje = null, icono = 'marca/eje04.png' } = Astro.props;
-const rotuloEje = eje ?? 'Eje 04 · Cómo interactuamos con los modelos de lenguaje';
+const rotuloEje = eje ?? 'Eje 04 · Hablar';
 const tituloPagina = titulo ? `${titulo} · ${sitio.titulo}` : `${sitio.titulo} · ${sitio.proyecto}`;
 
 const camino = Astro.url.pathname;

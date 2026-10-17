@@ -252,6 +252,13 @@ h3 {
 .bloque-secciones {
   padding-bottom: clamp(56px, 8vw, 96px);
 }
+/* Subtítulo de las portadas (h2 debajo del h1), igual en Hablar y en Leer. */
+.portada-texto h2 {
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  margin-top: -12px;
+}
 /* Aire entre la banda de color de una portada y la lista de secciones (Hablar y Leer). */
 .portada-eje + .bloque-secciones {
   padding-top: clamp(40px, 6vw, 72px);

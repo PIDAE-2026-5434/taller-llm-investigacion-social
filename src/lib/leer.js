@@ -3,7 +3,7 @@
 // (src/pages/leer/index.astro); cada sección vive en src/pages/leer/<slug>.astro.
 import { ruta } from './sitio.js';
 
-export const eje = 'Eje 05 · Leer con IA: trabajar con papers y fuentes';
+export const eje = 'Eje 05 · Leer';
 
 export const seccionesLeer = [
   {
