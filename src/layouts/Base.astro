@@ -58,19 +58,24 @@ const menu = [
 
     <footer class="pie">
       <div class="contenedor">
-        <div class="pie-logos">
-          <img class="uba" src={ruta('marca/uba-sociales.png')} alt="UBA Sociales, Facultad de Ciencias Sociales" width="190" height="30" />
-          <img class="sello" src={ruta('marca/sello-uba.png')} alt="Sello de la Universidad de Buenos Aires" width="38" height="38" />
+        <div class="pie-fila">
+          <div class="pie-logos">
+            <img class="uba" src={ruta('marca/uba-sociales.png')} alt="UBA Sociales, Facultad de Ciencias Sociales" width="190" height="30" />
+            <img class="sello" src={ruta('marca/sello-uba.png')} alt="Sello de la Universidad de Buenos Aires" width="38" height="38" />
+          </div>
+          <p class="pie-proyecto">{sitio.institucion}</p>
         </div>
-        <p>{sitio.institucion}</p>
-        <p>
-          Discursos: Casa Rosada, bajo licencia{' '}
-          <a href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento 2.5 Argentina</a>.
-        </p>
-        <p>
-          Entrevistas y grupo focal: corpus FOUBA de Lourdes Moran (CONICET), bajo licencia{' '}
-          <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Atribución-NoComercial-CompartirIgual 2.5</a>.
-        </p>
+        <div class="pie-fuentes">
+          <p class="pie-fuentes-titulo">Fuentes:</p>
+          <p>
+            Discursos: Casa Rosada, bajo licencia{' '}
+            <a href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento 2.5 Argentina</a>.
+          </p>
+          <p>
+            Entrevistas y grupo focal: corpus FOUBA de Lourdes Moran (CONICET), bajo licencia{' '}
+            <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Atribución-NoComercial-CompartirIgual 2.5</a>.
+          </p>
+        </div>
       </div>
     </footer>
 

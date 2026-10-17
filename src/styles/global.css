@@ -120,14 +120,40 @@ a:hover {
 }
 .pie .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px 48px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
   padding-block: 32px 48px;
 }
-.pie .contenedor > * {
-  flex: 1 1 320px;
+.pie p {
   margin: 0;
+}
+/* Logos y línea del proyecto, en una sola fila. */
+.pie-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+@media (min-width: 900px) {
+  .pie-proyecto {
+    white-space: nowrap;
+  }
+}
+/* Fuentes: más chicas, un renglón por fuente. */
+.pie-fuentes {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.pie-fuentes-titulo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  margin-bottom: 2px;
 }
 
 /* Botones */
