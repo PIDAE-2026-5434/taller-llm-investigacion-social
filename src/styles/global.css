@@ -139,11 +139,8 @@ a:hover {
     white-space: nowrap;
   }
 }
-/* Fuentes: más chicas, un renglón por fuente. */
+/* Enlace a fuentes y licencias: chico y en una sola línea. */
 .pie-fuentes {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   font-size: 13px;
   line-height: 1.5;
 }
