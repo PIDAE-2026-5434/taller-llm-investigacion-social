@@ -106,10 +106,6 @@ a:hover {
   color: var(--tinta);
   text-decoration: none;
 }
-.cabecera nav a.secundario {
-  font-size: 14px;
-  color: var(--gris);
-}
 .cabecera nav a:hover,
 .cabecera nav a[aria-current='page'] {
   text-decoration: underline;
