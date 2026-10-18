@@ -15,9 +15,9 @@ const tituloPagina = titulo ? `${titulo} · ${sitio.titulo}` : `${sitio.titulo} 
 const camino = Astro.url.pathname;
 const en = (parte) => camino.includes(parte);
 const menu = [
-  { texto: 'HABLAR', href: ruta('hablar/'), actual: en('/hablar/') || en('/guia/') },
-  { texto: 'LEER', href: ruta('leer/'), actual: en('/leer/') },
-  { texto: 'Materiales', href: ruta('materiales/'), actual: en('/materiales/'), secundario: true },
+  { texto: 'Hablar', href: ruta('hablar/'), actual: en('/hablar/') || en('/guia/') },
+  { texto: 'Leer', href: ruta('leer/'), actual: en('/leer/') },
+  { texto: 'Materiales', href: ruta('materiales/'), actual: en('/materiales/') },
 ];
 ---
 
@@ -43,7 +43,7 @@ const menu = [
         <nav aria-label="Principal">
           {
             menu.map((m) => (
-              <a href={m.href} class={m.secundario ? "secundario" : undefined} aria-current={m.actual ? 'page' : undefined}>
+              <a href={m.href} aria-current={m.actual ? 'page' : undefined}>
                 {m.texto}
               </a>
             ))
