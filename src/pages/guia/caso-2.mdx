@@ -116,17 +116,19 @@ Una skill es una carpeta con un archivo `SKILL.md`. El archivo empieza con un no
 
 </details>
 
-<details>
-<summary>Cómo se instala en Claude</summary>
+### Cómo se sube a cada herramienta
 
-1. En la configuración de Claude, activar la ejecución de código y creación de archivos.
-2. Comprimir la carpeta `grilla-de-menciones` en un archivo .zip. La carpeta se tiene que llamar igual que el campo `name` del archivo.
-3. En la sección de skills de Claude, elegir crear una skill y subir el .zip.
-4. Abrir una conversación nueva, adjuntar las transcripciones y el CSV de dimensiones, y pedir la grilla.
+En todas se prepara igual: una carpeta con el nombre de la skill, con `SKILL.md` adentro y, si lleva, el script. Lo que cambia es dónde se sube.
 
-Las skills que sube una persona son privadas. En las cuentas de equipo se pueden compartir. En ChatGPT y en Gemini, el texto del `SKILL.md` se puede pegar como instrucciones de un proyecto o de un Gem. Sin ejecución de código, la verificación se hace después con el script del repositorio.
+| | Claude | ChatGPT | Gemini |
+| --- | --- | --- | --- |
+| Dónde | Personalizar > Skills, en claude.ai o en la app de escritorio. Se sube la carpeta comprimida en un .zip | Plugins > pestaña Skills > Crear > Subir desde tu computadora | Configuración > Skills, en la web o en la app. Según una nota de prensa, ahí se sube; la ayuda oficial de Google se llama "Create & manage skills for Gemini Apps" |
+| Qué se sube | Un .zip que tiene adentro la carpeta (no solo los archivos). La carpeta se llama igual que el `name` del `SKILL.md` | La carpeta de la skill | Según esa nota, el `SKILL.md`, la carpeta o un .zip. Google dice que las skills hechas en otras plataformas con el formato `SKILL.md` se pueden copiar a Gemini |
+| Quién la tiene | Hace falta tener activada la ejecución de código. En cuentas de equipo se puede compartir | Según su documentación, planes Business, Enterprise, Healthcare y Edu. Un administrador puede apagarlo | Cuentas personales y de Workspace. Google la empezó a habilitar el 13 de octubre de 2026 y calcula terminar a mediados de noviembre, así que puede no aparecer todavía |
+| Script | Corre en la ejecución de código de Claude | Puede llevar scripts. Conviene probar si el entorno tiene lo que el script necesita | Puede llevar scripts, pero sin acceso a sitios externos |
+| Cuidado | Las skills que sube una persona son privadas | Las skills subidas se escanean y pueden quedar marcadas para revisión | Reemplaza a los Gems, que dejan de poder crearse desde marzo de 2027 en cuentas de empresa |
 
-</details>
+Los datos salen de las páginas de ayuda de cada herramienta y de notas de prensa, consultadas el 17 de octubre de 2026. Las tres lo están desplegando ahora, así que conviene mirar la pantalla propia antes de armar el taller. Si la herramienta no ejecuta código, la skill sirve igual y la verificación se hace después con el script del repositorio.
 
 El pedido es una línea. Lo demás lo pone la skill.
 
@@ -168,8 +170,6 @@ El patrón trabaja sobre una grilla ya revisada, armada con las mismas siete dim
 Con criterios escritos, el resultado cambia. Hay consenso en el tipo de uso, en el criterio frente a la respuesta, en la frontera con la clínica y en la trayectoria. La lectura del paciente, la responsabilidad y la visibilidad del uso quedan como "presente en todos" y no como consenso. En la lectura del paciente, el grupo focal aporta una sola voz independiente. En la responsabilidad, casi todo responde a preguntas que la nombran. Además encontró una tensión: la docente y la estudiante valoran preparar con IA y, a la vez, cuentan que lo preparado puede frenar la escucha. Separa los acuerdos inducidos por el disparador y por la pregunta de MOD en el turno 13, que anticipaba "un uso más de 'pensar el caso'". Y señala frases que se repiten casi textuales entre participantes, lo que debilita la independencia de varios apoyos.
 
 La verificación encontró una cita retocada también en esta salida: "su preparación estaba muy bien, pero había dejado de escuchar", donde la docente dijo "pero que había dejado de escuchar". Tener criterios no reemplaza revisar las citas.
-
-<Archivo archivo="salidas/caso-2/p4-patron-verificacion.md" rotulo="Verificación" />
 
 ### Contraejemplos de una lectura del equipo
 
